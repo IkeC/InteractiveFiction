@@ -1,0 +1,1758 @@
+
+squieeeek ...
+squieeek ...
+squieeeeek ...
+
+Langsam wachst du auf.
+
+Dein Kopf dröhnt erbarmungslos und das Blut pulsiert schmerzhaft in deinen Schläfen.
+
+Staub
+Ein Western von IkeC
+Release 4 / Serial number 260525 / Inform v6.44 PunyInformDE v6.6 
+
+Zimmer
+Du hustest zweimal kräftig und raffst dich schließlich langsam von dem staubigen Dielenboden hoch.
+
+Dieses Zimmer ist ziemlich spärlich eingerichtet. In der Ecke steht ein Bett mit einem kleinen Nachttisch. An der gegenüberliegenden Wand befindet sich ein Fenster. Eine einfache Holztür führt nach draußen und die Treppe hinunter.
+
+Bitte gib jetzt INFO ein für einige grundlegende Informationen zum Spiel, vor allem wenn du noch nie ein Textadventure gespielt hast.
+
+> schau
+Zimmer
+Dieses Zimmer ist ziemlich spärlich eingerichtet. In der Ecke steht ein Bett mit einem kleinen Nachttisch. An der gegenüberliegenden Wand befindet sich ein Fenster. Eine einfache Holztür führt nach draußen und die Treppe hinunter.
+
+> x bett
+Ein karges Bett, auf dem eine fleckige dünne Matratze liegt.
+
+> x matratze
+Matratze ist ein ziemlich großes Wort für diese beiden grob zusammengenähten Stoffbahnen. Einzelne Strohhalme drücken sich überall durch die Nähte und Löcher im Stoff.
+
+> x fenster
+Fahles Licht dringt durch die staubige Glasscheibe des Fensters. Draußen glaubst du ein Windrad zu erkennen.
+
+> x windrad
+Ein großes Windrad aus Metall dreht sich rhythmisch quietschend im Wind. Das Geräusch ist gerade nur schwer zu ertragen.
+
+> x wand
+Wand und Decke mögen einmal weiß gewesen sein, aber inzwischen wird der graue und rissige Putz nur noch von gutem Willen aufrecht gehalten.
+
+> x boden
+Einen Besen oder gar Wasser hat dieser Boden schon lange nicht mehr gesehen. An vielen Stellen scheint das Licht des darunter liegenden Raumes durch die Dielen.
+
+> x scharniere
+Eine Holztür mit grob gearbeiteten Scharnieren.
+
+> x nachttisch
+Ein kleiner Nachttisch mit einem offenen Fach.
+
+Der Nachttisch enthält eine Umhängetasche (geschlossen).
+
+> x tasche
+Eine abgewetzte Umhängetasche aus rissigem Leder. Sie ist geschlossen.
+
+> oeffne tasche
+Du öffnest die Umhängetasche und siehst eine Zeichnung, einen Revolver, einen Einberufungsbescheid und Geld.
+
+> x revolver
+Dein Colt Navy, Model 1861. Frisch geputzt, geladen und schussbereit.
+
+> x bescheid
+Ein Einberufungsbescheid für Thomas Marshall, laut Datum über fünf Jahre alt. Ein wichtiges Dokument, das du immer bei dir trägst, weist es dich doch als ehemaligen Armeeangehörigen aus. Außerdem kannst du deinen Namen nachschauen, wenn die Nacht mal wieder etwas heftig war.
+
+> x zeichnung
+Eine gefaltete Kohlezeichnung, an den Kanten schon leicht brüchig. Sie zeigt Claire, deine Frau.
+
+Sie fehlt dir so sehr.
+
+Du steckst die Zeichnung behutsam in die Innenseite deiner Weste.
+
+> x geld
+Etwa 12 Dollar.
+
+> nimm tasche
+Du nimmst die Umhängetasche an dich.
+
+> nimm revolver
+Du nimmst den Revolver an dich.
+
+> i
+Du hast bei dir:
+  einen Revolver
+  eine Umhängetasche
+    einen Einberufungsbescheid
+    Geld
+  eine Zeichnung
+
+> info
+Lenke deinen Charakter durch Richtungsangaben wie SÜD (oder kürzer: S), NORDWEST (NW), RUNTER (R), RAUS etc. sowie folgende Anweisungen: 
+
+- SCHAU (L) 
+- UNTERSUCHE <Sache> (U) 
+- NIMM <Sache> (P) 
+- REDE MIT <Person> (T) 
+- BENUTZE <Sache> MIT <Sache> (B) - LEGE / DRÜCKE / ÖFFNE <Sache> 
+
+Andere Anweisungen sind ebenfalls möglich. Ein typischer Anfang wäre z.B. SCHAU, ÖFFNE FENSTER, UNTERSUCHE NACHTTISCH, NIMM TASCHE, RUNTER, REDE MIT FRAU und so weiter.
+
+Mit LAUF werden die bereits besuchten Orte angezeigt. Diese können mit LAUF <Ort> direkt erreicht werden. INV (I) zeigt dein Inventar, also was du bei dir trägst. SPEICHERN und LADEN ist ebenfalls möglich. Mit TIPP bekommst Du einen Hinweis, wie es weiter geht.
+
+Aktionen wie das Betreten neuer Räume oder der Fund von Gegenständen schalten oft neue Dialogoptionen frei, es ist daher sinnvoll, mehrmals mit Personen zu sprechen. Unter https://ikeserver.de/Staub gibt es weitere Hinweise und eine Komplettlösung, wenn's mal nicht weiter geht.
+
+> credits
+Vielen Dank an Olaf Nowacki, Hannes Schüller, Michael L. und meine Familie für ihr hilfreiches Feedback sowie den GerX-/deform-Autoren für die deutsche Inform-Erweiterung. Das Cover wurde mit Hilfe von Stable Diffusion XL erstellt.
+
+> tipp
+Gehe raus.
+
+> riech
+Es riecht leicht nach Pisse, aber du hast schon an deutlich schlimmeren Orten geschlafen.
+
+> hoer
+squieeek ...
+squieeek ...
+squieeeeek ...
+
+> runter
+Saloon
+Du schlurfst die Treppe hinunter und massierst dabei deine schmerzende linke Schulter.
+
+Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
+
+Hinter der Bar steht eine Frau und kratzt sich am Kinn. Sie wirft dir einen leicht amüsierten Blick zu.
+
+> lauf
+LAUF ZU einem dieser Orte:
+- Zimmer
+- Saloon (Ella)
+
+> lauf zu zimmer
+Kurze Zeit später...
+Zimmer
+Dieses Zimmer ist ziemlich spärlich eingerichtet. In der Ecke steht ein Bett mit einem kleinen Nachttisch. An der gegenüberliegenden Wand befindet sich ein Fenster. Eine einfache Holztür führt nach draußen und die Treppe hinunter.
+
+> lauf zu saloon
+Ein paar Minuten später...
+Saloon
+Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
+
+Hinter der Bar steht eine Frau und zieht an ihrer Zigarette.
+
+> schau
+Saloon
+Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
+
+Hinter der Bar steht eine Frau und kratzt sich am Kinn.
+
+> x tresen
+Der Tresen hat einige dunkle Stellen und kleinere Schnitzspuren gelangweilter Gäste, sieht aber insgesamt recht sauber aus.
+
+> x frau
+Die Frau hinter dem Tresen heißt Ella, ihr kennt euch noch von früher. Sie ist ungefähr Ende vierzig, eine korpulente, attraktive Frau mit Lachfalten und schwieligen Händen. Sie hat ein dunkelrotes Stofftuch um die Stirn gebunden und poliert Gläser mit einem mäßig sauber wirkenden Stofflappen.
+
+> rede mit frau
+Was möchtest du zu Ella sagen?
+
+[1] "Alles klar bei dir?"
+[2] "Sieht ja wild aus hier."
+[0] Gespräch beenden
+
+> 1
+["Alles klar bei dir?"]
+"Mir geht's ganz gut, danke. So leicht bringt mich hier nichts mehr aus der Fassung, so 'ne kleine Kneipenschlägerei jedenfalls nicht."
+
+[1] "Sieht ja wild aus hier."
+[2] "Es gab 'ne Schlägerei?"
+[0] Gespräch beenden
+
+> 1
+["Sieht ja wild aus hier."]
+"Ist gestern noch hoch hergegangen hier, als du schon oben warst. Ich räume das später auf.", sagt Ella. "Du siehst ganz schön fertig aus, willst du einen Kaffee? Hab' direkt einen aufgebrüht, als ich dich hab' aufstehen hören."
+
+[1] "Einen Kaffee bitte."
+[2] "Es gab 'ne Schlägerei?"
+[0] Gespräch beenden
+
+> 1
+["Einen Kaffee bitte."]
+Ella dreht sich um und gießt eine tiefschwarze dampfende Brühe aus einem kleinen Blechtopf in eine Tasse und stellt sie vor dir auf den Tresen.
+
+"Wohl bekomm's, macht 'nen Vierteldollar. Zucker ist leider aus, aber 'n Keks hab' ich noch."
+
+Ella legt einen Keks neben die Tasse. Du legst das Geld hin, steckst die Nase tief in die Tasse und atmest einmal tief ein. Herrlich.
+
+[1] "Es gab 'ne Schlägerei?"
+[0] Gespräch beenden
+
+> 1
+["Es gab 'ne Schlägerei?"]
+"Keine Ahnung wer diesmal angefangen hat. Die Mifflin-Brüder haben mal wieder ordentlich gesoffen und mit ihren Scheinen gewedelt, aber natürlich nichts springen lassen."
+
+Ella zuckt mit den Schultern und lächelt. "Denke das wird einigen nicht gefallen haben."
+
+[1] "Mifflin? Sagt mir nichts."
+[0] Gespräch beenden
+
+> 1
+["Mifflin? Sagt mir nichts."]
+"Ach du kennst die Mifflin-Brüder gar nicht? Dann sind die damals wohl erst aufgetaucht, als du schon aus der Stadt warst. Calvin und Bob heißen die, haben die alte Mine drüben im Westen wieder in Betrieb genommen und offenbar tatsächlich wieder was gefunden."
+
+Ella hält kurz inne und zieht einmal kräftig an ihrer Zigarette.
+
+"Jedenfalls haben sie offenbar genug Kohle, um sich hier regelmäßig volllaufen zu lassen. Mir soll's recht sein."
+
+Damit endet das Gespräch.
+
+> trinke kaffee
+Du nimmst einen kleinen Schluck. Nicht übel.
+
+> nimm keks
+Du packst den Keks vorsichtig ein.
+
+> raus
+Main Street
+Du trittst durch die Schwingtür vor den Saloon. Ein kleines Vordach schützt dich vor der sengenden Sonne. Ein unangenehm heißer Wind trägt einen dornigen Steppenläufer langsam aus der Stadt hinaus. Es ist kein Mensch zu sehen.
+
+Die breite, staubige Straße verläuft von Osten nach Westen. Drei ähnlich aussehende Gebäude aus Holz liegen auf der gegenüberliegenden Straßenseite im Norden. Im Süden geht es in den Saloon.
+
+> x gebaeude
+Das Gebäude im Nordwesten ist offenbar das Büro des Sheriffs. Im Norden befindet sich ein Gemischtwarenladen und daneben im Nordosten hat ein Barbier sein kleines Geschäft.
+
+> w
+Ranch
+Du kommst zu einem kleinen Holzhaus mit angrenzendem Stall und einer großen umzäunten Koppel.
+
+Eine junge Frau sitzt schluchzend auf einer kleinen Bank.
+
+> rede mit frau
+Was möchtest du zu der jungen Frau sagen?
+
+[1] "Kann ich Ihnen vielleicht helfen Ma'am?"
+[0] Gespräch beenden
+
+> 1
+["Kann ich Ihnen vielleicht helfen Ma'am?"]
+Die junge Frau blickt zu dir hoch, die Augen tränenüberströmt. "Michael ist weg!"
+
+[1] "Wer ist Michael?"
+[2] "Wie heißen Sie?"
+[0] Gespräch beenden
+
+> 1
+["Wer ist Michael?"]
+Die junge Frau schnäuzt einmal in ihr Taschentuch. "Michael ist mein Verlobter. Er wollte gestern noch in den Saloon."
+
+Sie holt tief Luft und deutet hinüber zu den Pferden.
+
+"Als ich heute Morgen hergekommen bin, waren die Pferde nicht versorgt und von Michael keine Spur. Er würde die Pferde niemals sich selbst überlassen!"
+
+[1] "Wie heißen Sie?"
+[2] "Haben Sie eine Idee, was passiert sein könnte?"
+[0] Gespräch beenden
+
+> 2
+["Haben Sie eine Idee, was passiert sein könnte?"]
+Sie wendet den Blick ab.
+
+"Ich weiß es nicht. Bevor er gestern gegangen ist, hat er kurz gesagt, dass er etwas über die Mifflin-Brüder gehört hat. Als ich wissen wollte, was genau hat er mich nachdenklich angesehen und gemeint, es sei doch nicht so wichtig."
+
+Die junge Frau wendet sich dir wieder zu. Ihr Blick streift dein Gesicht, ihre Augen weiten sich angsterfüllt.
+
+"He, was--"
+
+BAUZ!
+
+~~~
+
+Claire wirbelt herum. "Zur Armee? Bist du völlig bescheuert?"
+
+Sie ist so schön, wenn sie wütend ist, aber das funkelnde Feuer in ihren Augen macht dir manchmal auch ein bisschen Angst. Als du ihr über die Wange streichen möchtest, dreht sie sich schnell weg.
+
+"Du weißt doch, dass wir das Geld brauchen."
+
+Du versuchst möglichst fest und bestimmt zu klingen, dabei bist du selbst nicht ganz überzeugt von deiner Entscheidung. Trotzig blickt sie aus dem staubigen Fenster, die Arme vor der Brust verschränkt. Ihr Kinn zittert leicht.
+
+Claire...
+
+~~~
+
+Aua.
+
+Dein Kopf dröhnt schon wieder, nur dass es sich diesmal nicht wie zu viel Whiskey am Vorabend anfühlt.
+
+"Kleines Schläfchen gehalten, was?"
+
+Du öffnest langsam die Augen und blickst unvermittelt in das wettergegerbte Gesicht des Sheriffs.
+
+> schau
+Büro des Sheriffs
+Dies ist Sheriff Dunders Büro. Du stehst vor einer der beiden Pritschen die an einer der Wände befestigt sind.
+
+Auf der gegenüberliegenden Seite steht ein massiver Schreibtisch. Ein Durchgang führt offenbar tiefer ins Haus hinein. Eine breite Tür im Süden führt nach draußen.
+
+> rede mit sheriff
+Was möchtest du zu Sheriff Dunder sagen?
+
+[1] "Was ist passiert? Wie komme ich hierher?"
+[0] Gespräch beenden
+
+> 1
+["Was ist passiert? Wie komme ich hierher?"]
+"Was passiert ist? Das wollte ich eigentlich von dir wissen, Junge."
+
+Sheriff Dunder geht einen Schritt zurück und lehnt sich an seinen Schreibtisch.
+
+"Deputy Miller hat dich auf der Ranch gefunden, mit'm Gesicht im Dreck und Blut am Kopf. Wollte dich da nicht in der Gluthitze verrecken lassen und hat dich her geschleift."
+
+Ja richtig, die Ranch, die junge Frau... langsam fällt dir alles wieder ein.
+
+[1] "Was ist mit der jungen Frau?"
+[0] Gespräch beenden
+
+> 1
+["Was ist mit der jungen Frau?"]
+Dunder runzelt die Stirn. "Miller sagt die Ranch war leer, kein Michael, keine Lucy. Was war da los, Junge?"
+
+Du berichtest kurz von deinem Gespräch mit der jungen Frau. Der Sheriff beäugt dich kritisch und seufzt schließlich.
+
+"Lucy ist die Tochter von Bürgermeister Thompson. Wenn ihr was passiert sein sollte, hast nicht nur du ein Problem."
+
+[1] "Wieso ist das jetzt mein Problem?"
+[0] Gespräch beenden
+
+> 1
+["Wieso ist das jetzt mein Problem?"]
+Der Sheriff kommt langsam auf dich zu und schiebt sein Gesicht vor deines, bis sich eure Nasenspitzen beinahe berühren. Sein Atem stinkt faulig und seine Augen blitzen dich unheilvoll an.
+
+"Du bist jetzt einen Tag hier und schon ist die Tochter des Bürgermeisters verschwunden. Ich hab' keine Ahnung, was genau du damit zu tun hast und ob deine Geschichte stimmt, aber ich rate dir dringend herauszufinden, wo sie ist."
+
+[1] "Können Sie mir was zu Lucy sagen?"
+[2] "Kann ich jetzt gehen?"
+[0] Gespräch beenden
+
+> 1
+["Können Sie mir was zu Lucy sagen?"]
+"Sie ist die Tochter von Bürgermeister Thompson, die Stieftochter, um genau zu sein. Hat sich mit dem Stallburschen verlobt, passt Thompson gar nicht."
+
+Dunder zieht geräuschvoll einen hoch und spuckt unter die Pritsche.
+
+"Ihre Mutter ist wohl vor einem Jahr oder so gestorben. Kannte sie aber nicht, bin selbst erst ein paar Monate hier."
+
+[1] "Kann ich jetzt gehen?"
+[0] Gespräch beenden
+
+> 1
+["Kann ich jetzt gehen?"]
+Der Sheriff wendet sich von dir ab und nickt widerwillig. "Deine Papiere bleiben hier und du verlässt nicht die Stadt. Die Kutsche heute ist eh schon durch und einen Gaul wirst du dir nicht leisten können."
+
+Dunder kommt noch einmal näher und blickt dich durchdringend an.
+
+"Dein Kram liegt auf dem Tisch. Wir behalten dich im Auge, Junge. Mach' keinen Blödsinn."
+
+Damit endet das Gespräch.
+
+> nimm tasche
+Du nimmst die Umhängetasche an dich.
+
+> oeffne tasche
+Du öffnest die Umhängetasche und siehst einen Revolver und Geld.
+
+> raus
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+> w
+Ranch
+Ein kleines Holzhaus mit angrenzendem Stall und einer umzäunten Koppel. Vor dem Haus steht eine kleine Bank.
+
+Ein schmaler Weg führt nach Süden zum Windrad. Die Hauptstraße führt von Osten kommend weiter nach Westen aus der Stadt hinaus.
+
+Ein dumpfer Knall aus westlicher Richtung gefolgt von leisem Fluchen lässt dich kurz aufhorchen.
+
+> w
+Mine
+Nach einem kurzen Stück staubiger Straße erhebt sich eine niedrige Hügelkette vor dir. Einige Minuten später erkennst du den Eingang zu einer Mine.
+
+Der Eingang der Mine wird zu beiden Seiten von Fackeln erhellt. Eine dünne Rauchfahne zieht am höchsten Punkt des Stollens nach oben und verliert sich schnell im Wind.
+
+An einem leeren Karren lehnt ein hohläugiger Mann mit zerzaustem schwarzem Haar und spielt mit seinem Gewehr herum.
+
+Am Wegrand blitzt etwas Weißes hinter einem kleinen Strauch hervor.
+
+Der Weg nach Osten führt zurück in die Stadt.
+
+> nimm taschentuch
+Du steckst das Taschentuch ein.
+
+> o
+Ranch
+Ein kleines Holzhaus mit angrenzendem Stall und einer umzäunten Koppel. Vor dem Haus steht eine kleine Bank.
+
+Ein schmaler Weg führt nach Süden zum Windrad. Die Hauptstraße führt von Osten kommend weiter nach Westen aus der Stadt hinaus.
+
+> o
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+> no
+Barbier
+Du stupst kurz die rot-weiß-blaue Säule neben der Eingangstür an und betrittst das Geschäft. Du bist angenehm überrascht, wie hell und sauber es hier ist.
+
+Ein ausladender Kippsessel aus rotem Leder prangt vor einem großen, an der Wand befestigten Spiegel. Auf diversen Tischen und Regalen stehen kleine Fläschchen, Dosen und allerlei Krimskrams herum.
+
+Ein Papagei sitzt auf einer Stange und wackelt mit dem Kopf. Der Barbier steht hinter dem Sessel und prüft sein Rasiermesser.
+
+> x barbier
+Der Barbier ist ein stämmiger Mann mit dicken Oberarmen und einem gepflegten schwarzen Vollbart. Er trägt eine gestreifte Stoffweste und eine kurze Leinenhose.
+
+> rede mit barbier
+Der Barbier geht einen kleinen Schritt auf dich zu und grinst dich freundlich an.
+
+"Moin Mister. Mein Name ist Marten, was kann ich für Sie tun? Bart stutzen, Haare schneiden, Schusswunde versorgen?"
+
+Was möchtest du zu Marten sagen?
+
+[1] "Moin? Es ist schon Mittag."
+[2] "Schusswunde? Ich dachte Sie sind Barbier."
+[3] "Eine Idee wie ich in die Mine komme?"
+[0] Gespräch beenden
+
+> 1
+["Moin? Es ist schon Mittag."]
+Marten lacht herzlich und hält sich den Bauch.
+
+"Entschuldigen Sie Mister, ich kann mir das nicht ganz abgewöhnen. Ich bin nämlich Friese."
+
+[1] "Was hat Sie denn hierher verschlagen?"
+[2] "Schusswunde? Ich dachte Sie sind Barbier."
+[3] "Eine Idee wie ich in die Mine komme?"
+[0] Gespräch beenden
+
+> 1
+["Was hat Sie denn hierher verschlagen?"]
+"Bin vor über zehn Jahren mit'm Kahn hergekommen, war erster Maat. Wollte eigentlich mit Molly auf Goldsuche gehen, aber dann kam der Krieg dazwischen."
+
+[1] "Schusswunde? Ich dachte Sie sind Barbier."
+[2] "Ist Molly Ihre Frau?"
+[3] "Eine Idee wie ich in die Mine komme?"
+[0] Gespräch beenden
+
+> 2
+["Ist Molly Ihre Frau?"]
+"Meine Frau? Haa-ha-ha!"
+
+Marten kann kaum an sich halten und klopft sich auf die Schenkel.
+
+"Molly is' mein Vogel meen Jong! Ham' schon viel gemeinsam erlebt auf See. War als Feuermelder mit dabei, beim kleinsten bisschen Rauch schlägt sie Alarm."
+
+[1] "Schusswunde? Ich dachte Sie sind Barbier."
+[2] "Wieso war Molly noch gleich mit auf See?"
+[3] "Eine Idee wie ich in die Mine komme?"
+[0] Gespräch beenden
+
+> 2
+["Wieso war Molly noch gleich mit auf See?"]
+"War als Feuermelder mit dabei, beim kleinsten bisschen Rauch schlägt sie Alarm. Das habe ich dir doch schon gesagt!"
+
+[1] "Schusswunde? Ich dachte Sie sind Barbier."
+[2] "Wieso war Molly noch gleich mit auf See?"
+[3] "Eine Idee wie ich in die Mine komme?"
+[0] Gespräch beenden
+
+> 1
+["Schusswunde? Ich dachte Sie sind Barbier."]
+Marten lacht dröhnend.
+
+"Als Barbier auf hoher See ist es immer ganz nützlich, wenn man sich auch ein bisschen mit der Versorgung von Wunden auskennt. Außerdem gibt es hier keinen Arzt mehr."
+
+Er zieht eine kleine Pfeife aus der Tasche und drückt mit einer geübten Bewegung etwas Tabak hinein.
+
+"Und bevor du fragst, ich bin außerdem der Totengräber hier. Ist seit dem Krieg zum Glück nicht mehr so oft gefragt."
+
+[1] "Wieso war Molly noch gleich mit auf See?"
+[2] "Eine Idee wie ich in die Mine komme?"
+[0] Gespräch beenden
+
+> 1
+["Wieso war Molly noch gleich mit auf See?"]
+"War als Feuermelder mit dabei, beim kleinsten bisschen Rauch schlägt sie Alarm. Das habe ich dir doch schon dreimal erzählt!"
+
+[1] "Wieso war Molly noch gleich mit auf See?"
+[2] "Eine Idee wie ich in die Mine komme?"
+[0] Gespräch beenden
+
+> 2
+["Eine Idee wie ich in die Mine komme?"]
+"Die Mine? Was willst'n da?"
+
+Du erzählst Marten, was los ist. Zum ersten Mal macht er ein ernstes Gesicht.
+
+"Aah. Üble Geschichte. Glaub' nicht, dass du vorne reinkommst, mit den Jungs da ist nicht gut Kirschen essen. Vielleicht gibt's noch einen anderen Eingang."
+
+[1] "Wieso war Molly noch gleich mit auf See?"
+[2] "Kann ich mir Molly mal ausleihen?"
+[0] Gespräch beenden
+
+> 2
+["Kann ich mir Molly mal ausleihen?"]
+"Wat, mein' Vogel willste mitnehmen? Wegen Lucy ne?"
+
+Marten kratzt sich nachdenklich an dem tätowierten Anker auf seinem rechten Oberarm.
+
+"Also wennse freiwillig mit dir mitgeht, soll's mir recht sein. Die haut dann schon ab, wenn's brenzlig wird. Aber trotzdem, pass ja gut auf sie auf!"
+
+[1] "Wieso war Molly noch gleich mit auf See?"
+[0] Gespräch beenden
+
+> 0
+Damit beendest du das Gespräch.
+
+> gib keks an molly
+Molly schnappt gierig nach dem Keks und mümmelt ihn ruck-zuck herunter.
+
+> nimm molly
+Du hältst Molly deinen ausgestreckten Arm entgegen. Sie schaut kurz zu Marten der wohlwollend nickt, dann hoppelt sie auf deinem Arm entlang und macht es sich auf deiner linken Schulter bequem.
+
+"BRAAAK!"
+
+> raus
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+> w
+Ranch
+Ein kleines Holzhaus mit angrenzendem Stall und einer umzäunten Koppel. Vor dem Haus steht eine kleine Bank.
+
+Ein schmaler Weg führt nach Süden zum Windrad. Die Hauptstraße führt von Osten kommend weiter nach Westen aus der Stadt hinaus.
+
+Etwas zischt an deinem Kopf vorbei und landet vor dir in der Pferdekoppel. Ein kleiner Junge sprintet heran und springt über den Zaun.
+
+Kurz darauf kommt er mit einem Stoffball unter dem Arm wieder zum Vorschein und rennt davon. "Sie ham nix gesehen Mister!"
+
+> s
+Windrad
+Nach einigen Metern kommst du an das Windrad, das du durch das Fenster deines Zimmers sehen konntest.
+
+Das Windrad ist in etwa fünfzehn Meter Höhe auf einen aus langen Metallstangen bestehenden Gittermast montiert und quietscht bei jeder Bewegung. Eine Heckfahne aus Metall stellt die Rotorblätter automatisch in Windrichtung.
+
+Im Norden geht es zurück zur Ranch. Ein Weg führt nach Westen Richtung Hügelkette.
+
+> x mast
+Der Gittermast besteht aus verschweißten Metallstangen. Eine der Stangen in Bodennähe scheint sich gelöst zu haben.
+
+> nimm stange
+Du hebelst die Stange hin und her, bis sich die verbliebene Schweißnaht vom Gittermast löst. Sie ist so lang und schwer, dass du sie mit beiden Händen tragen musst.
+
+> w
+Hügelkette
+Nach ein paar Minuten Fußmarsch stehst du am Fuße einer niedrigen Hügelkette.
+
+Ein großes Geröllfeld aus größeren und kleineren Felsen erstreckt sich hunderte Meter weit über die gesamte Breite. Die Hügel bieten guten Schutz vor dem Wind, es ist hier beinahe windstill.
+
+Der Weg im Osten führt zurück zum Windrad vor der Stadt.
+
+Molly trippelt unruhig auf deiner Schulter auf und ab.
+
+> x geröll
+Du gehst das Geröllfeld auf und ab, als Molly plötzlich aufgeregt zu flattern beginnt und von deiner Schulter auf einen der Felsbrocken hüpft.
+
+"Braak! BRAAAAK! FEURIOOOO!"
+
+> l
+Hügelkette
+Ein großes Geröllfeld aus größeren und kleineren Felsen erstreckt sich hunderte Meter weit über die gesamte Breite. Die Hügel bieten guten Schutz vor dem Wind, es ist hier beinahe windstill.
+
+Der Weg im Osten führt zurück zum Windrad vor der Stadt.
+
+Auf einem Felsbrocken sitzt Molly und flattert aufgeregt mit den Flügeln.
+
+> x brocken
+Auf dem Felsbrocken sitzt Molly und flattert aufgeregt. Als du den Brocken genauer untersuchst, erkennst du einen offenbar größeren Hohlraum hinter einem daumenbreiten Spalt.
+
+> o
+Windrad
+Das Windrad ist in etwa fünfzehn Meter Höhe auf einen aus langen Metallstangen bestehenden Gittermast montiert und quietscht bei jeder Bewegung. Eine Heckfahne aus Metall stellt die Rotorblätter automatisch in Windrichtung.
+
+Im Norden geht es zurück zur Ranch. Ein Weg führt nach Westen Richtung Hügelkette.
+
+> n
+Ranch
+Ein kleines Holzhaus mit angrenzendem Stall und einer umzäunten Koppel. Vor dem Haus steht eine kleine Bank.
+
+Ein schmaler Weg führt nach Süden zum Windrad. Die Hauptstraße führt von Osten kommend weiter nach Westen aus der Stadt hinaus.
+
+> lege stange
+Du legst die Stange auf den Boden.
+
+> o
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+Eine Katze trabt gemächlich an dir vorbei, wirft dir einen müden Blick zu und verschwindet im Schatten zwischen den Häusern.
+
+> n
+Gemischtwarenladen
+Eine kleine Glocke bimmelt hell, als du das Geschäft betrittst. Der Bereich für die Kunden ist so klein, dass sich kaum zwei Personen gleichzeitig umdrehen können.
+
+Im Durchgang hinter der Ladentheke erscheint der Ladenbesitzer Bill, krächzt ein leises "Morgen" und wirft dir ein schiefes Lächeln zu.
+
+Du stehst vor der Ladentheke. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+
+Im Süden geht es hinaus auf die Straße.
+> rede mit bill
+Was möchtest du zu Bill sagen?
+
+[1] "Wie geht's?"
+[2] "Was gibt's hier?"
+[3] "Wissen Sie, wo Lucy ist?"
+[4] "Haben Sie einen Meißel oder sowas?"
+[0] Gespräch beenden
+
+> 1
+["Wie geht's?"]
+"Naja, muss halt, wa?"
+
+Bill grinst und präsentiert dabei einen gelben Schneidezahn im Oberkiefer seines ansonsten zahnlosen Mundes.
+
+"Die Kutsche ist überfällig und ich hab' fast nix mehr. Hoffe es gab keinen Überfall."
+
+[1] "Was gibt's hier?"
+[2] "Wissen Sie, wo Lucy ist?"
+[3] "Haben Sie einen Meißel oder sowas?"
+[0] Gespräch beenden
+
+> 1
+["Was gibt's hier?"]
+"Alles, was du hinter mir siehst. Lesen musst du schon selber. Die roten Heringe da verkauf' ich allerdings nicht mehr, die sind schon ein bisschen drüber."
+
+[1] "Ich kann die meisten Schilder nicht lesen."
+[2] "Wissen Sie, wo Lucy ist?"
+[3] "Haben Sie einen Meißel oder sowas?"
+[0] Gespräch beenden
+
+> 1
+["Ich kann die meisten Schilder nicht lesen."]
+Bill lacht laut krächzend auf und erleidet dabei einen kleinen Hustenanfall. Er wischt sich den Mund am Kittel ab und lächelt, den Blick leicht an dir vorbei gerichtet.
+
+"Tut mir leid Junge. Früher hat meine Frau die Waren beschriftet, aber sie ist leider nicht mehr. Ihre Schrift war wunderschön."
+
+Er greift sich gedankenverloren ins Gesicht, schüttelt kurz den Kopf und schaut dich an.
+
+"Frag' mich einfach, wenn du was Bestimmtes willst, ich weiß dann schon wo's ist. Werkzeug und so hab' ich eh hinten im Lager."
+
+[1] "Wissen Sie, wo Lucy ist?"
+[2] "Haben Sie einen Meißel oder sowas?"
+[0] Gespräch beenden
+
+> 1
+["Wissen Sie, wo Lucy ist?"]
+Bill kneift misstrauisch die Augen zusammen.
+
+"Lucy is'n feines Mädchen, was willst du von ihr?"
+
+[1] "Lucy ist verschwunden."
+[2] "Haben Sie einen Meißel oder sowas?"
+[0] Gespräch beenden
+
+> 1
+["Lucy ist verschwunden."]
+Du erzählst Bill, was passiert ist. Er wirkt betroffen.
+
+"Oh Junge. Weiß leider nicht, wo sie sein könnte, vielleicht bei ihrem Burschen? Hier im Laden war sie jedenfalls schon ein paar Tage nicht mehr, und durch die dreckigen Scheiben seh' ich nicht gut nach draußen. Tut mir leid."
+
+[1] "Haben Sie einen Meißel oder sowas?"
+[0] Gespräch beenden
+
+> 1
+["Haben Sie einen Meißel oder sowas?"]
+Bill blinzelt dich an. "Einen Meißel? Nee sowas hab' ich nicht."
+
+Er überlegt kurz und lächelt. "Aber 'nen Kuhfuß müsste ich hinten noch irgendwo liegen haben."
+
+[1] "Was zum Henker ist denn ein Kuhfuß?"
+[0] Gespräch beenden
+
+> 1
+["Was zum Henker ist denn ein Kuhfuß?"]
+Der Ladenbesitzer schaut dich verblüfft an und lacht dann krächzend. "Wo kommst du denn her Junge? Ein Brecheisen halt! Ich hol's mal eben."
+
+Er verschwindet im Durchgang hinter der Theke. Ein paar Minuten und einige dubiose Geräusche und Kraftausdrücke später tritt er wieder an die Theke, das spärliche Haupthaar voller Spinnweben.
+
+"Ich find's leider nicht. Ohne meinen Zwicker seh' ich einfach nicht mehr gut genug."
+
+[1] "Kann ich vielleicht mal nachsehen?"
+[2] "Wo ist denn Ihr Zwicker?"
+[0] Gespräch beenden
+
+> 1
+["Kann ich vielleicht mal nachsehen?"]
+Bill weicht zurück und kneift die Augen zusammen.
+
+"Und dann brätst du mir da hinten eins über was? Nee nee, du bleibst mal schön hier vorne Junge!"
+
+[1] "Wo ist denn Ihr Zwicker?"
+[0] Gespräch beenden
+
+> 1
+["Wo ist denn Ihr Zwicker?"]
+Bill blickt gedankenverloren durch die fleckigen Fenster. "Ich weiß es nicht."
+
+Er klopft mit den Fingerknöcheln auf den Tresen. "War heute früh wie jeden Morgen am Grab meiner Frau, da muss ich ihn noch gehabt haben. Bei dem Sandsturm seh' ich sonst keine fünf Meter weit."
+
+Damit endet das Gespräch.
+
+> raus
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+> o
+Galgen
+Als du das letzte Gebäude passierst, trifft dich der Wind hart von der Seite. Du ziehst dir dein Halstuch über die Nase und gehst langsam weiter. Nach ein paar Metern kannst du in der Staubwolke vor dir allmählich eine Art Gerüst erkennen.
+
+Du stehst vor einem Galgen, bestehend aus zwei Pfosten mit Querbalken und einer Schlinge. Ein Holzpodest dient als Fundament.
+
+Weiter nördlich glaubst du einige schiefe Kreuze zu erkennen. Nach Westen geht es zurück in die Stadt.
+
+> n
+Friedhof
+Du gehst einige Schritte weiter auf die Kreuze zu. Halbhohes Buschwerk schützt die Grabstätten und deren Besucher vor dem Wind.
+
+Mehrere schiefe Kreuze stehen achtlos nebeneinander auf einen kleinen Hügel gepfercht, keines davon beschriftet. Möglicherweise die letzte Ruhestätte von Deserteuren.
+
+Weiter vorne stehen vier Kreuze sauber aufgereiht nebeneinander, jeweils am Kopfende eines ordentlich mit Steinen eingefassten Grabes.
+
+Im Süden siehst du die Umrisse des Galgens.
+
+> x kreuz
+Welches der Kreuze möchtest du lesen?
+
+[1] Erstes Kreuz
+[2] Zweites Kreuz
+[3] Drittes Kreuz
+[4] Viertes Kreuz
+[0] Beenden
+
+> 1
+[Erstes Kreuz]
+
+"Biff Clayton"
+"1837-1868"
+[1] Erstes Kreuz
+[2] Zweites Kreuz
+[3] Drittes Kreuz
+[4] Viertes Kreuz
+[0] Beenden
+
+> 2
+[Zweites Kreuz]
+
+"Mathilda Brooks geb. Walker"
+"1808-1869"
+[1] Erstes Kreuz
+[2] Zweites Kreuz
+[3] Drittes Kreuz
+[4] Viertes Kreuz
+[0] Beenden
+
+> 3
+[Drittes Kreuz]
+
+"Wendy Porter"
+"1816-1875"
+[1] Erstes Kreuz
+[2] Zweites Kreuz
+[3] Drittes Kreuz
+[4] Viertes Kreuz
+[0] Beenden
+
+> 4
+[Viertes Kreuz]
+
+"Lucille Thompson geb. Powell"
+"1845-1878"
+[1] Erstes Kreuz
+[2] Zweites Kreuz
+[3] Drittes Kreuz
+[4] Viertes Kreuz
+[0] Beenden
+
+> 0
+
+Friedhof
+Mehrere schiefe Kreuze stehen achtlos nebeneinander auf einen kleinen Hügel gepfercht, keines davon beschriftet. Möglicherweise die letzte Ruhestätte von Deserteuren.
+
+Weiter vorne stehen vier Kreuze sauber aufgereiht nebeneinander, jeweils am Kopfende eines ordentlich mit Steinen eingefassten Grabes.
+
+Im Süden siehst du die Umrisse des Galgens.
+
+
+Ein Gecko sitzt starr auf einem der Grabkreuze und sonnt sich. Als du die Hand nach ihm ausstreckst, verschwindet er blitzartig im Gebüsch.
+
+> x grab
+Welches der Gräber möchtest du untersuchen?
+
+[1] Erstes Grab
+[2] Zweites Grab
+[3] Drittes Grab
+[4] Viertes Grab
+[0] Beenden
+
+> 2
+Du siehst nichts Besonderes, und ohne triftigen Grund möchtest du nicht auf dem Grab herumwühlen.
+[1] Erstes Grab
+[2] Zweites Grab
+[3] Drittes Grab
+[4] Viertes Grab
+[0] Beenden
+
+> 0
+
+Friedhof
+Mehrere schiefe Kreuze stehen achtlos nebeneinander auf einen kleinen Hügel gepfercht, keines davon beschriftet. Möglicherweise die letzte Ruhestätte von Deserteuren.
+
+Weiter vorne stehen vier Kreuze sauber aufgereiht nebeneinander, jeweils am Kopfende eines ordentlich mit Steinen eingefassten Grabes.
+
+Im Süden siehst du die Umrisse des Galgens.
+
+> s
+Galgen
+Du stehst vor einem Galgen, bestehend aus zwei Pfosten mit Querbalken und einer Schlinge. Ein Holzpodest dient als Fundament.
+
+Weiter nördlich glaubst du einige schiefe Kreuze zu erkennen. Nach Westen geht es zurück in die Stadt.
+
+> w
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+> n
+Gemischtwarenladen
+Du stehst vor der Ladentheke, dahinter steht Bill und reibt sich die Augen. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+
+Im Süden geht es hinaus auf die Straße.
+> rede mit bill
+Was möchtest du zu Bill sagen?
+
+[1] "Ähm, wie heißt eigentlich Ihre Frau?"
+[0] Gespräch beenden
+
+> 1
+["Ähm, wie heißt eigentlich Ihre Frau?"]
+"Sie hieß Mathilda."
+
+Er zieht die Nase hoch und reibt sich im Auge. "Hab' sie meistens Hildchen genannt."
+
+Damit endet das Gespräch.
+
+> raus
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+> o
+Galgen
+Du stehst vor einem Galgen, bestehend aus zwei Pfosten mit Querbalken und einer Schlinge. Ein Holzpodest dient als Fundament.
+
+Weiter nördlich glaubst du einige schiefe Kreuze zu erkennen. Nach Westen geht es zurück in die Stadt.
+
+"Suchen wohl Ihre Freunde, was? Sowas wie Sie wollen wir hier nicht mehr sehen!"
+
+Du blickst dich verdutzt um und siehst eine ältere Frau in einem der Häuser verschwinden, mit ihrem Gehstock wild in der Luft herumstochernd.
+
+> n
+Friedhof
+Mehrere schiefe Kreuze stehen achtlos nebeneinander auf einen kleinen Hügel gepfercht, keines davon beschriftet. Möglicherweise die letzte Ruhestätte von Deserteuren.
+
+Weiter vorne stehen vier Kreuze sauber aufgereiht nebeneinander, jeweils am Kopfende eines ordentlich mit Steinen eingefassten Grabes.
+
+Im Süden siehst du die Umrisse des Galgens.
+
+> x grab
+Welches der Gräber möchtest du untersuchen?
+
+[1] Erstes Grab
+[2] Zweites Grab
+[3] Drittes Grab
+[4] Viertes Grab
+[0] Beenden
+
+> 2
+[Zweites Grab]
+
+Du streichst vorsichtig mit den Fingern durch den feinen Sand auf dem Grab, bis deine Finger etwas ertasten.
+
+Da ist er, Bills Zwicker!
+
+Du bläst behutsam den Sand von den Linsen und steckst ihn ein.
+[1] Erstes Grab
+[2] Zweites Grab
+[3] Drittes Grab
+[4] Viertes Grab
+[0] Beenden
+
+> 0
+
+Friedhof
+Mehrere schiefe Kreuze stehen achtlos nebeneinander auf einen kleinen Hügel gepfercht, keines davon beschriftet. Möglicherweise die letzte Ruhestätte von Deserteuren.
+
+Weiter vorne stehen vier Kreuze sauber aufgereiht nebeneinander, jeweils am Kopfende eines ordentlich mit Steinen eingefassten Grabes.
+
+Im Süden siehst du die Umrisse des Galgens.
+
+> s
+Galgen
+Du stehst vor einem Galgen, bestehend aus zwei Pfosten mit Querbalken und einer Schlinge. Ein Holzpodest dient als Fundament.
+
+Weiter nördlich glaubst du einige schiefe Kreuze zu erkennen. Nach Westen geht es zurück in die Stadt.
+
+> w
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+Ein Geier setzt sich auf den Dachgiebel vor dir und betrachtet dich argwöhnisch, bevor er wieder davonfliegt.
+
+> n
+Gemischtwarenladen
+Du stehst vor der Ladentheke, dahinter steht Bill und stützt sich auf seinen Gehstock. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+
+Im Süden geht es hinaus auf die Straße.
+> rede mit bill
+Was möchtest du zu Bill sagen?
+
+[1] "Ich glaube, ich habe Ihren Zwicker gefunden."
+[0] Gespräch beenden
+
+> 1
+["Ich glaube, ich habe Ihren Zwicker gefunden."]
+Du legst den Zwicker behutsam auf den Tresen. Bills Gesicht hellt sich auf und er blickt dich dankbar an.
+
+"Ja, das ist er! Vielen Dank mein Junge! Ohne den wär' ich auf Dauer ziemlich aufgeschmissen."
+
+[1] "Könnten Sie jetzt nochmal nach dem Brecheisen sehen?"
+[0] Gespräch beenden
+
+> 1
+["Könnten Sie jetzt nochmal nach dem Brecheisen sehen?"]
+"Natürlich! Bin gleich wieder da."
+
+Ein endlos scheinendes Gleich später erscheint Bill wieder im Durchgang und knallt das Brecheisen vor dir auf den Tresen.
+
+"Macht normalerweise acht Scheine, aber wenn du's nicht ewig brauchst leih' ich's dir aus, scheinst ja 'ne ehrliche Haut zu sein."
+
+Damit endet das Gespräch.
+
+> nimm brecheisen
+Du nimmst den Brecheisen an dich.
+
+> raus
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+> w
+Ranch
+Ein kleines Holzhaus mit angrenzendem Stall und einer umzäunten Koppel. Vor dem Haus steht eine kleine Bank.
+
+Ein schmaler Weg führt nach Süden zum Windrad. Die Hauptstraße führt von Osten kommend weiter nach Westen aus der Stadt hinaus.
+
+Hier liegt eine Metallstange.
+> nimm stange
+Du nimmst die Metallstange an dich.
+
+> s
+Windrad
+Das Windrad ist in etwa fünfzehn Meter Höhe auf einen aus langen Metallstangen bestehenden Gittermast montiert und quietscht bei jeder Bewegung. Eine Heckfahne aus Metall stellt die Rotorblätter automatisch in Windrichtung.
+
+Im Norden geht es zurück zur Ranch. Ein Weg führt nach Westen Richtung Hügelkette.
+
+
+Zwei Kojoten schleichen sich bis auf wenige Meter an dich heran. Du nimmst einen Stein und wirft ihn in ihre Richtung, woraufhin sie laut aufheulend Reißaus nehmen.
+
+> w
+Hügelkette
+Ein großes Geröllfeld aus größeren und kleineren Felsen erstreckt sich hunderte Meter weit über die gesamte Breite. Die Hügel bieten guten Schutz vor dem Wind, es ist hier beinahe windstill.
+
+Der Weg im Osten führt zurück zum Windrad vor der Stadt.
+
+Auf einem Felsbrocken sitzt Molly und flattert aufgeregt mit den Flügeln.
+
+> benutze brecheisen mit spalt
+Du schiebst das flache, gerade Ende der Brechstange in den Spalt und hämmerst mit einem flachen Stein auf das gebogene Ende.
+
+Du klopfst und hebelst eine Weile bis endlich ein flaches, handbreites Stück Fels vom Brocken abbricht. Der Spalt ist nun deutlich breiter.
+
+Du steckst das Brecheisen wieder ein.
+
+> benutze stange mit spalt
+Du schiebst die lange Metallstange langsam in den Spalt. Passt perfekt!
+
+Du packst die Stange mit beiden Händen am freien Ende und drückst sie kräftig Richtung Berg. Der Brocken scheint sich leicht zu bewegen. "BRAAAK!" krächzt Molly aufgeregt und lässt sich auf deiner Schulter nieder.
+
+Du blickst dich noch einmal um - es scheint niemand in Hörweite zu sein. Mit deinem ganzen Gewicht stemmst du dich erneut gegen die Stange, und siehe da - der Brocken löst sich!
+
+RRRRRRRRRRRRRR...
+
+~~~
+
+Ihr seid schon ewig nicht mehr hier am Pier gewesen. Sie wollte das Geld wie immer sparen für später, aber heute wolltest du unbedingt mit ihr ans Meer.
+
+"Mit Hut oder ohne, was denkst du?"
+
+Claire sitzt auf einem Schemel und hält lachend den wild im Wind flatternden Hut fest. Du hast dem Zeichner zwei Dollar gegeben, hoffentlich wird das ein schönes Bild. Sein Kohlestück huscht hastig und geübt über das Papier.
+
+Möwen kreisen am Ende des Piers und kreischen laut auf, als ein kleiner Junge versucht sie zu fangen. Sie dreht den Kopf und lächelt dich an. Du ballst die Faust in der Tasche, den Ring dabei fest umklammernd.
+
+Wo bist du, Claire?
+
+~~~
+
+Du öffnest die Augen.
+
+Offenbar hast du dir (wieder einmal) den Kopf gestoßen, diesmal wohl, als du dich vor dem losrollenden Felsbrocken mit einem Hechtsprung in Sicherheit bringen wollest. Zumindest das scheint funktioniert zu haben.
+
+Langsam rappelst du dich auf und klopfst dir den Staub von den Schultern. Was für ein Scheißtag.
+
+> l
+Hügelkette
+Ein großes Geröllfeld aus größeren und kleineren Felsen erstreckt sich hunderte Meter weit über die gesamte Breite. Die Hügel bieten guten Schutz vor dem Wind, es ist hier beinahe windstill.
+
+Richtung Norden ist ein etwa schulterhoher, schmaler Durchgang zwischen den Steinen zu erkennen, daneben liegt eine verbogene Metallstange. Einige Schritte weiter liegt der Felsbrocken, der den Stolleneingang zuvor verschlossen hat.
+
+Der Weg im Osten führt zurück zum Windrad vor der Stadt.
+
+> n
+Höhle
+Du zwängst dich durch den engen Spalt. Nach einigen Metern kannst du bequem stehen und dich frei bewegen.
+
+Die Luft ist angenehm kühl und feucht. Es riecht leicht nach Rauch. Du kannst kaum die Hand vor Augen sehen.
+
+Im Süden dringt fahles Licht durch den langen, schmalen Höhleneingang.
+
+> s
+Hügelkette
+Ein großes Geröllfeld aus größeren und kleineren Felsen erstreckt sich hunderte Meter weit über die gesamte Breite. Die Hügel bieten guten Schutz vor dem Wind, es ist hier beinahe windstill.
+
+Richtung Norden ist ein etwa schulterhoher, schmaler Durchgang zwischen den Steinen zu erkennen, daneben liegt eine verbogene Metallstange. Einige Schritte weiter liegt der Felsbrocken, der den Stolleneingang zuvor verschlossen hat.
+
+Der Weg im Osten führt zurück zum Windrad vor der Stadt.
+
+> o
+Windrad
+Das Windrad ist in etwa fünfzehn Meter Höhe auf einen aus langen Metallstangen bestehenden Gittermast montiert und quietscht bei jeder Bewegung. Eine Heckfahne aus Metall stellt die Rotorblätter automatisch in Windrichtung.
+
+Im Norden geht es zurück zur Ranch. Ein Weg führt nach Westen Richtung Hügelkette.
+
+> n
+Ranch
+Ein kleines Holzhaus mit angrenzendem Stall und einer umzäunten Koppel. Vor dem Haus steht eine kleine Bank.
+
+Ein schmaler Weg führt nach Süden zum Windrad. Die Hauptstraße führt von Osten kommend weiter nach Westen aus der Stadt hinaus.
+
+Du hörst das leise Rasseln einer Klapperschlange. Als du mit gezogenem Revolver neben das Haus trittst, verschwindet sie schnell in Richtung Steppe.
+
+> o
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+> s
+Saloon
+Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
+
+Hinter der Bar steht Ella und zieht an ihrer Zigarette.
+
+> x decke
+Mächtige Holzbalken stützen die Decke des großen Raumes. An einem der Balken ist ein langer Nagel eingeschlagen, daran baumelt eine Petroleumlampe.
+> x lampe
+Eine große Petroleumlampe mit Henkelgriff. Sie ist aus.
+
+> nimm lampe
+Du kommst so nicht ganz ran, die Lampe hängt etwas zu hoch.
+
+> zieh stuhl
+Du stellst einen der Stühle unter den Deckenbalken mit der Laterne.
+
+> nimm lampe
+Ella zieht eine Augenbraue hoch. "Was genau soll das werden?"
+
+> rede mit frau
+Was möchtest du zu Ella sagen?
+
+[1] "Hast du Lucy gesehen?"
+[2] "Ich glaube, ich habe Lucys Taschentuch gefunden."
+[3] "Kann ich die Lampe da haben?"
+[0] Gespräch beenden
+
+> 1
+["Hast du Lucy gesehen?"]
+"Lucy? Wieso?"
+
+Du erzählst Ella kurz, was passiert ist.
+
+"Verdammter Mist. Lucy hab' ich zuletzt vor ein paar Tagen gesehen, aber Michael war gestern hier. Hab' ihn mit ein paar Leuten aus der Mine tuscheln sehen, dann weiß ich nicht mehr. Ist bestimmt vor der Schlägerei abgehauen, ist ja nicht so sein Ding."
+
+[1] "Ich glaube, ich habe Lucys Taschentuch gefunden."
+[2] "Kann ich die Lampe da haben?"
+[0] Gespräch beenden
+
+> 1
+["Ich glaube, ich habe Lucys Taschentuch gefunden."]
+Du zeigst Ella das Taschentuch mit dem Monogramm.
+
+"Ja, das gehört bestimmt ihr. Wo hast du das gefunden?"
+
+[1] "Vor der Mine westlich von hier."
+[2] "Kann ich die Lampe da haben?"
+[0] Gespräch beenden
+
+> 1
+["Vor der Mine westlich von hier."]
+Ellas Gesicht verdunkelt sich.
+
+"Das gefällt mir gar nicht. Sie würde niemals freiwillig in die Mine gehen, sie hatte schon als Kind Angst davor."
+
+Sie zieht nervös an ihrer Zigarette und blickt dir fest in die Augen.
+
+"Tom, du musst da rein. Ich glaube, der Eingang ist zu gut bewacht. Es gab mal einen Stollen im Süden, aber der wurde vor einigen Jahren von einem Haufen Geröll begraben."
+
+[1] "Kann ich die Lampe da haben?"
+[0] Gespräch beenden
+
+> 1
+["Kann ich die Lampe da haben?"]
+Du erzählst Ella kurz von dem Stolleneingang, den du freigelegt hast. Sie lächelt und nickt.
+
+"Kannst die Lampe gerne mitnehmen, aber bis heute Abend will ich sie zurück!"
+
+Damit endet das Gespräch.
+
+> benutze stuhl
+Du steigst auf den Stuhl unter dem Balken.
+Saloon (auf dem Stuhl)
+Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
+
+Hinter der Bar steht Ella und reinigt die Spüle.
+
+> nimm lampe
+Du nimmst die Lampe vom Nagel.
+
+> mach lampe an
+Du hast nichts, um die Lampe anzuzünden.
+
+> raus
+Du steigst von dem Stuhl herunter.
+Saloon
+Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
+
+Hinter der Bar steht Ella und wischt gelangweilt den Tresen.
+
+> rede mit frau
+Was möchtest du zu Ella sagen?
+
+[1] "Hast du auch etwas, womit ich die Lampe anzünden kann?"
+[0] Gespräch beenden
+
+> 1
+["Hast du auch etwas, womit ich die Lampe anzünden kann?"]
+Ella runzelt die Stirn. "Meine Zündhölzer sind fast alle, und ohne Feuer raucht sich's schlecht."
+
+Sie pustet eine beeindruckende Rauchwolke über dich hinweg und deutet zur Tür. "Bill hat bestimmt noch welche, kannst mir gerne welche mitbringen."
+
+Damit endet das Gespräch.
+
+> n
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+> n
+Gemischtwarenladen
+Du stehst vor der Ladentheke, dahinter steht Bill und reibt sich die Augen. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+
+Im Süden geht es hinaus auf die Straße.
+> rede mit bill
+Was möchtest du zu Bill sagen?
+
+[1] "Haben Sie vielleicht Streichhölzer für mich?"
+[0] Gespräch beenden
+
+> 1
+["Haben Sie vielleicht Streichhölzer für mich?"]
+Bills Gesicht hellt sich auf. "Klar hab' ich welche! Die guten alten ohne diesen Sicherheits-Reibescheiß, die kriegste immer an."
+
+Er legt ein kleines braunes Papiertütchen auf den Tisch. "Macht einen Dollar."
+
+Du legst einen zerknitterten Dollarschein auf die Theke. Bill steckt ihn ein.
+
+Damit endet das Gespräch.
+
+> nimm streichhoelzer
+Du nimmst die Streichhölzer an dich.
+
+> mach lampe an
+Du nimmst eines der Schwefelhölzer und reißt es an deinem schartigen Daumennagel an. Behutsam hältst du es an den Docht der Lampe. Ein behagliches Licht breitet sich aus.
+
+> raus
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+Ein Fensterladen fliegt mit lautem Getöse auf und eine Bettdecke wird von zwei dicken Armen kraftvoll ausgeschüttelt. Dann verschwindet die Decke in einer beeindruckenden Staubwolke und das Fenster wird krachend wieder zugeschlagen.
+
+> w
+Ranch
+Ein kleines Holzhaus mit angrenzendem Stall und einer umzäunten Koppel. Vor dem Haus steht eine kleine Bank.
+
+Ein schmaler Weg führt nach Süden zum Windrad. Die Hauptstraße führt von Osten kommend weiter nach Westen aus der Stadt hinaus.
+
+> s
+Windrad
+Das Windrad ist in etwa fünfzehn Meter Höhe auf einen aus langen Metallstangen bestehenden Gittermast montiert und quietscht bei jeder Bewegung. Eine Heckfahne aus Metall stellt die Rotorblätter automatisch in Windrichtung.
+
+Im Norden geht es zurück zur Ranch. Ein Weg führt nach Westen Richtung Hügelkette.
+
+> w
+Hügelkette
+Ein großes Geröllfeld aus größeren und kleineren Felsen erstreckt sich hunderte Meter weit über die gesamte Breite. Die Hügel bieten guten Schutz vor dem Wind, es ist hier beinahe windstill.
+
+Richtung Norden ist ein etwa schulterhoher, schmaler Durchgang zwischen den Steinen zu erkennen, daneben liegt eine verbogene Metallstange. Einige Schritte weiter liegt der Felsbrocken, der den Stolleneingang zuvor verschlossen hat.
+
+Der Weg im Osten führt zurück zum Windrad vor der Stadt.
+
+> n
+Höhle
+Die Luft ist angenehm kühl und feucht. Es riecht leicht nach Rauch. Ein großer, spitzer Felsbrocken markiert den Rand eines Abgrunds im Norden.
+
+Im Süden dringt fahles Licht durch den langen, schmalen Höhleneingang.
+
+> n
+Der Abgrund ist viel zu steil um ohne Hilfsmittel gefahrlos hinunter klettern zu können, vor allem wenn du dabei noch die Lampe halten musst.
+
+> x abgrund
+Trotz Lampe kannst du keinen Boden erkennen. Es ist auf jeden Fall zu tief, um zu springen.
+
+> n
+Der Abgrund ist viel zu steil um ohne Hilfsmittel gefahrlos hinunter klettern zu können, vor allem wenn du dabei noch die Lampe halten musst.
+
+> s
+Hügelkette
+Ein großes Geröllfeld aus größeren und kleineren Felsen erstreckt sich hunderte Meter weit über die gesamte Breite. Die Hügel bieten guten Schutz vor dem Wind, es ist hier beinahe windstill.
+
+Richtung Norden ist ein etwa schulterhoher, schmaler Durchgang zwischen den Steinen zu erkennen, daneben liegt eine verbogene Metallstange. Einige Schritte weiter liegt der Felsbrocken, der den Stolleneingang zuvor verschlossen hat.
+
+Der Weg im Osten führt zurück zum Windrad vor der Stadt.
+
+> o
+Windrad
+Das Windrad ist in etwa fünfzehn Meter Höhe auf einen aus langen Metallstangen bestehenden Gittermast montiert und quietscht bei jeder Bewegung. Eine Heckfahne aus Metall stellt die Rotorblätter automatisch in Windrichtung.
+
+Im Norden geht es zurück zur Ranch. Ein Weg führt nach Westen Richtung Hügelkette.
+
+
+Einige Kojoten scheinen dich aus einiger Entfernung zu beobachten. Du machst eine beiläufige Wurfbewegung und sie rennen davon.
+
+> n
+Ranch
+Ein kleines Holzhaus mit angrenzendem Stall und einer umzäunten Koppel. Vor dem Haus steht eine kleine Bank.
+
+Ein schmaler Weg führt nach Süden zum Windrad. Die Hauptstraße führt von Osten kommend weiter nach Westen aus der Stadt hinaus.
+
+> o
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+> n
+Gemischtwarenladen
+Du stehst vor der Ladentheke, dahinter steht Bill und stützt sich auf seinen Gehstock. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+
+Im Süden geht es hinaus auf die Straße.
+> rede mit bill
+Was möchtest du zu Bill sagen?
+
+[1] "Ich muss wo runterklettern, haben Sie da was für mich?"
+[0] Gespräch beenden
+
+> 1
+["Ich muss wo runterklettern, haben Sie da was für mich?"]
+Der alte Mann kratzt sich nachdenklich am Kinn und schaut aus dem Fenster.
+
+"Ich hatte bestimmt zwanzig Meter Tau da. Kamen zwei junge Soldaten und sagten sie brauchen fünf Meter davon."
+
+Seine Augen blitzen auf, als sich ein breites Grinsen auf seinem Gesicht ausbreitet.
+
+"Hab' ihnen gesagt ich kann's nicht durchschneiden, da ham sie das komplette Ding gekauft."
+
+[1] "Wofür haben die das Seil denn gebraucht?"
+[0] Gespräch beenden
+
+> 1
+["Wofür haben die das Seil denn gebraucht?"]
+"Die ham damals ganz schnell 'n Galgen zusammengezimmert, um ein paar Deserteure zu hängen, draußen vor der Stadt."
+
+Bill kneift die Augen zusammen und zieht die Luft ein. Die Erinnerung scheint ihm unangenehm zu sein.
+
+"Das ganze Dorf sollte zusehen. Kaum war's getan, sind die Soldaten wieder abgezogen, und Marten durfte sich um die Leichen kümmern."
+
+Er reibt sich kurz die Nase und blickt dich direkt an. "Jetzt wo ich so dran denke, den Rest vom Tau hatten sie nicht dabei. Würde mich nicht wundern, wenn das da draußen noch irgendwo rumliegt."
+
+Damit endet das Gespräch.
+
+> raus
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+> no
+Barbier
+Ein ausladender Kippsessel aus rotem Leder prangt vor einem großen, an der Wand befestigten Spiegel. Auf diversen Tischen und Regalen stehen kleine Fläschchen, Dosen und allerlei Krimskrams herum.
+
+Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und poliert den Spiegel.
+
+> rede mit barbier
+Was möchtest du zu Marten sagen?
+
+[1] "Waren Sie damals dabei als der Galgen gebaut wurde?"
+[0] Gespräch beenden
+
+> 1
+["Waren Sie damals dabei als der Galgen gebaut wurde?"]
+Marten zuckt zusammen und blickt dich argwöhnisch an.
+
+"Nee war ich nich. Ich war leider dabei, als er eingeweiht wurde, und durfte danach zwei Tage ranklotzen, bis alle verscharrt waren. Wieso fragst du?"
+
+[1] "Bill meinte da müsste 'ne Menge Seil übriggeblieben sein, wissen Sie wo das abgeblieben ist?"
+[0] Gespräch beenden
+
+> 1
+["Bill meinte da müsste 'ne Menge Seil übriggeblieben sein, wissen Sie wo das abgeblieben ist?"]
+"Ja klar meen Jong. Ich durfte ja alles wegräumen."
+
+Er schüttelt den Kopf und räuspert sich.
+
+"Die Soldaten haben mir ein bisschen Geld gegeben und gesagt, allen übrigen Kram rein in die Luke und feste zunageln, die Schlinge durchschneiden und die Leichen begraben. War ein lächerlicher Lohn für die ganze Arbeit, aber Nein zu sagen wär' sicher keine gute Idee gewesen."
+
+Damit endet das Gespräch.
+
+> raus
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+> o
+Galgen
+Du stehst vor einem Galgen, bestehend aus zwei Pfosten mit Querbalken und einer Schlinge. Ein Holzpodest dient als Fundament.
+
+Weiter nördlich glaubst du einige schiefe Kreuze zu erkennen. Nach Westen geht es zurück in die Stadt.
+
+> x sand
+Der Sand bildet eine kleine Düne und geht dir an der höchsten Stelle bis zum Knie. Vom Boden des Podests ist praktisch nichts mehr zu sehen.
+
+> w
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+> no
+Barbier
+Ein ausladender Kippsessel aus rotem Leder prangt vor einem großen, an der Wand befestigten Spiegel. Auf diversen Tischen und Regalen stehen kleine Fläschchen, Dosen und allerlei Krimskrams herum.
+
+Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und prüft sein Rasiermesser.
+
+> rede mit barbier
+Was möchtest du zu Marten sagen?
+
+[1] "Sie haben doch bestimmt eine Schaufel, oder?"
+[0] Gespräch beenden
+
+> 1
+["Sie haben doch bestimmt eine Schaufel, oder?"]
+Marten lacht dröhnend und blinzelt dich an.
+
+"Jo meinste ich heb' die Gräber hier mit den Händen aus oder wat? Klar hab' ich eine Schaufel! Erst vor ein paar Tagen 'ne neue bei Bill geholt, dem ollen Geizkragen!"
+
+[1] "Können Sie mir die Schaufel leihen? Es ist wirklich wichtig."
+[0] Gespräch beenden
+
+> 1
+["Können Sie mir die Schaufel leihen? Es ist wirklich wichtig."]
+"Ist das für die Lucy-Sache?" fragt Marten. Du bejahst. Er legt den Kopf schief und krault sich den Bart. "Gut, hol' ich dir."
+
+Er verschwindet kurz im hinteren Teil des Ladens und taucht kurz darauf mit einer großen Metallschaufel in der Hand wieder auf.
+
+"Is'n bissken schettrig aber kannste ja sauber machen wenn's dich stört. Wiedersehen macht Freude!"
+
+Du nimmst die Schaufel und bedankst dich.
+
+Damit endet das Gespräch.
+
+> raus
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+> o
+Galgen
+Du stehst vor einem Galgen, bestehend aus zwei Pfosten mit Querbalken und einer Schlinge. Ein Holzpodest dient als Fundament.
+
+Weiter nördlich glaubst du einige schiefe Kreuze zu erkennen. Nach Westen geht es zurück in die Stadt.
+
+> benutze schaufel mit sand
+Stück um Stück befreist du das Podest von dem großen Sandhaufen, während dir der Wind unerbittlich ins Gesicht peitscht.
+
+Direkt unter dem Galgen wird eine stabile Holzplatte sichtbar, die gewissenhaft mit vielen großen Nägeln auf dem Podest festgenagelt wurde.
+
+> x holzpodest
+Auf dem Podest wurde direkt unter dem Galgen eine große Holzplatte festgenagelt.
+
+> benutze brecheisen mit holzplatte
+Du hebelst einen Nagel nach dem anderen aus der Platte heraus, nicht ohne gelegentlich einen Fluch auszustoßen und dich lautstark zu fragen, was zur Hölle du hier eigentlich machst.
+
+Etwa eine halbe Stunde und einen abgebrochenen Fingernagel später hast du alle Nägel erfolgreich entfernt. Schweißgebadet schiebst du die Holzplatte beiseite und legst eine quadratische, dunkle Öffnung frei.
+
+> x oeffnung
+Du leuchtest mit deiner Lampe in die Öffnung hinein. Einige Mäuse nehmen quiekend Reißaus.
+
+Im fahlen Schein der Lampe kannst du einige krummgeschlagene Nägel, ein paar in Spinnweben eingehüllte Bretter und ein aufgerolltes Tau erkennen.
+
+> nimm seil
+Du wirfst dir das aufgerollte Seil über die Schulter. Ganz schön schwer.
+
+> w
+Main Street
+Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten liegt das Büro des Sheriffs, im Norden der Gemischtwarenladen und im Nordosten der Barbier. Im Süden geht es in den Saloon.
+
+> w
+Ranch
+Ein kleines Holzhaus mit angrenzendem Stall und einer umzäunten Koppel. Vor dem Haus steht eine kleine Bank.
+
+Ein schmaler Weg führt nach Süden zum Windrad. Die Hauptstraße führt von Osten kommend weiter nach Westen aus der Stadt hinaus.
+
+Ein dürrer Hund jagt keuchend in einem Affentempo an dir vorbei, ein Stück Dörrfleisch zwischen den Zähnen. Einige Häuser weiter hörst du jemanden leise fluchen.
+
+> s
+Windrad
+Das Windrad ist in etwa fünfzehn Meter Höhe auf einen aus langen Metallstangen bestehenden Gittermast montiert und quietscht bei jeder Bewegung. Eine Heckfahne aus Metall stellt die Rotorblätter automatisch in Windrichtung.
+
+Im Norden geht es zurück zur Ranch. Ein Weg führt nach Westen Richtung Hügelkette.
+
+> w
+Hügelkette
+Ein großes Geröllfeld aus größeren und kleineren Felsen erstreckt sich hunderte Meter weit über die gesamte Breite. Die Hügel bieten guten Schutz vor dem Wind, es ist hier beinahe windstill.
+
+Richtung Norden ist ein etwa schulterhoher, schmaler Durchgang zwischen den Steinen zu erkennen, daneben liegt eine verbogene Metallstange. Einige Schritte weiter liegt der Felsbrocken, der den Stolleneingang zuvor verschlossen hat.
+
+Der Weg im Osten führt zurück zum Windrad vor der Stadt.
+
+> n
+Höhle
+Die Luft ist angenehm kühl und feucht. Es riecht leicht nach Rauch. Ein großer, spitzer Felsbrocken markiert den Rand eines Abgrunds im Norden.
+
+Im Süden dringt fahles Licht durch den langen, schmalen Höhleneingang.
+
+> benutze seil mit felsen
+Du bindest das Seil um den Felsen und fixierst es mit einem ordentlichen Knoten.
+
+> runter
+Du nimmst den Henkel der Petroleumlampe zwischen die Zähne und greift mit beiden Händen das Seil.
+
+Die Füße gegen die Felswand gestemmt, seilst du dich langsam ab.
+~~~
+
+Gewölbe
+Nach einer gefühlten Ewigkeit ertasten deine Füße endlich wieder festen Boden. Der Schweiß läuft dir den Rücken hinunter, als du dich von der Wand abwendest. Dein angestrengtes Keuchen malt kleine Dampfwölkchen in den Schein deiner Laterne.
+
+Ein tiefes, offenbar nicht weit entferntes Rumpeln lässt dich blitzartig verstummen. Vorsichtig folgst du dem fahlen Lichtschein des gekrümmten Stollengangs vor dir.
+
+Als sich der Gang weitet und immer heller wird, kannst du immer deutlicher Stimmen vernehmen. Vorsichtig gehst du hinter einem hüfthohen Steinvorsprung in Deckung, von dem du das große, mit unzähligen Fackeln erleuchtete Gewölbe unter dir überblicken kannst.
+
+~~~
+
+Etwa ein Dutzend Männer scheint in einiger Entfernung an verschiedenen Stationen zu arbeiten. Einige rühren in großen befeuerten Stahlkesseln, andere hantieren mit großen, mit Tüchern bespannten Bottichen, wieder andere scheinen so etwas wie Fladen auszuwalzen und Kugeln zu formen. Es stinkt ziemlich und dir wird etwas schwummrig.
+
+Nur wenige Meter von dir entfernt befindet sich eine größere Felsnische. Hinter zusammengebundenen Gittern kauert ein junges Paar auf dem Boden und flüstert manchmal miteinander. Das ist Lucy! Dann muss der junge Mann wohl Michael sein.
+
+
+Davor sitzt ein mürrisch dreinschauender Geselle auf einem Stein, die Arme auf die Oberschenkel gestützt, mit einer Flinte in der rechten Hand.
+
+> lege taschentuch
+Du nimmst das leuchtend weiße Taschentuch in die Hand und lässt es über den Rand des Felsvorsprungs gleiten, als die Wache kurz zu den Gefangenen schaut.
+
+Einen Moment später dreht der Mann den Kopf wieder in deine Richtung und runzelt irritiert die Stirn. Er steht auf, kommt langsam in deine Richtung und bückt sich direkt vor dir nach dem Taschentuch.
+
+"Wo zum Teufel kommt das denn her?"
+
+> benutze brecheisen mit mann
+BAUZ! Du streckst den Mann mit einem gezielten Schlag mit dem Brecheisen nieder.
+
+Du siehst dich verstohlen um, aber keiner der Arbeiter scheint etwas gehört zu haben. Du steckst das leuchtende Taschentuch schnell wieder ein.
+
+> rede mit lucy
+Was möchtest du zu der jungen Frau sagen?
+
+[1] "Alles klar bei euch?"
+[0] Gespräch beenden
+
+> 1
+["Alles klar bei euch?"]
+Lucy funkelt dich an, ihr Gesichtsausdruck eine wilde Mischung aus Verzweiflung und blanker Wut. "Hol' uns bitte hier raus, verdammt!"
+
+Du hebelst die Gitter mit Hilfe deines Brecheisens auseinander, so dass sich beide gerade so hindurchzwängen können.
+
+Der junge Mann atmet erleichtert auf und streckt dir die Hand entgegen. "Vielen Dank Sir. Ich bin Michael."
+
+
+[1] "Was ist hier passiert?"
+[0] Gespräch beenden
+
+> 1
+["Was ist hier passiert?"]
+"Dafür haben wir jetzt keine Zeit!", zischt Lucy aufgeregt. "Die panschen hier irgendeine Sauerei zusammen, und mein Stiefvater steckt da mit drin!"
+
+Ihre Augen weiten sich und sie zieht euch beide hastig zurück hinter den schmalen Felsvorsprung. "Achtung, da kommen sie!"
+
+
+Ein sehr gepflegt aussehender Mann in mittlerem Alter mit Stock und Melone sowie ein deutlich schmutzigerer, wild gestikulierender Bursche schlendern in eure Richtung und bleiben nur ein paar Meter entfernt stehen.
+
+"Was sollen wir denn sonst machen, Ron? Die singen doch sofort, wenn wir die jetzt rauslassen!"
+
+"Für dich immer noch Mr. Thompson, Cal. Ich werde mit Lucy reden, wenn sie sich etwas beruhigt hat, dann sehen wir weiter." Ah, das muss dann wohl Calvin Mifflin sein!~~~
+
+Der junge Mann blickt zu Boden und schüttelt den Kopf. "Na ich weiß nicht Ro-- Mr. Thompson. Die hat ganz schön Haare auf den Zähnen."
+
+Mit einer schnellen, fast beiläufigen Bewegung holt Thompson mit dem Stock aus und lässt den Knauf blitzschnell auf das linke Knie des Mannes niedersausen. "AAAARGH!" schreit dieser überrascht auf und klappt augenblicklich zusammen.
+
+Als wäre nichts geschehen spricht Thompson mit gleichbleibend sonorer Stimme weiter. "Es steht dir nicht zu, so über sie zu sprechen. Wenn sie und ihr Stallbursche nicht zur Besinnung kommen, werden wir leider eine andere Lösung finden müssen."
+
+Lucy läuft purpurrot an. "DU VERDAMMTER---"
+
+~~~
+
+Michael presst Lucy schnell eine Hand auf den Mund, doch es ist zu spät. Thompson tritt zwei Schritte zur Seite, um in die Nische zu blicken. Seine Augen weiten sich.
+
+"Die Gefangenen sind frei! Hierher, sofort!"
+
+Mehrere Männer blicken auf und laufen vom Höhleneingang hinab in eure Richtung, einige greifen nach ihren Waffen.
+
+> x karren
+Ein Karren mit vier Speichenrädern, mit mehreren Holzfässern beladen.
+
+Ein großer Holzkeil unter einem der Räder hindert den Karren daran wegzurollen.
+
+> x keil
+Ein großer Holzkeil blockiert eines der Räder und hindert den Karren daran wegzurollen.
+
+> benutze Revolver mit Männer
+Du reißt den Revolver hoch und triffst zwei der heranstürmenden Männer in Brust und Bauch, ehe dir eine Kugel das Knie zerfetzt. Schreiend sinkst du zu Boden.
+--- WEISSES LICHT ---
+
+Nein, so war es nicht gewesen. Du hast es irgendwie anders gemacht, da bist du dir sicher.
+
+Langsam lichtet sich der weiße Nebel vor deinen Augen. Die Männer stürmen immer noch auf euch zu.
+
+> benutze Revolver mit Karren
+Blitzschnell ziehst du den Revolver und schießt auf den Karren.
+
+Der Karren wackelt leicht, kippt aber nicht um.
+
+Ein Gewehrkolben trifft dich brutal an der Stirn als dich die Männer erreichen und überwältigen.
+--- WEISSES LICHT ---
+
+Nein, so war es nicht gewesen. Du lässt dir noch einmal alle Handlungsmöglichkeiten durch den Kopf gehen.
+
+Langsam lichtet sich der weiße Nebel vor deinen Augen. Die Männer stürmen immer noch auf euch zu.
+
+> benutze Revolver mit Keil
+Du kneifst das linke Auge zu und zielst sorgfältig über Kimme und Korn auf den Holzkeil, der den Karren an seinem Platz hält. Du atmest zur Hälfte aus und drückst ab.
+
+Der Schuss löst sich perfekt und lässt den getroffenen Holzkeil in hohem Bogen davonschnellen. Durch die entstandene Staubwolke hindurch setzt sich der Karren laut rumpelnd in Bewegung und rollt genau auf euch zu.
+
+Die Männer halten inne und drehen sich um, die Augen vor Angst geweitet.
+
+"Das Nitro! RAUS HIER!"
+
+Du drehst dich zu Michael und Lucy um, die mit starrem Blick an dir vorbeisehen, die Münder weit geöffnet. Du hechtest auf sie und drückst sie zu Boden, kurz bevor die Welt um dich explodiert.
+--- WEISSES LICHT ---
+Büro des Sheriffs
+Du liegst auf einer der Pritschen im Büro des Sheriffs. In der Ecke sitzen Michael und Lucy, der junge Mann trägt einen leicht blutigen Verband um den Kopf. Sheriff Dunder sitzt hinter seinem Schreibtisch.
+
+> nimm Einberufungsbescheid
+"Ich gebe dir deine Papiere gleich, wenn du mir alles erzählt hast."
+
+> rede mit Dunder
+Was möchtest du zu Sheriff Dunder sagen?
+
+[1] "Was ist passiert?"
+[2] "Was haben die da in der Höhle getrieben?"
+[3] "Wo ist Thompson?"
+[0] Gespräch beenden
+
+> 1
+["Was ist passiert?"]
+Dunder steht auf und legt Lucy eine Hand auf die Schulter.
+
+"Nun, soweit ich die beiden hier richtig verstanden habe, hast du ihnen das Leben gerettet nachdem in der Höhle ein Karren mit Nitrofässern losgerollt und explodiert ist."
+
+Er blinzelt dich listig an. "So ein Zufall, was?"
+
+
+[1] "Wie geht's Ihrem Kopf, Michael?"
+[2] "Was haben die da in der Höhle getrieben?"
+[3] "Wo ist Thompson?"
+[0] Gespräch beenden
+
+> 1
+["Wie geht's Ihrem Kopf, Michael?"]
+Michael fasst sich an den Kopf und rückt seinen Verband etwas zurecht.
+
+"Ach, das geht schon wieder. Hat wohl ganz schön geblutet, als sie uns gefunden haben, aber Marten hat sich das angesehen und gleich verbunden."
+
+
+[1] "Was wollten Sie überhaupt da?"
+[2] "Was haben die da in der Höhle getrieben?"
+[3] "Wo ist Thompson?"
+[0] Gespräch beenden
+
+> 1
+["Was wollten Sie überhaupt da?"]
+"Hatte gehört, dass in der Mine wohl nicht alles mit rechten Dingen zugehen soll und auch Thompson seine Finger mit im Spiel hat. Als Cal und Bob dann am Abend bei Ella aufgetaucht sind und es da hoch her ging, dachte ich, das wäre ein guter Zeitpunkt da mal nachzusehen."
+
+Als Michael Lucys vorwurfsvollen Blick bemerkt, hebt er entschuldigend die Arme. "Ich wollt's dir erst sagen, aber hätte ja auch einfach leeres Gerede sein können. Immerhin geht's um deinen Va-- ähm, Stiefvater."
+
+Lucy holt tief Luft und er spricht schnell weiter. "Jedenfalls war die Mine leider nicht so verlassen wie ich dachte, ich wurde entdeckt und eingesperrt."
+
+
+[1] "Was haben die da in der Höhle getrieben?"
+[2] "Wo ist Thompson?"
+[0] Gespräch beenden
+
+> 1
+["Was haben die da in der Höhle getrieben?"]
+Lucy steht hastig auf. Ihre Unterlippe zittert.
+
+"Diese Penner haben da irgendeinen Dreck zum Rauchen hergestellt! Und das nach all dem, was mit meiner Mutter war!"
+
+Sie ringt um Fassung und dreht sich zu Michael um, der sie in den Arm nimmt.
+
+
+[1] "Was war denn mit Ihrer Mutter?"
+[2] "Wo ist Thompson?"
+[0] Gespräch beenden
+
+> 1
+["Was war denn mit Ihrer Mutter?"]
+Michael wendet sich dir zu. "Lucys Mutter hat wohl Opium geraucht und wurde irgendwann sehr krank. Sie ist leider letztes Jahr verstorben."
+
+Lucy weint. "Ich habe nie genau verstanden, was mit ihr los war. Dieses Arschloch! Mein richtiger Vater hätte das niemals zugelassen!"
+
+
+[1] "Wo ist Thompson?"
+[0] Gespräch beenden
+
+> 1
+["Wo ist Thompson?"]
+Dunder seufzt und hebt die Hände.
+
+"Den haben wir leider noch nicht. Deputy Miller war als Erster am Mineneingang nach der Explosion. Ein paar der Banditen haben's wohl hustend und kriechend nach draußen geschafft. Um die hat sich Marten gekümmert."
+
+Er setzt sich neben Lucy. "Die meisten anderen hatten nicht so viel Glück. Cal Mifflin ist tot, seinen Bruder Bob haben wir hinten in der Zelle. Miller musste über einige Leichen steigen, bevor er euch da hinten gefunden hat."
+
+Über Leichen steigen... Die furchtbaren Erinnerungen an die Ereignisse von Red Rock bohren sich kurz einen Weg in dein Bewusstsein, und ein kalter Schauer läuft dir über den Rücken.
+
+
+[1] "Was genau haben die denn hergestellt?"
+[0] Gespräch beenden
+
+> 1
+["Was genau haben die denn hergestellt?"]
+"Wir gehen davon aus, dass sie Chandu produziert haben."
+
+Der Sheriff blickt in dein fragendes Gesicht und lacht. "Ja, ungefähr so hab' ich auch erst geschaut, aber Marten hat's mir erklärt. Du kennst dieses Opiumzeug, das die Chinamänner rauchen? Der Gouverneur duldet es zwar noch, aber es wird hier nicht mehr gern gesehen. Macht die Leute nur krank."
+
+Er zieht einen Flachmann aus der Tasche, nimmt einen Schluck und hält ihn dir hin. Du nimmst dankbar an.
+
+"Also, die schaffen wohl Opium in die Höhle, machen dann alles Mögliche damit und am Ende kommen dann so kleine Kugeln bei raus. Die lassen sich wohl einfacher verkaufen, und Marten meint, dass die mit Pflanzenfasern oder sowas gestreckt sind, daher auch die ganze Heimlichtuerei."
+
+
+[1] "Was für ein Aufwand!"
+[0] Gespräch beenden
+
+> 1
+["Was für ein Aufwand!"]
+Dunder nickt. "Nun, das Zeug verdirbt wohl ziemlich schnell, wenn es nicht mehr rein ist, und draußen an der frischen Luft funktioniert die Produktion wohl nicht. Keine Ahnung. Denke das Zeug wurde dann möglichst schnell in der Stadt vertickt."
+
+Er blickt zur Tür. "Wenn Bob aufwacht und wir Thompson haben, gibt's vielleicht mehr Antworten."
+
+Antworten... plötzlich fällt dir wieder ein, was dich eigentlich an diesen Ort geführt hat, und nimmst die Zeichnung aus deiner Weste, die du am Tag davor schon einigen Leuten in der Stadt gezeigt hast.
+
+
+[1] "Michael, kennen Sie diese Frau?"
+[0] Gespräch beenden
+
+> 1
+["Michael, kennen Sie diese Frau?"]
+Du zeigst Michael die Zeichnung. Er studiert sie eingehend und lächelt.
+
+"Aber sicher! Diese Frau kam neulich drüben spätabends bei der Ranch an. Ihr Gaul ist fast unter ihr zusammengebrochen, und sie sah auch aus, als könne sie dringend eine Mütze Schlaf vertragen."
+
+Er gibt dir die Zeichnung zurück. "Habe ihr angeboten bei Ella nach einem Zimmer zu fragen, aber sie wollte nicht. Ich habe sie dann im Heu schlafen lassen und ihr Pferd versorgt. Als ich am nächsten Morgen nach ihr sehen wollte, waren sie und ihr Pferd verschwunden."
+
+
+[1] "Wo wollte sie hin?"
+[0] Gespräch beenden
+
+> 1
+["Wo wollte sie hin?"]
+"Sie hatte mir am Abend ein paar Dollar gegeben und gesagt, sie wolle in die Stadt, weil ihr Mann wohl dort im Militärgefängnis sitze."
+
+Oh Claire, nein!
+
+
+[1] "Ich muss so schnell wie möglich dorthin!"
+[0] Gespräch beenden
+
+> 1
+["Ich muss so schnell wie möglich dorthin!"]
+"Militärgefängnis, was? Nun, aktuell bist du jedenfalls sauber, das habe ich schon prüfen lassen." Dunder öffnet die Schublade seines Schreibtischs und reicht dir deinen Einberufungsbescheid.
+
+"Die Männer des Gouverneurs werden bald hier sein, um Thompson zu finden und Mifflin zu befragen."
+
+Michael räuspert sich. "Ähm, wir haben uns noch gar nicht richtig bedankt für alles, was Sie für uns getan haben. Also... vielen Dank."
+
+Er gibt dir etwas unbeholfen die Hand. Lucy blickt dich an, die Augen gerötet, und umarmt dich kurz und fest.
+
+
+[1] "Hier, Ihr Taschentuch. Hat mir sehr geholfen."
+[0] Gespräch beenden
+
+> 1
+Lucys verweintes Gesicht hellt sich auf. "Danke!"
+
+Sie nimmt das Taschentuch aus deiner Hand und schnäuzt die Nase.
+
+"Wir haben leider nicht viel Geld, und die Kohle meines Stiefvaters rühre ich nicht an. Wir würden Ihnen aber gerne Billy anbieten, das ist unser schnellstes Pferd."
+
+Sie blickt zu Michael, der eifrig nickt.
+
+"Bringen Sie ihn einfach zu meinem Cousin Marc in der Tanner Street, wenn Sie in der Stadt angekommen sind."
+
+Du nimmst dankend an und stehst auf.
+Steppe
+Frisch gesattelt sitzt du auf Billy, einem jungen Hengst, deine Umhängetasche fest im Griff. Die langsam untergehende Sonne wirft lange Schatten auf den staubigen Weg vor dir, der nach Osten aus der Stadt führt.
+
+Du blickst dich noch einmal um und hebst die Hand in Richtung Ella, Marten und Bill, die dir auf der Straße stehend nachwinken.
+
+Den Blick nach vorne gerichtet versetzt du den Rappen in einen leichten Trab. Ein weiter Weg liegt noch vor dir.
+
+Wieso dachtest du, dass ich im Gefängnis sitze, Claire? Wer hat dir das erzählt?
+
+Egal. Du würdest sie finden, und bald würdet ihr wieder zusammen sein, dessen warst du dir sicher... doch das war eine Geschichte, die an einem anderen Tag erzählt werden sollte.~~~
+
+
+
+                 ~~~ FIN ~~~~~~
+
+
+Vielen Dank, dass du Staub gespielt hast. Ich hoffe, es hat dir gefallen.
+
+Wenn ja, würde ich mich sehr über eine Bewertung auf IFDB.org freuen - vielleicht erfährst du dann bald, wie die Geschichte endet. Gerne nehme ich Anregungen, Lob und Kritik gerne auch in https://bit.ly/Ikes-Discord oder per Mail an staub@ikeserver.de entgegen.
+
+Vielen Dank an Olaf Nowacki, Hannes Schüller, Michael L. und meine Familie für ihr hilfreiches Feedback sowie den GerX-/deform-Autoren für die deutsche Inform-Erweiterung. Das Cover wurde mit Hilfe von Stable Diffusion XL erstellt.
+
+2024 (c) IkeC
+
+> schau
+Steppe
+
+> q
+Bist du sicher, dass du das Spiel beenden willst? ja
+

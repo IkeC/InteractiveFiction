@@ -1,0 +1,511 @@
+================================================================================
+DIFF: Inform7 vs PunyStaub (same walkthrough)
+Walkthrough: C:\Source\InteractiveFiction\Staub\Inform7\Tests\Staub.walkthrough.txt
+Inform7 transcript: C:\Source\InteractiveFiction\Staub\Inform7\Tests\Staub.transcript.inform7.txt
+PunyStaub transcript: C:\Source\InteractiveFiction\Staub\PunyStaub\build\Staub.transcript.txt
+================================================================================
+Lines starting with '-' are only in Inform7.
+Lines starting with '+' are only in PunyStaub.
+================================================================================
+
+COMMAND: 'x nachttisch'
+--- Inform7
++++ PunyStaub
+@@ -1,2 +1,2 @@
+ Ein kleiner Nachttisch mit einem offenen Fach.
+-In dem Nachttisch siehst du eine Umhängetasche.
++Der Nachttisch enthält eine Umhängetasche (geschlossen).
+
+COMMAND: 'oeffne tasche'
+--- Inform7
++++ PunyStaub
+@@ -1 +1 @@
+-Du öffnest die Umhängetasche und findest einen Revolver, einen Einberufungsbescheid, eine Zeichnung und Geld.
++Du öffnest die Umhängetasche und siehst eine Zeichnung, einen Revolver, einen Einberufungsbescheid und Geld.
+
+COMMAND: 'x geld'
+--- Inform7
++++ PunyStaub
+@@ -1 +1 @@
+-Etwa zwölf Dollar.
++Etwa 12 Dollar.
+
+COMMAND: 'nimm revolver'
+--- Inform7
++++ PunyStaub
+@@ -1 +1 @@
+-In Ordnung.
++Du nimmst den Revolver an dich.
+
+COMMAND: 'i'
+--- Inform7
++++ PunyStaub
+@@ -1 +1 @@
+-Du hast Folgendes bei dir: einen Revolver eine Umhängetasche (die offen ist) ein Einberufungsbescheid Geld eine Zeichnung Kleidung (die angezogen ist)
++Du hast bei dir: einen Revolver eine Umhängetasche einen Einberufungsbescheid Geld eine Zeichnung
+
+COMMAND: 'info'
+--- Inform7
++++ PunyStaub
+@@ -1,6 +1,5 @@
+ Lenke deinen Charakter durch Richtungsangaben wie SÜD (oder kürzer: S), NORDWEST (NW), RUNTER (R), RAUS etc. sowie folgende Anweisungen:
+ - SCHAU (L) - UNTERSUCHE <Sache> (U) - NIMM <Sache> (P) - REDE MIT <Person> (T) - BENUTZE <Sache> MIT <Sache> (B) - LEGE / DRÜCKE / ÖFFNE <Sache>
+ Andere Anweisungen sind ebenfalls möglich. Ein typischer Anfang wäre z.B. SCHAU, ÖFFNE FENSTER, UNTERSUCHE NACHTTISCH, NIMM TASCHE, RUNTER, REDE MIT FRAU und so weiter.
+-Mit GEH werden die bereits besuchten Orte angezeigt. Diese können mit GEH <Ort> direkt erreicht werden. INV (I) zeigt dein Inventar, also was du bei dir trägst. SPEICHERN und LADEN ist ebenfalls möglich. Mit TIPP bekommst Du einen Hinweis, wie es weiter geht.
++Mit LAUF werden die bereits besuchten Orte angezeigt. Diese können mit LAUF <Ort> direkt erreicht werden. INV (I) zeigt dein Inventar, also was du bei dir trägst. SPEICHERN und LADEN ist ebenfalls möglich. Mit TIPP bekommst Du einen Hinweis, wie es weiter geht.
+ Aktionen wie das Betreten neuer Räume oder der Fund von Gegenständen schalten oft neue Dialogoptionen frei, es ist daher sinnvoll, mehrmals mit Personen zu sprechen. Unter https://ikeserver.de/Staub gibt es weitere Hinweise und eine Komplettlösung, wenn's mal nicht weiter geht.
+-Vielen Dank an Olaf Nowacki, Hannes Schüller, Michael L. und meine Familie für ihr hilfreiches Feedback sowie den GerX-/deform-Autoren für die deutsche Inform-Erweiterung. Das Cover wurde mit Hilfe von Stable Diffusion XL erstellt.
+
+COMMAND: 'runter'
+--- Inform7
++++ PunyStaub
+@@ -1,3 +1,3 @@
+ Saloon Du schlurfst die Treppe hinunter und massierst dabei deine schmerzende linke Schulter.
+ Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
+-Hinter der Bar steht eine Frau und schnäuzt in ihr Geschirrtuch. Sie wirft dir einen leicht amüsierten Blick zu.
++Hinter der Bar steht eine Frau und kratzt sich am Kinn. Sie wirft dir einen leicht amüsierten Blick zu.
+
+COMMAND: 'lauf'
+--- Inform7
++++ PunyStaub
+@@ -1 +1 @@
+-Gib GEH und eine Richtung oder einen dieser bereits bekannten Orte ein: - Zimmer - Saloon (Ella)
++LAUF ZU einem dieser Orte: - Zimmer - Saloon (Ella)
+
+COMMAND: 'lauf zu zimmer'
+--- Inform7
++++ PunyStaub
+@@ -1,2 +1 @@
+-Einige Schritte später...
+-Zimmer Dieses Zimmer ist ziemlich spärlich eingerichtet. In der Ecke steht ein Bett mit einem kleinen Nachttisch. An der gegenüberliegenden Wand befindet sich ein Fenster. Eine einfache Holztür führt nach draußen und die Treppe hinunter.
++Kurze Zeit später... Zimmer Dieses Zimmer ist ziemlich spärlich eingerichtet. In der Ecke steht ein Bett mit einem kleinen Nachttisch. An der gegenüberliegenden Wand befindet sich ein Fenster. Eine einfache Holztür führt nach draußen und die Treppe hinunter.
+
+COMMAND: 'lauf zu saloon'
+--- Inform7
++++ PunyStaub
+@@ -1,3 +1,2 @@
+-Kurz darauf...
+-Saloon Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
+-Hinter der Bar steht eine Frau und poliert Gläser mit einem mäßig sauber wirkenden Stofflappen.
++Ein paar Minuten später... Saloon Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
++Hinter der Bar steht eine Frau und zieht an ihrer Zigarette.
+
+COMMAND: 'schau'
+--- Inform7
++++ PunyStaub
+@@ -1,2 +1,2 @@
+ Saloon Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
+-Hinter der Bar steht eine Frau und schnäuzt in ihr Geschirrtuch.
++Hinter der Bar steht eine Frau und kratzt sich am Kinn.
+
+COMMAND: 'x frau'
+--- Inform7
++++ PunyStaub
+@@ -1 +1 @@
+-Die Frau hinter dem Tresen heißt Ella, ihr kennt euch noch von früher. Sie ist ungefähr Ende vierzig, eine korpulente, attraktive Frau mit Lachfalten und schwieligen Händen. Sie hat ein dunkelrotes Stofftuch um die Stirn gebunden und dreht sich eine Zigarette.
++Die Frau hinter dem Tresen heißt Ella, ihr kennt euch noch von früher. Sie ist ungefähr Ende vierzig, eine korpulente, attraktive Frau mit Lachfalten und schwieligen Händen. Sie hat ein dunkelrotes Stofftuch um die Stirn gebunden und poliert Gläser mit einem mäßig sauber wirkenden Stofflappen.
+
+COMMAND: '1'
+--- Inform7
++++ PunyStaub
+@@ -1,5 +1,4 @@
+ "Ach du kennst die Mifflin-Brüder gar nicht? Dann sind die damals wohl erst aufgetaucht, als du schon aus der Stadt warst. Calvin und Bob heißen die, haben die alte Mine drüben im Westen wieder in Betrieb genommen und offenbar tatsächlich wieder was gefunden."
+ Ella hält kurz inne und zieht einmal kräftig an ihrer Zigarette.
+ "Jedenfalls haben sie offenbar genug Kohle, um sich hier regelmäßig volllaufen zu lassen. Mir soll's recht sein."
+-Saloon Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
+-Hinter der Bar steht Ella und schnäuzt in ihr Geschirrtuch.
++Damit endet das Gespräch.
+
+COMMAND: '1'
+--- Inform7
++++ PunyStaub
+@@ -1,5 +1,4 @@
+ Der Sheriff wendet sich von dir ab und nickt widerwillig. "Deine Papiere bleiben hier und du verlässt nicht die Stadt. Die Kutsche heute ist eh schon durch und einen Gaul wirst du dir nicht leisten können."
+ Dunder kommt noch einmal näher und blickt dich durchdringend an.
+ "Dein Kram liegt auf dem Tisch. Wir behalten dich im Auge, Junge. Mach' keinen Blödsinn."
+-Büro des Sheriffs Dies ist Sheriff Dunders Büro. Zwei Pritschen sind an der Wand befestigt.
+-Auf der gegenüberliegenden Seite steht ein massiver Schreibtisch, dahinter sitzt Sheriff Dunder. Er hat den Hut tief ins Gesicht gezogen und scheint vor sich hin zu dösen. Ein Durchgang führt offenbar tiefer ins Haus hinein. Eine breite Tür im Süden führt nach draußen.
++Damit endet das Gespräch.
+
+COMMAND: 'oeffne tasche'
+--- Inform7
++++ PunyStaub
+@@ -1 +1 @@
+-Du öffnest die Umhängetasche und findest einen Revolver und Geld.
++Du öffnest die Umhängetasche und siehst einen Revolver und Geld.
+
+COMMAND: 'no'
+--- Inform7
++++ PunyStaub
+@@ -1,3 +1,3 @@
+ Barbier Du stupst kurz die rot-weiß-blaue Säule neben der Eingangstür an und betrittst das Geschäft. Du bist angenehm überrascht, wie hell und sauber es hier ist.
+ Ein ausladender Kippsessel aus rotem Leder prangt vor einem großen, an der Wand befestigten Spiegel. Auf diversen Tischen und Regalen stehen kleine Fläschchen, Dosen und allerlei Krimskrams herum.
+-Ein Papagei sitzt auf einer Stange und wackelt mit dem Kopf. Der Barbier steht hinter dem Sessel und poliert den Spiegel.
++Ein Papagei sitzt auf einer Stange und wackelt mit dem Kopf. Der Barbier steht hinter dem Sessel und prüft sein Rasiermesser.
+
+COMMAND: '1'
+--- Inform7
++++ PunyStaub
+@@ -1,2 +1,2 @@
+-"War als Feuermelder mit dabei, beim kleinsten bisschen Rauch schlägt sie Alarm. Das habe ich dir doch schon dreimal mitgeteilt!"
++"War als Feuermelder mit dabei, beim kleinsten bisschen Rauch schlägt sie Alarm. Das habe ich dir doch schon dreimal erzählt!"
+ [1] "Wieso war Molly noch gleich mit auf See?" [2] "Eine Idee wie ich in die Mine komme?" [0] Gespräch beenden
+
+COMMAND: '0'
+--- Inform7
++++ PunyStaub
+@@ -1,2 +1 @@
+-Barbier Ein ausladender Kippsessel aus rotem Leder prangt vor einem großen, an der Wand befestigten Spiegel. Auf diversen Tischen und Regalen stehen kleine Fläschchen, Dosen und allerlei Krimskrams herum.
+-Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und schärft seine Schere.
++Damit beendest du das Gespräch.
+
+COMMAND: 'n'
+--- Inform7
++++ PunyStaub
+@@ -1,4 +1,3 @@
+-(Du öffnest zuerst die Ladentür.)
+ Gemischtwarenladen Eine kleine Glocke bimmelt hell, als du das Geschäft betrittst. Der Bereich für die Kunden ist so klein, dass sich kaum zwei Personen gleichzeitig umdrehen können.
+ Im Durchgang hinter der Ladentheke erscheint der Ladenbesitzer Bill, krächzt ein leises "Morgen" und wirft dir ein schiefes Lächeln zu.
+ Du stehst vor der Ladentheke. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+
+COMMAND: '1'
+--- Inform7
++++ PunyStaub
+@@ -1,4 +1,3 @@
+ Bill blickt gedankenverloren durch die fleckigen Fenster. "Ich weiß es nicht."
+ Er klopft mit den Fingerknöcheln auf den Tresen. "War heute früh wie jeden Morgen am Grab meiner Frau, da muss ich ihn noch gehabt haben. Bei dem Sandsturm seh' ich sonst keine fünf Meter weit."
+-Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und stützt sich auf seinen Gehstock. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+-Im Süden geht es hinaus auf die Straße.
++Damit endet das Gespräch.
+
+COMMAND: '1'
+--- Inform7
++++ PunyStaub
+@@ -1,2 +1 @@
+-"Biff Clayton" "1837-1868"
+-[1] Erstes Kreuz [2] Zweites Kreuz [3] Drittes Kreuz [4] Viertes Kreuz [0] Beenden
++"Biff Clayton" "1837-1868" [1] Erstes Kreuz [2] Zweites Kreuz [3] Drittes Kreuz [4] Viertes Kreuz [0] Beenden
+
+COMMAND: '2'
+--- Inform7
++++ PunyStaub
+@@ -1,2 +1 @@
+-"Mathilda Brooks geb. Walker" "1808-1869"
+-[1] Erstes Kreuz [2] Zweites Kreuz [3] Drittes Kreuz [4] Viertes Kreuz [0] Beenden
++"Mathilda Brooks geb. Walker" "1808-1869" [1] Erstes Kreuz [2] Zweites Kreuz [3] Drittes Kreuz [4] Viertes Kreuz [0] Beenden
+
+COMMAND: '3'
+--- Inform7
++++ PunyStaub
+@@ -1,2 +1 @@
+-"Wendy Porter" "1816-1875"
+-[1] Erstes Kreuz [2] Zweites Kreuz [3] Drittes Kreuz [4] Viertes Kreuz [0] Beenden
++"Wendy Porter" "1816-1875" [1] Erstes Kreuz [2] Zweites Kreuz [3] Drittes Kreuz [4] Viertes Kreuz [0] Beenden
+
+COMMAND: '4'
+--- Inform7
++++ PunyStaub
+@@ -1,2 +1 @@
+-"Lucille Thompson geb. Powell" "1845-1878"
+-[1] Erstes Kreuz [2] Zweites Kreuz [3] Drittes Kreuz [4] Viertes Kreuz [0] Beenden
++"Lucille Thompson geb. Powell" "1845-1878" [1] Erstes Kreuz [2] Zweites Kreuz [3] Drittes Kreuz [4] Viertes Kreuz [0] Beenden
+
+COMMAND: '2'
+--- Inform7
++++ PunyStaub
+@@ -1,2 +1 @@
+-Du siehst nichts Besonderes, und ohne triftigen Grund möchtest du nicht auf dem Grab herumwühlen.
+-[1] Erstes Grab [2] Zweites Grab [3] Drittes Grab [4] Viertes Grab [0] Beenden
++Du siehst nichts Besonderes, und ohne triftigen Grund möchtest du nicht auf dem Grab herumwühlen. [1] Erstes Grab [2] Zweites Grab [3] Drittes Grab [4] Viertes Grab [0] Beenden
+
+COMMAND: 'n'
+--- Inform7
++++ PunyStaub
+@@ -1,2 +1,2 @@
+-Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und hustet krächzend. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
++Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und reibt sich die Augen. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+ Im Süden geht es hinaus auf die Straße.
+
+COMMAND: '1'
+--- Inform7
++++ PunyStaub
+@@ -1,4 +1,3 @@
+ "Sie hieß Mathilda."
+ Er zieht die Nase hoch und reibt sich im Auge. "Hab' sie meistens Hildchen genannt."
+-Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und reibt sich die Augen. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+-Im Süden geht es hinaus auf die Straße.
++Damit endet das Gespräch.
+
+COMMAND: '2'
+--- Inform7
++++ PunyStaub
+@@ -1,4 +1,3 @@
+ Du streichst vorsichtig mit den Fingern durch den feinen Sand auf dem Grab, bis deine Finger etwas ertasten.
+ Da ist er, Bills Zwicker!
+-Du bläst behutsam den Sand von den Linsen und steckst ihn ein.
+-[1] Erstes Grab [2] Zweites Grab [3] Drittes Grab [4] Viertes Grab [0] Beenden
++Du bläst behutsam den Sand von den Linsen und steckst ihn ein. [1] Erstes Grab [2] Zweites Grab [3] Drittes Grab [4] Viertes Grab [0] Beenden
+
+COMMAND: 'n'
+--- Inform7
++++ PunyStaub
+@@ -1,2 +1,2 @@
+-Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und kratzt sich am Kinn. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
++Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und stützt sich auf seinen Gehstock. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+ Im Süden geht es hinaus auf die Straße.
+
+COMMAND: '1'
+--- Inform7
++++ PunyStaub
+@@ -1,5 +1,4 @@
+ "Natürlich! Bin gleich wieder da."
+ Ein endlos scheinendes Gleich später erscheint Bill wieder im Durchgang und knallt das Brecheisen vor dir auf den Tresen.
+ "Macht normalerweise acht Scheine, aber wenn du's nicht ewig brauchst leih' ich's dir aus, scheinst ja 'ne ehrliche Haut zu sein."
+-Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und reibt sich die Augen. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+-Auf der Theke liegt ein Brecheisen. Im Süden geht es hinaus auf die Straße.
++Damit endet das Gespräch.
+
+COMMAND: 'nimm brecheisen'
+--- Inform7
++++ PunyStaub
+@@ -1 +1 @@
+-In Ordnung.
++Du nimmst den Brecheisen an dich.
+
+COMMAND: 's'
+--- Inform7
++++ PunyStaub
+@@ -1,2 +1,2 @@
+ Saloon Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
+-Hinter der Bar steht Ella und sortiert die Getränke.
++Hinter der Bar steht Ella und zieht an ihrer Zigarette.
+
+COMMAND: '1'
+--- Inform7
++++ PunyStaub
+@@ -1,4 +1,3 @@
+ Du erzählst Ella kurz von dem Stolleneingang, den du freigelegt hast. Sie lächelt und nickt.
+ "Kannst die Lampe gerne mitnehmen, aber bis heute Abend will ich sie zurück!"
+-Saloon Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
+-Hinter der Bar steht Ella und reinigt die Spüle.
++Damit endet das Gespräch.
+
+COMMAND: 'benutze stuhl'
+--- Inform7
++++ PunyStaub
+@@ -1,3 +1,2 @@
+-Du steigst auf den Stuhl unter dem Balken.
+-Saloon (auf dem Stuhl) Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
+-Hinter der Bar steht Ella und schnäuzt in ihr Geschirrtuch.
++Du steigst auf den Stuhl unter dem Balken. Saloon (auf dem Stuhl) Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
++Hinter der Bar steht Ella und reinigt die Spüle.
+
+COMMAND: 'nimm lampe'
+--- Inform7
++++ PunyStaub
+@@ -1 +1 @@
+-Du nimmst die Lampe an dich.
++Du nimmst die Lampe vom Nagel.
+
+COMMAND: 'raus'
+--- Inform7
++++ PunyStaub
+@@ -1,3 +1,2 @@
+-Du steigst von dem Stuhl herunter.
+-Saloon Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
+-Hinter der Bar steht Ella und dreht sich eine Zigarette.
++Du steigst von dem Stuhl herunter. Saloon Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
++Hinter der Bar steht Ella und wischt gelangweilt den Tresen.
+
+COMMAND: '1'
+--- Inform7
++++ PunyStaub
+@@ -1,4 +1,3 @@
+ Ella runzelt die Stirn. "Meine Zündhölzer sind fast alle, und ohne Feuer raucht sich's schlecht."
+ Sie pustet eine beeindruckende Rauchwolke über dich hinweg und deutet zur Tür. "Bill hat bestimmt noch welche, kannst mir gerne welche mitbringen."
+-Saloon Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
+-Hinter der Bar steht Ella und poliert Gläser mit einem mäßig sauber wirkenden Stofflappen.
++Damit endet das Gespräch.
+
+COMMAND: 'n'
+--- Inform7
++++ PunyStaub
+@@ -1,2 +1,2 @@
+-Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und stützt sich auf seinen Gehstock. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
++Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und reibt sich die Augen. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+ Im Süden geht es hinaus auf die Straße.
+
+COMMAND: '1'
+--- Inform7
++++ PunyStaub
+@@ -1,5 +1,4 @@
+ Bills Gesicht hellt sich auf. "Klar hab' ich welche! Die guten alten ohne diesen Sicherheits-Reibescheiß, die kriegste immer an."
+ Er legt ein kleines braunes Papiertütchen auf den Tisch. "Macht einen Dollar."
+ Du legst einen zerknitterten Dollarschein auf die Theke. Bill steckt ihn ein.
+-Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und hustet krächzend. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+-Auf der Theke liegt ein kleines Papiertütchen mit Streichhölzern. Im Süden geht es hinaus auf die Straße.
++Damit endet das Gespräch.
+
+COMMAND: '1'
+--- Inform7
++++ PunyStaub
+@@ -2,5 +2,4 @@
+ Bill kneift die Augen zusammen und zieht die Luft ein. Die Erinnerung scheint ihm unangenehm zu sein.
+ "Das ganze Dorf sollte zusehen. Kaum war's getan, sind die Soldaten wieder abgezogen, und Marten durfte sich um die Leichen kümmern."
+ Er reibt sich kurz die Nase und blickt dich direkt an. "Jetzt wo ich so dran denke, den Rest vom Tau hatten sie nicht dabei. Würde mich nicht wundern, wenn das da draußen noch irgendwo rumliegt."
+-Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und reibt sich die Augen. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+-Im Süden geht es hinaus auf die Straße.
++Damit endet das Gespräch.
+
+COMMAND: '1'
+--- Inform7
++++ PunyStaub
+@@ -1,5 +1,4 @@
+ "Ja klar meen Jong. Ich durfte ja alles wegräumen."
+ Er schüttelt den Kopf und räuspert sich.
+ "Die Soldaten haben mir ein bisschen Geld gegeben und gesagt, allen übrigen Kram rein in die Luke und feste zunageln, die Schlinge durchschneiden und die Leichen begraben. War ein lächerlicher Lohn für die ganze Arbeit, aber Nein zu sagen wär' sicher keine gute Idee gewesen."
+-Barbier Ein ausladender Kippsessel aus rotem Leder prangt vor einem großen, an der Wand befestigten Spiegel. Auf diversen Tischen und Regalen stehen kleine Fläschchen, Dosen und allerlei Krimskrams herum.
+-Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und schärft seine Schere.
++Damit endet das Gespräch.
+
+COMMAND: 'no'
+--- Inform7
++++ PunyStaub
+@@ -1,2 +1,2 @@
+ Barbier Ein ausladender Kippsessel aus rotem Leder prangt vor einem großen, an der Wand befestigten Spiegel. Auf diversen Tischen und Regalen stehen kleine Fläschchen, Dosen und allerlei Krimskrams herum.
+-Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und poliert den Spiegel.
++Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und prüft sein Rasiermesser.
+
+COMMAND: '1'
+--- Inform7
++++ PunyStaub
+@@ -2,5 +2,4 @@
+ Er verschwindet kurz im hinteren Teil des Ladens und taucht kurz darauf mit einer großen Metallschaufel in der Hand wieder auf.
+ "Is'n bissken schettrig aber kannste ja sauber machen wenn's dich stört. Wiedersehen macht Freude!"
+ Du nimmst die Schaufel und bedankst dich.
+-Barbier Ein ausladender Kippsessel aus rotem Leder prangt vor einem großen, an der Wand befestigten Spiegel. Auf diversen Tischen und Regalen stehen kleine Fläschchen, Dosen und allerlei Krimskrams herum.
+-Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und prüft sein Rasiermesser.
++Damit endet das Gespräch.
+
+COMMAND: 'runter'
+--- Inform7
++++ PunyStaub
+@@ -1,6 +1,5 @@
+ Du nimmst den Henkel der Petroleumlampe zwischen die Zähne und greift mit beiden Händen das Seil.
+-Die Füße gegen die Felswand gestemmt, seilst du dich langsam ab.
+-~~~
++Die Füße gegen die Felswand gestemmt, seilst du dich langsam ab. ~~~
+ Gewölbe Nach einer gefühlten Ewigkeit ertasten deine Füße endlich wieder festen Boden. Der Schweiß läuft dir den Rücken hinunter, als du dich von der Wand abwendest. Dein angestrengtes Keuchen malt kleine Dampfwölkchen in den Schein deiner Laterne.
+ Ein tiefes, offenbar nicht weit entferntes Rumpeln lässt dich blitzartig verstummen. Vorsichtig folgst du dem fahlen Lichtschein des gekrümmten Stollengangs vor dir.
+ Als sich der Gang weitet und immer heller wird, kannst du immer deutlicher Stimmen vernehmen. Vorsichtig gehst du hinter einem hüfthohen Steinvorsprung in Deckung, von dem du das große, mit unzähligen Fackeln erleuchtete Gewölbe unter dir überblicken kannst.
+
+COMMAND: 'rede mit lucy'
+--- Inform7
++++ PunyStaub
+@@ -1 +1,2 @@
++Was möchtest du zu der jungen Frau sagen?
+ [1] "Alles klar bei euch?" [0] Gespräch beenden
+
+COMMAND: '1'
+--- Inform7
++++ PunyStaub
+@@ -1,9 +1,8 @@
+ "Dafür haben wir jetzt keine Zeit!", zischt Lucy aufgeregt. "Die panschen hier irgendeine Sauerei zusammen, und mein Stiefvater steckt da mit drin!"
+ Ihre Augen weiten sich und sie zieht euch beide hastig zurück hinter den schmalen Felsvorsprung. "Achtung, da kommen sie!"
+-Gewölbe Ein sehr gepflegt aussehender Mann in mittlerem Alter mit Stock und Melone sowie ein deutlich schmutzigerer, wild gestikulierender Bursche schlendern in eure Richtung und bleiben nur ein paar Meter entfernt stehen.
++Ein sehr gepflegt aussehender Mann in mittlerem Alter mit Stock und Melone sowie ein deutlich schmutzigerer, wild gestikulierender Bursche schlendern in eure Richtung und bleiben nur ein paar Meter entfernt stehen.
+ "Was sollen wir denn sonst machen, Ron? Die singen doch sofort, wenn wir die jetzt rauslassen!"
+-"Für dich immer noch Mr. Thompson, Cal. Ich werde mit Lucy reden, wenn sie sich etwas beruhigt hat, dann sehen wir weiter." Ah, das muss dann wohl Calvin Mifflin sein!
+-~~~
++"Für dich immer noch Mr. Thompson, Cal. Ich werde mit Lucy reden, wenn sie sich etwas beruhigt hat, dann sehen wir weiter." Ah, das muss dann wohl Calvin Mifflin sein!~~~
+ Der junge Mann blickt zu Boden und schüttelt den Kopf. "Na ich weiß nicht Ro-- Mr. Thompson. Die hat ganz schön Haare auf den Zähnen."
+ Mit einer schnellen, fast beiläufigen Bewegung holt Thompson mit dem Stock aus und lässt den Knauf blitzschnell auf das linke Knie des Mannes niedersausen. "AAAARGH!" schreit dieser überrascht auf und klappt augenblicklich zusammen.
+ Als wäre nichts geschehen spricht Thompson mit gleichbleibend sonorer Stimme weiter. "Es steht dir nicht zu, so über sie zu sprechen. Wenn sie und ihr Stallbursche nicht zur Besinnung kommen, werden wir leider eine andere Lösung finden müssen."
+
+COMMAND: 'benutze Revolver mit Männer'
+--- Inform7
++++ PunyStaub
+@@ -1,4 +1,3 @@
+-Du reißt den Revolver hoch und triffst zwei der heranstürmenden Männer in Brust und Bauch, ehe dir eine Kugel das Knie zerfetzt. Schreiend sinkst du zu Boden.
+---- WEISSES LICHT ---
++Du reißt den Revolver hoch und triffst zwei der heranstürmenden Männer in Brust und Bauch, ehe dir eine Kugel das Knie zerfetzt. Schreiend sinkst du zu Boden. --- WEISSES LICHT ---
+ Nein, so war es nicht gewesen. Du hast es irgendwie anders gemacht, da bist du dir sicher.
+ Langsam lichtet sich der weiße Nebel vor deinen Augen. Die Männer stürmen immer noch auf euch zu.
+
+COMMAND: 'benutze Revolver mit Karren'
+--- Inform7
++++ PunyStaub
+@@ -1,6 +1,5 @@
+ Blitzschnell ziehst du den Revolver und schießt auf den Karren.
+ Der Karren wackelt leicht, kippt aber nicht um.
+-Ein Gewehrkolben trifft dich brutal an der Stirn als dich die Männer erreichen und überwältigen.
+---- WEISSES LICHT ---
+-Nein, so war es nicht gewesen. In Wirklichkeit war dir natürlich eine viel schlauere Lösung eingefallen.
++Ein Gewehrkolben trifft dich brutal an der Stirn als dich die Männer erreichen und überwältigen. --- WEISSES LICHT ---
++Nein, so war es nicht gewesen. Du lässt dir noch einmal alle Handlungsmöglichkeiten durch den Kopf gehen.
+ Langsam lichtet sich der weiße Nebel vor deinen Augen. Die Männer stürmen immer noch auf euch zu.
+
+COMMAND: 'benutze Revolver mit Keil'
+--- Inform7
++++ PunyStaub
+@@ -2,6 +2,4 @@
+ Der Schuss löst sich perfekt und lässt den getroffenen Holzkeil in hohem Bogen davonschnellen. Durch die entstandene Staubwolke hindurch setzt sich der Karren laut rumpelnd in Bewegung und rollt genau auf euch zu.
+ Die Männer halten inne und drehen sich um, die Augen vor Angst geweitet.
+ "Das Nitro! RAUS HIER!"
+-Du drehst dich zu Michael und Lucy um, die mit starrem Blick an dir vorbeisehen, die Münder weit geöffnet. Du hechtest auf sie und drückst sie zu Boden, kurz bevor die Welt um dich explodiert.
+---- WEISSES LICHT ---
+-Büro des Sheriffs Du liegst auf einer der Pritschen im Büro des Sheriffs. In der Ecke sitzen Michael und Lucy, der junge Mann trägt einen leicht blutigen Verband um den Kopf. Sheriff Dunder sitzt hinter seinem Schreibtisch.
++Du drehst dich zu Michael und Lucy um, die mit starrem Blick an dir vorbeisehen, die Münder weit geöffnet. Du hechtest auf sie und drückst sie zu Boden, kurz bevor die Welt um dich explodiert. --- WEISSES LICHT --- Büro des Sheriffs Du liegst auf einer der Pritschen im Büro des Sheriffs. In der Ecke sitzen Michael und Lucy, der junge Mann trägt einen leicht blutigen Verband um den Kopf. Sheriff Dunder sitzt hinter seinem Schreibtisch.
+
+COMMAND: 'rede mit Dunder'
+--- Inform7
++++ PunyStaub
+@@ -1,2 +1,2 @@
+-Was möchtest du sagen?
++Was möchtest du zu Sheriff Dunder sagen?
+ [1] "Was ist passiert?" [2] "Was haben die da in der Höhle getrieben?" [3] "Wo ist Thompson?" [0] Gespräch beenden
+
+COMMAND: '1'
+--- Inform7
++++ PunyStaub
+@@ -3,15 +3,13 @@
+ "Wir haben leider nicht viel Geld, und die Kohle meines Stiefvaters rühre ich nicht an. Wir würden Ihnen aber gerne Billy anbieten, das ist unser schnellstes Pferd."
+ Sie blickt zu Michael, der eifrig nickt.
+ "Bringen Sie ihn einfach zu meinem Cousin Marc in der Tanner Street, wenn Sie in der Stadt angekommen sind."
+-Du nimmst dankend an und stehst auf.
+-Steppe Frisch gesattelt sitzt du auf Billy, einem jungen Hengst, deine Umhängetasche fest im Griff. Die langsam untergehende Sonne wirft lange Schatten auf den staubigen Weg vor dir, der nach Osten aus der Stadt führt.
++Du nimmst dankend an und stehst auf. Steppe Frisch gesattelt sitzt du auf Billy, einem jungen Hengst, deine Umhängetasche fest im Griff. Die langsam untergehende Sonne wirft lange Schatten auf den staubigen Weg vor dir, der nach Osten aus der Stadt führt.
+ Du blickst dich noch einmal um und hebst die Hand in Richtung Ella, Marten und Bill, die dir auf der Straße stehend nachwinken.
+ Den Blick nach vorne gerichtet versetzt du den Rappen in einen leichten Trab. Ein weiter Weg liegt noch vor dir.
+ Wieso dachtest du, dass ich im Gefängnis sitze, Claire? Wer hat dir das erzählt?
+-Egal. Du würdest sie finden, und bald würdet ihr wieder zusammen sein, dessen warst du dir sicher... doch das war eine Geschichte, die an einem anderen Tag erzählt werden sollte.^^ ~~~
+-~~~ FIN ~~~
+-~~~
+-Vielen Dank, dass du Staub gespielt hast. Ich hoffe, es hat dir gefallen. Wenn ja, würde ich mich sehr über eine Bewertung auf IFDB.org freuen - vielleicht erfährst du dann bald, wie die Geschichte endet. Wenn du online spielst, schreib mir auch gerne etwas direkt hier drunter!
+-Ansonsten nehme ich Anregungen, Lob und Kritik gerne auch in https://bit.ly/Ikes-Discord oder per Mail an staub@ikeserver.de entgegen.
++Egal. Du würdest sie finden, und bald würdet ihr wieder zusammen sein, dessen warst du dir sicher... doch das war eine Geschichte, die an einem anderen Tag erzählt werden sollte.~~~
++~~~ FIN ~~~~~~
++Vielen Dank, dass du Staub gespielt hast. Ich hoffe, es hat dir gefallen.
++Wenn ja, würde ich mich sehr über eine Bewertung auf IFDB.org freuen - vielleicht erfährst du dann bald, wie die Geschichte endet. Gerne nehme ich Anregungen, Lob und Kritik gerne auch in https://bit.ly/Ikes-Discord oder per Mail an staub@ikeserver.de entgegen.
+ Vielen Dank an Olaf Nowacki, Hannes Schüller, Michael L. und meine Familie für ihr hilfreiches Feedback sowie den GerX-/deform-Autoren für die deutsche Inform-Erweiterung. Das Cover wurde mit Hilfe von Stable Diffusion XL erstellt.
+-2024 © IkeC
++2024 (c) IkeC
+
+COMMAND: 'schau'
+--- Inform7
++++ PunyStaub
+@@ -1,2 +1 @@
+-Steppe Im staubigen Dunst der einsetzenden Dämmerung kannst du die Umrisse einer größeren Stadt erahnen.
+-Erreichen wirst du sie heute aber nicht mehr.
++Steppe
+
+COMMAND: 'q'
+--- Inform7
++++ PunyStaub
+@@ -1 +1 @@
+-Möchtest du das Spiel wirklich beenden?
++Bist du sicher, dass du das Spiel beenden willst? ja
+
+================================================================================
+Total: 53 differing commands out of 233 compared.
+================================================================================

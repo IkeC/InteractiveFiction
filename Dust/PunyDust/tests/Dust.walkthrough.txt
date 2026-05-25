@@ -1,0 +1,361 @@
+info
+look
+smell
+examine door
+examine wall
+examine floor
+examine bed
+examine mattress
+examine window
+examine windpump
+examine nightstand
+take bag
+examine bag
+open bag
+examine draft notice
+examine drawing
+examine revolver
+examine money
+smell me
+down
+smell
+examine woman
+examine tables
+examine chairs
+examine stage
+examine stairs
+examine counter
+examine beams
+examine nail
+talk to woman
+1
+1
+1
+1
+1
+0
+examine counter
+drink coffee
+drink coffee
+out
+smell
+examine tumbleweed
+examine sun
+take sun
+examine buildings
+examine office
+examine cat
+examine store
+examine barber
+examine pole
+w
+talk to woman
+1
+1
+2
+take bag
+examine Sheriff
+examine star
+talk to Sheriff
+1
+1
+1
+1
+1
+0
+take bag
+smell
+examine plank beds
+examine passageway
+examine house
+out
+open bag
+w
+smell
+examine house
+enter house
+examine paddock
+examine grass
+examine stable
+enter stable
+examine horses
+examine bench
+sit on bench
+w
+smell
+examine hill chain
+examine mine
+examine smoke
+examine man
+talk to man
+shoot man
+examine shrub
+take hankie
+examine hankie
+smell hankie
+e
+e
+nw
+talk to Sheriff
+1
+0
+out
+s
+examine counter
+examine cookie
+take cookie
+talk to woman
+1
+1
+1
+0
+n
+ne
+smell
+examine odds and ends
+examine tilt chair
+pull tilt chair
+examine mirror
+examine parrot
+talk to parrot
+talk to parrot
+examine barber
+talk to barber
+1
+1
+1
+1
+1
+2
+0
+take Molly
+give cookie to Molly
+take Molly
+talk to Marten
+2
+0
+take Molly
+out
+w
+s
+smell
+examine windpump
+examine mast
+climb mast
+w
+smell
+examine boulder field
+look
+examine boulder
+examine crevice
+e
+n
+e
+n
+examine bell
+examine counter
+examine shelves
+examine labels
+examine man
+buy tools
+talk to Bill
+1
+1
+1
+1
+1
+1
+1
+1
+1
+0
+out
+e
+smell
+examine gallows
+examine noose
+take noose
+examine crosses
+examine town
+examine platform
+look under platform
+n
+examine bushes
+smell
+examine crosses
+1
+2
+3
+4
+0
+s
+w
+n
+talk to Bill
+1
+0
+out
+e
+n
+examine crosses
+1
+2
+0
+examine graves
+2
+0
+run to Bill
+talk to Bill
+1
+1
+0
+take crowbar
+examine crowbar
+s
+w
+s
+w
+use crowbar with crevice
+run to Bill
+talk to Bill
+1
+0
+run to windpump
+examine mast
+take rod
+examine rod
+w
+use rod on crevice
+take rod
+n
+smell
+e
+w
+n
+examine rock
+s
+e
+n
+e
+s
+examine ceiling
+examine lamp
+take lamp
+use crowbar on lamp
+pull chair
+take lamp
+talk to woman
+1
+0
+use chair
+take lamp
+examine lamp
+turn on lamp
+talk to woman
+down
+talk to woman
+1
+0
+n
+n
+talk to Bill
+1
+0
+take matches
+examine matches
+use matches on lamp
+run to cave
+n
+examine precipice
+down
+run to Bill
+talk to Bill
+1
+1
+0
+s
+ne
+talk to Marten
+1
+1
+0
+out
+e
+examine platform
+examine sand
+take sand
+w
+n
+talk to Bill
+1
+0
+s
+ne
+talk to Marten
+1
+1
+0
+out
+e
+dig sand with shovel
+examine plate
+use crowbar on plate
+examine opening
+examine rope
+take rope
+run to cave
+use rope on precipice
+tie rope to rock
+down
+smell
+examine man
+examine guard
+examine niche
+examine Michael
+talk to guard
+shoot guard
+drop hankie
+s
+hit guard
+hit guard with shovel
+talk to guard
+examine guard
+look
+examine niche
+up
+talk to couple
+1
+1
+look
+e
+up
+shoot men
+look
+examine cart
+shoot cart
+look
+examine barrels
+shoot barrels
+hit man with crowbar
+examine wedge
+use revolver with wedge
+out
+take draft notice
+talk to Dunder
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+look
+examine Billy
+run to saloon
+quit

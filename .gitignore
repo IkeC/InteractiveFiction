@@ -1,0 +1,21 @@
+Staub/Inform7/Staub.inform/Build/
+Staub/Inform7/Staub.inform/Index/
+Staub/Inform7/release.cmd
+Staub/PunyStaub/Build/.cache/
+Staub/PunyStaub/Staub-*.zip
+
+Dust/Inform7/Dust.inform/Build/
+Dust/Inform7/Dust.inform/Index/
+Dust/Inform7/release.cmd
+Dust/PunyDust/tests/dust.cmd
+Dust/PunyDust/tests/dust.output
+Dust/PunyDust/tests/dust.scr
+Dust/PunyDust/tests/dust.z5
+Dust/Inform7/Dust.inform/Build/Problems.html
+Dust/Inform7/Dust.inform/Build/Debug log.txt
+.pytest_cache/
+__pycache__/
+*.pyc
+Dust/PunyDust/Build/.cache/
+Dust/PunyDust/Dust-*.zip
+Dust/PunyDust/Build/build.log

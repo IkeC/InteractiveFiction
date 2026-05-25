@@ -1,0 +1,112 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Staub Build",
+			"type": "shell",
+			"command": "powershell -ExecutionPolicy Bypass -File build.ps1",
+			"options": {
+				"cwd": "${workspaceFolder}\\Staub\\Inform7"
+			},
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Staub Test (Glulxe)",
+			"type": "shell",
+			"command": "chcp 1252 > nul && ${workspaceFolder}\\tools\\glulxe.exe \"${workspaceFolder}\\Staub\\Inform7\\Staub.inform\\Build\\output.gblorb\"",
+			"options": {
+				"shell": {
+					"executable": "cmd.exe",
+					"args": [
+						"/d",
+						"/s",
+						"/c"
+					]
+				}
+			},
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "PunyStaub Build",
+			"type": "shell",
+			"command": "powershell -ExecutionPolicy Bypass -File build.ps1",
+			"options": {
+				"cwd": "${workspaceFolder}\\Staub\\PunyStaub"
+			},
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "PunyStaub Test (Lectrote)",
+			"type": "shell",
+			"command": "C:\\Source\\PunyInformDE\\tools\\Lectrote\\Lectrote.exe build\\staub.z5",
+			"options": {
+				"cwd": "${workspaceFolder}\\Staub\\PunyStaub"
+			},
+			"dependsOn": [
+				"Staub Build"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "PunyDust Build",
+			"type": "shell",
+			"command": "powershell -ExecutionPolicy Bypass -File build.ps1",
+			"options": {
+				"cwd": "${workspaceFolder}\\Dust\\PunyDust"
+			},
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "PunyStaub Release",
+			"type": "shell",
+			"command": ".\\Staub\\PunyStaub\\release.cmd",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "PunyDust Release",
+			"type": "shell",
+			"command": ".\\Dust\\PunyDust\\release.cmd",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Transcript Make",
+			"type": "shell",
+			"command": "powershell -ExecutionPolicy Bypass -File gen_diff.ps1 -DiffOnly -RegenI7",
+			"options": {
+				"cwd": "${workspaceFolder}\\Staub\\PunyStaub"
+			},
+			"dependsOn": [
+				"Staub Build",
+				"PunyStaub Build"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Transcript Diff",
+			"type": "shell",
+			"command": "code --diff ${workspaceFolder}\\Staub\\Inform7\\Tests\\Staub.transcript.Inform7.txt ${workspaceFolder}\\Staub\\PunyStaub\\build\\Staub.transcript.txt",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		}
+	]
+}

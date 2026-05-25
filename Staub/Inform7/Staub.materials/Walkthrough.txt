@@ -1,0 +1,356 @@
+# Zimmer
+schau
+x Nachttisch
+nimm Tasche
+runter
+
+# Saloon
+x Frau
+rede mit Frau
+# Alles klar bei dir?
+1
+# Sieht ja wild aus hier.
+1
+# Einen Kaffee bitte.
+1
+# Es gab 'ne Schlägerei?
+1
+# Mifflin-Brüder? Sagt mir nichts.
+1
+# Ende
+0
+x Tresen
+trinke Kaffee
+nimm Keks
+raus
+
+# Main Street / Hof
+x Gebäude
+w
+rede mit Frau
+# Kann ich ihnen vielleicht helfen Ma'am?
+1
+# Wer ist Michael?
+1
+# Haben Sie eine Idee, was passiert sein könnte?
+2
+
+# Flashback 1 / Sheriff
+rede mit Sheriff
+# Was ist passiert? Wie komme ich hierher?
+1
+# Was ist mit Lucy?
+1
+# Wieso ist das jetzt mein Problem?
+1
+# Können sie mir was zu Lucy sagen?
+1
+# Kann ich jetzt gehen?
+1
+# Ende
+0
+nimm Tasche
+raus
+öffne Tasche
+w
+w
+nimm Tuch 
+o
+o
+no
+
+# Barbier
+x barbier
+rede mit barbier
+# Moin? Es ist schon Mittag.
+1
+# Was hat sie denn hierher verschlagen?
+1
+# Schusswunde? Ich dachte sie sind Barbier?
+1
+# Ist Molly ihre Frau?
+1
+# Wieso war Molly gleich mit auf See?
+1
+# Eine Idee wie ich in die Mine komme?
+2
+# Ende
+0
+rede mit Molly
+nimm Molly 
+i
+benutze Keks mit Molly
+nimm Molly
+rede mit Marten
+# Kann ich mir Molly mal ausleihen?
+2
+# Ende
+0
+nimm Molly
+i
+raus
+w
+s
+
+# Windrad / Hügelkette
+x Mast
+nimm Stange
+w
+x Geröll
+l
+x brocken
+benutze Stange mit Spalt
+o
+n
+o
+lege Stange
+o
+n
+
+# Gemischtwarenladen
+rede mit Bill
+# Wie geht's?
+1
+# Was gibt's hier?
+1
+# Ich kann die meisten Schilder nicht lesen.
+1
+# Wissen sie wo Lucy ist?
+1
+# Lucy ist verschwunden.
+1
+# Haben sie einen Meißel oder sowas?
+1
+# Was zum Henker ist ein Kuhfuß?
+1
+# Kann ich vielleicht mal nachsehen?
+1
+# Wo ist denn ihr Zwicker?
+1
+# Ende
+0
+raus
+
+# Galgen und Friedhof
+o
+n
+x Kreuz
+1
+2
+3
+4
+5
+s
+w
+n
+rede mit Bill
+# Ähm, wie heißt eigentlich ihre Frau?
+1
+# Ende
+0
+raus
+o
+n
+x Grab
+1
+# Mathilda Grab (Bills Frau)
+2
+5
+s
+w
+n
+rede mit Bill
+# Ich glaube ich habe ihren Zwicker gefunden.
+1
+# Könnten sie jetzt nochmal nach dem Brecheisen sehen?
+1
+# Ende
+0
+nimm Kuhfuss
+s
+w
+nimm Stange
+s
+w
+
+# Hügelkette
+benutze Brecheisen mit Spalt
+benutze Stange mit Spalt
+
+# Flashback 2 / Höhle
+l
+n
+e
+w
+n
+s
+o
+n
+o
+s
+
+# Saloon
+x Decke
+x Lampe
+nimm Lampe
+zieh Stuhl
+nimm Lampe
+rede mit Frau
+# Hast du Lucy gesehen?
+1
+# Ich glaube ich habe Lucys Taschentuch gefunden.
+1
+# Vor der Mine westlich von hier.
+1
+# Kann ich die Lampe da haben?
+1
+# Ende
+0
+b Stuhl
+nimm Lampe
+x Lampe
+schalte Lampe ein
+rede mit Ella
+# Hast du auch etwas womit ich die Lampe anzünden kann?
+1
+# Ende
+0
+n
+n
+
+# Gemischtwarenladen
+rede mit Bill
+# Haben Sie vielleicht Streichhölzer für mich?
+1
+# Ende
+0
+nimm Streichhölzer
+zünde Lampe an
+s
+w
+s
+w
+n
+n
+
+# Höhle
+x Abgrund
+runter
+s
+o
+n
+o
+n
+rede mit Bill
+# Ich muss wo runterklettern, haben Sie da was für mich?
+1
+# Wofür haben die das Seil denn gebraucht?
+1
+# Ende
+0
+s
+no
+rede mit Marten
+# Waren Sie damals dabei als der Galgen gebaut wurde?
+1
+# Bill meinte da müsste 'ne Menge Seil übrig geblieben sein, wissen Sie wo das abgeblieben ist?
+1
+# Ende
+0
+raus
+o
+
+# Galgen
+x Podest
+nimm Sand
+w
+no
+rede mit Marten
+# Sie haben doch bestimmt eine Schaufel, oder?
+1
+# Können Sie mir die Schaufel leihen? Es ist wirklich wichtig.
+1
+# Ende
+0
+raus
+o
+benutze Schaufel mit Sand
+x Platte
+benutze Brecheisen mit Platte
+x Öffnung
+nimm Seil
+w
+w
+s
+w
+n
+benutze Seil mit Abgrund
+benutze Seil mit Felsen
+runter
+
+# Gewölbe
+x Mann
+x Nische
+x Michael
+benutze Revolver mit Mann
+rede mit Mann
+lege Taschentuch
+s
+schlage Mann
+benutze Schaufel mit Geselle
+rede mit Wache
+x Wache
+schau
+x Nische
+hoch
+rede mit Paar
+# Alles klar bei euch?
+1
+# Was ist hier passiert?
+1
+x Eingang
+x Karren
+x Keil
+l
+o
+l
+hoch
+l
+
+# Showdown
+benutze Revolver mit Männer
+benutze Revolver mit Karren
+benutze Revolver mit Keil
+
+# Sheriff
+nimm Einberufungsbescheid
+rede mit Dunder
+# Was ist passiert?
+1
+# Wie geht's ihrem Kopf, Michael?
+1
+# Was wollten Sie überhaupt da?
+1
+# Was haben die da in der Höhle getrieben?
+1
+# Was war denn mit Ihrer Mutter?
+1
+# Wo ist Thompson?
+1
+# Was genau haben die denn hergestellt?
+1
+# Was für ein Aufwand.
+1
+# Michael, kennen Sie diese Frau?
+1
+# Wo wollte sie hin?
+1
+# Ich muss so schnell wie möglich dorthin!
+1
+# Hier, Ihr Taschentuch. Hat mir sehr geholfen.
+1
+# Ende
+0
+schau
+q
+ja

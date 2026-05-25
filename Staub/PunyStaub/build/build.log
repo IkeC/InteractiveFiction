@@ -1,0 +1,409 @@
+puny CLI 2.4_56aef47b | Unknown Transmission
+
+Processing target 'c64', Z-machine version 5
+
+c64.sh 2.1 - C64 disk builder
+Puny BuildTools, (c) 2024 Stefan Vogt
+
+Max preload blocks adjusted to total vmem size, from 256 to 78.
+Loader pic address: 2313
+ Reading "/mnt/c/Source/ozmoo/temp/loader", loading from $0801 to $0909.
+ Reading "loadpic.kla", loading from $0909 to $301A.
+ Crunched data reduced 5427 bytes (52.86%)
+ Writing "/mnt/c/Source/ozmoo/temp/loader_zip" as prg, saving from $0801 to $1C1C.
+ Reading "/mnt/c/Source/ozmoo/temp/ozmoo", loading from $0801 to $4400.
+ Reading "/mnt/c/Source/ozmoo/temp/compmem.tmp", loading from $4400 to $10000.
+ Crunched data reduced 22068 bytes (34.76%)
+ Writing "/mnt/c/Source/ozmoo/temp/ozmoo_zip" as prg, saving from $0801 to $AAF9.
+writing file `LOADER_ZIP' as `LOADER' to unit 8
+Successfully built game as c64_staub.d64
+
+loadpic.kla found in /Resources dir.
+C64 disk with loading screen successfully built.
+
+Processing target 'apple2', Z-machine version 5
+
+apple2.sh 2.6 - Apple II disk builder
+Puny BuildTools, (c) 2024 Stefan Vogt
+
+0:
+story.dat
+
+Apple II disk Side 1 and Side 2 successfully built.
+Boot in a system with CPM card installed.
+
+Processing target 'bbc_acorn', Z-machine version 5
+
+bbc_acorn.sh 2.2 - BBC Micro/Acorn Electron disk builder
+Puny BuildTools, (c) 2024 Stefan Vogt
+
+BBC B sideways RAM executable uses small dynamic memory model and requires PAGE<=&1900
+Shadow+sideways RAM executable uses small dynamic memory model and requires PAGE<=&2F00
+Game will be run using virtual memory on second processor
+Generated disc image staub.ssd
+
+No screen.bbc found in /Resources dir. Building disk without loading screen.
+BBC/Electron disk image 'staub_bbc_elk.ssd' successfully built.
+
+Processing target 'speccy', Z-machine version 5
+
+speccy.sh 2.5 - Sinclair ZX Spectrum +3 disk builder
+Puny BuildTools, (c) 2024 Stefan Vogt
+
+DSK : staub_speccy.dsk
+Amsdos file : STORY.DAT
+PLAY    .COM 0
+STORY   .DAT 0
+------------------------------------
+
+No SCRLOAD.COM found in /Resources dir.
+ZX Spectrum +3 disk without loading screen successfully built.
+
+Processing target 'plus4', Z-machine version 5
+
+plus4.sh 2.1 - Plus/4 disk builder
+Puny BuildTools, (c) 2024 Stefan Vogt
+
+Max preload blocks adjusted to total vmem size, from 256 to 75.
+ Reading "/mnt/c/Source/ozmoo/temp/ozmoo", loading from $1001 to $4600.
+ Reading "/mnt/c/Source/ozmoo/temp/compmem.tmp", loading from $4600 to $FC00.
+ Crunched data reduced 20891 bytes (34.58%)
+ Writing "/mnt/c/Source/ozmoo/temp/ozmoo_zip" as prg, saving from $1001 to $ABA8.
+Successfully built game as plus4_staub.d64
+
+No picplus4.mb found in /Resources dir.
+Plus/4 disk without loading screen successfully built.
+
+Processing target 'macintosh', Z-machine version 5
+
+macintosh.sh 2.0 - Macintosh Classic disk builder
+Puny BuildTools, (c) 2024 Stefan Vogt
+
+Volume name is "Moonmist Ent."
+Volume was created on Tue Dec 15 21:23:11 2009
+Volume was last modified on Tue Nov 28 13:02:56 2023
+Volume has 447488 bytes free
+game.story
+Interpreter
+readme.txt
+
+Macintosh disk image (System 7 or higher) successfully built.
+
+Processing target 'atari_st', Z-machine version 5
+
+atari_st.sh 2.0 - Atari ST disk builder
+Puny BuildTools, (c) 2024 Stefan Vogt
+
+Configuring Z5 .ST template with pixel art viewer.
+  adding: PLAY.PRG	(in=40295) (out=17941) (deflated 55%)
+total bytes=40295, compressed=17941 -> 55% savings
+  adding: STORY.DAT 	(in=91648) (out=65331) (deflated 29%)
+total bytes=131943, compressed=83272 -> 37% savings
+  adding: ARTVIEW.APP	(in=12533) (out=8570) (deflated 32%)
+total bytes=144476, compressed=91842 -> 36% savings
+  adding: ART.PI1	(in=32034) (out=15349) (deflated 52%)
+total bytes=176510, compressed=107191 -> 39% savings
+Converting 'staub.zip' -> '/tmp/tmp.nA12gfv971/' -> 'staub.st'
+
+1) Unzipping...
+unzip staub.zip -d /tmp/tmp.nA12gfv971
+Archive:  staub.zip
+  inflating: /tmp/tmp.nA12gfv971/PLAY.PRG  
+  inflating: /tmp/tmp.nA12gfv971/STORY.DAT  
+  inflating: /tmp/tmp.nA12gfv971/ARTVIEW.APP  
+  inflating: /tmp/tmp.nA12gfv971/ART.PI1  
+chmod -R u+rw /tmp/tmp.nA12gfv971/*
+
+2) Checking/skipping intermediate directories...
+
+3) Creating 360 KB disk image...
+dd if=/dev/zero of=staub.st bs=1024 count=360
+360+0 records in
+360+0 records out
+368640 bytes (369 kB, 360 KiB) copied, 0.0489699 s, 7.5 MB/s
+
+4) Formatting disk image...
+mformat -a -t 80 -h 1 -n 9 -i staub.st ::
+
+5) Copying data to disk image...
+MTOOLS_NO_VFAT=1 mcopy -i staub.st -spmv /tmp/tmp.nA12gfv971/* ::
+Copying ART.PI1
+Copying ARTVIEW.APP
+Copying PLAY.PRG
+Copying STORY.DAT
+
+6) Cleaning up temporary files...
+rm -rv /tmp/tmp.nA12gfv971
+removed '/tmp/tmp.nA12gfv971/ARTVIEW.APP'
+removed '/tmp/tmp.nA12gfv971/PLAY.PRG'
+removed '/tmp/tmp.nA12gfv971/STORY.DAT'
+removed '/tmp/tmp.nA12gfv971/ART.PI1'
+removed directory '/tmp/tmp.nA12gfv971'
+Done.
+
+'ART.PI1' found in /Resources dir.
+Atari ST disk with loading screen successfully built.
+
+Processing target 'mega65', Z-machine version 5
+
+mega65.sh 2.1 - MEGA65 disk builder
+Puny BuildTools, (c) 2024 Stefan Vogt
+
+ Reading "/mnt/c/Source/ozmoo/temp/ozmoo", loading from $1800 to $5700.
+ Reading "/mnt/c/Source/ozmoo/temp/compmem.tmp", loading from $5700 to $5700.
+ Crunched data reduced 5528 bytes (34.28%)
+ Writing "/mnt/c/Source/ozmoo/temp/ozmoo_zip" as prg, saving from $0801 to $3286.
+Successfully built game as mega65_staub.d81
+reading file `autoboot.c65' from unit 8
+reading file `zcode,s' from unit 8
+formatting in unit 8 ...
+writing file `AUTOBOOT.C65' as `AUTOBOOT.C65' to unit 8
+writing file `OZMOO' as `OZMOO' to unit 8
+writing file `SCREEN16.IFF' as `ARTSC' to unit 8
+writing file `ZCODE' as `ZCODE,S' to unit 8
+
+screen16.iff found in /Resources dir.
+MEGA65 disk with 16-color loading screen successfully built.
+
+Processing target 'msx', Z-machine version 5
+
+msx.sh 2.5 - MSX1/MSX2 disk builder
+Puny BuildTools, (c) 2024 Stefan Vogt
+
+DskTool v1.40 (C) 1998 by Ricardo Bittencourt
+Utility to manage MSX DOS 1.0 diskette images (3.5"360/720Kb).
+(2010) Updated by Tony Cruise
+(2017-2019) Updated by NataliaPC
+This file is under GNU GPL, read COPYING for details
+
+Disk image size:  720Kb
+Standard format
+
+  adding STORY.DAT
+
+No LPIC.SC2 found in /Resources dir.
+MSX1/MSX2 disk without loading screen successfully built.
+
+Processing target 'trs80_m3', Z-machine version 5
+
+trs80_m3.sh 2.6 - TRS80 Model 3 disk builder
+Puny BuildTools, (c) 2024 Stefan Vogt
+
+VDK-80, The TRS-80 Virtual Disk Kit v1.7
+Written by Miguel Dutra (www.mdutra.com)
+Linux functionality by Richard Goedeken
+
+VDI: DMK (40:1:18,DD)
+OSI: TD4 (LDOS-531,04/29/99,53)
+
+Writing files to disk:
+
+/mnt/c/Source/InteractiveFiction/Staub/PunyStaub/build/STORY.DAT -> STORY/DAT   	   91648 bytes OK
+
+Total of 91648 bytes written in 1 files.
+
+
+VDK-80, The TRS-80 Virtual Disk Kit v1.7
+Written by Miguel Dutra (www.mdutra.com)
+Linux functionality by Richard Goedeken
+
+VDI: DMK (40:1:18,DD)
+OSI: TD4 (LDOS-531,04/29/99,53)
+
+Writing files to disk:
+
+/mnt/c/Source/Puny-BuildTools/Templates/Interpreters/M3ZVM.CMD -> M3ZVM/CMD   	   13378 bytes OK
+
+Total of 13378 bytes written in 1 files.
+
+
+STORY.DAT    91,648  05/05/1986 FULL
+KI.DVR         1874  02/07/1985 EXEC
+M3ZVM.CMD    13,378  05/04/1986 FULL
+CONFIG.SYS      463        1980 READ
+MOD3.DCT        285  26/07/1983 READ
+
+TRS80 Model 3 disk successfully built if directory has STORY.DAT and M3ZVM.CMD.
+
+Processing target 'trs80_m4', Z-machine version 5
+
+trs80_m4.sh 2.6 - TRS80 Model 4 disk builder
+Puny BuildTools, (c) 2024 Stefan Vogt
+
+VDK-80, The TRS-80 Virtual Disk Kit v1.7
+Written by Miguel Dutra (www.mdutra.com)
+Linux functionality by Richard Goedeken
+
+VDI: DMK (40:1:18,DD)
+OSI: TD4 (VEZZA,07/05/99,63)
+
+Writing files to disk:
+
+/mnt/c/Source/InteractiveFiction/Staub/PunyStaub/build/STORY.DAT -> STORY/DAT   	   91648 bytes OK
+
+Total of 91648 bytes written in 1 files.
+
+
+VDK-80, The TRS-80 Virtual Disk Kit v1.7
+Written by Miguel Dutra (www.mdutra.com)
+Linux functionality by Richard Goedeken
+
+VDI: DMK (40:1:18,DD)
+OSI: TD4 (VEZZA,07/05/99,63)
+
+Writing files to disk:
+
+/mnt/c/Source/Puny-BuildTools/Templates/Interpreters/M4ZVM64.CMD -> M4ZVM64/CMD 	   14107 bytes OK
+
+Total of 14107 bytes written in 1 files.
+
+
+STORY.DAT     91,648  05/05/1986 FULL
+M4ZVM64.CMD   14,107  05/04/1986 FULL
+CONFIG.SYS      1036        1980 NO_ACCESS
+
+TRS80 Model 4 disk successfully built if directory has STORY.DAT and M4ZVM64.CMD.
+
+Processing target 'c128', Z-machine version 5
+
+c128.sh 2.2 - C128 disk builder
+Puny BuildTools, (c) 2024 Stefan Vogt
+
+Max preload blocks adjusted to total vmem size, from 256 to 67.
+ Reading "/mnt/c/Source/ozmoo/temp/ozmoo", loading from $1200 to $5600.
+ Reading "/mnt/c/Source/ozmoo/temp/compmem.tmp", loading from $5600 to $FC00.
+ Crunched data reduced 20526 bytes (34.26%)
+ Writing "/mnt/c/Source/ozmoo/temp/ozmoo_zip" as prg, saving from $1C01 to $B72F.
+Successfully built game as c128_staub.d71
+
+C128 disk successfully built.
+
+Processing target 'sam_coupe', Z-machine version 5
+
+sam_coupe.sh 2.5 - SAM Coupe disk builder
+Puny BuildTools, (c) 2024 Stefan Vogt
+
+0:
+
+
+
+
+
+screen
+story.dat
+
+2:
+a
+
+SAM Coupe disk image successfully built.
+
+Processing target 'cpc_pcw', Z-machine version 5
+
+cpc_pcw.sh 2.5 - Amstrad CPC/PCW disc builder
+Puny BuildTools, (c) 2024 Stefan Vogt
+
+DSK : staub.dsk
+Amsdos file : STORY.DAT
+CPM     .BIN 0
+VEZZA   .COM 0
+PROFILE .SUB 0
+STORY   .DAT 0
+------------------------------------
+DSK : staub.dsk
+Amsdos file : DISC.BAS
+File already has an header
+CPM     .BIN 0
+VEZZA   .COM 0
+PROFILE .SUB 0
+STORY   .DAT 0
+DISC    .BAS 0
+------------------------------------
+DSK : staub.dsk
+Amsdos file : GAME.BAS
+File already has an header
+CPM     .BIN 0
+VEZZA   .COM 0
+PROFILE .SUB 0
+STORY   .DAT 0
+DISC    .BAS 0
+GAME    .BAS 0
+------------------------------------
+DSK : staub.dsk
+Amsdos file : SCREEN.SCR
+File already has an header
+CPM     .BIN 0
+VEZZA   .COM 0
+PROFILE .SUB 0
+STORY   .DAT 0
+DISC    .BAS 0
+GAME    .BAS 0
+SCREEN  .SCR 0
+------------------------------------
+DSK : staub.dsk
+Amsdos file : SCREEN.PAL
+File already has an header
+CPM     .BIN 0
+VEZZA   .COM 0
+PROFILE .SUB 0
+STORY   .DAT 0
+DISC    .BAS 0
+GAME    .BAS 0
+SCREEN  .SCR 0
+SCREEN  .PAL 0
+------------------------------------
+DSK : staub.dsk
+Amsdos file : SCREEN.BAS
+File already has an header
+CPM     .BIN 0
+VEZZA   .COM 0
+PROFILE .SUB 0
+STORY   .DAT 0
+DISC    .BAS 0
+GAME    .BAS 0
+SCREEN  .SCR 0
+SCREEN  .PAL 0
+SCREEN  .BAS 0
+------------------------------------
+
+SCREEN.SCR, SCREEN.PAL and SCREEN.BAS found in /Resources dir.
+CPC/PCW disc with loading screen successfully built.
+
+Processing target 'dos', Z-machine version 5
+
+dos.sh 2.2 - MS-DOS release builder
+Puny BuildTools, (c) 2024 Stefan Vogt
+
+SCREEN.PNG found in /Resources dir.
+MS-DOS release with loading screen successfully built.
+
+Processing target 'amiga', Z-machine version 5
+
+amiga.sh 2.0 - Commodore Amiga disk builder
+Puny BuildTools, (c) 2024 Stefan Vogt
+
+Configuring Z5 .ADF template without loader.
+
+No 'loader' found in /Resources dir.
+Commodore Amiga disk without loading screen successfully built.
+
+Processing target 'a8bit', Z-machine version 5
+
+a8bit.sh 3.0 - Atari 8-bit disk builder
+Puny BuildTools, (c) 2024 Stefan Vogt
+
+Interpreter: Jindroush/Infocom version H [XZIP]
+Columns: 40
+Memory: min. 128kb of extended memory
+Disk: Single-Sided, Double-Density, 180kb capacity
+Disk Drive: 1050 and XF551
+
+Disk image built. Boot with BASIC disabled.
+
+Processing target 'agon', Z-machine version 5
+
+agon.sh 1.0 - Agon Light release builder
+Puny BuildTools, (c) 2025 Shawn Sijnstra
+
+SCREEN.SCR found in /Resources dir.
+Agon release with loading screen successfully built.
+

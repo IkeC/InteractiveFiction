@@ -1,0 +1,59 @@
+! Blurb file created by Inform Inform 10.1.2 (build )
+
+status "C:\Program Files\Inform\Internal\HTML\CblorbModel.html" "C:\Source\InteractiveFiction\Dust\Inform7\Dust.inform\Build\StatusCblorb.html"
+
+
+! Identification
+
+project folder "C:\Source\InteractiveFiction\Dust\Inform7\Dust.inform"
+release to "C:\Source\InteractiveFiction\Dust\Inform7\Dust.materials\Release"
+
+! Blorb instructions
+
+storyfile leafname "Dust.gblorb"
+storyfile "C:\Source\InteractiveFiction\Dust\Inform7\Dust.inform\Build\output.ulx" include
+ifiction "C:\Source\InteractiveFiction\Dust\Inform7\Dust.inform\Metadata.iFiction" include
+cover "C:\Source\InteractiveFiction\Dust\Inform7\Dust.materials\Cover.png"
+picture 1 "C:\Source\InteractiveFiction\Dust\Inform7\Dust.materials\Cover.png"
+
+! Placeholder variables
+
+placeholder [IFID] = "506FA077-9940-404A-B9FB-907CD4C773D2"
+placeholder [RELEASE] = "4"
+placeholder [YEAR] = "2024"
+placeholder [TITLE] = "Dust"
+placeholder [AUTHOR] = "IkeC"
+placeholder [BLURB] = "A Western by IkeC"
+
+! Other material to release
+
+auxiliary "C:\Source\InteractiveFiction\Dust\Inform7\Dust.materials\Hints.html" "Hints" "--"
+auxiliary "C:\Source\InteractiveFiction\Dust\Inform7\Dust.materials\Walkthrough.txt" "Walkthrough" "--"
+auxiliary "C:\Source\InteractiveFiction\Dust\Inform7\Dust.materials\Map.png" "Map" "--"
+auxiliary "C:\Source\InteractiveFiction\Dust\Inform7\Dust.materials\Flowchart.png" "Flowchart" "--"
+
+! Website instructions
+
+placeholder [ENCODEDSTORYFILE] = "Dust.gblorb.js"
+template path "C:\Source\InteractiveFiction\Dust\Inform7\Dust.materials\Templates"
+template path "C:\Source\InteractiveFiction\Dust\Inform7\Dust.materials\Templates"
+template path "C:\Users\Ike\Documents\Inform\Templates"
+template path "C:\Program Files\Inform\Internal\Templates"
+placeholder [INTERPRETERSCRIPTS] = " "
+interpreter "Quixe" "g"
+base64 "C:\Source\InteractiveFiction\Dust\Inform7\Dust.inform\Build\output.ulx" to "C:\Source\InteractiveFiction\Dust\Inform7\Dust.materials\Release\interpreter\Dust.gblorb.js"
+
+! Website instructions
+
+template path "C:\Source\InteractiveFiction\Dust\Inform7\Dust.materials\Templates"
+template path "C:\Source\InteractiveFiction\Dust\Inform7\Dust.materials\Templates"
+template path "C:\Users\Ike\Documents\Inform\Templates"
+template path "C:\Program Files\Inform\Internal\Templates"
+css
+website "Standard"
+status instruction ||&nbsp;<a href="source:story.ni#line18"><img border=0 src=inform:/doc_images/Reveal.png></a>||
+status alternative ||Using 'Release along with the source text'&nbsp;<a href=inform:/doc410.html><img border=0 src=inform:/doc_images/help.png></a>||
+status alternative ||Using 'Release along with a solution'&nbsp;<a href=inform:/doc409.html><img border=0 src=inform:/doc_images/help.png></a>||
+status alternative ||Using 'Release along with the library card'&nbsp;<a href=inform:/doc410.html><img border=0 src=inform:/doc_images/help.png></a>||
+status alternative ||Using 'Release along with the introductory booklet'&nbsp;<a href=inform:/doc402.html><img border=0 src=inform:/doc_images/help.png></a>||
+status alternative ||Using 'Release along with the introductory postcard'&nbsp;<a href=inform:/doc402.html><img border=0 src=inform:/doc_images/help.png></a>||

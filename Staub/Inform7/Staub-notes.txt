@@ -1,0 +1,184 @@
+
+[
+Plot
+
+Es ist 1879.
+
+1) Zimmer
+
+2) Saloon
+- P: Ella
+-- Gibt Tipps
+
+3) Main Street
+? I: Wohnhäuser neben Saloon
+? I: Anbindestange für Pferde
+- D: Geruch
+
+4) Sheriff
+
+5) Laden
+- P: Billy
+-- (Meißel) -> Brecheisen
+-- Verkauft Brecheisen ("Kuhfuß")
+! Braucht Monokel sonst findet er das Brecheisen nicht 
+-- Hat Seil für Galgen verkauft
+
+6) Barbier
+! Molly will nen Keks
+! Verleiht Schaufel
+
+7) Hof
+
+8) Galgen
+- D: Halb mit Sand bedeckt
+! Sand untersuchen: Erhöhung freilegen (zugenagelt)
+! Benötigt Schaufel
+! Nägel mit Brecheisen ziehen
+
+9) Friedhof
+- D: 4 ordentliche Gräber, 7 einfache Kreuze
+-- ohne triftigen Grund nicht rumwühlen
+
+Random 1:
+- Biff Clayton
+	1838-1868
+
+Frau von Bill:
+- Mathilda Brooks geb. Walker
+	1808-1869
+
+Random 2:
+- Wendy Bennett geb. Coleman
+	1816-1875
+
+Mutter von Lucy:
+- Lucille Thompson geb. Powell
+	1845-1878
+
+! Monokel
+
+10) Mineneingang
+- P: Fieser Typ
+
+11) Windrad
+- D: Für Strom
+- I: Stangen/Gestänge, Leiter
+-- Will nicht hoch, nicht schwindelfrei
+! Stange abbrechen
+! Stange nicht in Stadt mitnehmen (Stall geht)
+
+12) Berg
+- D: etwas flacher, steinig, weniger windig
+- I: Geröll
+! Mit Molly Spalt finden
+! Mit Brecheisen Spalt vergrößern, Stein als Hammer benutzen)
+! Mit Windrad-Stange Stein weghebeln
+
+13) Höhle/Stollen
+- D: Stockdunkel ohne Laterne
+- I: Gespaltener Stein
+! Brecheisen an Tau binden
+! Tau in Spalt legen
+
+14) Gewölbe
+Mögliche Aktionen:
+- Schiesse auf Mann/Frau/Käfig
+
+werfe/wirf Taschentuch
+Benutze Taschentuch mit Mann
+Benutze brecheisen/Revolver mit Mann
+Schlage Mann mit brecheisen/Revolver/Schaufel
+
+
+Männer
+Thompson/Bürgermeister/Stieffvater
+
+Höhleneingang
+o (Auf die Männer zu)
+s (Flucht)
+schiesse auf männer
+
+benutze revolver mit Männer/Thompson
+benutze schaufel/brecheisen mit Männer/Thompson
+schiesse auf Männer/Thompson
+
+diecount
+
+schiesse auf fässer
+schiesse auf karren/räder
+schiesse auf keil
+
+[Deputy Miller]
+
+- Lauschen
+-- Opium zu Chandu
+-- mit Pflanzenfasern gestreckt
+"wurde zur Herstellung Opium „impastiert“. Das heißt ausgewalzt, aufgerührt, zu Fladen geformt, mazeriert, dekantiert, filtriert, von restlichen Rückständen befreit, eingedampft, unter kalter Luftzufuhr gelockert, mit dem Aspergillus Niger fermentiert und pasteurisiert."
+- Wache ablenken (Taschentuch)
+- Behelfsmäßigen Käfig öffnen
+- entdeckt werden
+- Stieftochter
+- D: Nitroglycerin am Eingang in Karren
+- auf Rad schießen
+- über Seil flüchten
+- Sheriff
+- Mutter an Opium gestorben
+- Kuli/Coolie
+
+Im Büro des Sheriffs?
+- Michael die Zeichnung zeigen
+- Michael erzählt
+-- Claire kam spätabends
+-- Gaul im Arsch
+-- Tom im Militärgefängnis
+-- Im Heu geschlafen
+-- morgens weg
+
+
+TODO
+- gestorben vor einem Jahr (1878)
+
+Gespräch:
+
+After telling the XXX about:
+	say "Was möchtest du zu [dem XXX] sagen?";	
+	switch to cyoa at pg-XXX-menu.
+
+pg-XXX-menu is a page. 
+
+pg-XXX-page1 is a page. 
+"'Answer to Q1'"
+The cdesc is "'Q1 ?'" It is for pg-XXX-menu. It is a dead-end. It is one-off.
+A page-toggle rule for pg-XXX-page1: now pg-XXX-page2 is active.
+
+pg-XXX-page2 is a page. 
+"'Answer to Q2'"
+The cdesc is "'Q2 ?'" It is for pg-XXX-menu. It is a dead-end. It is one-off. It is inactive.
+[A page-toggle rule for pg-XXX-page2: 
+	now pg-XXX-page3 is active.]
+
+pg-XXX-end is a page. 
+The cdesc is "Gespräch beenden". It is for pg-XXX-menu. It is an end-page.
+
+Bugs / Features
+
+lausche windrad
+
+Flashback 1: Nach Lucy-Entführung
+Flashback 2: Felsbrocken entfernt
+
+Test Nowacki:
+
+V2
+Laterne leer?
+Main Street 
+- East/West
+- Flashbacks spielbar
+
+MathBrush:
+- Repetitive puzzle
+- Drogen
+- Kuli
+
+Hints

@@ -1,0 +1,347 @@
+# Room
+look
+examine nightstand
+take bag
+down
+
+# Saloon
+talk to woman
+# How are you doing?
+1
+# Looks wild in here.
+1
+# A coffee please.
+1
+# There was a fight?
+1
+# Mifflin? Doesn't ring a bell.
+1
+# End
+0
+examine counter
+drink coffee
+take cookie
+out
+
+# Main Street / Ranch
+examine buildings
+w
+talk to woman
+# May I help you Ma'am?
+1
+# Who is Michael?
+1
+# Do you have any idea what might have happened?
+2
+
+# Flashback 1 / Sheriff
+talk to Sheriff
+# What happened? How did I get here?
+1
+# What about Lucy?
+1
+# Why is this my problem now?
+1
+# Can you tell me something about Lucy?
+1
+# May I leave now?
+1
+# End
+0
+get bag
+out
+open bag
+w
+w
+take hankie
+e
+e
+ne
+# Barber
+examine barber
+talk to barber
+# Moin? Is that French or something?
+1
+# What brought you here?
+1
+# Gunshot wound? I thought you were a barber.
+1
+# So Molly is your wife?
+1
+# Why was Molly at sea with you again?
+1
+# Any idea how to get into the mine?
+2
+# End
+0
+talk to Molly
+take Molly 
+i
+use cookie on Molly
+take Molly
+talk to Marten
+# May I borrow Molly for a little while?
+2
+# End
+0
+take Molly
+out
+w
+s
+
+# Wind Pump / Hill Chain
+examine mast
+take rod
+w
+examine boulder field
+l
+examine boulder
+use rod with crevice
+e
+n
+e
+drop rod
+e
+n
+
+# General Store
+talk to Bill
+# How's it going?
+1
+# What's for sale here?
+1
+# I can't read most of the labels.
+1
+# Do you happen to know where Lucy is?
+1
+# Lucy has gone missing.
+1
+# Do you have a chisel or something like that?
+1
+# What the heck is a gooseneck?
+1
+# Can I have a look maybe?
+1
+# Where are your pince-nez?
+1
+# End
+0
+out
+
+# Gallows and Cemetery
+e
+n
+examine cross
+1
+2
+3
+4
+0
+s
+w
+n
+talk to Bill
+# Um, what is your wife's name?
+1
+# End
+0
+out
+e
+n
+examine grave
+1
+# Mathilda's grave (Bill's wife)
+2
+0
+s
+w
+n
+talk to Bill
+# I believe I've found your pince-nez.
+1
+# Could you have another look for that crowbar now?
+1
+# End
+0
+take crowbar
+s
+w
+take rod
+s
+w
+
+# Hill Chain
+use crowbar with crevice
+use rod with crevice
+
+# Flashback 2 / Cave
+l
+n
+e
+w
+n
+s
+e
+n
+e
+s
+
+# Saloon
+examine ceiling
+examine lamp
+take lamp
+pull chair
+take lamp
+talk to woman
+# Have you seen Lucy?
+1
+# I think I've found Lucy's hankie.
+1
+# Close to the mine entrance west of here.
+1
+# Can I borrow that lamp?
+1
+# End
+0
+take lamp
+examine lamp
+turn on lamp
+talk to woman
+# Do you have anything I could use to light the lamp?
+1
+# End
+0
+n
+n
+
+# General Store
+talk to Bill
+# Do you sell matches?
+1
+# End
+0
+take matches
+use matches on lamp
+s
+w
+s
+w
+n
+n
+
+# Cave
+examine precipice
+down
+run to Bill
+talk to Bill
+# I have to climb down the mine. Do you have a rope or something?
+1
+# What did they need the rope for?
+1
+# End
+0
+s
+no
+
+# Barber
+talk to Marten
+# Were you there when the gallows were built?
+1
+# Bill said there must have been a lot of rope left over, do you know where that went?
+1
+# End
+0
+out
+e
+
+# Gallows
+examine platform
+take sand
+w
+no
+talk to Marten
+# You must have a shovel, right?
+1
+# May I borrow your shovel? It is really important.
+1
+# End
+0
+out
+e
+use shovel on sand
+examine plate
+use crowbar on plate
+examine opening
+take rope
+w
+w
+s
+w
+n
+use rope on precipice
+use rope on rock
+down
+
+# Vault
+examine man
+examine niche
+examine Michael
+use revolver on man
+talk to man
+drop hankie
+s
+hit man
+use shovel on man
+talk to man
+examine man
+look
+examine niche
+up
+talk to couple
+# Everything okay with you?
+1
+# What happened to you?
+1
+look
+e
+examine entrance
+examine cart
+examine wedge
+
+# Showdown
+use revolver with men
+use revolver with cart
+use revolver with wedge
+
+# Sheriff
+take papers
+talk to Sheriff
+# What happened?
+1
+# How's your head, Michael?
+1
+# What were you doing there anyway?
+1
+# What were they doing in that cave?
+1
+# What happened to your mother?
+1
+# Where is Thompson?
+1
+# What exactly did they produce?
+1
+# What an effort!
+1
+# Michael, do you know this woman?
+1
+# Where was she going?
+1
+# I have to get there as quickly as possible!
+1
+# Here's your hankie. It sure helped me a lot.
+1
+# End
+1
+look
+quit
+yes

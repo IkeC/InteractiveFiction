@@ -1,0 +1,234 @@
+schau
+x bett
+x matratze
+x fenster
+x windrad
+x wand
+x boden
+x scharniere
+x nachttisch
+x tasche
+oeffne tasche
+x revolver
+x bescheid
+x zeichnung
+x geld
+nimm tasche
+nimm revolver
+i
+info
+credits
+tipp
+riech
+hoer
+runter
+lauf
+lauf zu zimmer
+lauf zu saloon
+schau
+x tresen
+x frau
+rede mit frau
+1
+1
+1
+1
+1
+trinke kaffee
+nimm keks
+raus
+x gebaeude
+w
+rede mit frau
+1
+1
+2
+schau
+rede mit sheriff
+1
+1
+1
+1
+1
+nimm tasche
+oeffne tasche
+raus
+w
+w
+nimm taschentuch
+o
+o
+no
+x barbier
+rede mit barbier
+1
+1
+2
+2
+1
+1
+2
+2
+0
+gib keks an molly
+nimm molly
+raus
+w
+s
+x mast
+nimm stange
+w
+x geröll
+l
+x brocken
+o
+n
+lege stange
+o
+n
+rede mit bill
+1
+1
+1
+1
+1
+1
+1
+1
+1
+raus
+o
+n
+x kreuz
+1
+2
+3
+4
+0
+x grab
+2
+0
+s
+w
+n
+rede mit bill
+1
+raus
+o
+n
+x grab
+2
+0
+s
+w
+n
+rede mit bill
+1
+1
+nimm brecheisen
+raus
+w
+nimm stange
+s
+w
+benutze brecheisen mit spalt
+benutze stange mit spalt
+l
+n
+s
+o
+n
+o
+s
+x decke
+x lampe
+nimm lampe
+zieh stuhl
+nimm lampe
+rede mit frau
+1
+1
+1
+1
+benutze stuhl
+nimm lampe
+mach lampe an
+raus
+rede mit frau
+1
+n
+n
+rede mit bill
+1
+nimm streichhoelzer
+mach lampe an
+raus
+w
+s
+w
+n
+n
+x abgrund
+n
+s
+o
+n
+o
+n
+rede mit bill
+1
+1
+raus
+no
+rede mit barbier
+1
+1
+raus
+o
+x sand
+w
+no
+rede mit barbier
+1
+1
+raus
+o
+benutze schaufel mit sand
+x holzpodest
+benutze brecheisen mit holzplatte
+x oeffnung
+nimm seil
+w
+w
+s
+w
+n
+benutze seil mit felsen
+runter
+lege taschentuch
+benutze brecheisen mit mann
+rede mit lucy
+1
+1
+x karren
+x keil
+benutze Revolver mit Männer
+benutze Revolver mit Karren
+benutze Revolver mit Keil
+nimm Einberufungsbescheid
+rede mit Dunder
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+schau
+q
+ja

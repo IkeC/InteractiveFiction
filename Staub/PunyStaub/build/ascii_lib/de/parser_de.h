@@ -1,0 +1,301 @@
+! Part of PunyInformDE: German localisation of PunyInform.
+!
+! This file:
+!   1. Defines LANG_DE constant (used by parser.h for German yes/no words in YesOrNo).
+!   2. Provides BeforeParsing hook to normalise unrecognised words in player input.
+!
+!      For each word NOT found in the dictionary (dict value == 0 after the
+!      initial @aread tokenisation), the following normalisation is applied
+!      IN TWO PASSES on the buffer bytes:
+!
+!      Pass 1 (Unicode build only):
+!         Collapse ASCII digraph pairs to umlaut bytes:
+!            ae->ae-umlaut, oe->oe-umlaut, ue->ue-umlaut
+!            ss->sz only when NOT followed by a vowel.
+!         Re-tokenise after pass 1 if anything changed. This means that
+!         e.g. 'oeffne' is correctly resolved to the dictionary word 'oeffne'
+!         and NOT further reduced to 'oeffn' in pass 2.
+!
+!      Pass 2 (both builds):
+!         For words still not in the dictionary that end with 'e',
+!         strip the trailing 'e' and re-tokenise.
+!
+!      After any modification the buffer is re-tokenised.
+!
+!      Words already found in the dictionary are left entirely unchanged,
+!      so explicit grammar aliases (e.g. 'schaue') are always respected.
+!
+!      Together, only the canonical e-less umlaut form needs to appear in
+!      Verb statements.  All four surface forms are accepted automatically:
+!        fluecht / fluecht / fluechte / fluechte
+!
+! 
+! Included by lib/de/globals_de.h before lib/parser.h. The LANG_DE constant
+! enables German yes/no word support in parser.h via #IfDef guards.
+
+System_file;
+
+Constant LANG_DE;
+
+! ---------------------------------------------------------------------------
+! _DE_IsVowelByte: return true if byte c is a German vowel (ASCII or umlaut).
+! Only used by _DE_NormaliseDigraphsOnly; guarded accordingly.
+! ---------------------------------------------------------------------------
+#IfNDef USE_ASCII;
+[ _DE_IsVowelByte c;
+    if(c == 'a' or 'e' or 'i' or 'o' or 'u' or
+       'A' or 'E' or 'I' or 'O' or 'U' or
+       'ae' or 'oe' or 'ue' or 'ae' or 'oe' or 'ue') rtrue;
+    rfalse;
+];
+#Endif; ! USE_ASCII
+
+! ---------------------------------------------------------------------------
+! _DE_NormaliseDigraphsOnly
+! Collapse digraph pairs to umlaut bytes in-place, WITHOUT stripping trailing e.
+! Returns new length.
+! ---------------------------------------------------------------------------
+#IfNDef USE_ASCII;
+[ _DE_NormaliseDigraphsOnly p_start p_len  _src _dst _c _next _after;
+    _src = 0;
+    _dst = 0;
+    while(_src < p_len) {
+        _c    = (p_start + _src)->0;
+        _next = (p_start + _src + 1)->0;
+
+        if     (_c == 'a' && _next == 'e') { (p_start + _dst)->0 = 'ae'; _src = _src + 2; _dst++; }
+        else if(_c == 'o' && _next == 'e') { (p_start + _dst)->0 = 'oe'; _src = _src + 2; _dst++; }
+        else if(_c == 'u' && _next == 'e') { (p_start + _dst)->0 = 'ue'; _src = _src + 2; _dst++; }
+        else if(_c == 'A' && _next == 'e') { (p_start + _dst)->0 = 'ae'; _src = _src + 2; _dst++; }
+        else if(_c == 'O' && _next == 'e') { (p_start + _dst)->0 = 'oe'; _src = _src + 2; _dst++; }
+        else if(_c == 'U' && _next == 'e') { (p_start + _dst)->0 = 'ue'; _src = _src + 2; _dst++; }
+        else if(_c == 's' && _next == 's') {
+            _after = (p_start + _src + 2)->0;
+            if(_DE_IsVowelByte(_after)) {
+                (p_start + _dst)->0 = 's'; _src++; _dst++;
+            } else {
+                (p_start + _dst)->0 = 'ss'; _src = _src + 2; _dst++;
+            }
+        } else {
+            (p_start + _dst)->0 = _c; _src++; _dst++;
+        }
+    }
+    return _dst;
+];
+#Endif; ! USE_ASCII
+
+! ---------------------------------------------------------------------------
+! _DE_PruneWordSuffixLen -- §3 Stage 1 input robustness.
+!
+! For an unknown word, try stripping common inflection endings and check if
+! the stem exists in the dictionary. Returns the new length if a valid stem
+! was found, otherwise returns p_len unchanged.
+!
+! Order matches deform/German.i7x behavior:
+!   1) two-char endings: -em / -en / -er / -es
+!   2) one-char endings: -e / -n / -s
+! ---------------------------------------------------------------------------
+[ _DE_PruneWordSuffixLen p_start p_len _newlen _c0 _c1;
+    if (p_len >= 4) {
+        _newlen = p_len - 2;
+        _c0 = (p_start + _newlen)->0;
+        _c1 = (p_start + _newlen + 1)->0;
+        if (_c0 == 'e' && (_c1 == 'm' || _c1 == 'n' || _c1 == 'r' || _c1 == 's')) return _newlen;
+    }
+
+    if (p_len >= 3) {
+        _newlen = p_len - 1;
+        _c0 = (p_start + _newlen)->0;
+        if (_c0 == 'e' || _c0 == 'n' || _c0 == 's') return _newlen;
+    }
+    return p_len;
+];
+
+! ---------------------------------------------------------------------------
+! _DE_IsInDict: check if the word at p_addr (length p_len, as raw bytes in the
+! main input buffer) is in the game dictionary.
+! Uses a private mini-buffer so the main buffer/parse state is not disturbed.
+! Returns the dictionary address (non-zero) if found, 0 if not found.
+! ---------------------------------------------------------------------------
+Array _de_dict_buf -> 68;   ! 2-byte header + up to 64 chars + null
+Array _de_dict_parse -> 8;  ! 2-byte header + 1 word entry (4 bytes)
+
+[ _DE_IsInDict p_addr p_len  _i;
+    _de_dict_buf->0 = 64;         ! max chars
+    _de_dict_buf->1 = p_len;
+    for(_i = 0: _i < p_len: _i++) _de_dict_buf->(_i + 2) = (p_addr + _i)->0;
+    _de_dict_buf->(p_len + 2) = 0;  ! null-terminate
+    _de_dict_parse->0 = 1;        ! max 1 word
+    @tokenise _de_dict_buf _de_dict_parse;
+    return _de_dict_parse-->1;    ! dict word address (0 = not found)
+];
+
+! ---------------------------------------------------------------------------
+! BeforeParsing -- normalise unrecognised words then re-tokenise.
+! Two-pass approach:
+!   Pass 1 (Unicode only): collapse digraph pairs to umlaut bytes in-place
+!          for any word not in the dictionary. Re-tokenise if anything changed.
+!   Pass 2: for any word still not in the dictionary that ends with 'e',
+!          strip the trailing 'e'. Re-tokenise if anything changed.
+! This two-pass design ensures that e.g. 'oeffne' is first converted to
+! 'oeffne' (which IS in the dictionary) and not further reduced to 'oeffn'.
+! ---------------------------------------------------------------------------
+[ BeforeParsing  _nwords _i _waddr _wlen _newlen _changed _j _blen;
+    _nwords  = parse->1;
+
+#IfNDef USE_ASCII;
+    ! --- Pass 1: digraph normalisation only ---
+    ! Normalise to a temp buffer first, then only apply if the result is in
+    ! the dictionary.  This prevents unknown words like "kajuete" from being
+    ! silently rewritten to "kajuete" in error messages.
+    _changed = false;
+    for(_i = 1 : _i <= _nwords : _i++) {
+        if(parse-->(_i + _i - 1) ~= 0) continue;
+        _waddr = WordAddress(_i);
+        _wlen  = WordLength(_i);
+        if(_wlen < 2) continue;
+        ! Copy word into temp buffer and normalise there
+        _de_dict_buf->0 = 64;
+        for(_j = 0: _j < _wlen: _j++) _de_dict_buf->(_j + 2) = (_waddr + _j)->0;
+        _newlen = _DE_NormaliseDigraphsOnly(_de_dict_buf + 2, _wlen);
+        if(_newlen >= _wlen) continue;  ! no digraphs found
+        ! Only apply if the normalised form exists in the dictionary
+        _de_dict_buf->1 = _newlen;
+        _de_dict_buf->(_newlen + 2) = 0;
+        _de_dict_parse->0 = 1;
+        @tokenise _de_dict_buf _de_dict_parse;
+        if(_de_dict_parse-->1 == 0) continue;  ! normalised form not in dict
+        ! Apply: write normalised bytes to main buffer, then close the gap
+        for(_j = 0: _j < _newlen: _j++) (_waddr + _j)->0 = _de_dict_buf->(_j + 2);
+        _blen  = buffer->1;
+        for(_j = (_waddr + _newlen) - buffer : _j <= _blen + 1 : _j++) {
+            buffer->_j = buffer->(_j + (_wlen - _newlen));
+        }
+        buffer->1 = _blen - (_wlen - _newlen);
+        _changed = true;
+        ! Re-tokenise immediately so that the parse entries (word start positions
+        ! and dict addresses) for subsequent words are correct after the buffer
+        ! was shifted.  Without this, when word N shrinks, word N+1's stored
+        ! start-position in `parse` is stale and points to the wrong bytes.
+        buffer->(2 + buffer->1) = 0;
+        @tokenise buffer parse;
+        _nwords = parse->1;
+    }
+    ! _changed is set, but the final re-tokenise already happened inside the loop.
+    ! The check below is kept for safety (it is a no-op if nothing changed after
+    ! the last iteration).
+    if(_changed) {
+        buffer->(2 + buffer->1) = 0;
+        @tokenise buffer parse;
+        _nwords = parse->1;
+    }
+#Endif; ! USE_ASCII
+
+    ! --- Pass 3: deutsche Pronomina → englische Pronomina ersetzen ---
+    ! WICHTIG: Muss vor Pass 2 laufen, damit "sie" nicht durch die
+    ! -e-Stripping-Regel zu "si" reduziert wird (Pass 2 entfernt
+    ! abschliessendes 'e' von nicht erkannten Woertern).
+    if (_DE_SubstitutePronouns()) {
+        buffer->(2 + buffer->1) = 0;
+        @tokenise buffer parse;
+        _nwords = parse->1;
+    }
+
+    ! --- Pass 2: strip trailing -e from still-unrecognised words ---
+    ! Note: some interpreters (e.g. dfrotz) convert digraphs like 'ue'→ue on
+    ! input, so 'schaue' arrives as 'schaue' (ZSCII 157). We expand trailing
+    ! ZSCII umlauts back to their two-byte digraph forms (ue→ue, oe→oe, ae→ae)
+    ! so the -e stripping below can recover the canonical verb root.
+    _changed = false;
+    for(_i = 1 : _i <= _nwords : _i++) {
+        if(parse-->(_i + _i - 1) ~= 0) continue;
+        _waddr = WordAddress(_i);
+        _wlen  = WordLength(_i);
+        if(_wlen < 2) continue;
+        ! Check for trailing ZSCII umlaut (155=ae, 156=oe, 157=ue) that was
+        ! produced by interpreter digraph conversion from a trailing -ae/-oe/-ue.
+        _j = (_waddr + _wlen - 1)->0;  ! last byte
+        if(_j == 155 or 156 or 157) {
+            ! Expand ZSCII umlaut to vowel+e, then check if stem is in dictionary.
+            _blen = buffer->1;
+            ! shift everything after the umlaut right by 1 to make room for 'e'
+            for(_newlen = _blen + 1 : _newlen >= (_waddr + _wlen) - buffer : _newlen--) {
+                buffer->(_newlen + 1) = buffer->_newlen;
+            }
+            if(_j == 155) (_waddr + _wlen - 1)->0 = 'a';
+            else if(_j == 156) (_waddr + _wlen - 1)->0 = 'o';
+            else (_waddr + _wlen - 1)->0 = 'u';
+            (_waddr + _wlen)->0 = 'e';
+            buffer->1 = _blen + 1;
+            _wlen++;
+            ! Only strip if the stem (word without trailing 'e') is in the dictionary
+            if(_DE_IsInDict(_waddr, _wlen - 1) ~= 0) {
+                for(_j = (_waddr + _wlen - 1) - buffer : _j <= _blen + 1 : _j++) {
+                    buffer->_j = buffer->(_j + 1);
+                }
+                buffer->1 = _blen;
+                _changed = true;
+            } else {
+                ! Stem not found: undo the expansion, restore original ZSCII byte
+                (_waddr + _wlen - 2)->0 = _j;
+                for(_newlen = (_waddr + _wlen - 1) - buffer : _newlen <= _blen : _newlen++) {
+                    buffer->_newlen = buffer->(_newlen + 1);
+                }
+                buffer->1 = _blen;
+            }
+            continue;  ! ZSCII case fully handled
+        }
+        if((_waddr + _wlen - 1)->0 ~= 'e') continue;
+        _newlen = _wlen - 1;
+        ! Only strip if the stem exists in the dictionary — preserves the
+        ! original input form in error messages for words not in the dict.
+        if(_DE_IsInDict(_waddr, _newlen) == 0) continue;
+        ! shift later bytes left by 1 to close the gap left by the stripped 'e'
+        _blen = buffer->1;
+        for(_j = (_waddr + _newlen) - buffer : _j <= _blen + 1 : _j++) {
+            buffer->_j = buffer->(_j + 1);
+        }
+        buffer->1 = _blen - 1;
+        _changed = true;
+    }
+    if(_changed) {
+        ! null-terminate buffer at the new end (required by @tokenise in some implementations)
+        buffer->(2 + buffer->1) = 0;
+        @tokenise buffer parse;
+        _nwords = parse->1;
+    }
+
+    ! --- Pass 4: prune unknown-word suffixes (-em/-en/-er/-es, -e/-n/-s) ---
+    _changed = false;
+    for(_i = 1 : _i <= _nwords : _i++) {
+        if(parse-->(_i + _i - 1) ~= 0) continue;
+        _waddr = WordAddress(_i);
+        _wlen  = WordLength(_i);
+        if(_wlen < 3) continue;
+        _newlen = _DE_PruneWordSuffixLen(_waddr, _wlen);
+        if(_newlen >= _wlen) continue;
+        ! Only prune if the resulting stem is in the dictionary
+        if(_DE_IsInDict(_waddr, _newlen) == 0) continue;
+
+        _blen = buffer->1;
+        ! shift later bytes left by (_wlen - _newlen) to close the removed suffix
+        for(_j = (_waddr + _newlen) - buffer : _j <= _blen + 1 : _j++) {
+            buffer->_j = buffer->(_j + (_wlen - _newlen));
+        }
+        buffer->1 = _blen - (_wlen - _newlen);
+        _changed = true;
+    }
+    if(_changed) {
+        buffer->(2 + buffer->1) = 0;
+        @tokenise buffer parse;
+    }
+];
+
+! ---------------------------------------------------------------------------
+! German strings for parser disambiguation prompt (overrides defaults in parser.h).
+! ---------------------------------------------------------------------------
+Constant PARSER_ASK_WHICH_PREFIX_STR = "Meinst du ";
+Constant PARSER_ASK_WHICH_OR_STR = " oder ";
+
+! _DE_SubstitutePronouns is defined in de/article_de.h (compiled after globals.h
+! so that herobj/themobj global variables are already declared when needed).

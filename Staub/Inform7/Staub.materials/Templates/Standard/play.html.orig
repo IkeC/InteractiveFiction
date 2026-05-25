@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>[AUTHOR] - [TITLE] — Play</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta name="author" content="[AUTHOR]">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <!-- [INTERPRETERHEAD] -->
+  
+</head>
+<body class="play">
+<div class="container">
+<div class="coverimage"><span>[COVER]</span></div>
+<div class="links">
+<!--
+	<div class="smalltitle">[TITLE]</div>
+<ul>
+<li><a href="index.html">Home page</a></li>
+</ul>
+-->
+</div>
+
+<div class="playinfo">
+	Das Spiel kann durch die Eingabe von 'Speichern' gespeichert und 'Laden' geladen werden.<br>
+</div>
+
+<div class="about"><span>[BLURB]</span><br><a href="./index.html" style="font-size:1.5em"><b>&gt;&gt; Spiel starten
+			&lt;&lt;</a></b></div>
+
+<div class="playinfo">
+	<p>[TITLE] was created with <a href="http://inform7.com/">Inform</a> and has IFID [IFID].
+		To play a work like this one, you need an interpreter program: many are available,
+		among them <a href="http://ccxvii.net/gargoyle/">Gargoyle for MacOS, Linux or Windows</a>;
+		<a href="https://github.com/angstsmurf/spatterlight/releases">Spatterlight for MacOS</a>;
+		<a href="http://davidkinder.co.uk/frotz.html">Windows Frotz</a> or
+		<a href="http://davidkinder.co.uk/glulxe.html">Windows Glulxe</a> for Windows.
+		[OTHERCREDITS]
+	</p>
+</div>
+
+</div>
+</body>
+</html>

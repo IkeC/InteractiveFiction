@@ -1,0 +1,2489 @@
+!% =1
+!% -~S
+!% $OMIT_UNUSED_ROUTINES=1
+!% $ZCODE_LESS_DICT_DATA=1
+!% $LONG_DICT_FLAG_BUG=0
+!% $ZCODE_COMPACT_GLOBALS=1
+!% $MAX_ABBREVS=96
+!!% $OMIT_SYMBOL_TABLE=1  ! Incompatible with Inform 6.44 + puny.h (#identifiers_table)
+
+! The very first lines of the main source code file for a game can
+! contain compiler options, like the lines above. -~S disables
+! strict error checking. This is otherwise used in z5 and z8 games by
+! default. While useful for debugging, it adds ~10 KB to the story file
+! size and it makes the game slower.
+! $OMIT_UNUSED_ROUTINES=1 makes the compiler remove all routines which
+! aren't used. This can save some space.
+! $ZCODE_LESS_DICT_DATA=1 removes an empty data byte for every dictionary word.
+
+Constant Story      "Dust";
+Constant Headline   "^A Western by IkeC^";
+
+Release 4;
+!Constant DEBUG;
+Array UUID_ARRAY string "UUID://506FA077-9940-404A-B9FB-907CD4C773D2//";
+#Ifdef UUID_ARRAY;#Endif;
+
+! Uncomment ONE of the two following lines, to show either time or score/turns
+! Leaving both commented out makes the library bigger.
+! Constant STATUSLINE_TIME; Statusline time;
+! Constant STATUSLINE_SCORE; Statusline score;
+
+! Comment out to keep track of score
+! The value is what will be shown as the score on statusline in z3
+Constant NO_SCORE = 1;
+
+! Customize the statusline in z5+ (has no effect in z3)
+Constant OPTIONAL_SL_NO_SCORE;
+Constant OPTIONAL_SL_NO_MOVES;
+
+! Uncomment to add optional features to PunyInform
+!Constant DIALECT_US ! Affects OPTIONAL_ENGLISH_NUMBER
+Constant CUSTOM_ABBREVIATIONS;
+Include ">Build/abbrvs.h";
+Constant CUSTOM_PLAYER_OBJECT = Tom;
+Constant OPTIONAL_NO_DARKNESS;
+Constant OPTIONAL_FULL_DIRECTIONS; !NW, NE
+!Constant OPTIONAL_SHIP_DIRECTIONS;
+!Constant OPTIONAL_ALLOW_WRITTEN_NUMBERS;
+!Constant OPTIONAL_GUESS_MISSING_NOUN;
+
+! for tests
+Constant OPTIONAL_EXTENDED_METAVERBS;
+
+!Constant OPTIONAL_EXTENDED_VERBSET;
+!Constant OPTIONAL_FLEXIBLE_INVENTORY;
+!Constant OPTIONAL_LANGUAGE_NUMBER;
+!Constant OPTIONAL_LIST_TOGETHER;
+!Constant OPTIONAL_PRINT_SCENERY_CONTENTS;
+!Constant OPTIONAL_SCORED;
+!Constant OPTIONAL_FULL_SCORE; ! Comment out NO_SCORE when uncommenting this
+Constant OPTIONAL_SIMPLE_DOORS;
+!Constant OPTIONAL_MANUAL_SCOPE;
+!Constant OPTIONAL_MANUAL_SCOPE_BOOST;
+!Constant OPTIONAL_MANUAL_REACTIVE;
+!Constant OPTIONAL_ORDERED_TIMERS;
+!Constant OPTIONAL_PROVIDE_UNDO;
+!Constant OPTIONAL_REACTIVE_PARSE_NAME;
+
+Constant RUNTIME_ERRORS = 0; ! 0, 1 or 2. 0 = smallest file, 2 = most info
+
+! Define any library constants you need here, like MAX_SCORE, AMUSING_PROVIDED,
+! MAX_CARRIED, SACK_OBJECT,  etc.
+
+Constant INITIAL_LOCATION_VALUE = r_Room;
+Constant FLAG_COUNT = 60;
+
+! IkeC: commented out - use default from ext_talk_menu-dust.h
+! IkeC: exit conversation silently with Look(), matching original I7 behavior
+Constant TM_MSG_EXIT _tmExitDoLook;
+
+!!FLAGS
+Constant F_SALOON_OFFERED_COFFEE 32;
+Constant F_SALOON_GOT_COFFEE 33;
+Constant F_PLAYER_LOCKED_UP 34;
+Constant F_BILLS_WIFE_FOUND 35;
+Constant F_BILLS_WIFE_NAMED 36;
+Constant F_PINCENEZ_FOUND 37;
+Constant F_BOULDER_DISCOVERED 38;
+Constant F_BOULDER_REMOVED 39;
+Constant F_CREVICE_WIDENED 40;
+Constant F_MOLLY_TRUSTING 41;
+Constant F_MOLLY_TAKEABLE 42;
+Constant F_MARTEN_KNOWN 43;
+Constant F_ROPE_TIED 44;
+Constant F_PLATFORM_DUG 45;
+Constant F_PLATFORM_OPEN 46;
+Constant F_GUARD_CROUCHING 47;
+Constant F_GUARD_OUT 48;
+Constant F_LUCY_FREE 49;
+Constant F_LUCY_LISTENING 50;
+Constant F_VAULT_SHOWDOWN 51;
+Constant F_ENDING_ACTIVE 52;
+Constant F_PLATFORM_KNOWN 53;
+
+! Toldcounter indices for repeatable dialogue topics
+Constant TC_ELLA_COFFEE 0;
+Constant TC_BILL_PINCENEZ 1;
+Constant TC_BILL_ROD 2;
+Constant TC_MARTEN_MOLLY 3;
+Constant TC_MARTEN_SHOVEL 4;
+
+Include "globals.h";
+
+Property cheap_scenery;
+
+! Toldcounter array (must be after globals.h)
+Array told_count -> 5;
+
+! Define your attributes, common properties and global variables here, if any
+
+! Define the entry point routines you need here, like Amusing, DarkToDark etc.
+
+! Uncomment to add PunyInform extensions
+!Include "ext_menu.h";
+Include "ext_flags.h";
+
+Object Tom "you"
+	with name 'me' 'myself' 'self' 'Tom',
+	short_name  "yourself",
+	description "You've been through worse, but you could probably do with a bath and a shave.",
+	before [; 
+		Smell: "It's been a while since your last bath, and you can definitely smell it. However, it's not bad enough to attract any unpleasant attention in this area (yet).";
+	],
+	has concealed animate proper transparent;
+
+Include "ext_talk_menu-dust.h"; ! Note: Also include ext_flags.h to allow use of flags
+!Include "ext_quote_box.h";
+Include "ext_cheap_scenery.h";
+
+Verb 'ask'
+	* creature                                   -> Ask;
+
+Verb 'tell'
+	* creature                                   -> Tell;
+
+Verb 'give' 'feed' 'offer' 'pay'
+	* creature                                   -> Give;
+
+Verb 'show' 'display' 'present'
+	* creature                                   -> Show;
+
+Include "puny.h";
+Include "ext-dust.h";
+
+! Uncomment to add PunyInform extensions
+!Include "ext_waittime.h";
+
+[Initialise;
+	lookmode = 2; ! activate verbose look mode
+	notify_mode = false; ! no score message
+	inventory_style = 0;  ! 0 for tall mode or 1 for wide mode
+	told_count->TC_MARTEN_MOLLY = 1; ! Marten already said this in topic 303
+	print "squeeek ...^squeeek ...^squeeeeek ...^^You wake up slowly.^^Your head rumbles mercilessly and the blood pulsates painfully through your temples.^";
+
+	!DEBUG
+	!initDev();
+];
+
+[sayPageTold index count;
+	count = told_count->index;
+	count++;
+	told_count->index = count;
+	if (count > 7) {
+		print " I told you that ";
+		style bold; print "WAY TOO MANY"; style roman;
+		print " times already!";
+	} else if (count > 5) {
+		print " I told you that many, ";
+		style underline; print "MANY"; style roman;
+		print " times already!";
+	} else if (count == 5) {
+		print " I told you that five times already!";
+	} else if (count == 4) {
+		print " I told you that four times already!";
+	} else if (count == 3) {
+		print " I told you that three times already!";
+	} else if (count == 2) {
+		print " I already told you that before!";
+	}
+];
+
+[initDev;
+	PlayerTo(r_Ranch);
+	move Bag to player;
+	give Bag open;
+];
+
+Class Room
+	with visitcounter 0;
+
+Room r_Backstage;
+
+!--- 1: ROOM
+
+Constant CS_WINDOW 110;
+Constant CS_BED 111;
+Room r_Room "Room"
+	with name 'Room',
+	description [;
+		if (self has visited) {
+			print "This room is rather sparsely furnished. There's a bed in the corner with a small nightstand to the left. The opposite wall features a small window. A plain wooden door leads outside and down the stairs.^";
+		}
+		else {
+			print "You cough twice and finally manage to pull yourself up from the dusty floorboards.^^";
+			print "This room is rather sparsely furnished. There's a bed in the corner with a small nightstand to the left. The opposite wall features a small window. A plain wooden door leads outside and down the stairs.^^";
+			print "Please enter INFO now for instructions on how to play, especially if you've never played a game like this before.^";
+			give self visited;
+		}
+	],
+	cheap_scenery
+		CS_ADD_LIST r_Room (sc1),
+	sc1
+		CS_BED 12 'stained' 'bed' 'corner' "A sparse bed with a stained thin mattress on it."
+		1 'mattress' "Mattress is a pretty big word for these two roughly sewn-together lengths of fabric. Individual straws push through the seams and holes in the fabric everywhere."
+		CS_WINDOW 12 'small' 'window' 'pane' "Pale light shines through the dusty glass pane of the window. Outside, you think you can make out a wind pump."
+		4 'wind' 'pump' 'windpump' 'mill' "A large metal windmill turns rhythmically, squeaking in the wind. The noise is hard to bear right now."
+		1 'stairs' "The door is open, you can simply walk out."
+		2 'wall' 'plaster' "The walls and ceiling may once have been white, but now the gray and cracked plaster is only held up by good will."
+		2 'floor' 'floorboards' "This floor has not seen a broom or even water for a long time. In many places, the light from the room below shines through the floorboards.",
+	d_to WoodenDoor, out_to WoodenDoor, n_to WoodenDoor,
+	before [;
+		Smell: if (noun == player) rfalse; "It smells slightly of piss, but you've slept in far worse places.";
+		Enter, Open, Use: 
+			if (cs_match_id == CS_WINDOW) "It's nailed shut. Maybe some guests didn't pay their bill and left this way in the past.";
+			else if (cs_match_id == CS_BED) "You're not tired, just exhausted.";
+		Examine: if (noun == Directions) "This floor has not seen a broom or even water for a long time. In many places, the light from the room below shines through the floorboards.";
+		Listen: "squeeek ...^squeeek ...^squeeeeek ...";
+	];
+
+Object -> WoodenDoor "wooden door"
+	with name 'wooden' 'door' 'hinges',
+	description "A wooden door with roughly crafted hinges.",
+	door_dir (d_to) (u_to),
+	found_in r_Room r_Saloon,
+	has static scenery door open ~openable;
+
+Object -> Nightstand "nightstand"
+	with name 'nightstand' 'compartment' 'table',
+	description "A small bedside table with an open compartment.^",
+	after [;
+		Examine: <Search self>;
+	],
+	has scenery open ~openable container;
+
+Object -> -> Bag "shoulder bag"
+	with name 'shoulder' 'bag' 'stuff',
+	description "A scuffed shoulder bag made from slightly cracked leather.",
+	after [;
+		Take: setTalkOptionsEllaCoffee();
+	],
+	has ~open openable container;
+
+[noDropValuable;
+	"You'd rather keep that for now.";
+];
+
+Object -> -> -> Drawing "drawing"
+	with name 'drawing' 'image' 'picture',
+	description "A folded charcoal drawing, already slightly brittle at the edges. It shows Claire, your wife.^^You miss her beyond words.",
+	before [;
+		Drop: noDropValuable(); rtrue;
+	],
+	after [;
+		Take: setTalkOptionsEllaCoffee();
+		Examine: 
+			if (self notin player) {
+				print "^You carefully tuck the drawing into the inside of your vest.^";
+				move self to player;
+			}
+	];
+
+Object -> -> -> Revolver "revolver"
+	with name 'revolver' 'colt' 'gun' 'pistol',
+	description "Your Colt Navy, Model 1861. Freshly cleaned, loaded and ready to fire.",
+	before [;
+		Use: "No random shooting around here.";
+		Drop: noDropValuable(); rtrue;
+		Open: "The weapon is ready to fire, that's all you need to know.";
+	];
+
+Object -> -> -> DraftNotice "draft notice"
+	with name 'draft' 'notice' 'papers',
+	description "A draft notice for Thomas Marshall, over five years old according to the date. An important document that you always carry with you, as it identifies you as a former member of the army. As a welcome side effect, you can also look up your name if you've had a rough night.",
+	before [;
+		Drop: noDropValuable(); rtrue;
+		Take: if (self in Bag) "You'd rather leave the papers in your bag.";
+	];
+
+Global AmountOfMoney = 12;
+[getAmountOfMoney;
+	switch(AmountOfMoney) {
+		10: print "About ten dollars.^";
+		11: print "About eleven dollars.^";
+		12: print "About twelve dollars.^";
+		default: print "About ", AmountOfMoney, " dollars.^";
+	}
+];
+
+Object -> -> -> Money "money"
+	with name 'money' 'dollar' 'cash',
+	description getAmountOfMoney,
+	article "some",
+	before [;
+		Drop: noDropValuable(); rtrue;
+		Take: if (self in Bag) "You'd rather leave the money in your bag.";
+	];
+
+
+!---  2: SALOON
+
+Constant CS_STAIRS = 120;
+Room r_Saloon "Saloon"
+	with description descSaloon,
+	cheap_scenery
+		CS_ADD_LIST r_Saloon (sc1),
+	sc1
+		12 'wooden' 'stage' 'platform' "An unadorned wooden platform that has often served as the backdrop for mediocre dance routines and many a brawl."
+		2 'table' 'tables' descTables
+		CS_STAIRS 2 'staircase' 'stairs' "The staircase leads up to your rented room and other rooms that you are not allowed to enter."
+		3 'carvings//p' 'carving' 'mark' descUnimportantIt
+		13 'wooden' 'beam' 'beams//p' 'ceiling' descBeams
+		21 'long' 'rusty' 'nail' descNail
+		,
+	u_to WoodenDoor, in_to WoodenDoor, n_to SwingDoors, out_to SwingDoors,
+	before [;
+		Smell: "It smells of spilt beer and old cigarettes.";
+		Go:
+			if (player in Chair && selected_direction == d_to) {
+				climbChair();
+				rtrue;
+			}
+		Enter, Open, Use: 
+			if (cs_match_id == CS_STAIRS) "You can just go upstairs.";
+		Talk:
+			if (player in Chair)
+				"If you're not about to give a speech, you might want to get off the chair first.";
+	];
+
+[descSaloon;
+	if (r_Saloon hasnt visited) {
+		print "You shuffle down the stairs, massaging your aching left shoulder.^^";
+	}
+	print "The saloon consists of a few round tables with chairs and a small stage. Next to it, a staircase leads up to your room. On the other side is a long counter. Two massive beams run under the ceiling. The swing doors to the north lead outside.^^";
+	if (Ella hasnt proper) print "A ";
+	print (string) Ella.short_name, " is behind the counter, ",
+	(string) random(
+		"polishing glasses with a moderately clean-looking cloth", "wiping the counter with a bored expression", "sorting the drinks", "rolling a cigarette", "scratching her chin", "blowing her nose into her kitchen towel", "cleaning the sink", "taking a drag on her cigarette"), ".";
+	if (r_Saloon hasnt visited) print " She gives you a slightly amused look.";
+	new_line;
+	if (r_Mainstreet has visited && Cookie in Counter) 
+		"^She looks up. ~Don't you want your cookie?~";
+];
+
+[descTables;
+	Examine:
+		print "A few round wooden tables are scattered randomly around the room.";
+		if (r_Mainstreet hasnt visited) print " Two of the tables have been tipped over.";
+		"";
+	default: rfalse; ! Necessary in a named routine
+];
+
+[descUnimportantIt;
+	Examine:
+		print (string) random("You don't see anything special about it.", "You don't attach any great importance to it.", "Nothing about it catches your interest.");
+		"";
+	default: rfalse; ! Necessary in a named routine
+];
+
+[descBeams;
+	Examine:
+		print "Massive wooden beams support the ceiling of the large room. A long nail is hammered into one of the beams";
+		if (Lamp in r_Saloon) print " with a kerosene lamp dangling from it";
+		".";
+	default: rfalse; ! Necessary in a named routine
+];
+
+[descNail;
+	Examine:
+		"A long, rusty nail, driven deep into one of the ceiling beams. It will probably stay there until the saloon collapses one day.";
+	default: 
+		"You can't reach it, and you don't really want it anyway.";
+];
+
+Object -> SwingDoors "swing doors"
+	with name 'swing' 'doors',
+	description "Half-height swing doors consisting of two wooden panels.",
+	door_dir (n_to) (s_to),
+	door_to doorToSaloon,
+	found_in r_Saloon r_Mainstreet,
+	has static scenery door open ~openable;
+
+[doorToSaloon;
+	if (self in r_Saloon) {
+		if (bag notin player) {
+			print "You've still got your stuff upstairs. Besides, you could do with a coffee first.^"; rtrue;
+		}
+		return r_Mainstreet;
+	}
+	return r_Saloon;
+];
+
+Object -> Chair "chair"
+	with name 'chair' 'stool' 'chairs//p' 'stools//p',
+	description descChair,
+	before [;
+		Take: "The chairs are too bulky to take away.";
+		Push, Pull: moveChair(); rtrue;
+		Enter, Climb, Use: climbChair(); rtrue;
+	],
+	has supporter concealed ~moved;
+
+[descChair;
+	print "Inconspicuous wooden chairs and stools, some patched together with thin boards.";
+	if (r_Mainstreet hasnt visited) {
+		print " A few of them lie shattered next to the entrance.^^~I wanted to let you sleep in before I clean up the mess here~, ", (the) Ella, " says.";
+	}
+	"";
+];
+
+[moveChair;
+	if (Chair has moved) {
+		"The chair is in a good position now.";
+	} else {
+		print "You place one of the chairs under the ceiling beam with the lantern.^";
+		give Chair moved;
+	}
+];
+
+[climbChair;
+	if (Chair hasnt moved) {
+		"The way the chairs are standing right now, you see no reason to.";
+	} else if (player notin Chair) {
+		move player to Chair;
+		print "You climb onto the chair under the beam.^";
+		Look();
+		rtrue;
+	} else {
+		move player to r_Saloon;
+		print "You get down from the chair.^";
+		Look();
+		rtrue;
+	}
+];
+
+Object -> Counter "counter"
+	with name 'counter' 'bar',
+	description descCounter,
+	has supporter concealed;
+
+[descCounter;
+	print "The bar counter has a few dark spots and minor carving marks from bored guests, but overall, it looks quite clean.";
+	if (Cup in Counter) {
+		print "^^There's a cup on the counter";
+		if (Cookie in Counter) {
+			 print " with a cookie next to it.";
+		} else {
+			print ".";
+		}
+	}
+	"";
+];
+
+Object -> Lamp "lamp"
+	with name 'kerosene' 'lamp' 'lantern',
+	description descLamp,
+	before[;
+		Take: takeLamp(); rtrue;
+		SwitchOn: lightLamp(); rtrue;
+		Drop: noDropValuable(); rtrue;
+	],
+	has concealed ~on static;
+
+[descLamp;
+	if (Lamp in player) print "A large, filled ";
+	else print "A large ";
+	print "kerosene lamp with a handle. It is ";
+	if (Lamp hasnt on) print "not ";
+	"lit.";
+];
+
+[takeLamp;
+	if (Lamp in player) "You already have it!";
+	if (Lamp has static) ActivateTopic(Ella, 304);
+	if (Chair hasnt moved) "You can't quite reach it like this, the lamp is hanging a little too high.";
+	if (Lamp has static) {
+		print_ret (The) Ella, " raises an eyebrow. ~What do you think you're doing there?~";
+	}
+	if (player notin Chair) "If you get on the chair, you can probably reach the lamp now.";
+	move Lamp to player;
+	ActivateTopic(Ella, 305);
+	ActivateTopic(Bill, 314);
+	InactivateTopic(Bill, 312);
+	InactivateTopic(Bill, 313);
+	"You take the lamp off the nail.";
+];
+
+[ellaLampPermission;
+	give Lamp ~static;
+];
+
+[lightLamp;
+	if (Lamp has on) "The lamp is already lit.";
+	if (Lamp notin player) "You'll need to be holding the lamp.";
+	if (Matches notin player) {
+		ActivateTopic(Ella, 305);
+		ActivateTopic(Bill, 314);
+		"You have nothing to light the lamp.";
+	}
+	give Lamp on;
+	"You take one of the matches and swipe it over your ragged thumbnail, then gently holding it to the wick of the lamp. A cozy light spreads out.";
+];
+
+Object Matches "matches" r_Backstage
+	with name 'matches' 'envelope' 'matchbox' 'box',
+	description "A considerable number of matches in a brown paper envelope.",
+	before [;
+		Drop: noDropValuable(); rtrue;
+	],
+	has concealed;
+
+Object Cup "cup" r_Backstage
+	with name 'coffee' 'cup' 'mug',
+	description descCup,
+	filled 100,
+	before[;
+		Drink: drinkCup(); rtrue;
+		Take: 
+			print (The) Ella, " raises an eyebrow. 'The cup stays here!'^"; rtrue;
+	];
+
+[descCup;
+	print "A slightly battered coffee cup";
+	if (Cup.filled == 100) " with strong black coffee in it.";
+	". It is empty.";
+];
+
+[drinkCup;
+	if (Cup.filled == 100) {
+		Cup.filled = 70;
+		"You take a small sip. Not bad.";
+	} if (Cup.filled == 70) {
+		Cup.filled = 30;
+		"You take another sip. You feel much better already.";
+	} if (Cup.filled == 30) {
+		Cup.filled = 0;
+		"You finish your coffee.";
+	} else {
+		"The cup is empty.";
+	}
+];
+
+Object Cookie "cookie" r_Backstage
+	with name 'cookie',
+	description "It's a cookie.",
+	before[;
+		Eat: "You'd better save that for later.";
+		Take: 
+			move Cookie to player;
+			"You wrap the cookie carefully.";
+		Give:
+			if (second == Molly) {
+				print "Molly greedily grabs the cookie and munches it down in no time at all.^";
+				SetFlag(F_MOLLY_TRUSTING);
+				remove Cookie;
+				rtrue;
+			}
+	];
+
+Object -> Ella
+	with name 'Ella' 'woman',
+	short_name "woman",
+	description descElla,
+	talk_array talk_array_ella,
+	before [;
+		Ask, AskFor, AskTo, Tell, Give, Show: "Just TALK TO them instead.";
+	],
+	has animate female concealed;
+
+Array talk_array_ella -->
+	30 300 "~How are you doing?~" TM_NO_LINE descEllaTopic300 setEllaKnown
+	30 301 "~Looks wild in here.~" TM_NO_LINE "~Things got pretty rough here yesterday when you were already upstairs. I'll clean it all up later,~ says Ella. ~You look pretty exhausted, do you want a coffee? I brewed one as soon as I heard you get up.~" F_SALOON_OFFERED_COFFEE setTalkOptionsEllaCoffee
+	0 302 "~I don't have any money on me I'm afraid.~" TM_NO_LINE descEllaCoffeeRepeat 302
+	0 303 "~A coffee please.~" TM_NO_LINE "Ella turns around and pours a deep black steaming broth from a small tin pot into a cup and places it on the counter in front of you.^^~Enjoy your coffee, that'll be a quarter. I'm afraid I'm out of sugar, but I still have a cookie.~^^Ella puts a cookie next to the cup. You put the money down, stick your nose deep into the cup and take a deep breath. Wonderful." gotCoffee
+	0 304 "~May I borrow that lamp?~" TM_NO_LINE descEllaLampPermission ellaLampPermission
+	0 305 "~Do you have anything to light the lamp?~" TM_NO_LINE "Ella frowns. ~I'm almost out of matches and it's hard to smoke without fire.~^^She blows an impressive cloud of smoke over you and points to the door. ~I'm sure Bill still has some, feel free to bring me some as well when you return the lamp.~"
+	0 306 "~There was a fight?~" TM_NO_LINE "~No idea who started it this time. The Mifflin brothers were drinking heavily again and waving dollar bills around, but of course they didn't spend it on anyone but themselves.~^^She shrugs and gives you a little smile. ~I suppose some people didn't like that.~" ellaSchlaegerei
+	0 307 "~Mifflin? Doesn't ring a bell.~" TM_NO_LINE "~Oh, you don't even know the Mifflin brothers? Then they must have turned up when you were already out of town back then. Their names are Calvin and Bob, they put the old mine west of here back into operation and they actually found something again it seems.~^^Ella pauses briefly and takes a long drag on her cigarette.^^~In any case, they obviously have enough money to get drunk here on a regular basis. That's fine by me.~"
+	0 308 "~Have you seen Lucy?~" TM_NO_LINE "~Lucy? Why?~^^You briefly tell Ella what happened.^^~Bloody hell. I last saw Lucy a few days ago, but Michael was here yesterday. I saw him whispering with a few people, then I don't remember. He probably left before the brawl, that's not his thing.~"
+	0 309 "~I think I've found Lucy's hankie.~" TM_NO_LINE "You show the handkerchief with the monogram to Ella.^^~Yes, that must be hers. Where did you find this?~" ellaTaschentuch
+	0 310 "~Close to the mine entrance west of here.~" TM_NO_LINE "Ella's face darkens.^^~I don't like all this at all. She would never go into the mine voluntarily, she's been afraid of it ever since she was a child.~^^She takes a nervous drag on her cigarette and looks you firmly in the eye.^^~Tom, you have to go in there. I think the entrance is too well guarded. There used to be a tunnel to the south, but it was buried by a pile of rubble a few years ago.~"
+	0 311 "~I have to climb down the mine. Do you have a rope or something?~" TM_NO_LINE "Ella shakes her head. ~Nah Tom, ropes are forbidden here since the rodeo incident the other day.~^^She grins mischievously. ~Why don't you ask ol' Billy?~"
+	TM_END;
+
+[descElla;
+	if (Ella hasnt proper) {
+		print "The woman behind the counter is Ella, you've first met her years before. ";
+		give Ella general;
+		Ella.short_name = "Ella";
+		give Ella proper;
+	}
+	print "She is in her late forties, a corpulent, attractive woman with laugh lines and calloused hands. She has a dark red cloth scarf tied around her forehead and is ",
+	(string) random(
+		"polishing glasses with a moderately clean-looking cloth", "wiping the counter with a bored expression", "sorting the drinks", "rolling a cigarette", "scratching her chin", "blowing her nose into her kitchen towel", "cleaning the sink", "taking a drag on her cigarette"), ".";
+	new_line;
+];
+
+[descEllaTopic300;
+	if (Ella hasnt general)
+		print "The woman behind the counter is Ella, you've first met her years before.^^";
+	print "~I'm doing quite well, thanks Tom. Nothing upsets me easily here anymore, at least not a little bar brawl.~";
+];
+
+
+[setEllaKnown;
+	Ella.short_name = "Ella";
+	give Ella proper;
+	give Ella general;
+	ActivateTopic(Ella, 306);
+];
+
+[descEllaCoffeeRepeat;
+	print "~Did you leave your stuff upstairs? You know, no liability and all that.";
+	sayPageTold(TC_ELLA_COFFEE);
+	print "~";
+];
+
+[descEllaLampPermission;
+	if (FlagIsSet(F_BOULDER_REMOVED))
+		print "You briefly tell Ella about the tunnel entrance that you have uncovered. She smiles and nods.^^";
+	print "~You're welcome to take the lamp with you, but I need it back by tonight!~";
+];
+
+[ellaSchlaegerei;
+	ActivateTopic(Ella, 307);
+];
+
+[ellaTaschentuch;
+	ActivateTopic(Ella, 310);
+];
+
+[setTalkOptionsEllaCoffee;
+	if (FlagIsSet(F_SALOON_OFFERED_COFFEE)) {
+		if (Bag in player) {
+			InactivateTopic(Ella, 302);
+			ActivateTopic(Ella,303);
+		} else {
+			InactivateTopic(Ella, 303);
+			ActivateTopic(Ella,302);
+		}
+	}
+];
+
+[gotCoffee;
+	ClearFlag(F_SALOON_OFFERED_COFFEE);
+	SetFlag(F_SALOON_GOT_COFFEE);
+	move Cup to Counter;
+	move Cookie to Counter;
+];
+
+[descGoneIt;
+	Examine:
+		print (string) random("It's not here anymore.", "It is nowhere to be seen.");
+		"";
+	default: rfalse; ! Necessary in a named routine
+];
+
+[descGoneHe;
+	Examine:
+		print (string) random("He's not here anymore.", "He is nowhere to be seen.");
+		"";
+	default: rfalse; ! Necessary in a named routine
+];
+
+[descGoneShe;
+	Examine:
+		print (string) random("She's not here anymore.", "She is nowhere to be seen.");
+		"";
+	default: rfalse; ! Necessary in a named routine
+];
+
+[descGonePlural;
+	Examine:
+		print (string) random("They're not here anymore.", "They're nowhere to be seen.");
+		"";
+	default: rfalse; ! Necessary in a named routine
+];
+
+
+!--- 3: Main Street
+Constant CS_SUN 130;
+
+Room r_Mainstreet "Main Street"
+	with name 'main' 'street' 'road',
+	description descMainstreet,
+	cheap_scenery
+		CS_ADD_LIST r_Mainstreet (sc1)
+		CS_ADD_LIST r_Mainstreet (sc2),
+	sc1
+		11 'small' 'canopy' descUnimportantIt
+		CS_SUN 1 'sun' "Looking at the sun isn't particularly smart under normal circumstances, but even less so with your grumpy head."
+		3 'tumbleweed' 'weed' 'bush' "The tumbleweed is already out of sight. Others will come and take its place."
+		2 'office' 'sheriff' "Sheriff Dunder's office is also his home. A cat lies lazily in the slowly diminishing shade next to the house."
+		2 'general' 'store' "A sign saying 'Bill's Goods & More' is dangling over the general store. You wonder what the more than goods could be.",
+	sc2
+		2 'barber' 'shop' "The barber shop is marked by a small red, white and blue pole next to the door."
+		2 'pole' 'pillar' "When the wind blows strongly, it even turns a little."
+		1 'cat' "She doesn't even look at you."
+		3 'vulture' 'bird' 'blanket' descGoneIt
+		2 'dust cloud' 'cloud' descGoneIt,
+	s_to SwingDoors, in_to SwingDoors,
+	nw_to SheriffDoor, n_to StoreDoor, ne_to BarberDoor,
+	w_to r_Ranch,
+	e_to r_Gallows,
+	before [;
+		Smell: "Many unidentifiable odors mingle in the hot and dusty morning air - most of them not very pleasant.";
+		Take: 
+			if (cs_match_id == CS_SUN) "You take the sun and put it in your pocket.^^.^.^.^^It's getting a bit hot. You quickly put the sun back in its place.";
+	];
+
+Object -> SheriffDoor "sheriff's office door"
+	with name 'office' 'door' 'front',
+	description "The front door to Dunder's office.",
+	door_dir (nw_to) (se_to),
+	found_in r_Mainstreet r_Sheriff,
+	has static scenery door ~open ~openable locked;
+
+Object -> StoreDoor "store door"
+	with name 'store' 'door',
+	description "The entrance door to the store.",
+	door_dir (ne_to) (sw_to),
+	found_in r_Mainstreet r_Store,
+	has static scenery door ~open ~openable locked;
+
+Object -> BarberDoor "barber door"
+	with name 'door',
+	description "The entrance door to the barber.",
+	door_dir (ne_to) (sw_to),
+	found_in r_Mainstreet r_Barber,
+	has static scenery door ~open ~openable locked;
+
+[descMainstreet;
+	r_Mainstreet.visitcounter++;
+	if (r_Mainstreet hasnt visited) {
+		print "You step through the swinging door in front of the saloon. A small canopy protects you from the scorching sun. An unpleasantly hot wind slowly carries a thorny tumbleweed out of the city. There is not a soul to be seen.^^";
+	}
+	print "The wide, dusty road runs from east to west. ";
+	descBuildings();
+	print "The saloon lies to the south.^";
+	if (r_Mainstreet.visitcounter == 2 && Lucy in r_Ranch) {
+		"^As the wind drops for a moment, you think you hear a soft whimper from the west.";
+	} else if (r_Mainstreet.visitcounter == 5) {
+		"^A cat trots past you at a leisurely pace, gives you a tired look and disappears into the shadows between the houses.";
+	} else if (r_Mainstreet.visitcounter == 9) {
+		"^A vulture sits on the roof gable in front of you and looks at you suspiciously before flying away.";
+	} else if (r_Mainstreet.visitcounter == 13) {
+		"^A window shutter flies open with a loud bang and a blanket is vigorously shaken out by two thick arms. It disappears in an impressive dust cloud and the window is slammed shut again with a crash.";
+	}
+];
+
+[descBuildings;
+	if (Buildings.examined) 
+		print "The sheriff's office is to the northwest, the general store lies to the north and the barber shop to the northeast. ";
+	else 
+		print "Three similar-looking wooden buildings are located on the opposite side of the street to the north. ";
+	rtrue;
+];
+
+Object -> Buildings "buildings"
+	with name 'building' 'buildings//p',
+	description "The building in the northwest is apparently the sheriff's office. To the north is a general store and next to it in the northeast is a small barber store.",
+	examined,
+	before[;
+		Examine: self.examined = true;
+	],
+	has scenery;
+
+
+!--- 4: Sheriff
+
+Constant CS_PLANKBEDS = 140;
+Constant CS_PASSAGEWAY = 141;
+Constant CS_HOUSE = 142;
+
+Room r_Sheriff "Sheriff's Office"
+	with description descSheriff,
+	cheap_scenery
+		CS_ADD_LIST r_Sheriff (sc1)
+		CS_ADD_LIST r_Sheriff (sc2),
+	sc1
+		CS_PLANKBEDS 14 'plank' 'bed' 'beds//p' 'bunk' 'bunks//p' "Simple wooden platforms to sit or lie on. They have certainly seen a few bandits and/or booze chokes and smell disgusting."
+		2 'wall' 'walls//p' descUnimportantIt
+		CS_PASSAGEWAY 3 'passageway' 'passage' 'cells//p' "A low passageway that presumably leads to holding cells and the sheriff's private rooms. Dunder won't let you go there, and you don't need to see anything back there anyway.",
+	sc2
+		CS_HOUSE 1 'house' "You don't think you'll see any more of the house. You certainly don't want to."
+		2 'moustache' 'beard' descUnimportantIt
+		2 'face' 'wrinkles' descUnimportantIt
+		2 'clothing' 'clothes' "Practical clothing like almost everyone wears here.",
+	se_to SheriffDoor, out_to SheriffDoor, s_to SheriffDoor,
+	before [;
+		Smell:
+			"It smells slightly musty and of various excrements in the bunks. Not a place where you would want to stay for long.";
+		Go:
+			if (FlagIsSet(F_ENDING_ACTIVE)) {
+				"You feel dizzy as you try to get up from the plank bed. The sheriff rushes over and puts a friendly but firm hand on your shoulder.^^~Slow down, boy. I think there are still a few things to discuss here.~";
+			}
+			if (FlagIsSet(F_PLAYER_LOCKED_UP)) {
+				print "The sheriff growls indignantly. ~Stay here, boy! First you tell me what's going on here.~^";
+				rtrue;
+			}
+			if (Bag in Desk) {
+				print "The sheriff growls indignantly. ~Take your stuff with you, boy.~^";
+				rtrue;
+			}
+		Enter:
+			if (cs_match_id == CS_PLANKBEDS) "You don't feel like resting any longer. Apart from that, the beds are pretty disgusting.";
+			if (cs_match_id == CS_PASSAGEWAY or CS_HOUSE) <<Examine noun>>;
+	];
+
+Object Desk "desk"
+	with name 'desk' 'table',
+	description "A mighty desk made of dark wood.",
+	found_in r_Sheriff,
+	has supporter scenery;
+
+Object Sheriff "Sheriff Dunder" r_Sheriff
+	with name 'sheriff' 'dunder' 'man',
+	description "Sheriff Dunder is a lean man in his late fifties with piercing green eyes and a white moustache. Deep wrinkles run across his deep brown face. A dull brass star adorns the vest of his otherwise unremarkable clothing.",
+	talk_array talk_array_Sheriff,
+	react_before [;
+		Take:
+			if (noun == DraftNotice && FlagIsSet(F_ENDING_ACTIVE)) {
+				"~I'll give you your papers as soon as you've told me everything.~";
+			}
+			if (noun == Bag or DraftNotice && FlagIsSet(F_PLAYER_LOCKED_UP)) {
+				print "~You might get your stuff back later. First you tell me what's going on here.~^";
+				rtrue;
+			}
+	],
+	has animate proper concealed;
+
+Object Star "star" r_Sheriff
+	with name 'star' 'brass',
+	description "A simple sheriff's star as worn by sheriffs all over the country.",
+	has scenery;
+
+Array talk_array_Sheriff -->
+	30 300 "~What happened? How did I get here?~" TM_NO_LINE descSheriffPage1 301
+	0 301 "~What about the young woman?~" TM_NO_LINE descSheriffPage2 302
+	0 302 "~Why is this my problem now?~" TM_NO_LINE descSheriffProblem 303 304
+	0 303 "~Can you tell me something about Lucy?~" TM_NO_LINE descSheriffInfos
+	0 304 "~May I leave now?~" TM_NO_LINE descSheriffLeave sheriffRelease
+	0 305 "~I think I've found Lucy's handkerchief!~" TM_NO_LINE "~Exciting story, boy.~ He looks at you disdainfully.^^~Come back when you've found her and try not to get on my nerves any more.~"
+	TM_END;
+
+[descSheriffPage1;
+	print "~What happened? That's what I wanted to know from you, boy.~^^Sheriff Dunder takes a step back and leans against his desk.^^~Deputy Miller found you on the ranch with your face in the dirt and blood on your head. Didn't want you to die there in the sweltering heat, so he dragged you in here.~^^Yeah right, the ranch, ";
+	if (Lucy hasnt proper) print "the young woman";
+	else print "Lucy";
+	print "... it's all starting to come back to you.";
+];
+
+[descSheriffPage2;
+	print "Dunder frowns. ~Miller says the ranch was empty, no Michael, no Lucy. What's going on there, boy?~^^You briefly recount your conversation with ";
+	if (Lucy hasnt proper) print "the young woman";
+	else print "Lucy";
+	print ". The sheriff eyes you critically and finally sighs.^^~Lucy is the daughter of Mayor Thompson. If something happened to her, you're not the only one with a problem.~";
+];
+
+[descSheriffProblem;
+	print "The sheriff approaches you slowly and pushes his face in front of yours until the tips of your noses are almost touching. His breath stinks foul and his eyes glare balefully at you.^^~You've been here one day and already the mayor's daughter has disappeared. I have no idea what exactly you have to do with it and whether your story is true, but I strongly advise you to find out where she is.~";
+];
+
+[descSheriffInfos;
+	print "~She's the daughter of Mayor Thompson, his stepdaughter, to be precise. She got engaged to that ranch boy, doesn't suit Thompson at all.~^^Dunder pulls one up noisily and spits under the plank bed.^^~Her mother must have died a year or so ago. Didn't know her though, only been here a few months myself.~";
+];
+
+[descSheriffLeave;
+	print "The sheriff turns away from you and nods reluctantly. ~Your papers stay here and you're not leaving town. The coach is already through today anyway and you won't be able to afford a horse.~^^Dunder comes closer again and looks at you penetratingly.^^~";
+	if (Bag in Desk) print "Your stuff is on the table. ";
+	print "We'll keep an eye on you boy. Don't do anything stupid.~";
+];
+
+[sheriffRelease;
+	ClearFlag(F_PLAYER_LOCKED_UP);
+	give SheriffDoor ~locked open;
+	give StoreDoor ~locked open;
+	give BarberDoor ~locked open;
+	move Lucy to r_Vault;
+	ActivateTopic(Ella, 308);
+];
+
+[descSheriff;
+	if (FlagIsSet(F_ENDING_ACTIVE)) {
+		print "You're lying on one of the plank beds in the sheriff's office. Michael and Lucy are sitting in the corner, the young man wearing a slightly bloody bandage around his head. Sheriff Dunder is sitting behind his desk.^";
+		return;
+	}
+	print "This is Sheriff Dunder's office. ";
+	if (FlagIsSet(F_PLAYER_LOCKED_UP))
+		print "You are standing in front of the two plank beds that are attached to one of the walls";
+	else
+		print "Two plank beds are attached to the wall";
+	print ".^^On the opposite side is a massive desk";
+	if (FlagIsClear(F_PLAYER_LOCKED_UP))
+		print " with Sheriff Dunder sitting behind it. He has pulled his hat half over his face and seems to be dozing off";
+	print ". A passageway apparently leads deeper into the house. The door to the sheriff's office in the southeast leads outside.^";
+];
+
+!-- Ending conversation (after vault explosion)
+
+Array talk_array_Sheriff_Ende -->
+	30 400 "~What happened?~" TM_NO_LINE descEndePassiert 401 402
+	0 401 "~How's your head, Michael?~" TM_NO_LINE descEndeKopf 403
+	0 403 "~How did you end up there anyway?~" TM_NO_LINE descEndeMichael
+	30 402 "~What were they doing in that cave?~" TM_NO_LINE descEndeHoehle 404
+	0 404 "~What happened to your mother?~" TM_NO_LINE descEndeMutter 405
+	30 405 "~Where is Thompson?~" TM_NO_LINE descEndeThompson 406
+	0 406 "~What exactly did they produce?~" TM_NO_LINE descEndeDrogen 407
+	0 407 "~What an effort!~" TM_NO_LINE descEndeAufwand 408
+	0 408 "~Michael, do you know this woman?~" TM_NO_LINE descEndeFrau 409
+	0 409 "~Where was she going?~" TM_NO_LINE descEndeWohin 410
+	0 410 "~I have to get there as quickly as possible!~" TM_NO_LINE descEndeDorthin 411
+	0 411 "~Here's your hankie. It sure helped me a lot.~" TM_NO_LINE descEndeTaschentuch
+	TM_END;
+
+[descEndePassiert;
+	print "Dunder stands up and puts a hand on Lucy's shoulder.^^~Well, as far as I've understood these two correctly, you saved their lives after a cart of nitro barrels rolled loose in the cave and exploded.~^^He blinks at you slyly. ~What a coincidence, eh?~";
+];
+
+[descEndeKopf;
+	print "Michael grabs his head and adjusts his bandage a little.^^~Oh, it's all right now. It must have bled a lot when they found us, but Marten looked at it and bandaged it up straight away.~";
+];
+
+[descEndeHoehle;
+	print "Lucy stands up hastily. Her lower lip is trembling.^^~Those crooks made some kind of filth for folks to smoke! And that's after what happened to my mother!~^^She struggles to keep her composure and turns to Michael, who takes her in his arms.";
+];
+
+[descEndeMichael;
+	print "~I'd heard that things weren't quite right at the mine and that Thompson had a hand in it. So, when Cal and Bob turned up at Ella's that evening and things were getting heated, I thought it would be a good time to check it out.~^^Michael notices Lucy's reproachful look and raises his arms apologetically. ~I wanted to tell you at first, but it could have just been empty talk. After all, it's about your fa-- um, stepfather.~^^Lucy takes a deep breath, and he continues speaking quickly. ~Anyway, unfortunately the mine wasn't as deserted as I thought, I was discovered and locked up.~";
+];
+
+[descEndeMutter;
+	print "Michael turns to you. ~Lucy's mother must have smoked opium and became very ill at some point. Unfortunately, she passed away last year.~^^Lucy cries. ~I never understood exactly what was wrong with her. That asshole! My real father would never have let that happen!~";
+];
+
+[descEndeThompson;
+	print "Dunder sighs and raises his hands.^^~Unfortunately, we don't have him yet. Deputy Miller was the first one at the mine entrance after the explosion. A few of the bandits must have made it out coughing and crawling. Marten took care of them.~^^He sits down next to Lucy. ~Most of the others weren't so lucky. Cal Mifflin is dead, we've got his brother Bob in the back here in a cell. Miller sure had to climb over a few bodies before he found you back there.~^^Stepping over dead bodies... The terrible memories of the events at Red Rock briefly drill a path into your consciousness, and a cold shiver runs down your spine.";
+];
+
+[descEndeDrogen;
+	print "~We assume that they produced Chandu.~^^The sheriff looks at your questioning face and laughs. ~Yeah, that's about how I looked at first, but Marten explained it to me. You know that opium stuff those Chinese fellas smoke? The governor still tolerates it, but it's no longer welcome here. It makes people sick.~^^He pulls a flask out of his pocket, takes a sip and holds it out to you. You take it gratefully.^^~Well, they it looks like they brought opium down into that vault, then did all sorts of things with it and ended up with these little balls. They're probably easier to sell, and Marten thinks they're stretched with plant fibers or something, hence all the secrecy.~";
+];
+
+[descEndeAufwand;
+	print "Dunder nods. ~Well, that stuff probably spoils pretty quickly when it's no longer pure, and outside in the fresh air the production doesn't seem to work. I don't know. I guess it was sold over in the city as quickly as possible.~^^He glances at the door. ~When Bob wakes up and we catch Thompson, maybe there will be more answers.~^^Answers... You suddenly remember what brought you to this place and take the drawing out of your vest that you showed to many people in town the day before.";
+];
+
+[descEndeFrau;
+	print "You show Michael the drawing. He studies it carefully and smiles.^^~Of course! This woman arrived at the ranch late the other night. Her horse almost collapsed under her, and she looked like she could really do with a good night's sleep.~^^He returns the drawing. ~I offered her a room at Ella's, but she didn't want one. So I let her sleep in the hay and looked after her horse. When I went to check on her the next morning, she and her horse had disappeared.~";
+];
+
+[descEndeWohin;
+	print "~She had given me a few dollars that evening and said she wanted to go to the city because her husband was in a military prison there.~^^";
+	style underline;
+	print "Oh Claire, no!";
+	style roman;
+];
+
+[descEndeDorthin;
+	print "~Military prison, eh? Well, that's none of my business right now.~ Dunder opens the drawer of his desk and hands you your draft notice.^^~The governor's men will be here soon to find Thompson and question Mifflin.~^^Michael clears his throat. ~Um, we haven't even properly thanked you for everything you've done for us yet. So... Thank you very much.~^^He shakes your hand a little awkwardly. Lucy looks at you, her eyes red, and gives you a quick, tight hug.";
+	move DraftNotice to player;
+];
+
+[descEndeTaschentuch;
+	print "Lucy's tear-stained face lights up a little. ~Thank you!~^^She takes the handkerchief from your hand and blows her nose.^^~Unfortunately, we don't have a lot of money, and I won't touch my stepfather's money for sure. But we'd like to offer you Billy, he's our fastest horse.~^^She looks at Michael, who nods eagerly.^^~Just leave him with my cousin Marc in Tanner Street when you're in the city.~^^You accept with gratitude and get up.";
+];
+
+[endingCleanup;
+	talk_menu_talking = false;
+	move Hankie to r_Backstage;
+	move Shovel to r_Backstage;
+	move Lamp to r_Backstage;
+	move Crowbar to r_Backstage;
+	move DraftNotice to Bag;
+	move Matches to Bag;
+	give Bag ~open;
+	ClearFlag(F_ENDING_ACTIVE);
+	ClearFlag(F_PLAYER_LOCKED_UP);
+	PlayerTo(r_Steppe);
+];
+
+
+!--- 5: Store
+
+Constant CS_BELL = 220;
+Constant CS_STORE_COUNTER = 221;
+Constant CS_SHELVES = 222;
+Constant CS_LABELS = 223;
+Constant CS_STORE_PASSAGE = 224;
+Constant CS_STORE_WINDOW = 225;
+Constant CS_GOODS = 226;
+
+Room r_Store "General Store"
+	with description descStore,
+	cheap_scenery
+		CS_ADD_LIST r_Store (sc1)
+		CS_ADD_LIST r_Store (sc2),
+	sc1
+		CS_BELL 4 'bell' 'brass' 'small' 'store' "A small bell on the store door, probably made of brass."
+		CS_STORE_COUNTER 4 'counter' 'flap' 'wide' 'wooden' "A wide wooden counter with a flap as a passageway."
+		CS_SHELVES 3 'shelf' 'shelves' 'wall' "The large wall shelves are pretty empty. A few cardboard boxes, tins, small canvas bags and large brown bottles apparently contain flour, sugar, beans and a few other things that you can't identify more precisely from the scrawled labels."
+		CS_LABELS 3 'label' 'labels' 'sign' "You can't read the labels, but you don't think you will need any of these things.",
+	sc2
+		CS_STORE_PASSAGE 1 'passageway' descUnimportantIt
+		CS_STORE_WINDOW 2 'window' 'windows' "A rather dusty window facing Main Street."
+		CS_GOODS 9 'goods' 'box' 'boxes' 'tin' 'tins' 'bag' 'bags' 'bottle' 'bottles' descGoodsInStore
+		6 'flour' 'sugar' 'beans' 'herring' 'herrings' 'tools//p' descGoodsInStore,
+	s_to StoreDoor, out_to StoreDoor,
+	before [;
+		Smell: "It smells a bit like old man and lots of aromas that remind you that you haven't eaten anything today.";
+		Use: if (cs_match_id == CS_BELL) "DING!";
+		Buy: "Just talk to Bill if you want to buy something. If you need something specific, you'll be able to ask for it.";
+	];
+
+[descGoodsInStore;
+	Examine:
+		"You don't want to buy that. Talk to Bill if you need something.";
+	Take:
+		"Just talk to Bill if you want to buy something. If you need something specific, you'll be able to ask for it.";
+	Buy:
+		"Just talk to Bill if you want to buy something. If you need something specific, you'll be able to ask for it.";
+	default: rfalse;
+];
+
+[descStore;
+	if (r_Store hasnt visited) {
+		print "A small bell jingles brightly as you enter the store. The area for customers is so small that two people can barely turn around at the same time.^^The shopkeeper Bill appears in the doorway behind the counter, croaks a quiet ~morning~ and gives you a wry smile.^^";
+	}
+	print "You're standing in front of the counter";
+	if (r_Store has visited)
+		print ", behind it is Bill ", (string) random("leaning on his walking stick", "scratching his chin", "rubbing his eyes", "coughing croakily");
+	print ". Apart from the open wall shelves behind Bill, the store is quite empty.^^";
+	if (Crowbar in StoreCounter) print "There is a crowbar on the counter. ";
+	if (Matches in StoreCounter) print "There is a small brown envelope with matches on the counter. ";
+	"The door to the south leads out onto the road.";
+];
+
+Object StoreCounter "store counter" r_Store
+	with name 'store' 'counter',
+	description "A wide wooden counter with a flap as a passageway.",
+	has supporter scenery;
+
+Object Bill "Bill" r_Store
+	with name 'Bill' 'man' 'shopkeeper',
+	description "The hunchbacked shopkeeper's name is Bill, at least that's what it says on the sign outside. He is an old man with snow-white, thinning hair and a scarred but friendly-looking face. He wears a stained smock and leans on a walking stick.",
+	talk_array talk_array_Bill,
+	has animate proper concealed;
+
+Object BillAppearance "Bill's appearance" r_Store
+	with name 'hair' 'face' 'smock' 'stick' 'walking',
+	description descUnimportantIt,
+	has scenery;
+
+Object Crowbar "crowbar" r_Backstage
+	with name 'crowbar' 'gooseneck',
+	description "A crowbar made of steel, about two feet long. Both sides are slotted, and one side is bent.",
+	before [;
+		Drop: noDropValuable(); rtrue;
+	];
+
+Object PinceNez "pince-nez" r_Backstage
+	with name 'pince-nez' 'pincenez' 'glasses',
+	description "A pair of old pince-nez with thick lenses.",
+	before [;
+		Give:
+			if (second == Bill) {
+				<<Talk Bill>>;
+			}
+		Drop: noDropValuable(); rtrue;
+	];
+
+Array talk_array_Bill -->
+	30 300 "~How's it going?~" TM_NO_LINE "~Well, it has to, right?~^^Bill grins, showing off a yellow incisor in the upper jaw of his otherwise toothless mouth.^^~The coach is overdue, and I've got almost nothing left. I hope there was no robbery.~"
+	30 301 "~What's for sale here?~" TM_NO_LINE "~Everything you see behind me, you'll have to read it yourself. I won't sell you these red herrings though, they're no good anymore.~" 302
+	0 302 "~I can't read most of the labels.~" TM_NO_LINE "Bill laughs out loud, croaking, and suffers a small coughing fit. He wipes his mouth on his coat and smiles, looking slightly past you.^^~I'm sorry, boy. My wife used to label the goods, but she's no more. Her writing was beautiful.~^^He grabs his face, lost in thought, shakes his head briefly and looks at you.^^~Just ask me if you want something specific, I'll probably remember where it is. I keep tools and stuff in the back anyway.~"
+	30 303 "~Do you happen to know where Lucy is?~" TM_NO_LINE "Bill squints his eyes suspiciously.^^~Lucy is a fine girl, what's your business with her?~" 304
+	0 304 "~Lucy has gone missing.~" TM_NO_LINE "You tell Bill what happened. He seems moved.^^~Oh boy. I don't know where she might be, maybe with her lad? Anyway, she hasn't been in the store for a few days, and I can't really see much through these dirty windows. I'm sorry.~"
+	0 305 "~Do you have a chisel or something like that?~" TM_NO_LINE "Bill blinks at you. ~A chisel? Nah, I don't have one of those.~^^He thinks for a moment and smiles. ~But I should have a gooseneck somewhere around the back.~" 306
+	0 306 "~What the heck is a gooseneck?~" TM_NO_LINE "The shopkeeper looks at you in amazement and then laughs croakily. ~Where do you come from, boy? A crowbar! Hold on, I'll go and get it.~^^He disappears through the passageway in the back. A couple of minutes and a few dubious noises and expletives later, he steps back up to the counter, his sparse hair full of cobwebs.^^~Sorry boy, I can't find it. I just can't see well enough without my pince-nez.~" 307 308
+	0 307 "~Can I have a look maybe?~" TM_NO_LINE "Bill backs away and squints his eyes.^^~And then you knock me out back there? Nah nah, you stay right here in the front boy!~"
+	0 308 "~Where are your pince-nez?~" TM_NO_LINE descBillPinceNez billPinceNezToggle
+	0 309 "~Um, what is your wife's name?~" TM_NO_LINE "~Her name was Mathilda.~^^He pulls up his nose and rubs his eye. ~Called her Hilda most of the time.~" billWifeNamed
+	0 310 "~I believe I've found your pince-nez.~" TM_NO_LINE "You gently place the pince-nez on the counter. Bill's face brightens and he looks at you gratefully.^^~There they are! Thank you very much, my boy! Without them, I'd be pretty screwed in the long run.~" billFoundPinceNez 311
+	0 311 "~Could you have another look for that crowbar now?~" TM_NO_LINE "~Of course! I'll be back in a minute.~^^A seemingly endless minute later, Bill reappears in the doorway and slams the crowbar down on the counter in front of you.^^~It's normally eight bucks, but if you don't need it forever, I'll lend it to you, you seem like an honest guy.~" billCrowbarOnCounter
+	0 312 "~I could use a long pole or something.~" TM_NO_LINE descBillRod billRodToggle
+	0 313 "~Do you have kerosene lamps?~" TM_NO_LINE "Bill shrugs his shoulders regretfully. ~Haven't got any at the moment boy, sorry.~"
+	0 314 "~Do you sell matches?~" TM_NO_LINE "Bill's face brightens. ~Of course I do! The good old ones without that security bullshit, you can light them anywhere.~^^He puts a small brown paper bag on the table. ~That'll be a dollar.~^^You put a crumpled dollar bill on the counter. Bill pockets it." billSellMatches
+	0 315 "~I have to climb down somewhere, do you have anything for me?~" TM_NO_LINE "The old man scratches his chin thoughtfully and looks out of the window.^^~I had about fifty feet of a nice thick rope. Two young soldiers came by and said they only needed like twenty feet of it.~^^His eyes flash as a broad grin spreads across his face.^^~Told them I had nothing to cut it, so they bought the whole thing.~" billRopeQuestion
+	0 316 "~What did they need the rope for?~" TM_NO_LINE "~They were in a hurry building a gallows to hang a few deserters outside the city.~^^Bill squints his eyes and draws in his breath. The memory seems unpleasant to him.^^~The whole village should be watching. As soon as it was done, the soldiers left again, and Marten was told to take care of the bodies.~^^He rubs his nose briefly and looks directly at you. ~Now that I think of it, they didn't seem to have the rest of the rope with them. I wouldn't be surprised if it's still out there somewhere.~" billRopeWhat
+	0 317 "~Do you have a shovel for me?~" TM_NO_LINE "~No, unfortunately I don't have any more. I sold my last one to Marten.~"
+	TM_END;
+
+[billPinceNezToggle;
+	if (FlagIsSet(F_BILLS_WIFE_FOUND)) {
+		InactivateTopic(Bill, 308);
+		ActivateTopic(Bill, 309);
+	}
+];
+
+[descBillPinceNez;
+	print "Bill looks through the stained windows, lost in thought. ~I don't know.~^^He raps his knuckles on the counter. ~I must have still had them when I went over to my wife's grave this morning. I couldn't see ten feet in this sandstorm without them.";
+	sayPageTold(TC_BILL_PINCENEZ);
+	print "~";
+];
+
+[descBillRod;
+	print "Bill looks at you, puzzled. ~Do I look like a builders' merchant? I don't have anything like that.";
+	sayPageTold(TC_BILL_ROD);
+	print "~^^He closes his eyes as if to think, but then shakes his head in annoyance. ~The squeaking of that damn windmill is driving me crazy, I'm telling you.~";
+];
+
+[billRodToggle;
+	ReActivateTopic(Bill, 312);
+];
+
+[billWifeNamed;
+	SetFlag(F_BILLS_WIFE_NAMED);
+];
+
+[billFoundPinceNez;
+	move PinceNez to Bill;
+];
+
+[billCrowbarOnCounter;
+	move Crowbar to StoreCounter;
+];
+
+[billSellMatches;
+	move Matches to StoreCounter;
+	give Matches ~concealed;
+	AmountOfMoney = AmountOfMoney - 1;
+];
+
+[billRopeQuestion;
+	ActivateTopic(Bill, 316);
+];
+
+[billRopeWhat;
+	ActivateTopic(Marten, 307);
+];
+
+
+!--- 6: Barber
+
+Constant CS_TILT_CHAIR = 230;
+Constant CS_MIRROR = 231;
+Constant CS_NOVELTIES = 232;
+Constant CS_PERCH = 233;
+
+Room r_Barber "Barber Shop"
+	with description descBarber,
+	cheap_scenery
+		CS_TILT_CHAIR 4 'chair' 'arm' 'armchair' 'tilt' "A large armchair in red leather that can be adjusted in height."
+		CS_MIRROR 2 'mirror' 'wall' "You could do with a shave. And a haircut. And taking a bath."
+		CS_NOVELTIES 8 'novelties' 'odds' 'ends' 'stuff' 'bottles' 'cans//p' 'tables//p' 'shelves' descBarberNovelties
+		CS_PERCH 2 'perch' 'pole' descUnimportantIt,
+	sw_to BarberDoor, out_to BarberDoor, s_to BarberDoor,
+	before [;
+		Smell: "It smells pretty good here. Somewhat fresh.";
+		Push, Pull:
+			if (cs_match_id == CS_TILT_CHAIR) "The barber probably doesn't like it when you fiddle around with his armchair, and unfortunately you don't have time to enjoy any of his services.";
+		Enter, Use:
+			if (cs_match_id == CS_TILT_CHAIR) "The barber probably doesn't like it when you fiddle around with his armchair, and unfortunately you don't have time to enjoy any of his services.";
+	];
+
+[descBarberNovelties;
+	Examine:
+		"You're not interested in all this hairdressing stuff.";
+	Take:
+		"You're not interested in all this hairdressing stuff.";
+	default: rfalse;
+];
+
+[descBarber;
+	if (r_Barber hasnt visited) {
+		print "You briefly nudge the red, white and blue pole next to the entrance door and enter the store. You are pleasantly surprised at how bright and clean it is here.^^";
+	}
+	print "An expansive tilt chair made of red leather is resplendent in front of a large mirror attached to the wall. Small bottles, cans and other novelties are scattered around on various tables and shelves.^^";
+	if (Molly in r_Barber)
+		print "The parrot sits on a perch and wobbles its head. ";
+	print "Marten stands behind the armchair ", (string) random("picking his nose", "polishing the mirror", "sorting some tins", "sharpening his scissors", "checking his razor blade"), ".^";
+];
+
+Object Shovel "shovel" r_Barber
+	with name 'shovel' 'spade',
+	description "A solid iron shovel with a wooden handle.",
+	before [;
+		Drop: noDropValuable(); rtrue;
+	],
+	has concealed;
+
+Object Marten "barber" r_Barber
+	with name 'barber' 'man' 'Marten' 'hairdresser',
+	short_name [;
+		if (FlagIsSet(F_MARTEN_KNOWN)) { give self proper; print "Marten"; }
+		else { give self ~proper; print "barber"; }
+		rtrue;
+	],
+	description "The barber is a stocky man with thick upper arms and a well-groomed black beard. He is wearing a striped vest and short linen pants.",
+	talk_array talk_array_Marten,
+	before [;
+		Talk:
+			if (FlagIsClear(F_MARTEN_KNOWN)) {
+				print "The barber takes a small step towards you and gives you a friendly grin.^^~Moin Mister! My name is Marten, what can I do for you today? Trim your beard, cut your hair, treat a bullet wound?~^";
+				SetFlag(F_MARTEN_KNOWN);
+				give self proper;
+			}
+	],
+	has animate concealed;
+
+Object MartenAppearance "Marten's appearance" r_Barber
+	with name 'arm' 'arms' 'beard' 'vest' 'pants' 'anchor' 'appearance',
+	description descUnimportantIt,
+	has scenery;
+
+Object Molly "parrot" r_Barber
+	with name 'parrot' 'bird' 'Molly',
+	description descMolly,
+	before [;
+		Talk:
+			print "~", (string) random(
+				"Yo-ho-ho and a bottle o' rum!",
+				"To-to-to-be or not to-to-to-be. That is the question.",
+				"Little Bo Peep has lost her sheep and doesn't know where to find it.",
+				"I shot an arrow as a test, a hundred paces shot it west.",
+				"I never give a sucker an even break, and that's a lead pipe cinch."),
+				" Bra";
+			print (string) random("a", "aa", "aaa");
+			"k!~";
+		Take: takeMolly(); rtrue;
+		Push, Pull: takeMolly(); rtrue;
+		Give:
+			if (second == Cookie) {
+				<<Give Cookie Molly>>;
+			}
+	],
+	has animate female scenery;
+
+[descMolly;
+	if (Molly notin player && Molly in r_Barber) {
+		print "A beautiful parrot is tripping up and down on its perch peacefully.";
+		if (FlagIsSet(F_MOLLY_TRUSTING))
+			print " The parrot looks at you expectantly.";
+		"";
+	}
+	"~Braaak!~";
+];
+
+[takeMolly;
+	if (Molly in player)
+		"You already have the parrot!";
+	if (FlagIsSet(F_BOULDER_DISCOVERED))
+		"Molly tilts her head and backs away a little. She's obviously had enough excitement today.";
+	if (FlagIsSet(F_MOLLY_TRUSTING) && FlagIsSet(F_MOLLY_TAKEABLE)) {
+		print "You hold your outstretched arm out to Molly. She looks briefly at Marten, who nods approvingly, then hops along on your arm and makes herself comfortable on your left shoulder.^^~BRAAAK!~^";
+		move Molly to player;
+		rtrue;
+	}
+	if (FlagIsSet(F_MOLLY_TRUSTING)) {
+		"You hold your outstretched arm out to Molly. She trundles towards you, looks briefly at Marten and then hops back onto her perch.";
+	}
+	if (FlagIsSet(F_MOLLY_TAKEABLE)) {
+		"You hold your outstretched arm out to Molly. She tilts her head and looks at you expectantly, but doesn't move.";
+	}
+	"Marten gives you a suspicious look. You leave it alone for now.";
+];
+
+Array talk_array_Marten -->
+	30 300 "~Moin? Is that French or something?~" TM_NO_LINE "Marten laughs heartily and holds his belly.^^~Excuse me mister, I can't quite break that habit. I am Frisian.~" 301
+	0 301 "~What brought you here?~" TM_NO_LINE "~I came here over ten years ago on a clipper, was first mate. Actually wanted to go gold prospecting with Molly, but then the war took us elsewhere.~" 303
+	30 302 "~Gunshot wound? I thought you were a barber.~" TM_NO_LINE "Marten laughs boomingly.^^~As a barber on the high seas, it's always useful to know a bit about treating wounds. Besides, there's no doctor here anymore.~^^He pulls a small pipe out of his pocket and puffs some tobacco into it with a practiced movement.^^~And before you ask, I'm also the gravedigger here. Fortunately, I haven't had much work like that since the war.~"
+	0 303 "~So Molly is your wife?~" TM_NO_LINE "~My wife? Haa-ha-ha!~^^Marten can barely contain himself and slaps his thighs.^^~Molly is my bird young lad! We've experienced a lot together at sea. She was there as a fire watcher, she goes off like an alarm at the slightest bit of smoke.~" 304
+	0 304 "~Why was Molly at sea with you again?~" TM_NO_LINE descMartenMollyRepeat 304
+	0 305 "~Any idea how to get into the mine?~" TM_NO_LINE "~The mine? Why would you want to go in there?~^^You tell Marten what's going on. For the first time, he makes a serious face.^^~Aah. That's bad news. Don't think you'll get in through the front, not with those boys there. Maybe there's another way in.~" 306
+	0 306 "~May I borrow Molly for a little while?~" TM_NO_LINE "~What, you wanna take my bird with you? Because of Lucy?~^^Marten thoughtfully scratches the tattooed anchor on his upper right arm.^^~Well, if she goes with you voluntarily, that's fine with me. She'll run off when things get dicey. But please take good care of her!~" martenLendMolly
+	0 307 "~Were you there when the gallows were built?~" TM_NO_LINE "Marten flinches and looks at you suspiciously.^^~No, I wasn't. Unfortunately, I was there when they were inaugurated, and I also was allowed to work for two days straight afterwards until everyone was buried. Why do you ask?~" martenRopeQuestion
+	0 308 "~Bill said there must have been a lot of rope left over, do you know where that went?~" TM_NO_LINE "~Yes, of course lad. After all, I was ordered to clean up the mess.~^^He shakes his head and clears his throat.^^~The soldiers gave me a bit of money and told me to put all the rest of the stuff in the hatch and nail it up tight, cut the noose and bury the bodies. It was a ridiculous wage for all the work, but saying no certainly wouldn't have been a good idea.~"
+	0 309 "~You must have a shovel, right?~" TM_NO_LINE "Marten laughs boomingly and blinks at you.^^~You think I dig the graves here with my hands or what? Of course I have a shovel! I just got a new one a few days ago from Bill, the old cheapskate!~" martenShovelQuestion
+	0 310 "~May I borrow your shovel? It is really important.~" TM_NO_LINE "" martenGiveShovel
+	TM_END;
+
+[martenLendMolly;
+	SetFlag(F_MOLLY_TAKEABLE);
+];
+
+[martenRopeQuestion;
+	ActivateTopic(Marten, 308);
+];
+
+[martenShovelQuestion;
+	ActivateTopic(Marten, 310);
+];
+
+[martenGiveShovel;
+	if (FlagIsSet(F_MOLLY_TAKEABLE)) {
+		print "~Is this for the Lucy thing?~, Marten asks. You nod. He tilts his head and strokes his beard. ~Well okay then, I'll go get it for you.~^^He briefly disappears in the back of the store and reappears shortly afterwards with a large sturdy-looking shovel in his hand.^^~It's a bit muddy, so clean it up if it bothers you. And make sure I'll see it again!~^^You thank him and take the shovel.";
+		move Shovel to player;
+		give Shovel ~concealed;
+		InactivateTopic(Marten, 309);
+		InactivateTopic(Marten, 310);
+		InactivateTopic(Bill, 317);
+	} else {
+		print "Marten laughs and pats you on the left shoulder. ~My shovel? Now why would I give it to you? No, you won't get it just like that.";
+		sayPageTold(TC_MARTEN_SHOVEL);
+		print "~^";
+		ReActivateTopic(Marten, 310);
+	}
+];
+
+[descMartenMollyRepeat;
+	print "~She was our fire watcher, goes off like an alarm at the slightest bit of smoke.";
+	sayPageTold(TC_MARTEN_MOLLY);
+	print "~";
+];
+
+
+!-- 7: Ranch
+
+Constant CS_HUT = 170;
+Constant CS_PADDOCK = 171;
+Constant CS_STABLE = 172;
+Constant CS_BENCH = 173;
+Constant CS_GRASS = 174;
+
+Room r_Ranch "Ranch"
+	with name 'ranch',
+	with description descRanch,
+	cheap_scenery
+		CS_ADD_LIST r_Ranch (sc1)
+		CS_ADD_LIST r_Ranch (sc2),
+	sc1
+		CS_HUT 15 'wooden' 'shed' 'hut' 'house' 'door' 'roof' "A small wooden house with a flat, slightly sloping roof, hardly more than a shed."
+		CS_PADDOCK 1 'paddock' "A small paddock, enclosed by a waist-high fence. There is nothing here but dried steppe grass."
+		CS_GRASS 12 'dry' 'steppe' 'grass' "Dry steppe grass, it's been a long time since the last rain. You won't need it."
+		1 'fence' descUnimportantIt
+		CS_STABLE 3 'stable' 'stables//p' 'stench' "Some horses are moving around restlessly in the stable. The stench is breathtaking.",
+	sc2
+		CS_BENCH 2 'bench' 'seat' "A simple bench, made of wood."
+		2 'horse' 'horses//p' "The horses seem to be restless."
+		12 'fabric' 'cloth' 'ball' descGoneIt
+		13 'dried' 'jerky' 'meat' 'beef' descGoneIt
+		3 'snake' 'rattlesnake' 'dog'  descGoneIt
+		1 'boy' descGoneHe,
+	e_to r_Mainstreet,
+	w_to r_Mine,
+	s_to r_Windpump,
+	before [;
+		Go:
+			if(selected_direction == e_to && Rod in player) {
+				descRodTown(); rtrue;
+			}
+		Smell: 
+			if (cs_match_id == CS_STABLE) {
+				"It smells like horse shit.";
+			} else {
+				"It smells mainly of straw and horse shit.";
+			}
+		Enter, Open, Use: 
+			if (cs_match_id == CS_BENCH) {
+				"You really don't have time to rest now.";
+			} else if (cs_match_id == CS_STABLE) {
+				"The smell is really unpleasant, and you don't expect to find anything important there.";
+			} else if (cs_match_id == CS_PADDOCK) {
+				<<Examine noun>>;
+			} else if (cs_match_id == CS_HUT) {
+				print "You have no business there.";
+				if (Lucy notin r_Ranch) {
+					" Lucy and Michael are definitely not here.";
+				} else {
+					"";
+				}
+			}
+	];
+
+[descRodTown;
+	print "You shouldn't walk around town with this long metal rod.^";
+];
+
+[descRanch;
+	r_Ranch.visitcounter++;
+	if (r_Ranch hasnt visited) {
+		print "You come to a small wooden hut with an adjoining stable and a large fenced-in paddock.^^";
+	} else {
+		print "A small wooden hut with an adjoining stable and a large fenced-in paddock. There is a small bench in front of the house.^^";
+	}
+	if (Lucy in r_Ranch) {
+			if (Lucy hasnt proper) print "A ";
+			print (string) Lucy.short_name,
+			" sits sobbing on a small bench.^";
+	} else {
+		print "A narrow path leads south to the wind pump. The main road leads further out of town from the east to the west.^";
+	}
+	if (r_Ranch.visitcounter == 2 && Lucy in r_Vault) {
+		"^You hear a muffled bang followed by quiet cursing from the west.";
+	} else if (r_Ranch.visitcounter == 4) {
+		"^Something whizzes past your head and lands in the paddock in front of you. A little boy sprints up and jumps over the fence.^^Shortly afterwards he reappears with a ball of cloth under his arm and runs off. ~You didn't see anything, mister!~";
+	} else if (r_Ranch.visitcounter == 7) {
+		"^You hear the soft rattle of a rattlesnake. As you step next to the house with your revolver drawn, it quickly disappears into the steppe.";
+	} else if (r_Ranch.visitcounter == 10) {
+		"^A scrawny dog chases past you, panting at a monkey's pace, a piece of jerky between its teeth. A few houses further on, you hear someone swearing loudly.";
+	}
+];
+
+Object -> Lucy
+	with name 'Lucy' 'woman' 'girl',
+	short_name "young woman",
+	description descLucy,
+	talk_array talk_array_Lucy,
+	before [;
+		Talk:
+			if (FlagIsSet(F_ENDING_ACTIVE)) <<Talk Sheriff>>;
+	],
+	react_before [;
+		Go:
+			if (Lucy in r_Ranch) "You can't just leave her sitting here like that.";
+	],
+	has animate female concealed;
+
+
+[descLucy;
+	if (FlagIsSet(F_ENDING_ACTIVE)) {
+		"Lucy's eyes are red from crying, but she seems relieved.";
+	}
+	if (Lucy in r_Ranch) {
+		if (Lucy hasnt proper) print "The ";
+		print (string) Lucy.short_name, " has her face buried in her hands and doesn't notice you. She is wearing functional, robust clothing and looks well-groomed.^";
+	} else {
+		if (Lucy hasnt proper) print "The ";
+		print (string) Lucy.short_name,  " wears functional, robust clothing and looks well-groomed.^";
+	}
+];
+
+[setLucyKnown;
+	Lucy.short_name = "Lucy";
+	give Lucy proper;
+];
+
+Array talk_array_Lucy -->
+	30 300 "~May I help you Ma'am?~" TM_NO_LINE "She looks up to you, her eyes welling with tears. ~Michael is gone!~" 301 302
+	0 301 "~Who is Michael?~" TM_NO_LINE "She blows into her handkerchief once. ~Michael is my fiance. He wanted to go to the saloon yesterday.~^^She takes a deep breath and points over to the horses.^^~When I got here this morning, the horses weren't looked after and there was no sign of Michael. He would never leave the horses to themselves like that!~" 303
+	0 302 "~What is your name?~" TM_NO_LINE "~I'm Lucy.~" setLucyKnown
+	0 303 "~Do you have any idea what might have happened?~" TM_NO_LINE descLucyHappened goToFlashback1
+	0 400 "~Everything okay with you?~" TM_NO_LINE "" lucyVaultFreeThem
+	0 401 "~What happened to you?~" TM_NO_LINE "~We don't have time for this now!~, Lucy hisses excitedly. ~They're cooking up some mess here, and my stepfather is in on it!~^^Her eyes widen and she hastily pulls you both back into the niche. ~Watch out, they're coming!~" lucyVaultWhatHappened
+	TM_END;
+
+[descLucyHappened;
+	print "She averts her eyes.^^~I don't know. Before he left yesterday, he said briefly that he had heard something about the Mifflin brothers. When I wanted to know what exactly, he looked at me thoughtfully and said it wasn't that important.~^^She turns back to you. Her gaze wanders past your face, her eyes widen in fear.^^~Hey, what--~^^";
+	print (bld) "POW!^^";
+];
+
+[bld text;
+  style bold;
+  print (string)text;
+  style roman;
+];
+
+[goToFlashback1;
+	doScreenbreak();
+	style underline;
+	print "Claire whirls around. ~To the army? Are you out of your mind?~^^She is so beautiful when she is angry, but the sparkling fire in her eyes sometimes scares you a little. As you try to stroke her cheek, she quickly turns away.^^~You know we need the money.~^^You try to sound as firm and determined as possible, but you're not entirely convinced of your decision yourself. She looks out of the dusty window defiantly, her arms crossed in front of her chest. Her chin trembles slightly.^^";
+	style roman;
+	print "Claire...^";
+	doScreenbreak();
+	! Move player silently to Sheriff's office
+	SetFlag(F_PLAYER_LOCKED_UP);
+	move Revolver to Bag;
+	if (Bag in player) {
+		give Bag ~open;
+		move Bag to Desk;
+		move DraftNotice to Desk;
+	}
+	PlayerTo(r_Sheriff, true);
+	print "Ouch.^^Your head is pounding again, only this time it doesn't feel like too much whiskey the night before.^^~Enjoying a little nap, eh?~^^You slowly open your eyes, looking straight into the weather-beaten face of the sheriff.^";
+	talk_menu_talking = false;
+];
+
+[doScreenbreak;
+	print "@@126@@126@@126^^";
+];
+
+Global vault_death_count = 0;
+
+[doWhiteLight;
+	print "^--- WHITE LIGHT ---^";
+];
+
+[doVaultDeath _r;
+	doWhiteLight();
+	new_line;
+	vault_death_count++;
+	_r = random(3);
+	print "No, that's not what really happened. ";
+	switch (_r) {
+		1: print "You think through all the possible courses of action again.";
+		2: print "You did it differently somehow, you're sure of it.";
+		3: print "In reality of course, you had come up with a much smarter solution.";
+	}
+	if (vault_death_count > 2)
+		print "^Perhaps you should take another look around.";
+	"^The white fog slowly clears before your eyes. The men are still charging towards you.";
+];
+
+
+!--- 8: Mine
+
+Constant CS_HILLCHAIN = 180;
+Constant CS_MINEENTRANCE = 181;
+Constant CS_SMOKE = 182;
+Constant CS_SHRUB = 183;
+
+Room r_Mine "Mine"
+	with description descMine,
+	cheap_scenery
+		CS_HILLCHAIN 4 'range' 'hill' 'hills//p' 'chain' "The range of hills stretches from north-east to south."
+		CS_MINEENTRANCE 6 'mine' 'entrance' 'cart' 'carts//p' 'torch' 'torches//p' "Apart from a few empty carts and some torches, you can't see much at the entrance to the mine."
+		CS_SMOKE 3 'smoke' 'plume' 'haze' "Black smoke is constantly billowing out of the mine. Perhaps caused by the torches burning down there, or by other mining work."
+		CS_SHRUB 3 'shrub' 'bush' 'path' descShrub,
+	e_to r_Ranch,
+	w_to [; <<Examine MineMan>>; ],
+	before [;
+		Go:
+			if (selected_direction == n_to or nw_to or ne_to or s_to or sw_to or se_to)
+				"There is no path in that direction.";
+		Smell:
+			if (noun == 0)
+				"It smells slightly of smoke.";
+		Enter:
+			if (cs_match_id == CS_MINEENTRANCE)
+				"Too far away and well guarded. Maybe you should try to find another way.";
+	];
+
+[descMine;
+	if (r_Mine hasnt visited)
+		print "After a short stretch of dusty road, a low ridge rises up in front of you. A few minutes later, you recognize the entrance to a mine.^^";
+	print "The entrance to the mine is lit by torches on both sides. A thin plume of smoke rises from the highest point of the tunnel and quickly disappears in the wind.^^";
+	print "A hollow-eyed man with disheveled black hair leans against an empty cart, playing around with his rifle.";
+	if (Hankie in r_Mine)
+		print "^^At the edge of the path, something white flashes out from behind a small shrub.";
+	"^^The path to the east leads back to town.";
+];
+
+[descShrub;
+	Examine:
+		if (Hankie in r_Mine)
+			"A handkerchief lies next to the bush, half covered in sand.";
+		"A small shrub stands at the edge of the path.";
+	default: rfalse;
+];
+
+Object MineMan "man" r_Mine
+	with name 'man' 'goon' 'bandit' 'hair' 'rifle',
+	description descMineManExamine,
+	before [;
+		Attack, Talk, Tell, Ask, Show, Give, Order:
+			descMineManExamine();
+			rtrue;
+		Shoot:
+			"You can't just shoot him in the face. First of all that's not very nice and second it would probably bring other similarly bad-tempered characters onto the scene.^^Maybe there's another way into the mine.";
+	],
+	has animate proper concealed;
+
+[descMineManExamine;
+	print "As you get closer, the man points his rifle at you.^^";
+	if (MineMan has general)
+		print "~Are you deaf shithead? Piss off!~";
+	else {
+		print "~Get the hell out of here, quickly!~";
+		give MineMan general;
+	}
+	"^^You raise your hands apologetically and back off.";
+];
+
+Object Hankie "handkerchief" r_Mine
+	with name 'handkerchief' 'hankie' 'hanky' 'hankey',
+	description "A somewhat crumpled, bright white handkerchief made of some fine fabric. The initials LT have been carefully embroidered on one corner.",
+	before [;
+		Take:
+			if (Hankie in r_Mine) {
+				print "You put the hankie in your pocket.^";
+				give Hankie ~concealed;
+				move Hankie to player;
+				remove SomethingWhite;
+				ActivateTopic(Marten, 305);
+				ActivateTopic(Ella, 309);
+				ActivateTopic(Sheriff, 305);
+				rtrue;
+			}
+		Smell:
+			"It smells of lavender and bitter tears.";
+	],
+	has concealed;
+
+Object SomethingWhite "something white" r_Mine
+	with name 'something' 'white',
+	description "It is a handkerchief.",
+	before [;
+		Take:
+			print "It's a handkerchief. You take it with you.^";
+			give Hankie ~concealed;
+			move Hankie to player;
+			remove SomethingWhite;
+			ActivateTopic(Marten, 305);
+			ActivateTopic(Ella, 309);
+			ActivateTopic(Sheriff, 305);
+			rtrue;
+	],
+	has scenery;
+
+!-- 11: Wind Pump
+
+Constant CS_WINDMILL = 190;
+Constant CS_MAST = 191;
+
+Room r_Windpump "Wind Pump"
+	with description descWindpump,
+	cheap_scenery
+		CS_WINDMILL 6 'pump' 'windpump' 'windmill' 'mill' 'wheel' 'vane' "The windmill turns slightly in the wind and squeaks heartbreakingly."
+		CS_MAST 13 'lattice' 'mast' 'tower' 'bars' descMast,
+	n_to r_Ranch,
+	w_to r_Hillchain,
+	before [;
+		Go:
+			if (selected_direction == nw_to or ne_to or e_to or s_to or sw_to or se_to)
+				"There is no path in that direction.";
+			if (selected_direction == u_to)
+				"You are not free from giddiness.";
+		Smell:
+			if (noun == 0)
+				"You don't smell anything special. The squeaking wheel takes over your senses.";
+		Climb:
+			if (cs_match_id == CS_WINDMILL or CS_MAST)
+				"You're a bit afraid of heights, and there's nothing up there that you need.";
+	];
+
+[descWindpump;
+	if (r_Windpump hasnt visited)
+		print "After a few yards you arrive at the wind pump that you could see through the window of your room.^^";
+	print "The windmill is mounted at a height of around fifteen yards on a lattice mast made of long metal rods. It squeaks terribly with every rotation. A metal tail vane automatically points the rotor blades in the direction of the wind.^^";
+	"The path leads back to the ranch in the north and towards the hill chain in the west.";
+];
+
+[descMast;
+	Examine:
+		print "The lattice mast consists of welded metal rods.";
+		if (Rod hasnt general)
+			" One of the rods near the ground seems to have come loose.";
+		"";
+	default: rfalse;
+];
+
+Object Rod "metal rod" r_Windpump
+	with name 'rod' 'metal' 'pole' 'bar',
+	description "A solid metal rod, about ten feet long with a diameter of about two inches.",
+	before [;
+		Take:
+			if (FlagIsSet(F_BOULDER_REMOVED))
+				"The long metal rod is bent and even more unwieldy than before. You no longer want to carry it around with you.";
+			if (Rod hasnt general) {
+				print "You lever the rod back and forth until the remaining weld seam detaches from the lattice mast. It is so long and heavy that you have to carry it with both hands.^";
+				give Rod general;
+				InactivateTopic(Bill, 312);
+				give Rod ~concealed;
+				move Rod to player;
+				rtrue;
+			}
+			if (Rod in player)
+				"You are already carrying the rod.";
+		Insert:
+			if (second == Bag)
+				"That won't fit into the bag.";
+	],
+	has concealed;
+
+
+!-- 12: Hill Chain
+
+Constant CS_BOULDERFIELD = 240;
+Constant CS_HILLPATH = 241;
+
+Room r_Hillchain "Hill Chain"
+	with description descHillchain,
+	cheap_scenery
+		CS_BOULDERFIELD 16 'boulder' 'stones//p' 'scree' 'boulders' 'rocks' 'rubble' 'field' descBoulderField
+		CS_HILLPATH 1 'path' descUnimportantIt,
+	e_to r_Windpump,
+	n_to [;
+		if (FlagIsSet(F_BOULDER_REMOVED)) return r_Cave;
+		if (FlagIsClear(F_BOULDER_DISCOVERED))
+			"You see no path in this direction.";
+		if (FlagIsSet(F_CREVICE_WIDENED))
+			"You can't squeeze past the boulder, the gap still isn't wide enough.";
+		"You can't squeeze past the boulder, the gap isn't wide enough.";
+	],
+	in_to [; return self.n_to(); ],
+	before [;
+		Go:
+			if (selected_direction == nw_to or ne_to)
+				<<Go n_to>>;
+			if (selected_direction == w_to or s_to or sw_to or se_to)
+				"There is nothing out there.";
+		Smell:
+			if (noun == 0)
+				"It smells slightly of smoke.";
+	];
+
+[descHillchain;
+	if (r_Hillchain hasnt visited)
+		print "After a few minutes' walk, you find yourself at the bottom of a low hill chain.^^";
+	print "A large boulder field of larger and smaller rocks stretches hundreds of yards across. The hills seem to offer good protection from the wind as it is almost windless here.^^";
+	if (FlagIsSet(F_BOULDER_REMOVED))
+		print "To the north, a narrow passage about shoulder-high can be seen between the stones, with a bent metal rod lying next to it. A few yards off is the boulder that previously closed off the tunnel entrance.^^";
+	print "The path in the east leads back to the wind pump of the town.^";
+	descMollyAtHill();
+];
+
+[descMollyAtHill;
+	if (Molly in player && FlagIsClear(F_BOULDER_DISCOVERED))
+		print "^Molly paces restlessly up and down on your shoulder.^";
+	else if (FlagIsSet(F_BOULDER_DISCOVERED) && FlagIsClear(F_BOULDER_REMOVED) && Molly in r_Hillchain)
+		print "^Molly sits on a boulder and flutters her wings excitedly.^";
+];
+
+[descBoulderField;
+	Examine:
+		if (Molly in player) {
+			SetFlag(F_BOULDER_DISCOVERED);
+			InactivateTopic(Marten, 304);
+			move Molly to r_Hillchain;
+			ActivateTopic(Bill, 305);
+			"You walk up and down the boulder field when Molly suddenly starts flapping excitedly and hops off your shoulder onto one of the boulders.^^~Braak! BRAAAAK! FIREEEE!~";
+		}
+		if (FlagIsSet(F_BOULDER_REMOVED)) {
+			print "To the north, a narrow passage about shoulder-high can be seen between the stones, with a bent metal rod lying next to it. A few yards off is the boulder that previously closed off the tunnel entrance.";
+			"";
+		}
+		if (FlagIsSet(F_BOULDER_DISCOVERED))
+			"Here lies the boulder that Molly discovered.";
+		"You walk up and down the boulder field, but can't see anything special about the boulders with the naked eye.^^At one point, you believe you notice the scent of smoke, but you can't pinpoint its exact origin.";
+	default: rfalse;
+];
+
+Object Boulder "boulder" r_Hillchain
+	with name 'boulder' 'bowlder' 'rock',
+	description descBoulder,
+	before [;
+		Take, Push, Pull:
+			if (FlagIsSet(F_BOULDER_REMOVED))
+				"The current position of the boulder is just fine.";
+			if (FlagIsSet(F_BOULDER_DISCOVERED))
+				"You push and pull the boulder with all your might, but it won't move. You probably won't get any further here unless you use some proper tools.";
+			"You don't want to search aimlessly in the boulder field.";
+	],
+	has scenery;
+
+[descBoulder;
+	if (FlagIsSet(F_BOULDER_REMOVED))
+		"The boulder lies lonely at the end of the scree field, about twenty steps away from the tunnel entrance that it previously blocked.";
+	if (FlagIsSet(F_BOULDER_DISCOVERED)) {
+		print "Molly sits on the boulder and flutters excitedly. As you examine the boulder more closely, you recognize what appears to be a larger cavity behind a ";
+		if (FlagIsSet(F_CREVICE_WIDENED)) print "narrow";
+		else print "thumb wide";
+		" crevice.";
+	}
+	! If Molly is present but boulder not yet discovered, trigger discovery
+	! (handles "examine boulder" as well as "examine boulder field").
+	if (Molly in player) {
+		descBoulderField();
+		rtrue;
+	}
+	"You can't see anything special between the boulders.";
+];
+
+Object Crevice "crevice" r_Hillchain
+	with name 'crevice' 'gap' 'hole' 'crack' 'cavity' 'draught' 'entrance' 'passage',
+	description descCrevice,
+	before [;
+		Open: "You cannot open the crevice with your bare hands.";
+		Receive: <<UseTogether noun self>>;
+		Unlock: <<UseTogether second self>>;
+		Smell: "It smells distinctly of smoke.";
+	],
+	has scenery;
+
+[descCrevice;
+	if (FlagIsSet(F_BOULDER_REMOVED))
+		"The crevice is no more. In place of the rock you removed, a narrow tunnel entrance is now visible to the north.";
+	print "There seems to be a larger cavity behind the ";
+	if (FlagIsSet(F_CREVICE_WIDENED)) print "narrow";
+	else print "thumb wide";
+	" crevice. You hold your hand inside and feel a faint draught.";
+];
+
+[doFlashback2;
+	print "You slowly push the long metal rod into the gap. It fits perfectly!^^You grab the rod with both hands at the free end and push it hard towards the mountain. The boulder seems to move slightly. ~BRAAAK!~ Molly croaks excitedly and settles on your shoulder.^^You look around again - there doesn't seem to be anyone within earshot. You brace yourself against the rod again with all your weight, and lo and behold - the boulder comes loose!^^";
+	print (bld) "RRRRRRRRRRRRRRR...^^";
+	doScreenbreak();
+	style underline;
+	print "You haven't been here at the pier for ages. As always, she wanted to save the money for later, but today you really wanted to go to the sea with her.^^~With or without the hat, what do you think?~^^Claire is sitting on a stool, laughing and holding the hat flapping wildly in the wind. You gave the artist two dollars, hopefully it'll be a nice picture. His piece of charcoal flits across the paper hastily and with skilled strokes.^^Seagulls circle at the end of the pier and screech loudly as a little boy tries to catch them. She turns her head and smiles at you. You clench your fist in your pocket, clutching the ring tightly.^^";
+	style roman;
+	print "Where are you, Claire?^";
+	doScreenbreak();
+	SetFlag(F_BOULDER_REMOVED);
+	move Molly to r_Barber;
+	move Rod to r_Hillchain;
+	give Rod general;
+	PlayerTo(r_Hillchain, true);
+	print "You open your eyes.^^It seems like you hit your head (again), this time probably when you tried to jump to safety from the rolling boulder it seems. At least that seems to have worked.^^You slowly pick yourself up and pat the dust off your shoulders. What a shitty day.^";
+];
+
+
+!-- 13: Gallows
+
+Constant CS_GALLOWS_POSTS = 200;
+Constant CS_NOOSE = 201;
+Constant CS_CROSSES_GAL = 202;
+Constant CS_TOWN = 203;
+Constant CS_SAND = 204;
+
+Room r_Gallows "Gallows"
+	with description descGallows,
+	cheap_scenery
+		CS_ADD_LIST r_Gallows (sc1)
+		CS_ADD_LIST r_Gallows (sc2),
+	sc1
+		CS_GALLOWS_POSTS 6 'gallows' 'scaffold' 'scaffolding' 'post' 'posts' 'crossbar' "The gallows consist of two thick posts with crossbars and a rope. The noose is severed."
+		CS_NOOSE 4 'noose' 'rope' 'sling' 'loop' "A thick rope, tied into a noose and cut at the lower end. The gallows were probably decommissioned after the war.",
+	sc2
+		CS_CROSSES_GAL 3 'crosses' 'cross' 'wooden' "Several crosses, some of them crooked. From a distance you can't make out any details."
+		CS_TOWN 4 'town' 'city' 'houses' 'house' "A couple of inconspicuous houses in the west.",
+	w_to r_Mainstreet,
+	n_to r_Cemetery,
+	before [;
+		Go:
+			if (selected_direction == nw_to or ne_to or e_to or sw_to or s_to or se_to)
+				"There is nothing out there.";
+		Smell:
+			if (noun == 0)
+				"The wind here is too piercing to smell anything.";
+		Take:
+			if (cs_match_id == CS_NOOSE && HatchRope has concealed) "Even if you could untie the noose, the rope would be of no use to you in this form.";
+		Dig:
+			if (second == Shovel) {
+				if (Shovel notin player) "You don't have your shovel.";
+				if (FlagIsSet(F_PLATFORM_DUG)) "You are actually already satisfied with the result.";
+				SetFlag(F_PLATFORM_DUG);
+				give IronPlate ~concealed;
+				"Piece by piece, you free the platform from the large pile of sand, while the wind whips relentlessly in your face.^^Directly under the gallows, a sturdy wooden board becomes visible, which has been carefully nailed to the pedestal with a lot of large nails.";
+			}
+			"There is nothing useful to dig at here.";
+	];
+
+Object Platform "wooden platform" r_Gallows
+	with name 'platform' 'pedestal' 'foundation' 'wooden' 'opening' 'hole' 'plate' 'panel' 'board',
+	description descPlatform,
+	before [;
+		Search:
+			"The platform is completely closed off with thick wooden beams.";
+		Push, Pull, Open, Rub, Take:
+			"Without suitable tools, this is a pointless undertaking.";
+		Enter:
+			<<Examine self>>;
+	],
+	has scenery;
+
+Object Sand "sand" r_Gallows
+	with name 'sand' 'dune',
+	description descSand,
+	before [;
+		Take:
+			if (FlagIsSet(F_PLATFORM_DUG)) "You've had enough sand for today.";
+			ActivateTopic(Bill, 317);
+			ActivateTopic(Marten, 309);
+			SetFlag(F_PLATFORM_KNOWN);
+			"You try to scrape the sand away with your feet, but in this wind that seems to be a pointless endeavor. Perhaps you would have more success with proper tools.";
+		Push, Pull, Rub:
+			<<Examine self>>;
+	],
+	has scenery;
+
+Object IronPlate "iron plate" r_Gallows
+	with name 'iron' 'hatch' 'trapdoor',
+	description "A rectangular iron plate, roughly two foot square, set flush into the wooden platform.",
+	before [;
+		Open, Pull, Take:
+			"It's stuck fast. You need a lever to pry it open.";
+	],
+	has concealed scenery;
+
+Object HatchRope "rope" r_Gallows
+	with name 'rope' 'coil' 'coiled' 'seil' 'thick' 'leftover',
+	description "A long, thick rope, at least ten yards long.",
+	before [;
+		Take:
+			if (FlagIsSet(F_ROPE_TIED)) "You'd rather leave it there.";
+			if (player in r_Gallows && (Lamp notin player || Lamp hasnt on))
+				"Even if you could untie the noose, the rope would be of no use to you in this form.";
+			give self ~scenery;
+			move self to player;
+			"You throw the coiled rope over your shoulder. Quite heavy.";
+	],
+	has concealed scenery;
+
+Object HatchDebris "boards" r_Backstage
+	with name 'boards' 'nails' 'cobwebs',
+	description [;
+		if (player in r_Gallows && (Lamp notin player || Lamp hasnt on)) {
+			if (Lamp has static) {
+				ActivateTopic(Ella, 304);
+				ActivateTopic(Bill, 313);
+			}
+			"It's too dark to see what's in there, and you don't feel like sticking your hand in just like that.";
+		}
+		"You don't see anything special about them.";
+	],
+	before [;
+		Take:
+			"You see no reason to take them with you.";
+	],
+	has concealed scenery;
+
+[descGallows;
+	if (r_Gallows hasnt visited)
+		print "As you pass the last building, the wind hits you hard from the side. You pull your scarf over your nose and continue walking slowly. After a few more steps, you can gradually make out a kind of scaffolding in the cloud of dust in front of you.^^";
+	print "You are standing in front of a gallows consisting of two posts with crossbars and a noose. A wooden platform serves as a foundation.^^";
+	"Further north you think you can recognize some leaning crosses. Heading west, you can return to town.";
+];
+
+[descPlatform;
+	if (FlagIsSet(F_PLATFORM_OPEN)) {
+		if (Lamp in player && Lamp has on) {
+			print "You shine your lamp into the opening. A few mice take flight, squeaking.";
+			if (HatchRope in r_Gallows)
+				"^In the pale light of the lamp, you can make out a few bent nails, some boards covered in cobwebs and a coiled rope.";
+			"^In the pale light of the lamp, you can make out a few bent nails and some boards covered in cobwebs.";
+		}
+		else {
+			if (Lamp has static) {
+				ActivateTopic(Ella, 304);
+				ActivateTopic(Bill, 313);
+			}
+			"It's too dark to see what's in there, and you don't feel like sticking your hand in just like that.";
+		}
+	}
+	if (FlagIsSet(F_PLATFORM_DUG))
+		"A large wooden plate was nailed to the platform directly under the gallows.";
+	"A wooden platform, apparently hastily put together, forms the foundation of the gallows. It is almost completely covered with sand.";
+];
+
+[descSand;
+	print "The sand forms a small dune and comes up to your knee at the highest point. There is practically nothing left to see of the base of the platform.";
+	new_line;
+	if (Shovel notin player) {
+		ActivateTopic(Bill, 317);
+		ActivateTopic(Marten, 309);
+		SetFlag(F_PLATFORM_KNOWN);
+	}
+	rtrue;
+];
+
+
+!-- 14: Cemetery
+
+Constant CS_BUSHES_CEM = 210;
+
+Room r_Cemetery "Cemetery"
+	with description descCemetery,
+	cheap_scenery
+		CS_BUSHES_CEM 4 'bush' 'bushes' 'shrubbery' 'foliage' "Small bushes enclose the cemetery and offer some protection from the piercing wind.",
+	s_to r_Gallows,
+	before [;
+		Go:
+			if (selected_direction == nw_to or n_to or ne_to or e_to or sw_to or se_to or w_to)
+				"There is nothing out there.";
+		Smell:
+			if (noun == 0)
+				"The bushes, hot from the sun, exude a slightly sweet scent.";
+	];
+
+Object GraveCrosses "crosses" r_Cemetery
+	with name 'cross' 'crosses' 'grave' 'wooden',
+	description [; CrossMenu(); rtrue; ],
+	has scenery;
+
+Object Graves "graves" r_Cemetery
+	with name 'grave' 'graves' 'stones' 'gravesite' 'gravesites',
+	description [; GraveMenu(); rtrue; ],
+	has scenery;
+
+[descCemetery;
+	if (r_Cemetery hasnt visited)
+		print "You walk a few steps further towards the crosses. Half-height bushes protect the gravesites and their visitors from the wind.^^";
+	print "Several crooked crosses stand carelessly crammed next to each other on a small hill, none of them inscribed. Possibly the final resting place of deserters.^^";
+	print "Further ahead, four crosses stand neatly lined up next to each other, each at the head of a grave thoroughly edged with stones.^^";
+	"In the south you can see the outline of the gallows.";
+];
+
+[ _tmExitDoLook;
+	if (FlagIsSet(F_ENDING_ACTIVE) && GetTopicStatus(Sheriff, 411) == TM_STALE) {
+		endingCleanup();
+		return;
+	}
+	Look();
+];
+
+
+[CrossMenu val;
+	print "Which of the crosses would you like to read?^";
+	print "^";
+	while (true) {
+		print "[1] First cross^";
+		print "[2] Second cross^";
+		print "[3] Third cross^";
+		print "[4] Fourth cross^";
+		print "[0] End^^";
+		PrintMsg(MSG_PROMPT);
+		buffer->1 = 0;
+		@aread buffer parse -> num_words;
+		num_words = parse->1;
+		if (num_words == 0) val = -1;
+		else val = TryNumber(1);
+		if (val == 0) { new_line; Look(); rtrue; }
+		switch (val) {
+			1: print "[First cross]^~Biff Clayton~^~1837-1868~^";
+			2: print "[Second cross]^~Mathilda Brooks, n@'ee Walker~^~1808-1869~^";
+				SetFlag(F_BILLS_WIFE_FOUND);
+				if (GetTopicStatus(Bill, 308) == TM_STALE)
+					ActivateTopic(Bill, 309);
+				if (FlagIsSet(F_BILLS_WIFE_NAMED))
+					print "This is probably the grave of Bill's wife.^";
+			3: print "[Third cross]^~Wendy Porter~^~1816-1875~^";
+			4: print "[Fourth cross]^~Lucille Thompson, n@'ee Powell~^~1845-1878~^";
+			default: continue;
+		}
+	}
+];
+
+[GraveMenu val;
+	print "Which of the graves would you like to examine?^";
+	print "^";
+	while (true) {
+		print "[1] First grave^";
+		print "[2] Second grave^";
+		print "[3] Third grave^";
+		print "[4] Fourth grave^";
+		print "[0] End^^";
+		PrintMsg(MSG_PROMPT);
+		buffer->1 = 0;
+		@aread buffer parse -> num_words;
+		num_words = parse->1;
+		if (num_words == 0) val = -1;
+		else val = TryNumber(1);
+		if (val == 0) {
+			new_line;
+			! After exiting the grave menu, give pince-nez if found
+			if (FlagIsSet(F_PINCENEZ_FOUND) && PinceNez notin player && PinceNez notin Bill) {
+				move PinceNez to player;
+				InactivateTopic(Bill, 308);
+				ActivateTopic(Bill, 310);
+			}
+			Look(); rtrue;
+		}
+		switch (val) {
+			1, 3, 4: print "You don't see anything special, and you don't want to dig around the graveyard without good reason.^";
+			2: descGrave2();
+			default: continue;
+		}
+	}
+];
+
+[descGrave2;
+	if (FlagIsSet(F_BILLS_WIFE_NAMED) && FlagIsSet(F_BILLS_WIFE_FOUND) && PinceNez notin player && PinceNez notin Bill) {
+		print "[Second grave]^You carefully run your fingers through the fine sand on the grave until your fingers feel something.^^There they are, Bill's pince-nez!^^You gently blow the sand off the lenses and pocket them.^";
+		SetFlag(F_PINCENEZ_FOUND);
+	} else if (FlagIsSet(F_PINCENEZ_FOUND) || PinceNez in player || PinceNez in Bill) {
+		print "Rest in peace, Mathilda.^";
+	} else {
+		print "You don't see anything special, and you don't want to dig around the graveyard without good reason.^";
+	}
+];
+
+
+!-- 16: Cave
+
+Room r_Cave "Cave"
+	with description descCave,
+	s_to r_Hillchain, out_to r_Hillchain,
+	before [;
+		Go:
+			if (selected_direction == n_to or d_to) {
+				if (Lamp has on) {
+					if (FlagIsSet(F_ROPE_TIED)) {
+						! Rope is tied and lamp lit — descend to Vault
+						if (r_Vault hasnt visited) {
+							print "You take the handle of the kerosene lamp between your teeth and grasp the rope with both hands.^^With your feet braced against the rock face, you slowly rappel down into the dark abyss.^";
+							doScreenbreak();
+						}
+						PlayerTo(r_Vault);
+						rtrue;
+					}
+					print "The precipice is far too steep to climb down safely without gear.^";
+					ActivateTopic(Bill, 315);
+					ActivateTopic(Ella, 311);
+				} else {
+					if (PointedRock hasnt general) print "You feel your way forward carefully...^^Ouch! You hit your shin on a big rock or something.^^";
+				print "It really is too dark in here to go any further, you could seriously hurt yourself.^";
+					ActivateTopic(Bill, 313);
+					ActivateTopic(Ella, 304);
+				}
+				rtrue;
+			}
+			if (selected_direction == e_to or w_to or ne_to or nw_to or se_to or sw_to)
+				"You carefully feel the wall. This is as far as it goes.";
+		Tie:
+			if (noun == HatchRope || second == HatchRope) {
+				<<UseTogether HatchRope PointedRock>>;
+			}
+			"You can't tie that here.";
+		Smell:
+			"It smells slightly of smoke and damp stone. And somehow slightly sweet, a smell you've never smelled before.";
+	];
+
+[descCave;
+	if (r_Cave hasnt visited)
+		print "You squeeze through the narrow gap. After a few small steps, you can stand comfortably and move freely.^^";
+	print "The air is pleasantly cool and damp, and it slightly smells of smoke. ";
+	if (Lamp has on)
+		print "A large, pointed boulder marks the edge of a precipice to the north.";
+	else
+		print "It's so dark that you can hardly see your own feet.";
+	print "^^";
+	"To the south, pale light filters through the long, narrow cave entrance.";
+];
+
+Object PointedRock "pointed rock" r_Cave
+	with name 'rock' 'pointed' 'boulder',
+	description [;
+		if (Lamp has on)
+			"A man-sized, pointed rock stands right on the edge of the precipice.";
+		"The pointed rock feels damp and smooth.";
+	],
+	before [;
+		Examine:
+			give self general;
+	],
+	has scenery;
+
+Object Precipice "precipice" r_Cave
+	with name 'precipice' 'abyss' 'cliff' 'edge',
+	description [;
+		if (Lamp has on)
+			"Even with the light from the lamp, you can't see the bottom. It's definitely too deep to jump.";
+		"You can't see anything.";
+	],
+	has scenery;
+
+
+!-- 15: Vault
+
+[lucyVaultFreeThem;
+	if (FlagIsClear(F_GUARD_OUT)) {
+		print "~Shhh! Wait until the guard is gone!~^^Lucy barely whispers.^";
+		rtrue;
+	}
+	if (FlagIsSet(F_LUCY_FREE)) {
+		rfalse;
+	}
+	print "Lucy glares at you, her expression a wild mixture of desperation and sheer rage. ~Please get us out of here damnit!~^^";
+	print "You use your crowbar to pry the bars apart so that they both can just squeeze through.^^";
+	print "The young man breathes a sigh of relief and holds out his hand to you. ~Thank you very much sir. I am Michael.~ You shake his hand.";
+	SetFlag(F_LUCY_FREE);
+	ActivateTopic(Lucy, 401);
+];
+
+[lucyVaultWhatHappened;
+	SetFlag(F_LUCY_LISTENING);
+	talk_menu_talking = false;
+	print "^Vault^";
+	descVaultThompson();
+];
+
+[doExplosion;
+	if (FlagIsClear(F_LUCY_FREE)) {
+		"That would get everyone killed. You'd better deal with the guard and get Lucy out first.";
+	}
+	if (FlagIsClear(F_VAULT_SHOWDOWN)) {
+		"Careful - don't start shooting randomly in here. Wait for the right moment.";
+	}
+	print "You squint your left eye and carefully aim at the wooden wedge holding the cart in place. You breathe out halfway and pull the trigger.^^";
+	print "The shot releases perfectly and sends the wooden wedge flying in a high arc. The cart rumbles loudly through the resulting cloud of dust and rolls straight towards you.^^";
+	print "The men pause and turn around, their eyes widening in fear.^^";
+	print "~The nitro! GET OUT!~^^";
+	print "You turn to Michael and Lucy, who are staring past you with their mouths wide open. You leap onto them and push them to the ground just before the world explodes around you.^";
+	doWhiteLight();
+	move Michael to r_Sheriff;
+	move Lucy to r_Sheriff;
+	give Michael ~concealed;
+	give Lucy ~concealed;
+	SetFlag(F_ENDING_ACTIVE);
+	SetFlag(F_PLAYER_LOCKED_UP);
+	Sheriff.talk_array = talk_array_Sheriff_Ende;
+	PlayerTo(r_Sheriff, true);
+];
+
+Constant CS_VAULT_MEN = 310;
+Constant CS_VAULT_LEDGE = 311;
+Constant CS_VAULT_NICHE = 312;
+
+[descVaultThompson;
+	SetFlag(F_VAULT_SHOWDOWN);
+	print "A very dapper-looking middle-aged man with a cane and bowler hat and a much younger, dirtier and wildly gesticulating fellow stroll in your direction. They stop just a few steps away.^^";
+	print "~What else are we supposed to do Ron? They'll start singing as soon as we let them out!~^^";
+	print "~That's still Mr. Thompson to you, Cal. I'll talk to Lucy when she's calmed down a bit, then we'll see.~ Ah, the younger man must be Calvin Mifflin then!^^";
+	doScreenbreak();
+	print "The young man looks down and shakes his head. ~Well, I don't know Ro-- Mr. Thompson. She sounds like a smart mouth to me.~^^";
+	print "With a quick, almost casual movement, Thompson swings the cane and brings the knob down on the man's left knee with lightning speed. ~AAAARGH!~ the man cries out in surprise and collapses instantly.^^";
+	print "As if nothing had happened, Thompson continues to speak in a consistently sonorous voice. ~It's not your place to talk about her like that. If she and her groom don't come to their senses, we will have to find another solution I'm afraid.~^^";
+	print "Lucy turns crimson red. ~YOU GODDAMN---~^";
+	doScreenbreak();
+	print "Michael quickly presses a hand over Lucy's mouth, but it's too late. Thompson takes a few steps to the side to look into the alcove. His eyes widen.^^";
+	print "~The prisoners are free! Over here, now!~^^";
+	print "Several men look up and run down from the cave entrance in your direction, some reaching for their weapons.^";
+	give Wedge ~concealed;
+	give Barrels ~concealed;
+	give Thompson ~concealed;
+];
+
+[descVault;
+	if (r_Vault hasnt visited) {
+		print "After what feels like an eternity, your feet finally feel solid ground again. Sweat runs down your back as you turn away from the wall. Your strained panting paints small clouds of steam into the glow of your lantern.^^";
+		print "A deep rumble, apparently not far away, makes you fall silent in a flash. Carefully, you follow the dim light of the curved tunnel ahead of you.^^";
+		print "As the passage widens and becomes brighter, you can hear voices more and more clearly. Carefully, you take cover behind a waist-high stone ledge from which you can see the large vault below you, illuminated by countless torches.^^";
+		doScreenbreak();
+	}
+	if (FlagIsSet(F_VAULT_SHOWDOWN)) {
+		print "Several men run down from the cave entrance in your direction, some with their weapons drawn. You perceive the situation as if in slow motion. Your right hand twitches slightly.";
+		if (vault_death_count > 1) {
+			print "^^Everything seems like a blur, but next to the cave entrance a cart loaded with barrels catches your eye.";
+			give Wedge ~concealed;
+			give Barrels ~concealed;
+			if (vault_death_count > 2)
+				print " A large wooden wedge blocks one of the wheels and prevents the cart from rolling away.";
+		}
+		new_line;
+		rtrue;
+	}
+	if (FlagIsSet(F_LUCY_LISTENING)) {
+		descVaultThompson();
+		rtrue;
+	}
+	print "About a dozen men seem to be working at various stations some distance away. Some are stirring in large, fired steel kettles, others are handling large vats covered with cloth, while others seem to be rolling something flat and forming it into balls. It smells bad and sweet at the same time, making you feel a bit dizzy.^^";
+	if (FlagIsSet(F_LUCY_FREE))
+		print "Lucy and Michael stand hunched over in the semi-darkness next to their former prison and stare intently at the goings-on in the vault.^";
+	else if (FlagIsSet(F_GUARD_OUT))
+		print "Lucy and Michael rattle the bars and gesticulate wildly in your direction. You slowly get the impression that they urgently want to talk to you.^";
+	else
+		print "Just a few yards away from you is a large rock alcove. A young couple crouches on the ground behind the bars, sometimes whispering to each other. That's Lucy! Then the young man must be Michael.^";
+	if (FlagIsClear(F_GUARD_CROUCHING) && FlagIsClear(F_GUARD_OUT))
+		print "^In front of it, a grumpy-looking fellow sits on a flattened stone, his arms resting on his thighs and a pistol in his right hand.^";
+	rtrue;
+];
+
+Room r_Vault "Vault"
+	with description descVault,
+	cheap_scenery
+		CS_VAULT_MEN 7 'men//p' 'worker' 'workers//p' 'kettle' 'kettles//p' 'vat' 'vats//p' "Most of them seem very busy."
+		CS_VAULT_LEDGE 5 'ledge' 'stone' 'rock' 'torch' 'torches//p' "A waist-high stone ledge provides cover in the otherwise open vault."
+		CS_VAULT_NICHE 3 'bars//p' 'niche' 'alcove' "The bars of the alcove are solid iron.",
+	s_to [;
+		if (FlagIsSet(F_VAULT_SHOWDOWN)) {
+			print "You grab Lucy and Michael, pushing them over towards the ledge. Bullets whiz past your heads, and as you turn around, you feel a searing pain in your left shoulder that throws you to the ground.^";
+			doVaultDeath();
+			rtrue;
+		}
+		if (FlagIsSet(F_GUARD_CROUCHING))
+			"You should take care of that guard as soon as possible. Time seems to stand still as you ponder all the potential actions to take.";
+		if (FlagIsSet(F_GUARD_OUT))
+			"Are you just going to leave Lucy and Michael here? The guard could be discovered at any time.";
+		"You can't just leave Lucy and Michael here. Besides, you're not sure if you'll ever manage to climb up that rope again.";
+	],
+	u_to [;
+		if (FlagIsSet(F_VAULT_SHOWDOWN)) {
+			print "You grab Lucy and Michael, pushing them over towards the ledge. Bullets whiz past your heads, and as you turn around, you feel a searing pain in your left shoulder that throws you to the ground.^";
+			doVaultDeath();
+			rtrue;
+		}
+		if (FlagIsSet(F_GUARD_CROUCHING))
+			"You should take care of that guard as soon as possible. Time seems to stand still as you ponder all the potential actions to take.";
+		if (FlagIsSet(F_GUARD_OUT))
+			"Are you just going to leave Lucy and Michael here? The guard could be discovered at any time.";
+		"You can't just leave Lucy and Michael here. Besides, you're not sure if you'll ever manage to climb up that rope again.";
+	],
+	e_to [;
+		if (FlagIsSet(F_VAULT_SHOWDOWN)) {
+			print "You raise your arms placatingly and take a step towards the men.^^~Guys, this is just a misunderst-~^^The noise is deafening as several men open fire on you at the same time. Hit by several bullets, you slump to the ground.^";
+			doVaultDeath();
+			rtrue;
+		}
+		"The vault floor is some distance below you. There is no path that way.";
+	],
+	before [;
+		Go:
+			if (selected_direction ~= s_to or u_to or e_to)
+				"There is no way out in that direction.";
+		Drop:
+			if (noun == Hankie) {
+				if (FlagIsSet(F_GUARD_CROUCHING) || FlagIsSet(F_GUARD_OUT)) "The hankie is already being looked at.";
+				print "You unfold the bright white handkerchief and let it slide over the edge of the ledge as the guard briefly looks at the prisoners.^^A moment later, the man turns his head back in your direction and frowns in irritation. He stands up, slowly walks towards you and bends down in front of you to grab the hankie.^^~Where the hell did that come from?~^";
+				SetFlag(F_GUARD_CROUCHING);
+				rtrue;
+			}
+		Smell:
+			"Smoke and various vapors mix here in an unpleasant way to create a sweet, slightly stagnant smell. You feel slightly foggy.";
+		Shoot:
+			if (Revolver notin player && (Bag notin player || Revolver notin Bag))
+				"You'll need your revolver for that.";
+			if (FlagIsSet(F_VAULT_SHOWDOWN)) {
+				if (noun == Wedge) {
+					doExplosion();
+					rtrue;
+				}
+				if (noun == Cart) {
+					print "You draw the revolver at lightning speed and shoot at the cart.^^The cart wobbles slightly but does not tip over.^^A rifle butt hits you brutally on the forehead as the men reach and overpower you.^";
+					doVaultDeath();
+					rtrue;
+				}
+				if (noun == Barrels) {
+					print "You pull up the revolver, aim carefully and shoot at the barrels on the cart. You believe to see a watery liquid trickling out of one of the barrels just before a powerfully swung bandit fist smashes your nasal bone with full force.^";
+					doVaultDeath();
+					rtrue;
+				}
+				if (noun == CheapScenery && cs_match_id == CS_VAULT_MEN) {
+					print "You raise your revolver and hit two of the charging men in the chest and stomach before a bullet shreds your knee. You fall to the ground, screaming.^";
+					doVaultDeath();
+					rtrue;
+				}
+				"Shooting at that would not accomplish anything.";
+			}
+			if (noun == Wedge or Cart) {
+				doExplosion();
+				rtrue;
+			}
+			"That would cause quite a stir. A more inconspicuous approach would probably make more sense.";
+	];
+
+Object Guard "guard" r_Vault
+	with name 'guard' 'fellow' 'man' 'pistol' 'stone' 'arms' 'thighs',
+	short_name "guard",
+	description [;
+		if (FlagIsSet(F_GUARD_OUT))
+			"The guard lies face down in the dirt and doesn't move.";
+		if (FlagIsSet(F_GUARD_CROUCHING))
+			"An inviting back of the head covered with dry black hair.";
+		"The man looks glumly at the ground in front of him and scratches his feet in the sand. Occasionally he glances at the young couple in the makeshift cage or lets his gaze wander in your direction, but you are obviously unrecognizable in the semi-darkness behind the rocky ledge.";
+	],
+	before [;
+		Attack:
+			if (FlagIsSet(F_GUARD_OUT)) "I think he's had enough for now.";
+			if (FlagIsClear(F_GUARD_CROUCHING)) "He's too far away and sometimes looks in your direction.";
+			if (second == 0) "That's too risky without a weapon. An open fight would certainly be noticed quickly.^Maybe you could handle him if he was a little closer.";
+			if (second == Crowbar || second == Shovel) {
+				print "POW! You strike the man down with a well-aimed blow with ", (the) second, ".^^You look around furtively, but none of the workers seem to have heard anything. You quickly put the bright handkerchief back in your pocket.^";
+				ClearFlag(F_GUARD_CROUCHING);
+				SetFlag(F_GUARD_OUT);
+				InactivateTopic(Lucy, 302);
+				ActivateTopic(Lucy, 400);
+				rtrue;
+			}
+			"[The second] is not particularly suitable for this purpose.";
+		Talk:
+			if (FlagIsSet(F_GUARD_OUT)) "He doesn't seem to be in the mood.";
+			"Not a good idea.";
+	],
+	has animate scenery;
+
+Object Michael "Michael" r_Vault
+	with name 'michael' 'fiance' 'young' 'man' 'lad' 'couple',
+	description [;
+		if (FlagIsSet(F_ENDING_ACTIVE))
+			"Michael is wearing a slightly bloody bandage around his head.";
+		"The young man repeatedly puts his hand on his companion's arm or strokes her face reassuringly.";
+	],
+	before [;
+		Talk:
+			if (FlagIsSet(F_ENDING_ACTIVE)) <<Talk Sheriff>>;
+			<<Talk Lucy>>;
+	],
+	has animate concealed;
+
+Object VaultBars "cage bars" r_Vault
+	with name 'bars//p' 'cage' 'niche' 'alcove' 'prison' 'makeshift',
+	description [;
+		if (FlagIsSet(F_LUCY_FREE))
+			"Lucy and Michael stand hunched over in the semi-darkness next to their former prison and stare intently at the goings-on in the vault.";
+		if (FlagIsSet(F_GUARD_OUT))
+			"Lucy and Michael rattle the bars and gesticulate wildly in your direction. You slowly get the impression that they urgently want to talk to you.";
+		"Just a few yards away from you is a large rock alcove. A young couple crouches on the ground behind the bars, sometimes whispering to each other. That's Lucy! Then the young man must be Michael.";
+	],
+	before [;
+		Open, Pull: "It's stuck fast. You need a lever to pry it open.";
+	],
+	has static scenery;
+
+Object Cart "cart" r_Vault
+	with name 'cart' 'wheel' 'wheels' 'nitro' 'entrance',
+	description [;
+		if (FlagIsSet(F_VAULT_SHOWDOWN))
+			"A cart with four spoked wheels, loaded with several wooden barrels.^^A large wooden wedge under one of the wheels prevents the cart from rolling away.";
+		"There's a cart loaded with barrels at the mine entrance to the east.";
+	],
+	has static scenery;
+
+Object Wedge "wedge" r_Vault
+	with name 'wedge' 'wooden' 'chock' 'block',
+	description "A large wooden wedge blocks one of the wheels and prevents the cart from rolling away.",
+	before [;
+		Take: "You can't reach it.";
+	],
+	has static scenery concealed;
+
+Object Barrels "barrels" r_Vault
+	with name 'barrel' 'barrels' 'ng' 'letters',
+	description "Several wooden barrels. On one of them you can see the letters NG.",
+	has static scenery concealed pluralname;
+
+Object Thompson "Thompson" r_Vault
+	with name 'thompson' 'ron',
+	description "A very dapper-looking middle-aged man with a cane and bowler hat.",
+	before [;
+		Attack: "I'm afraid I can't do that.";
+	],
+	has scenery concealed animate proper;
+
+!-- 16: Steppe
+
+Room r_Steppe "Steppe"
+	with description [;
+		if (r_Steppe hasnt visited) {
+			print "You sit on Billy, a freshly saddled young stallion, your shoulder bag firmly in your grasp. The slowly setting sun casts long shadows on the dusty path in front of you, leading east out of town.^^";
+			print "You turn around one last time and raise your hand towards Ella, Marten and Bill, who are standing in the street waving back at you.^^";
+			print "Looking ahead, you set the black horse into a gentle trot. There is still a long way to go.^^";
+			style underline;
+			print "Why did you think I was in prison, Claire? Who told you that?^^";
+			style roman;
+			print "No matter. You would find her and soon you would be together again, you were sure of that... But that would be a story for another day.^^";
+			doScreenbreak();
+			print "^                 @@126@@126@@126 FIN @@126@@126@@126 ^";
+			doScreenbreak();
+			print "Thank you for playing Dust, I really hope you enjoyed it. If you did, please rate the game on IFDB.org - then maybe there will be an end to this story sometime. If you're playing online, just write something down here now and I'll read it later!^^";
+			print "I'd also be delighted to hear about your thoughts or suggestions at intfiction.org, my Discord at https://bit.ly/Ikes-Discord or by email to dust@@64ikeserver.de.^^";
+			print "Many thanks to Olaf Nowacki, Hannes Schueller, Michael L., Fredrik Ramsberg and my family for testing and helpful advice. This game was translated from the original German version Staub with kind help from mathbrush and DeepL. The cover image was created using Stable Diffusion XL.^^";
+			print "2024 (c) IkeC^";
+			rtrue;
+		}
+		print "In the dusty haze as dusk falls, you can make out the outline of a larger city.^";
+		"However, you won't be able to reach it today.";
+	],
+	before [;
+		Go: "Unfortunately, you can't go anywhere else. The story ends here for now.";
+		RunTo: "There is no turning back. Your next adventure is waiting somewhere else.";
+	];
+
+Object Billy "Billy" r_Steppe
+	with name 'billy' 'horse' 'stallion' 'black',
+	description "Billy whips across the steppe as fast as the wind and at full gallop now.",
+	before [;
+		Exit: "You've lost enough time already. Claire might be in danger.";
+	],
+	has animate proper scenery;
+

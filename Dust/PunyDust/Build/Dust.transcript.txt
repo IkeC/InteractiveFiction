@@ -1,0 +1,2759 @@
+
+squeeek ...
+squeeek ...
+squeeeeek ...
+
+You wake up slowly.
+
+Your head rumbles mercilessly and the blood pulsates painfully through your
+temples.
+
+Dust
+A Western by IkeC
+Release 4 / Serial number 260525 / Inform v6.44 PunyInform v6.6 
+
+Room
+You cough twice and finally manage to pull yourself up from the dusty
+floorboards.
+
+This room is rather sparsely furnished. There's a bed in the corner with a small
+nightstand to the left. The opposite wall features a small window. A plain
+wooden door leads outside and down the stairs.
+
+Please enter INFO now for instructions on how to play, especially if you've
+never played a game like this before.
+
+> info
+The game is completely solvable by giving directions such as SOUTH (short: S),
+NORTHWEST (NW), DOWN (D), OUT etc. as well as the following instructions:
+
+- LOOK (L) 
+- EXAMINE <Object> (X) 
+- PICK UP <Object> (P) 
+- TALK TO <Person> (T) 
+- USE <Object> WITH <Object> 
+- DROP / PUSH / OPEN <Object> 
+
+Other commands are also understood, but not required to complete the game. You
+might start playing like this: LOOK, OPEN WINDOW, X NIGHTSTAND, GET BAG, DOWN,
+TALK TO WOMAN and so on. 
+
+RUN displays the locations already visited. These can be reached directly with
+RUN <Location>. INV (I) shows your inventory. SAVE and LOAD commands are
+available as well. Type HINT for advice if you don't know what to do next. 
+
+Actions such as entering new rooms or finding items often unlock new dialog
+options, so it makes sense to talk to people several times.
+
+> look
+Room
+This room is rather sparsely furnished. There's a bed in the corner with a small
+nightstand to the left. The opposite wall features a small window. A plain
+wooden door leads outside and down the stairs.
+
+> smell
+It smells slightly of piss, but you've slept in far worse places.
+
+> examine door
+A wooden door with roughly crafted hinges.
+
+> examine wall
+The walls and ceiling may once have been white, but now the gray and cracked
+plaster is only held up by good will.
+
+> examine floor
+This floor has not seen a broom or even water for a long time. In many places,
+the light from the room below shines through the floorboards.
+
+> examine bed
+A sparse bed with a stained thin mattress on it.
+
+> examine mattress
+Mattress is a pretty big word for these two roughly sewn-together lengths of
+fabric. Individual straws push through the seams and holes in the fabric
+everywhere.
+
+> examine window
+Pale light shines through the dusty glass pane of the window. Outside, you think
+you can make out a wind pump.
+
+> examine windpump
+A large metal windmill turns rhythmically, squeaking in the wind. The noise is
+hard to bear right now.
+
+> examine nightstand
+A small bedside table with an open compartment.
+
+The nightstand contains a shoulder bag (which is closed).
+
+> take bag
+Taken.
+
+> examine bag
+A scuffed shoulder bag made from slightly cracked leather.
+
+> open bag
+You open the shoulder bag, revealing a drawing, a revolver, a draft notice and
+some money.
+
+> examine draft notice
+A draft notice for Thomas Marshall, over five years old according to the date.
+An important document that you always carry with you, as it identifies you as a
+former member of the army. As a welcome side effect, you can also look up your
+name if you've had a rough night.
+
+> examine drawing
+A folded charcoal drawing, already slightly brittle at the edges. It shows
+Claire, your wife.
+
+You miss her beyond words.
+
+You carefully tuck the drawing into the inside of your vest.
+
+> examine revolver
+Your Colt Navy, Model 1861. Freshly cleaned, loaded and ready to fire.
+
+> examine money
+About twelve dollars.
+
+> smell me
+It's been a while since your last bath, and you can definitely smell it.
+However, it's not bad enough to attract any unpleasant attention in this area
+(yet).
+
+> down
+Saloon
+You shuffle down the stairs, massaging your aching left shoulder.
+
+The saloon consists of a few round tables with chairs and a small stage. Next to
+it, a staircase leads up to your room. On the other side is a long counter. Two
+massive beams run under the ceiling. The swing doors to the north lead outside.
+
+A woman is behind the counter, scratching her chin. She gives you a slightly
+amused look.
+
+> smell
+It smells of spilt beer and old cigarettes.
+
+> examine woman
+The woman behind the counter is Ella, you've first met her years before. She is
+in her late forties, a corpulent, attractive woman with laugh lines and
+calloused hands. She has a dark red cloth scarf tied around her forehead and is
+sorting the drinks.
+
+> examine tables
+A few round wooden tables are scattered randomly around the room. Two of the
+tables have been tipped over.
+
+> examine chairs
+Inconspicuous wooden chairs and stools, some patched together with thin boards.
+A few of them lie shattered next to the entrance.
+
+"I wanted to let you sleep in before I clean up the mess here", Ella says.
+
+> examine stage
+An unadorned wooden platform that has often served as the backdrop for mediocre
+dance routines and many a brawl.
+
+> examine stairs
+The staircase leads up to your rented room and other rooms that you are not
+allowed to enter.
+
+> examine counter
+The bar counter has a few dark spots and minor carving marks from bored guests,
+but overall, it looks quite clean.
+
+> examine beams
+Massive wooden beams support the ceiling of the large room. A long nail is
+hammered into one of the beams with a kerosene lamp dangling from it.
+
+> examine nail
+A long, rusty nail, driven deep into one of the ceiling beams. It will probably
+stay there until the saloon collapses one day.
+
+> talk to woman
+What would you like to say to Ella?
+
+[1] "How are you doing?"
+[2] "Looks wild in here."
+[0] End conversation
+
+> 1
+["How are you doing?"]
+"I'm doing quite well, thanks Tom. Nothing upsets me easily here anymore, at
+least not a little bar brawl."
+
+[1] "Looks wild in here."
+[2] "There was a fight?"
+[0] End conversation
+
+> 1
+["Looks wild in here."]
+"Things got pretty rough here yesterday when you were already upstairs. I'll
+clean it all up later," says Ella. "You look pretty exhausted, do you want a
+coffee? I brewed one as soon as I heard you get up."
+
+[1] "A coffee please."
+[2] "There was a fight?"
+[0] End conversation
+
+> 1
+["A coffee please."]
+Ella turns around and pours a deep black steaming broth from a small tin pot
+into a cup and places it on the counter in front of you.
+
+"Enjoy your coffee, that'll be a quarter. I'm afraid I'm out of sugar, but I
+still have a cookie."
+
+Ella puts a cookie next to the cup. You put the money down, stick your nose deep
+into the cup and take a deep breath. Wonderful.
+
+[1] "There was a fight?"
+[0] End conversation
+
+> 1
+["There was a fight?"]
+"No idea who started it this time. The Mifflin brothers were drinking heavily
+again and waving dollar bills around, but of course they didn't spend it on
+anyone but themselves."
+
+She shrugs and gives you a little smile. "I suppose some people didn't like
+that."
+
+[1] "Mifflin? Doesn't ring a bell."
+[0] End conversation
+
+> 1
+["Mifflin? Doesn't ring a bell."]
+"Oh, you don't even know the Mifflin brothers? Then they must have turned up
+when you were already out of town back then. Their names are Calvin and Bob,
+they put the old mine west of here back into operation and they actually found
+something again it seems."
+
+Ella pauses briefly and takes a long drag on her cigarette.
+
+"In any case, they obviously have enough money to get drunk here on a regular
+basis. That's fine by me."
+
+[0] End conversation
+
+> 0
+Saloon
+The saloon consists of a few round tables with chairs and a small stage. Next to
+it, a staircase leads up to your room. On the other side is a long counter. Two
+massive beams run under the ceiling. The swing doors to the north lead outside.
+
+Ella is behind the counter, blowing her nose into her kitchen towel.
+
+> examine counter
+The bar counter has a few dark spots and minor carving marks from bored guests,
+but overall, it looks quite clean.
+
+There's a cup on the counter with a cookie next to it.
+
+> drink coffee
+You take a small sip. Not bad.
+
+> drink coffee
+You take another sip. You feel much better already.
+
+> out
+Main Street
+You step through the swinging door in front of the saloon. A small canopy
+protects you from the scorching sun. An unpleasantly hot wind slowly carries a
+thorny tumbleweed out of the city. There is not a soul to be seen.
+
+The wide, dusty road runs from east to west. Three similar-looking wooden
+buildings are located on the opposite side of the street to the north. The
+saloon lies to the south.
+
+> smell
+Many unidentifiable odors mingle in the hot and dusty morning air - most of them
+not very pleasant.
+
+> examine tumbleweed
+The tumbleweed is already out of sight. Others will come and take its place.
+
+> examine sun
+Looking at the sun isn't particularly smart under normal circumstances, but even
+less so with your grumpy head.
+
+> take sun
+You take the sun and put it in your pocket.
+
+.
+.
+.
+
+It's getting a bit hot. You quickly put the sun back in its place.
+
+> examine buildings
+The building in the northwest is apparently the sheriff's office. To the north
+is a general store and next to it in the northeast is a small barber store.
+
+> examine office
+The front door to Dunder's office.
+
+> examine cat
+She doesn't even look at you.
+
+> examine store
+The entrance door to the store.
+
+> examine barber
+The barber shop is marked by a small red, white and blue pole next to the door.
+
+> examine pole
+When the wind blows strongly, it even turns a little.
+
+> w
+Ranch
+You come to a small wooden hut with an adjoining stable and a large fenced-in
+paddock.
+
+A young woman sits sobbing on a small bench.
+
+> talk to woman
+What would you like to say to the young woman?
+
+[1] "May I help you Ma'am?"
+[0] End conversation
+
+> 1
+["May I help you Ma'am?"]
+She looks up to you, her eyes welling with tears. "Michael is gone!"
+
+[1] "Who is Michael?"
+[2] "What is your name?"
+[0] End conversation
+
+> 1
+["Who is Michael?"]
+She blows into her handkerchief once. "Michael is my fiance. He wanted to go to
+the saloon yesterday."
+
+She takes a deep breath and points over to the horses.
+
+"When I got here this morning, the horses weren't looked after and there was no
+sign of Michael. He would never leave the horses to themselves like that!"
+
+[1] "What is your name?"
+[2] "Do you have any idea what might have happened?"
+[0] End conversation
+
+> 2
+["Do you have any idea what might have happened?"]
+She averts her eyes.
+
+"I don't know. Before he left yesterday, he said briefly that he had heard
+something about the Mifflin brothers. When I wanted to know what exactly, he
+looked at me thoughtfully and said it wasn't that important."
+
+She turns back to you. Her gaze wanders past your face, her eyes widen in fear.
+
+"Hey, what--"
+
+POW!
+
+~~~
+
+Claire whirls around. "To the army? Are you out of your mind?"
+
+She is so beautiful when she is angry, but the sparkling fire in her eyes
+sometimes scares you a little. As you try to stroke her cheek, she quickly turns
+away.
+
+"You know we need the money."
+
+You try to sound as firm and determined as possible, but you're not entirely
+convinced of your decision yourself. She looks out of the dusty window
+defiantly, her arms crossed in front of her chest. Her chin trembles slightly.
+
+Claire...
+~~~
+
+Ouch.
+
+Your head is pounding again, only this time it doesn't feel like too much
+whiskey the night before.
+
+"Enjoying a little nap, eh?"
+
+You slowly open your eyes, looking straight into the weather-beaten face of the
+sheriff.
+
+> take bag
+"You might get your stuff back later. First you tell me what's going on here."
+
+> examine Sheriff
+Sheriff Dunder is a lean man in his late fifties with piercing green eyes and a
+white moustache. Deep wrinkles run across his deep brown face. A dull brass star
+adorns the vest of his otherwise unremarkable clothing.
+
+> examine star
+A simple sheriff's star as worn by sheriffs all over the country.
+
+> talk to Sheriff
+What would you like to say to Sheriff Dunder?
+
+[1] "What happened? How did I get here?"
+[0] End conversation
+
+> 1
+["What happened? How did I get here?"]
+"What happened? That's what I wanted to know from you, boy."
+
+Sheriff Dunder takes a step back and leans against his desk.
+
+"Deputy Miller found you on the ranch with your face in the dirt and blood on
+your head. Didn't want you to die there in the sweltering heat, so he dragged
+you in here."
+
+Yeah right, the ranch, the young woman... it's all starting to come back to you.
+
+[1] "What about the young woman?"
+[0] End conversation
+
+> 1
+["What about the young woman?"]
+Dunder frowns. "Miller says the ranch was empty, no Michael, no Lucy. What's
+going on there, boy?"
+
+You briefly recount your conversation with the young woman. The sheriff eyes you
+critically and finally sighs.
+
+"Lucy is the daughter of Mayor Thompson. If something happened to her, you're
+not the only one with a problem."
+
+[1] "Why is this my problem now?"
+[0] End conversation
+
+> 1
+["Why is this my problem now?"]
+The sheriff approaches you slowly and pushes his face in front of yours until
+the tips of your noses are almost touching. His breath stinks foul and his eyes
+glare balefully at you.
+
+"You've been here one day and already the mayor's daughter has disappeared. I
+have no idea what exactly you have to do with it and whether your story is true,
+but I strongly advise you to find out where she is."
+
+[1] "Can you tell me something about Lucy?"
+[2] "May I leave now?"
+[0] End conversation
+
+> 1
+["Can you tell me something about Lucy?"]
+"She's the daughter of Mayor Thompson, his stepdaughter, to be precise. She got
+engaged to that ranch boy, doesn't suit Thompson at all."
+
+Dunder pulls one up noisily and spits under the plank bed.
+
+"Her mother must have died a year or so ago. Didn't know her though, only been
+here a few months myself."
+
+[1] "May I leave now?"
+[0] End conversation
+
+> 1
+["May I leave now?"]
+The sheriff turns away from you and nods reluctantly. "Your papers stay here and
+you're not leaving town. The coach is already through today anyway and you won't
+be able to afford a horse."
+
+Dunder comes closer again and looks at you penetratingly.
+
+"Your stuff is on the table. We'll keep an eye on you boy. Don't do anything
+stupid."
+
+[0] End conversation
+
+> 0
+Sheriff's Office
+This is Sheriff Dunder's office. Two plank beds are attached to the wall.
+
+On the opposite side is a massive desk with Sheriff Dunder sitting behind it. He
+has pulled his hat half over his face and seems to be dozing off. A passageway
+apparently leads deeper into the house. The door to the sheriff's office in the
+southeast leads outside.
+
+> take bag
+Taken.
+
+> smell
+It smells slightly musty and of various excrements in the bunks. Not a place
+where you would want to stay for long.
+
+> examine plank beds
+Simple wooden platforms to sit or lie on. They have certainly seen a few bandits
+and/or booze chokes and smell disgusting.
+
+> examine passageway
+A low passageway that presumably leads to holding cells and the sheriff's
+private rooms. Dunder won't let you go there, and you don't need to see anything
+back there anyway.
+
+> examine house
+You don't think you'll see any more of the house. You certainly don't want to.
+
+> out
+Main Street
+The wide, dusty road runs from east to west. The sheriff's office is to the
+northwest, the general store lies to the north and the barber shop to the
+northeast. The saloon lies to the south.
+
+> open bag
+You open the shoulder bag, revealing a revolver and some money.
+
+> w
+Ranch
+A small wooden hut with an adjoining stable and a large fenced-in paddock. There
+is a small bench in front of the house.
+
+A narrow path leads south to the wind pump. The main road leads further out of
+town from the east to the west.
+
+You hear a muffled bang followed by quiet cursing from the west.
+
+> smell
+It smells mainly of straw and horse shit.
+
+> examine house
+A small wooden house with a flat, slightly sloping roof, hardly more than a
+shed.
+
+> enter house
+You have no business there. Lucy and Michael are definitely not here.
+
+> examine paddock
+A small paddock, enclosed by a waist-high fence. There is nothing here but dried
+steppe grass.
+
+> examine grass
+Dry steppe grass, it's been a long time since the last rain. You won't need it.
+
+> examine stable
+Some horses are moving around restlessly in the stable. The stench is
+breathtaking.
+
+> enter stable
+The smell is really unpleasant, and you don't expect to find anything important
+there.
+
+> examine horses
+The horses seem to be restless.
+
+> examine bench
+A simple bench, made of wood.
+
+> sit on bench
+You really don't have time to rest now.
+
+> w
+Mine
+After a short stretch of dusty road, a low ridge rises up in front of you. A few
+minutes later, you recognize the entrance to a mine.
+
+The entrance to the mine is lit by torches on both sides. A thin plume of smoke
+rises from the highest point of the tunnel and quickly disappears in the wind.
+
+A hollow-eyed man with disheveled black hair leans against an empty cart,
+playing around with his rifle.
+
+At the edge of the path, something white flashes out from behind a small shrub.
+
+The path to the east leads back to town.
+
+> smell
+It smells slightly of smoke.
+
+> examine hill chain
+The range of hills stretches from north-east to south.
+
+> examine mine
+Apart from a few empty carts and some torches, you can't see much at the
+entrance to the mine.
+
+> examine smoke
+Black smoke is constantly billowing out of the mine. Perhaps caused by the
+torches burning down there, or by other mining work.
+
+> examine man
+As you get closer, the man points his rifle at you.
+
+"Get the hell out of here, quickly!"
+
+You raise your hands apologetically and back off.
+
+> talk to man
+As you get closer, the man points his rifle at you.
+
+"Are you deaf shithead? Piss off!"
+
+You raise your hands apologetically and back off.
+
+> shoot man
+You can't just shoot him in the face. First of all that's not very nice and
+second it would probably bring other similarly bad-tempered characters onto the
+scene.
+
+Maybe there's another way into the mine.
+
+> examine shrub
+A handkerchief lies next to the bush, half covered in sand.
+
+> take hankie
+You put the hankie in your pocket.
+
+> examine hankie
+A somewhat crumpled, bright white handkerchief made of some fine fabric. The
+initials LT have been carefully embroidered on one corner.
+
+> smell hankie
+It smells of lavender and bitter tears.
+
+> e
+Ranch
+A small wooden hut with an adjoining stable and a large fenced-in paddock. There
+is a small bench in front of the house.
+
+A narrow path leads south to the wind pump. The main road leads further out of
+town from the east to the west.
+
+> e
+Main Street
+The wide, dusty road runs from east to west. The sheriff's office is to the
+northwest, the general store lies to the north and the barber shop to the
+northeast. The saloon lies to the south.
+
+> nw
+Sheriff's Office
+This is Sheriff Dunder's office. Two plank beds are attached to the wall.
+
+On the opposite side is a massive desk with Sheriff Dunder sitting behind it. He
+has pulled his hat half over his face and seems to be dozing off. A passageway
+apparently leads deeper into the house. The door to the sheriff's office in the
+southeast leads outside.
+
+> talk to Sheriff
+What would you like to say to Sheriff Dunder?
+
+[1] "I think I've found Lucy's handkerchief!"
+[0] End conversation
+
+> 1
+["I think I've found Lucy's handkerchief!"]
+"Exciting story, boy." He looks at you disdainfully.
+
+"Come back when you've found her and try not to get on my nerves any more."
+
+[0] End conversation
+
+> 0
+Sheriff's Office
+This is Sheriff Dunder's office. Two plank beds are attached to the wall.
+
+On the opposite side is a massive desk with Sheriff Dunder sitting behind it. He
+has pulled his hat half over his face and seems to be dozing off. A passageway
+apparently leads deeper into the house. The door to the sheriff's office in the
+southeast leads outside.
+
+> out
+Main Street
+The wide, dusty road runs from east to west. The sheriff's office is to the
+northwest, the general store lies to the north and the barber shop to the
+northeast. The saloon lies to the south.
+
+> s
+Saloon
+The saloon consists of a few round tables with chairs and a small stage. Next to
+it, a staircase leads up to your room. On the other side is a long counter. Two
+massive beams run under the ceiling. The swing doors to the north lead outside.
+
+Ella is behind the counter, taking a drag on her cigarette.
+
+She looks up. "Don't you want your cookie?"
+
+> examine counter
+The bar counter has a few dark spots and minor carving marks from bored guests,
+but overall, it looks quite clean.
+
+There's a cup on the counter with a cookie next to it.
+
+> examine cookie
+It's a cookie.
+
+> take cookie
+You wrap the cookie carefully.
+
+> talk to woman
+What would you like to say to Ella?
+
+[1] "Have you seen Lucy?"
+[2] "I think I've found Lucy's hankie."
+[0] End conversation
+
+> 1
+["Have you seen Lucy?"]
+"Lucy? Why?"
+
+You briefly tell Ella what happened.
+
+"Bloody hell. I last saw Lucy a few days ago, but Michael was here yesterday. I
+saw him whispering with a few people, then I don't remember. He probably left
+before the brawl, that's not his thing."
+
+[1] "I think I've found Lucy's hankie."
+[0] End conversation
+
+> 1
+["I think I've found Lucy's hankie."]
+You show the handkerchief with the monogram to Ella.
+
+"Yes, that must be hers. Where did you find this?"
+
+[1] "Close to the mine entrance west of here."
+[0] End conversation
+
+> 1
+["Close to the mine entrance west of here."]
+Ella's face darkens.
+
+"I don't like all this at all. She would never go into the mine voluntarily,
+she's been afraid of it ever since she was a child."
+
+She takes a nervous drag on her cigarette and looks you firmly in the eye.
+
+"Tom, you have to go in there. I think the entrance is too well guarded. There
+used to be a tunnel to the south, but it was buried by a pile of rubble a few
+years ago."
+
+[0] End conversation
+
+> 0
+Saloon
+The saloon consists of a few round tables with chairs and a small stage. Next to
+it, a staircase leads up to your room. On the other side is a long counter. Two
+massive beams run under the ceiling. The swing doors to the north lead outside.
+
+Ella is behind the counter, wiping the counter with a bored expression.
+
+> n
+Main Street
+The wide, dusty road runs from east to west. The sheriff's office is to the
+northwest, the general store lies to the north and the barber shop to the
+northeast. The saloon lies to the south.
+
+A cat trots past you at a leisurely pace, gives you a tired look and disappears
+into the shadows between the houses.
+
+> ne
+Barber Shop
+You briefly nudge the red, white and blue pole next to the entrance door and
+enter the store. You are pleasantly surprised at how bright and clean it is
+here.
+
+An expansive tilt chair made of red leather is resplendent in front of a large
+mirror attached to the wall. Small bottles, cans and other novelties are
+scattered around on various tables and shelves.
+
+The parrot sits on a perch and wobbles its head. Marten stands behind the
+armchair picking his nose.
+
+> smell
+It smells pretty good here. Somewhat fresh.
+
+> examine odds and ends
+You can't use multiple objects with that verb.
+
+> examine tilt chair
+A large armchair in red leather that can be adjusted in height.
+
+> pull tilt chair
+The barber probably doesn't like it when you fiddle around with his armchair,
+and unfortunately you don't have time to enjoy any of his services.
+
+> examine mirror
+You could do with a shave. And a haircut. And taking a bath.
+
+> examine parrot
+A beautiful parrot is tripping up and down on its perch peacefully.
+
+> talk to parrot
+"I never give a sucker an even break, and that's a lead pipe cinch. Braaak!"
+
+> talk to parrot
+"To-to-to-be or not to-to-to-be. That is the question. Braak!"
+
+> examine barber
+The barber is a stocky man with thick upper arms and a well-groomed black beard.
+He is wearing a striped vest and short linen pants.
+
+> talk to barber
+The barber takes a small step towards you and gives you a friendly grin.
+
+"Moin Mister! My name is Marten, what can I do for you today? Trim your beard,
+cut your hair, treat a bullet wound?"
+What would you like to say to Marten?
+
+[1] "Moin? Is that French or something?"
+[2] "Gunshot wound? I thought you were a barber."
+[3] "Any idea how to get into the mine?"
+[0] End conversation
+
+> 1
+["Moin? Is that French or something?"]
+Marten laughs heartily and holds his belly.
+
+"Excuse me mister, I can't quite break that habit. I am Frisian."
+
+[1] "What brought you here?"
+[2] "Gunshot wound? I thought you were a barber."
+[3] "Any idea how to get into the mine?"
+[0] End conversation
+
+> 1
+["What brought you here?"]
+"I came here over ten years ago on a clipper, was first mate. Actually wanted to
+go gold prospecting with Molly, but then the war took us elsewhere."
+
+[1] "Gunshot wound? I thought you were a barber."
+[2] "So Molly is your wife?"
+[3] "Any idea how to get into the mine?"
+[0] End conversation
+
+> 1
+["Gunshot wound? I thought you were a barber."]
+Marten laughs boomingly.
+
+"As a barber on the high seas, it's always useful to know a bit about treating
+wounds. Besides, there's no doctor here anymore."
+
+He pulls a small pipe out of his pocket and puffs some tobacco into it with a
+practiced movement.
+
+"And before you ask, I'm also the gravedigger here. Fortunately, I haven't had
+much work like that since the war."
+
+[1] "So Molly is your wife?"
+[2] "Any idea how to get into the mine?"
+[0] End conversation
+
+> 1
+["So Molly is your wife?"]
+"My wife? Haa-ha-ha!"
+
+Marten can barely contain himself and slaps his thighs.
+
+"Molly is my bird young lad! We've experienced a lot together at sea. She was
+there as a fire watcher, she goes off like an alarm at the slightest bit of
+smoke."
+
+[1] "Why was Molly at sea with you again?"
+[2] "Any idea how to get into the mine?"
+[0] End conversation
+
+> 1
+["Why was Molly at sea with you again?"]
+"She was our fire watcher, goes off like an alarm at the slightest bit of smoke.
+I already told you that before!"
+
+[1] "Why was Molly at sea with you again?"
+[2] "Any idea how to get into the mine?"
+[0] End conversation
+
+> 2
+["Any idea how to get into the mine?"]
+"The mine? Why would you want to go in there?"
+
+You tell Marten what's going on. For the first time, he makes a serious face.
+
+"Aah. That's bad news. Don't think you'll get in through the front, not with
+those boys there. Maybe there's another way in."
+
+[1] "Why was Molly at sea with you again?"
+[2] "May I borrow Molly for a little while?"
+[0] End conversation
+
+> 0
+Barber Shop
+An expansive tilt chair made of red leather is resplendent in front of a large
+mirror attached to the wall. Small bottles, cans and other novelties are
+scattered around on various tables and shelves.
+
+The parrot sits on a perch and wobbles its head. Marten stands behind the
+armchair polishing the mirror.
+
+> take Molly
+Marten gives you a suspicious look. You leave it alone for now.
+
+> give cookie to Molly
+Molly greedily grabs the cookie and munches it down in no time at all.
+
+> take Molly
+You hold your outstretched arm out to Molly. She trundles towards you, looks
+briefly at Marten and then hops back onto her perch.
+
+> talk to Marten
+What would you like to say to Marten?
+
+[1] "Why was Molly at sea with you again?"
+[2] "May I borrow Molly for a little while?"
+[0] End conversation
+
+> 2
+["May I borrow Molly for a little while?"]
+"What, you wanna take my bird with you? Because of Lucy?"
+
+Marten thoughtfully scratches the tattooed anchor on his upper right arm.
+
+"Well, if she goes with you voluntarily, that's fine with me. She'll run off
+when things get dicey. But please take good care of her!"
+
+[1] "Why was Molly at sea with you again?"
+[0] End conversation
+
+> 0
+Barber Shop
+An expansive tilt chair made of red leather is resplendent in front of a large
+mirror attached to the wall. Small bottles, cans and other novelties are
+scattered around on various tables and shelves.
+
+The parrot sits on a perch and wobbles its head. Marten stands behind the
+armchair checking his razor blade.
+
+> take Molly
+You hold your outstretched arm out to Molly. She looks briefly at Marten, who
+nods approvingly, then hops along on your arm and makes herself comfortable on
+your left shoulder.
+
+"BRAAAK!"
+
+> out
+Main Street
+The wide, dusty road runs from east to west. The sheriff's office is to the
+northwest, the general store lies to the north and the barber shop to the
+northeast. The saloon lies to the south.
+
+> w
+Ranch
+A small wooden hut with an adjoining stable and a large fenced-in paddock. There
+is a small bench in front of the house.
+
+A narrow path leads south to the wind pump. The main road leads further out of
+town from the east to the west.
+
+Something whizzes past your head and lands in the paddock in front of you. A
+little boy sprints up and jumps over the fence.
+
+Shortly afterwards he reappears with a ball of cloth under his arm and runs off.
+"You didn't see anything, mister!"
+
+> s
+Wind Pump
+After a few yards you arrive at the wind pump that you could see through the
+window of your room.
+
+The windmill is mounted at a height of around fifteen yards on a lattice mast
+made of long metal rods. It squeaks terribly with every rotation. A metal tail
+vane automatically points the rotor blades in the direction of the wind.
+
+The path leads back to the ranch in the north and towards the hill chain in the
+west.
+
+> smell
+You don't smell anything special. The squeaking wheel takes over your senses.
+
+> examine windpump
+The windmill turns slightly in the wind and squeaks heartbreakingly.
+
+> examine mast
+The lattice mast consists of welded metal rods. One of the rods near the ground
+seems to have come loose.
+
+> climb mast
+You're a bit afraid of heights, and there's nothing up there that you need.
+
+> w
+Hill Chain
+After a few minutes' walk, you find yourself at the bottom of a low hill chain.
+
+A large boulder field of larger and smaller rocks stretches hundreds of yards
+across. The hills seem to offer good protection from the wind as it is almost
+windless here.
+
+The path in the east leads back to the wind pump of the town.
+
+Molly paces restlessly up and down on your shoulder.
+
+> smell
+It smells slightly of smoke.
+
+> examine boulder field
+You walk up and down the boulder field when Molly suddenly starts flapping
+excitedly and hops off your shoulder onto one of the boulders.
+
+"Braak! BRAAAAK! FIREEEE!"
+
+> look
+Hill Chain
+A large boulder field of larger and smaller rocks stretches hundreds of yards
+across. The hills seem to offer good protection from the wind as it is almost
+windless here.
+
+The path in the east leads back to the wind pump of the town.
+
+Molly sits on a boulder and flutters her wings excitedly.
+
+> examine boulder
+Molly sits on the boulder and flutters excitedly. As you examine the boulder
+more closely, you recognize what appears to be a larger cavity behind a thumb
+wide crevice.
+
+> examine crevice
+There seems to be a larger cavity behind the thumb wide crevice. You hold your
+hand inside and feel a faint draught.
+
+> e
+Wind Pump
+The windmill is mounted at a height of around fifteen yards on a lattice mast
+made of long metal rods. It squeaks terribly with every rotation. A metal tail
+vane automatically points the rotor blades in the direction of the wind.
+
+The path leads back to the ranch in the north and towards the hill chain in the
+west.
+
+> n
+Ranch
+A small wooden hut with an adjoining stable and a large fenced-in paddock. There
+is a small bench in front of the house.
+
+A narrow path leads south to the wind pump. The main road leads further out of
+town from the east to the west.
+
+> e
+Main Street
+The wide, dusty road runs from east to west. The sheriff's office is to the
+northwest, the general store lies to the north and the barber shop to the
+northeast. The saloon lies to the south.
+
+> n
+General Store
+A small bell jingles brightly as you enter the store. The area for customers is
+so small that two people can barely turn around at the same time.
+
+The shopkeeper Bill appears in the doorway behind the counter, croaks a quiet
+"morning" and gives you a wry smile.
+
+You're standing in front of the counter. Apart from the open wall shelves behind
+Bill, the store is quite empty.
+
+The door to the south leads out onto the road.
+
+> examine bell
+A small bell on the store door, probably made of brass.
+
+> examine counter
+A wide wooden counter with a flap as a passageway.
+
+> examine shelves
+The large wall shelves are pretty empty. A few cardboard boxes, tins, small
+canvas bags and large brown bottles apparently contain flour, sugar, beans and a
+few other things that you can't identify more precisely from the scrawled
+labels.
+
+> examine labels
+You can't read the labels, but you don't think you will need any of these
+things.
+
+> examine man
+The hunchbacked shopkeeper's name is Bill, at least that's what it says on the
+sign outside. He is an old man with snow-white, thinning hair and a scarred but
+friendly-looking face. He wears a stained smock and leans on a walking stick.
+
+> buy tools
+Just talk to Bill if you want to buy something. If you need something specific,
+you'll be able to ask for it.
+
+> talk to Bill
+What would you like to say to Bill?
+
+[1] "How's it going?"
+[2] "What's for sale here?"
+[3] "Do you happen to know where Lucy is?"
+[4] "Do you have a chisel or something like that?"
+[0] End conversation
+
+> 1
+["How's it going?"]
+"Well, it has to, right?"
+
+Bill grins, showing off a yellow incisor in the upper jaw of his otherwise
+toothless mouth.
+
+"The coach is overdue, and I've got almost nothing left. I hope there was no
+robbery."
+
+[1] "What's for sale here?"
+[2] "Do you happen to know where Lucy is?"
+[3] "Do you have a chisel or something like that?"
+[0] End conversation
+
+> 1
+["What's for sale here?"]
+"Everything you see behind me, you'll have to read it yourself. I won't sell you
+these red herrings though, they're no good anymore."
+
+[1] "I can't read most of the labels."
+[2] "Do you happen to know where Lucy is?"
+[3] "Do you have a chisel or something like that?"
+[0] End conversation
+
+> 1
+["I can't read most of the labels."]
+Bill laughs out loud, croaking, and suffers a small coughing fit. He wipes his
+mouth on his coat and smiles, looking slightly past you.
+
+"I'm sorry, boy. My wife used to label the goods, but she's no more. Her writing
+was beautiful."
+
+He grabs his face, lost in thought, shakes his head briefly and looks at you.
+
+"Just ask me if you want something specific, I'll probably remember where it is.
+I keep tools and stuff in the back anyway."
+
+[1] "Do you happen to know where Lucy is?"
+[2] "Do you have a chisel or something like that?"
+[0] End conversation
+
+> 1
+["Do you happen to know where Lucy is?"]
+Bill squints his eyes suspiciously.
+
+"Lucy is a fine girl, what's your business with her?"
+
+[1] "Lucy has gone missing."
+[2] "Do you have a chisel or something like that?"
+[0] End conversation
+
+> 1
+["Lucy has gone missing."]
+You tell Bill what happened. He seems moved.
+
+"Oh boy. I don't know where she might be, maybe with her lad? Anyway, she hasn't
+been in the store for a few days, and I can't really see much through these
+dirty windows. I'm sorry."
+
+[1] "Do you have a chisel or something like that?"
+[0] End conversation
+
+> 1
+["Do you have a chisel or something like that?"]
+Bill blinks at you. "A chisel? Nah, I don't have one of those."
+
+He thinks for a moment and smiles. "But I should have a gooseneck somewhere
+around the back."
+
+[1] "What the heck is a gooseneck?"
+[0] End conversation
+
+> 1
+["What the heck is a gooseneck?"]
+The shopkeeper looks at you in amazement and then laughs croakily. "Where do you
+come from, boy? A crowbar! Hold on, I'll go and get it."
+
+He disappears through the passageway in the back. A couple of minutes and a few
+dubious noises and expletives later, he steps back up to the counter, his sparse
+hair full of cobwebs.
+
+"Sorry boy, I can't find it. I just can't see well enough without my pince-nez."
+
+[1] "Can I have a look maybe?"
+[2] "Where are your pince-nez?"
+[0] End conversation
+
+> 1
+["Can I have a look maybe?"]
+Bill backs away and squints his eyes.
+
+"And then you knock me out back there? Nah nah, you stay right here in the front
+boy!"
+
+[1] "Where are your pince-nez?"
+[0] End conversation
+
+> 1
+["Where are your pince-nez?"]
+Bill looks through the stained windows, lost in thought. "I don't know."
+
+He raps his knuckles on the counter. "I must have still had them when I went
+over to my wife's grave this morning. I couldn't see ten feet in this sandstorm
+without them."
+
+[0] End conversation
+
+> 0
+General Store
+You're standing in front of the counter, behind it is Bill rubbing his eyes.
+Apart from the open wall shelves behind Bill, the store is quite empty.
+
+The door to the south leads out onto the road.
+
+> out
+Main Street
+The wide, dusty road runs from east to west. The sheriff's office is to the
+northwest, the general store lies to the north and the barber shop to the
+northeast. The saloon lies to the south.
+
+> e
+Gallows
+As you pass the last building, the wind hits you hard from the side. You pull
+your scarf over your nose and continue walking slowly. After a few more steps,
+you can gradually make out a kind of scaffolding in the cloud of dust in front
+of you.
+
+You are standing in front of a gallows consisting of two posts with crossbars
+and a noose. A wooden platform serves as a foundation.
+
+Further north you think you can recognize some leaning crosses. Heading west,
+you can return to town.
+
+> smell
+The wind here is too piercing to smell anything.
+
+> examine gallows
+The gallows consist of two thick posts with crossbars and a rope. The noose is
+severed.
+
+> examine noose
+A thick rope, tied into a noose and cut at the lower end. The gallows were
+probably decommissioned after the war.
+
+> take noose
+Even if you could untie the noose, the rope would be of no use to you in this
+form.
+
+> examine crosses
+Several crosses, some of them crooked. From a distance you can't make out any
+details.
+
+> examine town
+A couple of inconspicuous houses in the west.
+
+> examine platform
+A wooden platform, apparently hastily put together, forms the foundation of the
+gallows. It is almost completely covered with sand.
+
+> look under platform
+The platform is completely closed off with thick wooden beams.
+
+> n
+Cemetery
+You walk a few steps further towards the crosses. Half-height bushes protect the
+gravesites and their visitors from the wind.
+
+Several crooked crosses stand carelessly crammed next to each other on a small
+hill, none of them inscribed. Possibly the final resting place of deserters.
+
+Further ahead, four crosses stand neatly lined up next to each other, each at
+the head of a grave thoroughly edged with stones.
+
+In the south you can see the outline of the gallows.
+
+> examine bushes
+Small bushes enclose the cemetery and offer some protection from the piercing
+wind.
+
+> smell
+The bushes, hot from the sun, exude a slightly sweet scent.
+
+> examine crosses
+Which of the crosses would you like to read?
+
+[1] First cross
+[2] Second cross
+[3] Third cross
+[4] Fourth cross
+[0] End
+
+> 1
+[First cross]
+"Biff Clayton"
+"1837-1868"
+[1] First cross
+[2] Second cross
+[3] Third cross
+[4] Fourth cross
+[0] End
+
+> 2
+[Second cross]
+"Mathilda Brooks, née Walker"
+"1808-1869"
+[1] First cross
+[2] Second cross
+[3] Third cross
+[4] Fourth cross
+[0] End
+
+> 3
+[Third cross]
+"Wendy Porter"
+"1816-1875"
+[1] First cross
+[2] Second cross
+[3] Third cross
+[4] Fourth cross
+[0] End
+
+> 4
+[Fourth cross]
+"Lucille Thompson, née Powell"
+"1845-1878"
+[1] First cross
+[2] Second cross
+[3] Third cross
+[4] Fourth cross
+[0] End
+
+> 0
+
+Cemetery
+Several crooked crosses stand carelessly crammed next to each other on a small
+hill, none of them inscribed. Possibly the final resting place of deserters.
+
+Further ahead, four crosses stand neatly lined up next to each other, each at
+the head of a grave thoroughly edged with stones.
+
+In the south you can see the outline of the gallows.
+
+> s
+Gallows
+You are standing in front of a gallows consisting of two posts with crossbars
+and a noose. A wooden platform serves as a foundation.
+
+Further north you think you can recognize some leaning crosses. Heading west,
+you can return to town.
+
+> w
+Main Street
+The wide, dusty road runs from east to west. The sheriff's office is to the
+northwest, the general store lies to the north and the barber shop to the
+northeast. The saloon lies to the south.
+
+A vulture sits on the roof gable in front of you and looks at you suspiciously
+before flying away.
+
+> n
+General Store
+You're standing in front of the counter, behind it is Bill leaning on his
+walking stick. Apart from the open wall shelves behind Bill, the store is quite
+empty.
+
+The door to the south leads out onto the road.
+
+> talk to Bill
+What would you like to say to Bill?
+
+[1] "Um, what is your wife's name?"
+[0] End conversation
+
+> 1
+["Um, what is your wife's name?"]
+"Her name was Mathilda."
+
+He pulls up his nose and rubs his eye. "Called her Hilda most of the time."
+
+[0] End conversation
+
+> 0
+General Store
+You're standing in front of the counter, behind it is Bill leaning on his
+walking stick. Apart from the open wall shelves behind Bill, the store is quite
+empty.
+
+The door to the south leads out onto the road.
+
+> out
+Main Street
+The wide, dusty road runs from east to west. The sheriff's office is to the
+northwest, the general store lies to the north and the barber shop to the
+northeast. The saloon lies to the south.
+
+> e
+Gallows
+You are standing in front of a gallows consisting of two posts with crossbars
+and a noose. A wooden platform serves as a foundation.
+
+Further north you think you can recognize some leaning crosses. Heading west,
+you can return to town.
+
+> n
+Cemetery
+Several crooked crosses stand carelessly crammed next to each other on a small
+hill, none of them inscribed. Possibly the final resting place of deserters.
+
+Further ahead, four crosses stand neatly lined up next to each other, each at
+the head of a grave thoroughly edged with stones.
+
+In the south you can see the outline of the gallows.
+
+> examine crosses
+Which of the crosses would you like to read?
+
+[1] First cross
+[2] Second cross
+[3] Third cross
+[4] Fourth cross
+[0] End
+
+> 1
+[First cross]
+"Biff Clayton"
+"1837-1868"
+[1] First cross
+[2] Second cross
+[3] Third cross
+[4] Fourth cross
+[0] End
+
+> 2
+[Second cross]
+"Mathilda Brooks, née Walker"
+"1808-1869"
+This is probably the grave of Bill's wife.
+[1] First cross
+[2] Second cross
+[3] Third cross
+[4] Fourth cross
+[0] End
+
+> 0
+
+Cemetery
+Several crooked crosses stand carelessly crammed next to each other on a small
+hill, none of them inscribed. Possibly the final resting place of deserters.
+
+Further ahead, four crosses stand neatly lined up next to each other, each at
+the head of a grave thoroughly edged with stones.
+
+In the south you can see the outline of the gallows.
+
+> examine graves
+Which of the graves would you like to examine?
+
+[1] First grave
+[2] Second grave
+[3] Third grave
+[4] Fourth grave
+[0] End
+
+> 2
+[Second grave]
+You carefully run your fingers through the fine sand on the grave until your
+fingers feel something.
+
+There they are, Bill's pince-nez!
+
+You gently blow the sand off the lenses and pocket them.
+[1] First grave
+[2] Second grave
+[3] Third grave
+[4] Fourth grave
+[0] End
+
+> 0
+
+Cemetery
+Several crooked crosses stand carelessly crammed next to each other on a small
+hill, none of them inscribed. Possibly the final resting place of deserters.
+
+Further ahead, four crosses stand neatly lined up next to each other, each at
+the head of a grave thoroughly edged with stones.
+
+In the south you can see the outline of the gallows.
+
+> run to Bill
+Shortly afterwards...
+General Store
+You're standing in front of the counter, behind it is Bill rubbing his eyes.
+Apart from the open wall shelves behind Bill, the store is quite empty.
+
+The door to the south leads out onto the road.
+
+> talk to Bill
+What would you like to say to Bill?
+
+[1] "I believe I've found your pince-nez."
+[0] End conversation
+
+> 1
+["I believe I've found your pince-nez."]
+You gently place the pince-nez on the counter. Bill's face brightens and he
+looks at you gratefully.
+
+"There they are! Thank you very much, my boy! Without them, I'd be pretty
+screwed in the long run."
+
+[1] "Could you have another look for that crowbar now?"
+[0] End conversation
+
+> 1
+["Could you have another look for that crowbar now?"]
+"Of course! I'll be back in a minute."
+
+A seemingly endless minute later, Bill reappears in the doorway and slams the
+crowbar down on the counter in front of you.
+
+"It's normally eight bucks, but if you don't need it forever, I'll lend it to
+you, you seem like an honest guy."
+
+[0] End conversation
+
+> 0
+General Store
+You're standing in front of the counter, behind it is Bill scratching his chin.
+Apart from the open wall shelves behind Bill, the store is quite empty.
+
+There is a crowbar on the counter. The door to the south leads out onto the
+road.
+
+> take crowbar
+Taken.
+
+> examine crowbar
+A crowbar made of steel, about two feet long. Both sides are slotted, and one
+side is bent.
+
+> s
+Main Street
+The wide, dusty road runs from east to west. The sheriff's office is to the
+northwest, the general store lies to the north and the barber shop to the
+northeast. The saloon lies to the south.
+
+> w
+Ranch
+A small wooden hut with an adjoining stable and a large fenced-in paddock. There
+is a small bench in front of the house.
+
+A narrow path leads south to the wind pump. The main road leads further out of
+town from the east to the west.
+
+> s
+Wind Pump
+The windmill is mounted at a height of around fifteen yards on a lattice mast
+made of long metal rods. It squeaks terribly with every rotation. A metal tail
+vane automatically points the rotor blades in the direction of the wind.
+
+The path leads back to the ranch in the north and towards the hill chain in the
+west.
+
+> w
+Hill Chain
+A large boulder field of larger and smaller rocks stretches hundreds of yards
+across. The hills seem to offer good protection from the wind as it is almost
+windless here.
+
+The path in the east leads back to the wind pump of the town.
+
+Molly sits on a boulder and flutters her wings excitedly.
+
+> use crowbar with crevice
+You push the flat, straight end of the crowbar into the gap and hammer on the
+curved end with a flat stone.
+
+You knock and pry for a while until a flat, hand-width piece of rock finally
+breaks off the boulder. The gap is now much wider.
+
+You put the crowbar back in.
+
+> run to Bill
+A few steps later...
+General Store
+You're standing in front of the counter, behind it is Bill coughing croakily.
+Apart from the open wall shelves behind Bill, the store is quite empty.
+
+The door to the south leads out onto the road.
+
+> talk to Bill
+What would you like to say to Bill?
+
+[1] "I could use a long pole or something."
+[0] End conversation
+
+> 1
+["I could use a long pole or something."]
+Bill looks at you, puzzled. "Do I look like a builders' merchant? I don't have
+anything like that."
+
+He closes his eyes as if to think, but then shakes his head in annoyance. "The
+squeaking of that damn windmill is driving me crazy, I'm telling you."
+
+[1] "I could use a long pole or something."
+[0] End conversation
+
+> 0
+General Store
+You're standing in front of the counter, behind it is Bill leaning on his
+walking stick. Apart from the open wall shelves behind Bill, the store is quite
+empty.
+
+The door to the south leads out onto the road.
+
+> run to windpump
+Shortly afterwards...
+Wind Pump
+The windmill is mounted at a height of around fifteen yards on a lattice mast
+made of long metal rods. It squeaks terribly with every rotation. A metal tail
+vane automatically points the rotor blades in the direction of the wind.
+
+The path leads back to the ranch in the north and towards the hill chain in the
+west.
+
+> examine mast
+The lattice mast consists of welded metal rods. One of the rods near the ground
+seems to have come loose.
+
+> take rod
+You lever the rod back and forth until the remaining weld seam detaches from the
+lattice mast. It is so long and heavy that you have to carry it with both hands.
+
+> examine rod
+A solid metal rod, about ten feet long with a diameter of about two inches.
+
+> w
+Hill Chain
+A large boulder field of larger and smaller rocks stretches hundreds of yards
+across. The hills seem to offer good protection from the wind as it is almost
+windless here.
+
+The path in the east leads back to the wind pump of the town.
+
+Molly sits on a boulder and flutters her wings excitedly.
+
+> use rod on crevice
+You slowly push the long metal rod into the gap. It fits perfectly!
+
+You grab the rod with both hands at the free end and push it hard towards the
+mountain. The boulder seems to move slightly. "BRAAAK!" Molly croaks excitedly
+and settles on your shoulder.
+
+You look around again - there doesn't seem to be anyone within earshot. You
+brace yourself against the rod again with all your weight, and lo and behold -
+the boulder comes loose!
+
+RRRRRRRRRRRRRRR...
+
+~~~
+
+You haven't been here at the pier for ages. As always, she wanted to save the
+money for later, but today you really wanted to go to the sea with her.
+
+"With or without the hat, what do you think?"
+
+Claire is sitting on a stool, laughing and holding the hat flapping wildly in
+the wind. You gave the artist two dollars, hopefully it'll be a nice picture.
+His piece of charcoal flits across the paper hastily and with skilled strokes.
+
+Seagulls circle at the end of the pier and screech loudly as a little boy tries
+to catch them. She turns her head and smiles at you. You clench your fist in
+your pocket, clutching the ring tightly.
+
+Where are you, Claire?
+~~~
+
+You open your eyes.
+
+It seems like you hit your head (again), this time probably when you tried to
+jump to safety from the rolling boulder it seems. At least that seems to have
+worked.
+
+You slowly pick yourself up and pat the dust off your shoulders. What a shitty
+day.
+
+> take rod
+The long metal rod is bent and even more unwieldy than before. You no longer
+want to carry it around with you.
+
+> n
+Cave
+You squeeze through the narrow gap. After a few small steps, you can stand
+comfortably and move freely.
+
+The air is pleasantly cool and damp, and it slightly smells of smoke. It's so
+dark that you can hardly see your own feet.
+
+To the south, pale light filters through the long, narrow cave entrance.
+
+> smell
+It smells slightly of smoke and damp stone. And somehow slightly sweet, a smell
+you've never smelled before.
+
+> e
+You carefully feel the wall. This is as far as it goes.
+
+> w
+You carefully feel the wall. This is as far as it goes.
+
+> n
+You feel your way forward carefully...
+
+Ouch! You hit your shin on a big rock or something.
+
+It really is too dark in here to go any further, you could seriously hurt
+yourself.
+
+> examine rock
+The pointed rock feels damp and smooth.
+
+> s
+Hill Chain
+A large boulder field of larger and smaller rocks stretches hundreds of yards
+across. The hills seem to offer good protection from the wind as it is almost
+windless here.
+
+To the north, a narrow passage about shoulder-high can be seen between the
+stones, with a bent metal rod lying next to it. A few yards off is the boulder
+that previously closed off the tunnel entrance.
+
+The path in the east leads back to the wind pump of the town.
+
+You can see a metal rod here.
+
+> e
+Wind Pump
+The windmill is mounted at a height of around fifteen yards on a lattice mast
+made of long metal rods. It squeaks terribly with every rotation. A metal tail
+vane automatically points the rotor blades in the direction of the wind.
+
+The path leads back to the ranch in the north and towards the hill chain in the
+west.
+
+> n
+Ranch
+A small wooden hut with an adjoining stable and a large fenced-in paddock. There
+is a small bench in front of the house.
+
+A narrow path leads south to the wind pump. The main road leads further out of
+town from the east to the west.
+
+You hear the soft rattle of a rattlesnake. As you step next to the house with
+your revolver drawn, it quickly disappears into the steppe.
+
+> e
+Main Street
+The wide, dusty road runs from east to west. The sheriff's office is to the
+northwest, the general store lies to the north and the barber shop to the
+northeast. The saloon lies to the south.
+
+> s
+Saloon
+The saloon consists of a few round tables with chairs and a small stage. Next to
+it, a staircase leads up to your room. On the other side is a long counter. Two
+massive beams run under the ceiling. The swing doors to the north lead outside.
+
+Ella is behind the counter, blowing her nose into her kitchen towel.
+
+> examine ceiling
+Massive wooden beams support the ceiling of the large room. A long nail is
+hammered into one of the beams with a kerosene lamp dangling from it.
+
+> examine lamp
+A large kerosene lamp with a handle. It is not lit.
+
+> take lamp
+You can't quite reach it like this, the lamp is hanging a little too high.
+
+> use crowbar on lamp
+Ella raises an eyebrow. "What do you think you're doing there?"
+
+> pull chair
+You place one of the chairs under the ceiling beam with the lantern.
+
+> take lamp
+Ella raises an eyebrow. "What do you think you're doing there?"
+
+> talk to woman
+What would you like to say to Ella?
+
+[1] "May I borrow that lamp?"
+[0] End conversation
+
+> 1
+["May I borrow that lamp?"]
+You briefly tell Ella about the tunnel entrance that you have uncovered. She
+smiles and nods.
+
+"You're welcome to take the lamp with you, but I need it back by tonight!"
+
+[0] End conversation
+
+> 0
+Saloon
+The saloon consists of a few round tables with chairs and a small stage. Next to
+it, a staircase leads up to your room. On the other side is a long counter. Two
+massive beams run under the ceiling. The swing doors to the north lead outside.
+
+Ella is behind the counter, blowing her nose into her kitchen towel.
+
+> use chair
+You climb onto the chair under the beam.
+Saloon (on the chair)
+The saloon consists of a few round tables with chairs and a small stage. Next to
+it, a staircase leads up to your room. On the other side is a long counter. Two
+massive beams run under the ceiling. The swing doors to the north lead outside.
+
+Ella is behind the counter, wiping the counter with a bored expression.
+
+> take lamp
+You take the lamp off the nail.
+
+> examine lamp
+A large, filled kerosene lamp with a handle. It is not lit.
+
+> turn on lamp
+You have nothing to light the lamp.
+
+> talk to woman
+If you're not about to give a speech, you might want to get off the chair first.
+
+> down
+You get down from the chair.
+Saloon
+The saloon consists of a few round tables with chairs and a small stage. Next to
+it, a staircase leads up to your room. On the other side is a long counter. Two
+massive beams run under the ceiling. The swing doors to the north lead outside.
+
+Ella is behind the counter, scratching her chin.
+
+> talk to woman
+What would you like to say to Ella?
+
+[1] "Do you have anything to light the lamp?"
+[0] End conversation
+
+> 1
+["Do you have anything to light the lamp?"]
+Ella frowns. "I'm almost out of matches and it's hard to smoke without fire."
+
+She blows an impressive cloud of smoke over you and points to the door. "I'm
+sure Bill still has some, feel free to bring me some as well when you return the
+lamp."
+
+[0] End conversation
+
+> 0
+Saloon
+The saloon consists of a few round tables with chairs and a small stage. Next to
+it, a staircase leads up to your room. On the other side is a long counter. Two
+massive beams run under the ceiling. The swing doors to the north lead outside.
+
+Ella is behind the counter, taking a drag on her cigarette.
+
+> n
+Main Street
+The wide, dusty road runs from east to west. The sheriff's office is to the
+northwest, the general store lies to the north and the barber shop to the
+northeast. The saloon lies to the south.
+
+A window shutter flies open with a loud bang and a blanket is vigorously shaken
+out by two thick arms. It disappears in an impressive dust cloud and the window
+is slammed shut again with a crash.
+
+> n
+General Store
+You're standing in front of the counter, behind it is Bill leaning on his
+walking stick. Apart from the open wall shelves behind Bill, the store is quite
+empty.
+
+The door to the south leads out onto the road.
+
+> talk to Bill
+What would you like to say to Bill?
+
+[1] "Do you sell matches?"
+[0] End conversation
+
+> 1
+["Do you sell matches?"]
+Bill's face brightens. "Of course I do! The good old ones without that security
+bullshit, you can light them anywhere."
+
+He puts a small brown paper bag on the table. "That'll be a dollar."
+
+You put a crumpled dollar bill on the counter. Bill pockets it.
+
+[0] End conversation
+
+> 0
+General Store
+You're standing in front of the counter, behind it is Bill coughing croakily.
+Apart from the open wall shelves behind Bill, the store is quite empty.
+
+There is a small brown envelope with matches on the counter. The door to the
+south leads out onto the road.
+
+> take matches
+Taken.
+
+> examine matches
+A considerable number of matches in a brown paper envelope.
+
+> use matches on lamp
+You take one of the matches and swipe it over your ragged thumbnail, then gently
+holding it to the wick of the lamp. A cozy light spreads out.
+
+> run to cave
+A few minutes later...
+Cave
+The air is pleasantly cool and damp, and it slightly smells of smoke. A large,
+pointed boulder marks the edge of a precipice to the north.
+
+To the south, pale light filters through the long, narrow cave entrance.
+
+> n
+The precipice is far too steep to climb down safely without gear.
+
+> examine precipice
+Even with the light from the lamp, you can't see the bottom. It's definitely too
+deep to jump.
+
+> down
+The precipice is far too steep to climb down safely without gear.
+
+> run to Bill
+A few steps later...
+General Store
+You're standing in front of the counter, behind it is Bill coughing croakily.
+Apart from the open wall shelves behind Bill, the store is quite empty.
+
+The door to the south leads out onto the road.
+
+> talk to Bill
+What would you like to say to Bill?
+
+[1] "I have to climb down somewhere, do you have anything for me?"
+[0] End conversation
+
+> 1
+["I have to climb down somewhere, do you have anything for me?"]
+The old man scratches his chin thoughtfully and looks out of the window.
+
+"I had about fifty feet of a nice thick rope. Two young soldiers came by and
+said they only needed like twenty feet of it."
+
+His eyes flash as a broad grin spreads across his face.
+
+"Told them I had nothing to cut it, so they bought the whole thing."
+
+[1] "What did they need the rope for?"
+[0] End conversation
+
+> 1
+["What did they need the rope for?"]
+"They were in a hurry building a gallows to hang a few deserters outside the
+city."
+
+Bill squints his eyes and draws in his breath. The memory seems unpleasant to
+him.
+
+"The whole village should be watching. As soon as it was done, the soldiers left
+again, and Marten was told to take care of the bodies."
+
+He rubs his nose briefly and looks directly at you. "Now that I think of it,
+they didn't seem to have the rest of the rope with them. I wouldn't be surprised
+if it's still out there somewhere."
+
+[0] End conversation
+
+> 0
+General Store
+You're standing in front of the counter, behind it is Bill scratching his chin.
+Apart from the open wall shelves behind Bill, the store is quite empty.
+
+The door to the south leads out onto the road.
+
+> s
+Main Street
+The wide, dusty road runs from east to west. The sheriff's office is to the
+northwest, the general store lies to the north and the barber shop to the
+northeast. The saloon lies to the south.
+
+> ne
+Barber Shop
+An expansive tilt chair made of red leather is resplendent in front of a large
+mirror attached to the wall. Small bottles, cans and other novelties are
+scattered around on various tables and shelves.
+
+The parrot sits on a perch and wobbles its head. Marten stands behind the
+armchair sorting some tins.
+
+> talk to Marten
+What would you like to say to Marten?
+
+[1] "Were you there when the gallows were built?"
+[0] End conversation
+
+> 1
+["Were you there when the gallows were built?"]
+Marten flinches and looks at you suspiciously.
+
+"No, I wasn't. Unfortunately, I was there when they were inaugurated, and I also
+was allowed to work for two days straight afterwards until everyone was buried.
+Why do you ask?"
+
+[1] "Bill said there must have been a lot of rope left over, do you know where
+that went?"
+[0] End conversation
+
+> 1
+["Bill said there must have been a lot of rope left over, do you know where that
+went?"]
+"Yes, of course lad. After all, I was ordered to clean up the mess."
+
+He shakes his head and clears his throat.
+
+"The soldiers gave me a bit of money and told me to put all the rest of the
+stuff in the hatch and nail it up tight, cut the noose and bury the bodies. It
+was a ridiculous wage for all the work, but saying no certainly wouldn't have
+been a good idea."
+
+[0] End conversation
+
+> 0
+Barber Shop
+An expansive tilt chair made of red leather is resplendent in front of a large
+mirror attached to the wall. Small bottles, cans and other novelties are
+scattered around on various tables and shelves.
+
+The parrot sits on a perch and wobbles its head. Marten stands behind the
+armchair sorting some tins.
+
+> out
+Main Street
+The wide, dusty road runs from east to west. The sheriff's office is to the
+northwest, the general store lies to the north and the barber shop to the
+northeast. The saloon lies to the south.
+
+> e
+Gallows
+You are standing in front of a gallows consisting of two posts with crossbars
+and a noose. A wooden platform serves as a foundation.
+
+Further north you think you can recognize some leaning crosses. Heading west,
+you can return to town.
+
+> examine platform
+A wooden platform, apparently hastily put together, forms the foundation of the
+gallows. It is almost completely covered with sand.
+
+> examine sand
+The sand forms a small dune and comes up to your knee at the highest point.
+There is practically nothing left to see of the base of the platform.
+
+> take sand
+You try to scrape the sand away with your feet, but in this wind that seems to
+be a pointless endeavor. Perhaps you would have more success with proper tools.
+
+> w
+Main Street
+The wide, dusty road runs from east to west. The sheriff's office is to the
+northwest, the general store lies to the north and the barber shop to the
+northeast. The saloon lies to the south.
+
+> n
+General Store
+You're standing in front of the counter, behind it is Bill rubbing his eyes.
+Apart from the open wall shelves behind Bill, the store is quite empty.
+
+The door to the south leads out onto the road.
+
+> talk to Bill
+What would you like to say to Bill?
+
+[1] "Do you have a shovel for me?"
+[0] End conversation
+
+> 1
+["Do you have a shovel for me?"]
+"No, unfortunately I don't have any more. I sold my last one to Marten."
+
+[0] End conversation
+
+> 0
+General Store
+You're standing in front of the counter, behind it is Bill rubbing his eyes.
+Apart from the open wall shelves behind Bill, the store is quite empty.
+
+The door to the south leads out onto the road.
+
+> s
+Main Street
+The wide, dusty road runs from east to west. The sheriff's office is to the
+northwest, the general store lies to the north and the barber shop to the
+northeast. The saloon lies to the south.
+
+> ne
+Barber Shop
+An expansive tilt chair made of red leather is resplendent in front of a large
+mirror attached to the wall. Small bottles, cans and other novelties are
+scattered around on various tables and shelves.
+
+The parrot sits on a perch and wobbles its head. Marten stands behind the
+armchair checking his razor blade.
+
+> talk to Marten
+What would you like to say to Marten?
+
+[1] "You must have a shovel, right?"
+[0] End conversation
+
+> 1
+["You must have a shovel, right?"]
+Marten laughs boomingly and blinks at you.
+
+"You think I dig the graves here with my hands or what? Of course I have a
+shovel! I just got a new one a few days ago from Bill, the old cheapskate!"
+
+[1] "May I borrow your shovel? It is really important."
+[0] End conversation
+
+> 1
+["May I borrow your shovel? It is really important."]
+"Is this for the Lucy thing?", Marten asks. You nod. He tilts his head and
+strokes his beard. "Well okay then, I'll go get it for you."
+
+He briefly disappears in the back of the store and reappears shortly afterwards
+with a large sturdy-looking shovel in his hand.
+
+"It's a bit muddy, so clean it up if it bothers you. And make sure I'll see it
+again!"
+
+You thank him and take the shovel.
+
+[0] End conversation
+
+> 0
+Barber Shop
+An expansive tilt chair made of red leather is resplendent in front of a large
+mirror attached to the wall. Small bottles, cans and other novelties are
+scattered around on various tables and shelves.
+
+The parrot sits on a perch and wobbles its head. Marten stands behind the
+armchair polishing the mirror.
+
+> out
+Main Street
+The wide, dusty road runs from east to west. The sheriff's office is to the
+northwest, the general store lies to the north and the barber shop to the
+northeast. The saloon lies to the south.
+
+> e
+Gallows
+You are standing in front of a gallows consisting of two posts with crossbars
+and a noose. A wooden platform serves as a foundation.
+
+Further north you think you can recognize some leaning crosses. Heading west,
+you can return to town.
+
+> dig sand with shovel
+Piece by piece, you free the platform from the large pile of sand, while the
+wind whips relentlessly in your face.
+
+Directly under the gallows, a sturdy wooden board becomes visible, which has
+been carefully nailed to the pedestal with a lot of large nails.
+
+> examine plate
+A large wooden plate was nailed to the platform directly under the gallows.
+
+> use crowbar on plate
+You pry one nail after another out of the platform, not without regularly
+swearing and asking yourself out loud what the hell you're doing here.
+
+About half an hour and a broken fingernail later, you have successfully removed
+all the nails. Drenched in sweat, you push the wooden panel aside to reveal a
+square, dark opening.
+
+> examine opening
+You shine your lamp into the opening. A few mice take flight, squeaking.
+In the pale light of the lamp, you can make out a few bent nails, some boards
+covered in cobwebs and a coiled rope.
+
+> examine rope
+A long, thick rope, at least ten yards long.
+
+> take rope
+You throw the coiled rope over your shoulder. Quite heavy.
+
+> run to cave
+Shortly afterwards...
+Cave
+The air is pleasantly cool and damp, and it slightly smells of smoke. A large,
+pointed boulder marks the edge of a precipice to the north.
+
+To the south, pale light filters through the long, narrow cave entrance.
+
+> use rope on precipice
+Simply throwing the rope into the abyss will probably not help.
+
+> tie rope to rock
+You tie the rope around the rock and secure it with a proper knot.
+
+> down
+You take the handle of the kerosene lamp between your teeth and grasp the rope
+with both hands.
+
+With your feet braced against the rock face, you slowly rappel down into the
+dark abyss.
+~~~
+
+Vault
+After what feels like an eternity, your feet finally feel solid ground again.
+Sweat runs down your back as you turn away from the wall. Your strained panting
+paints small clouds of steam into the glow of your lantern.
+
+A deep rumble, apparently not far away, makes you fall silent in a flash.
+Carefully, you follow the dim light of the curved tunnel ahead of you.
+
+As the passage widens and becomes brighter, you can hear voices more and more
+clearly. Carefully, you take cover behind a waist-high stone ledge from which
+you can see the large vault below you, illuminated by countless torches.
+
+~~~
+
+About a dozen men seem to be working at various stations some distance away.
+Some are stirring in large, fired steel kettles, others are handling large vats
+covered with cloth, while others seem to be rolling something flat and forming
+it into balls. It smells bad and sweet at the same time, making you feel a bit
+dizzy.
+
+Just a few yards away from you is a large rock alcove. A young couple crouches
+on the ground behind the bars, sometimes whispering to each other. That's Lucy!
+Then the young man must be Michael.
+
+In front of it, a grumpy-looking fellow sits on a flattened stone, his arms
+resting on his thighs and a pistol in his right hand.
+
+> smell
+Smoke and various vapors mix here in an unpleasant way to create a sweet,
+slightly stagnant smell. You feel slightly foggy.
+
+> examine man
+The man looks glumly at the ground in front of him and scratches his feet in the
+sand. Occasionally he glances at the young couple in the makeshift cage or lets
+his gaze wander in your direction, but you are obviously unrecognizable in the
+semi-darkness behind the rocky ledge.
+
+> examine guard
+The man looks glumly at the ground in front of him and scratches his feet in the
+sand. Occasionally he glances at the young couple in the makeshift cage or lets
+his gaze wander in your direction, but you are obviously unrecognizable in the
+semi-darkness behind the rocky ledge.
+
+> examine niche
+Just a few yards away from you is a large rock alcove. A young couple crouches
+on the ground behind the bars, sometimes whispering to each other. That's Lucy!
+Then the young man must be Michael.
+
+> examine Michael
+The young man repeatedly puts his hand on his companion's arm or strokes her
+face reassuringly.
+
+> talk to guard
+Not a good idea.
+
+> shoot guard
+That would cause quite a stir. A more inconspicuous approach would probably make
+more sense.
+
+> drop hankie
+You unfold the bright white handkerchief and let it slide over the edge of the
+ledge as the guard briefly looks at the prisoners.
+
+A moment later, the man turns his head back in your direction and frowns in
+irritation. He stands up, slowly walks towards you and bends down in front of
+you to grab the hankie.
+
+"Where the hell did that come from?"
+
+> s
+You should take care of that guard as soon as possible. Time seems to stand
+still as you ponder all the potential actions to take.
+
+> hit guard
+That's too risky without a weapon. An open fight would certainly be noticed
+quickly.
+Maybe you could handle him if he was a little closer.
+
+> hit guard with shovel
+POW! You strike the man down with a well-aimed blow with the shovel.
+
+You look around furtively, but none of the workers seem to have heard anything.
+You quickly put the bright handkerchief back in your pocket.
+
+> talk to guard
+He doesn't seem to be in the mood.
+
+> examine guard
+The guard lies face down in the dirt and doesn't move.
+
+> look
+Vault
+About a dozen men seem to be working at various stations some distance away.
+Some are stirring in large, fired steel kettles, others are handling large vats
+covered with cloth, while others seem to be rolling something flat and forming
+it into balls. It smells bad and sweet at the same time, making you feel a bit
+dizzy.
+
+Lucy and Michael rattle the bars and gesticulate wildly in your direction. You
+slowly get the impression that they urgently want to talk to you.
+
+> examine niche
+Lucy and Michael rattle the bars and gesticulate wildly in your direction. You
+slowly get the impression that they urgently want to talk to you.
+
+> up
+Are you just going to leave Lucy and Michael here? The guard could be discovered
+at any time.
+
+> talk to couple
+What would you like to say to the young woman?
+
+[1] "Everything okay with you?"
+[0] End conversation
+
+> 1
+["Everything okay with you?"]
+Lucy glares at you, her expression a wild mixture of desperation and sheer rage.
+"Please get us out of here damnit!"
+
+You use your crowbar to pry the bars apart so that they both can just squeeze
+through.
+
+The young man breathes a sigh of relief and holds out his hand to you. "Thank
+you very much sir. I am Michael." You shake his hand.
+
+[1] "What happened to you?"
+[0] End conversation
+
+> 1
+["What happened to you?"]
+"We don't have time for this now!", Lucy hisses excitedly. "They're cooking up
+some mess here, and my stepfather is in on it!"
+
+Her eyes widen and she hastily pulls you both back into the niche. "Watch out,
+they're coming!"
+Vault
+A very dapper-looking middle-aged man with a cane and bowler hat and a much
+younger, dirtier and wildly gesticulating fellow stroll in your direction. They
+stop just a few steps away.
+
+"What else are we supposed to do Ron? They'll start singing as soon as we let
+them out!"
+
+"That's still Mr. Thompson to you, Cal. I'll talk to Lucy when she's calmed down
+a bit, then we'll see." Ah, the younger man must be Calvin Mifflin then!
+
+~~~
+
+The young man looks down and shakes his head. "Well, I don't know Ro-- Mr.
+Thompson. She sounds like a smart mouth to me."
+
+With a quick, almost casual movement, Thompson swings the cane and brings the
+knob down on the man's left knee with lightning speed. "AAAARGH!" the man cries
+out in surprise and collapses instantly.
+
+As if nothing had happened, Thompson continues to speak in a consistently
+sonorous voice. "It's not your place to talk about her like that. If she and her
+groom don't come to their senses, we will have to find another solution I'm
+afraid."
+
+Lucy turns crimson red. "YOU GODDAMN---"
+~~~
+
+Michael quickly presses a hand over Lucy's mouth, but it's too late. Thompson
+takes a few steps to the side to look into the alcove. His eyes widen.
+
+"The prisoners are free! Over here, now!"
+
+Several men look up and run down from the cave entrance in your direction, some
+reaching for their weapons.
+
+> look
+Vault
+Several men run down from the cave entrance in your direction, some with their
+weapons drawn. You perceive the situation as if in slow motion. Your right hand
+twitches slightly.
+
+> e
+You raise your arms placatingly and take a step towards the men.
+
+"Guys, this is just a misunderst-"
+
+The noise is deafening as several men open fire on you at the same time. Hit by
+several bullets, you slump to the ground.
+
+--- WHITE LIGHT ---
+
+No, that's not what really happened. You did it differently somehow, you're sure
+of it.
+The white fog slowly clears before your eyes. The men are still charging towards
+you.
+
+> up
+You grab Lucy and Michael, pushing them over towards the ledge. Bullets whiz
+past your heads, and as you turn around, you feel a searing pain in your left
+shoulder that throws you to the ground.
+
+--- WHITE LIGHT ---
+
+No, that's not what really happened. You did it differently somehow, you're sure
+of it.
+The white fog slowly clears before your eyes. The men are still charging towards
+you.
+
+> shoot men
+You raise your revolver and hit two of the charging men in the chest and stomach
+before a bullet shreds your knee. You fall to the ground, screaming.
+
+--- WHITE LIGHT ---
+
+No, that's not what really happened. You think through all the possible courses
+of action again.
+Perhaps you should take another look around.
+The white fog slowly clears before your eyes. The men are still charging towards
+you.
+
+> look
+Vault
+Several men run down from the cave entrance in your direction, some with their
+weapons drawn. You perceive the situation as if in slow motion. Your right hand
+twitches slightly.
+
+Everything seems like a blur, but next to the cave entrance a cart loaded with
+barrels catches your eye. A large wooden wedge blocks one of the wheels and
+prevents the cart from rolling away.
+
+> examine cart
+A cart with four spoked wheels, loaded with several wooden barrels.
+
+A large wooden wedge under one of the wheels prevents the cart from rolling
+away.
+
+> shoot cart
+You draw the revolver at lightning speed and shoot at the cart.
+
+The cart wobbles slightly but does not tip over.
+
+A rifle butt hits you brutally on the forehead as the men reach and overpower
+you.
+
+--- WHITE LIGHT ---
+
+No, that's not what really happened. You did it differently somehow, you're sure
+of it.
+Perhaps you should take another look around.
+The white fog slowly clears before your eyes. The men are still charging towards
+you.
+
+> look
+Vault
+Several men run down from the cave entrance in your direction, some with their
+weapons drawn. You perceive the situation as if in slow motion. Your right hand
+twitches slightly.
+
+Everything seems like a blur, but next to the cave entrance a cart loaded with
+barrels catches your eye. A large wooden wedge blocks one of the wheels and
+prevents the cart from rolling away.
+
+> examine barrels
+Several wooden barrels. On one of them you can see the letters NG.
+
+> shoot barrels
+You pull up the revolver, aim carefully and shoot at the barrels on the cart.
+You believe to see a watery liquid trickling out of one of the barrels just
+before a powerfully swung bandit fist smashes your nasal bone with full force.
+
+--- WHITE LIGHT ---
+
+No, that's not what really happened. In reality of course, you had come up with
+a much smarter solution.
+Perhaps you should take another look around.
+The white fog slowly clears before your eyes. The men are still charging towards
+you.
+
+> hit man with crowbar
+I think he's had enough for now.
+
+> examine wedge
+A large wooden wedge blocks one of the wheels and prevents the cart from rolling
+away.
+
+> use revolver with wedge
+You squint your left eye and carefully aim at the wooden wedge holding the cart
+in place. You breathe out halfway and pull the trigger.
+
+The shot releases perfectly and sends the wooden wedge flying in a high arc. The
+cart rumbles loudly through the resulting cloud of dust and rolls straight
+towards you.
+
+The men pause and turn around, their eyes widening in fear.
+
+"The nitro! GET OUT!"
+
+You turn to Michael and Lucy, who are staring past you with their mouths wide
+open. You leap onto them and push them to the ground just before the world
+explodes around you.
+
+--- WHITE LIGHT ---
+
+> out
+You feel dizzy as you try to get up from the plank bed. The sheriff rushes over
+and puts a friendly but firm hand on your shoulder.
+
+"Slow down, boy. I think there are still a few things to discuss here."
+
+> take draft notice
+"I'll give you your papers as soon as you've told me everything."
+
+> talk to Dunder
+What would you like to say to Sheriff Dunder?
+
+[1] "What happened?"
+[2] "What were they doing in that cave?"
+[3] "Where is Thompson?"
+[0] End conversation
+
+> 1
+["What happened?"]
+Dunder stands up and puts a hand on Lucy's shoulder.
+
+"Well, as far as I've understood these two correctly, you saved their lives
+after a cart of nitro barrels rolled loose in the cave and exploded."
+
+He blinks at you slyly. "What a coincidence, eh?"
+
+[1] "How's your head, Michael?"
+[2] "What were they doing in that cave?"
+[3] "Where is Thompson?"
+[0] End conversation
+
+> 1
+["How's your head, Michael?"]
+Michael grabs his head and adjusts his bandage a little.
+
+"Oh, it's all right now. It must have bled a lot when they found us, but Marten
+looked at it and bandaged it up straight away."
+
+[1] "How did you end up there anyway?"
+[2] "What were they doing in that cave?"
+[3] "Where is Thompson?"
+[0] End conversation
+
+> 1
+["How did you end up there anyway?"]
+"I'd heard that things weren't quite right at the mine and that Thompson had a
+hand in it. So, when Cal and Bob turned up at Ella's that evening and things
+were getting heated, I thought it would be a good time to check it out."
+
+Michael notices Lucy's reproachful look and raises his arms apologetically. "I
+wanted to tell you at first, but it could have just been empty talk. After all,
+it's about your fa-- um, stepfather."
+
+Lucy takes a deep breath, and he continues speaking quickly. "Anyway,
+unfortunately the mine wasn't as deserted as I thought, I was discovered and
+locked up."
+
+[1] "What were they doing in that cave?"
+[2] "Where is Thompson?"
+[0] End conversation
+
+> 1
+["What were they doing in that cave?"]
+Lucy stands up hastily. Her lower lip is trembling.
+
+"Those crooks made some kind of filth for folks to smoke! And that's after what
+happened to my mother!"
+
+She struggles to keep her composure and turns to Michael, who takes her in his
+arms.
+
+[1] "What happened to your mother?"
+[2] "Where is Thompson?"
+[0] End conversation
+
+> 1
+["What happened to your mother?"]
+Michael turns to you. "Lucy's mother must have smoked opium and became very ill
+at some point. Unfortunately, she passed away last year."
+
+Lucy cries. "I never understood exactly what was wrong with her. That asshole!
+My real father would never have let that happen!"
+
+[1] "Where is Thompson?"
+[0] End conversation
+
+> 1
+["Where is Thompson?"]
+Dunder sighs and raises his hands.
+
+"Unfortunately, we don't have him yet. Deputy Miller was the first one at the
+mine entrance after the explosion. A few of the bandits must have made it out
+coughing and crawling. Marten took care of them."
+
+He sits down next to Lucy. "Most of the others weren't so lucky. Cal Mifflin is
+dead, we've got his brother Bob in the back here in a cell. Miller sure had to
+climb over a few bodies before he found you back there."
+
+Stepping over dead bodies... The terrible memories of the events at Red Rock
+briefly drill a path into your consciousness, and a cold shiver runs down your
+spine.
+
+[1] "What exactly did they produce?"
+[0] End conversation
+
+> 1
+["What exactly did they produce?"]
+"We assume that they produced Chandu."
+
+The sheriff looks at your questioning face and laughs. "Yeah, that's about how I
+looked at first, but Marten explained it to me. You know that opium stuff those
+Chinese fellas smoke? The governor still tolerates it, but it's no longer
+welcome here. It makes people sick."
+
+He pulls a flask out of his pocket, takes a sip and holds it out to you. You
+take it gratefully.
+
+"Well, they it looks like they brought opium down into that vault, then did all
+sorts of things with it and ended up with these little balls. They're probably
+easier to sell, and Marten thinks they're stretched with plant fibers or
+something, hence all the secrecy."
+
+[1] "What an effort!"
+[0] End conversation
+
+> 1
+["What an effort!"]
+Dunder nods. "Well, that stuff probably spoils pretty quickly when it's no
+longer pure, and outside in the fresh air the production doesn't seem to work. I
+don't know. I guess it was sold over in the city as quickly as possible."
+
+He glances at the door. "When Bob wakes up and we catch Thompson, maybe there
+will be more answers."
+
+Answers... You suddenly remember what brought you to this place and take the
+drawing out of your vest that you showed to many people in town the day before.
+
+[1] "Michael, do you know this woman?"
+[0] End conversation
+
+> 1
+["Michael, do you know this woman?"]
+You show Michael the drawing. He studies it carefully and smiles.
+
+"Of course! This woman arrived at the ranch late the other night. Her horse
+almost collapsed under her, and she looked like she could really do with a good
+night's sleep."
+
+He returns the drawing. "I offered her a room at Ella's, but she didn't want
+one. So I let her sleep in the hay and looked after her horse. When I went to
+check on her the next morning, she and her horse had disappeared."
+
+[1] "Where was she going?"
+[0] End conversation
+
+> 1
+["Where was she going?"]
+"She had given me a few dollars that evening and said she wanted to go to the
+city because her husband was in a military prison there."
+
+Oh Claire, no!
+
+[1] "I have to get there as quickly as possible!"
+[0] End conversation
+
+> 1
+["I have to get there as quickly as possible!"]
+"Military prison, eh? Well, that's none of my business right now." Dunder opens
+the drawer of his desk and hands you your draft notice.
+
+"The governor's men will be here soon to find Thompson and question Mifflin."
+
+Michael clears his throat. "Um, we haven't even properly thanked you for
+everything you've done for us yet. So... Thank you very much."
+
+He shakes your hand a little awkwardly. Lucy looks at you, her eyes red, and
+gives you a quick, tight hug.
+
+[1] "Here's your hankie. It sure helped me a lot."
+[0] End conversation
+
+> 1
+["Here's your hankie. It sure helped me a lot."]
+Lucy's tear-stained face lights up a little. "Thank you!"
+
+She takes the handkerchief from your hand and blows her nose.
+
+"Unfortunately, we don't have a lot of money, and I won't touch my stepfather's
+money for sure. But we'd like to offer you Billy, he's our fastest horse."
+
+She looks at Michael, who nods eagerly.
+
+"Just leave him with my cousin Marc in Tanner Street when you're in the city."
+
+You accept with gratitude and get up.
+
+[0] End conversation
+
+> 1
+Steppe
+You sit on Billy, a freshly saddled young stallion, your shoulder bag firmly in
+your grasp. The slowly setting sun casts long shadows on the dusty path in front
+of you, leading east out of town.
+
+You turn around one last time and raise your hand towards Ella, Marten and Bill,
+who are standing in the street waving back at you.
+
+Looking ahead, you set the black horse into a gentle trot. There is still a long
+way to go.
+
+Why did you think I was in prison, Claire? Who told you that?
+
+No matter. You would find her and soon you would be together again, you were
+sure of that... But that would be a story for another day.
+
+~~~
+
+
+                 ~~~ FIN ~~~ 
+~~~
+
+Thank you for playing Dust, I really hope you enjoyed it. If you did, please
+rate the game on IFDB.org - then maybe there will be an end to this story
+sometime. If you're playing online, just write something down here now and I'll
+read it later!
+
+I'd also be delighted to hear about your thoughts or suggestions at
+intfiction.org, my Discord at https://bit.ly/Ikes-Discord or by email to
+dust@ikeserver.de.
+
+Many thanks to Olaf Nowacki, Hannes Schueller, Michael L., Fredrik Ramsberg and
+my family for testing and helpful advice. This game was translated from the
+original German version Staub with kind help from mathbrush and DeepL. The cover
+image was created using Stable Diffusion XL.
+
+2024 (c) IkeC
+
+> look
+Steppe
+In the dusty haze as dusk falls, you can make out the outline of a larger city.
+However, you won't be able to reach it today.
+
+> examine Billy
+Billy whips across the steppe as fast as the wind and at full gallop now.
+
+> run to saloon
+There is no turning back. Your next adventure is waiting somewhere else.
+
+> quit
+Are you sure you want to quit? 

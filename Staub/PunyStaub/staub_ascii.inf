@@ -1,0 +1,17 @@
+!% -~S
+!% $OMIT_UNUSED_ROUTINES=1
+!% $ZCODE_LESS_DICT_DATA=1
+!% $LONG_DICT_FLAG_BUG=0
+!% $ZCODE_COMPACT_GLOBALS=1
+!% $MAX_ABBREVS=96
+
+! ASCII-Wrapper fuer staub.inf.
+! Definiert USE_ASCII, damit:
+!   - Kein Zcharacter-Tabelleneintrag fuer Umlaute (chartable_de.h)
+!   - Parser-Meldungen und Woerterbuch nutzen Digraphen (ae/oe/ue/ss)
+!   - Spielerbefehle funktionieren mit ASCII-Digraph-Eingabe
+! Dieses File wird zu build/staub.ascii.z5 kompiliert.
+! Kein -Cu: Die Retro-Plattformen benoetigen maximale Kompatibilitaet.
+
+Constant USE_ASCII;
+Include "staub.inf";
