@@ -6,15 +6,15 @@ My first IF work, a german western written in Inform7. Released in April 2024 fo
 
 Base folder: `Staub\Inform7`
 
-Public folder: https://ikeserver.de/Staub 
+Online: https://ikeserver.de/Staub
 
 # PunyStaub
 
-Port of Staub using [PunyInformDE](https://github.com/IkeC/PunyInformDE), my german version of the [PunyInform](https://github.com/johanberntsson/PunyInform) Inform6 library. Released in May 2026. 
+Port of Staub using [PunyInformDE](https://github.com/IkeC/PunyInformDE), my german version of the [PunyInform](https://github.com/johanberntsson/PunyInform) Inform6 library. Released in May 2026 with builds for many retro platforms.
 
 Base folder: `Staub\PunyStaub`
 
-Public folder: https://ikeserver.de/Staub/retro.html
+Online: https://ikeserver.de/Staub/retro.html
 
 # Dust
 
@@ -22,7 +22,7 @@ Inform7 translation of Staub. Released in September 2024 for the [IFComp 2024](h
 
 Base folder: `Dust\Inform7`
 
-Public folder: https://ikeserver.de/Dust
+Online: https://ikeserver.de/Dust
 
 # PunyDust
 
@@ -30,4 +30,4 @@ Port of Dust using the [PunyInform](https://github.com/johanberntsson/PunyInform
 
 Base folder: `Dust\PunyDust`
 
-Public folder: https://ikeserver.de/Dust
+Online: https://ikeserver.de/Dust/retro.html
