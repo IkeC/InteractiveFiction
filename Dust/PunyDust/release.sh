@@ -337,15 +337,17 @@ PY
 	fi
 
 	# MEGA65: screen16.iff (320x200, 16 colours via Pillow PPM → ppmtoilbm)
-	if python3 -c "$_pil; Image.open(sys.argv[1]).resize((320,200), $_resample).convert('RGB').save(sys.argv[2],'ppm')" \
-			"$cover_src" "$resources_src/screen16.ppm" 2>/dev/null \
-			&& ppmtoilbm -maxplanes 8 "$resources_src/screen16.ppm" > "$resources_src/screen16.iff" 2>/dev/null; then
-		echo "Generated screen16.iff (MEGA65 loading screen)"
-	else
-		echo "Warning: MEGA65 screen16.iff conversion failed — building without loading screen"
-		rm -f "$resources_src/screen16.iff"
-	fi
-	rm -f "$resources_src/screen16.ppm"
+	# IkeC: commented out, using custom
+echo "Warning: MEGA65 screen16.iff conversion commented out, using custom"
+#	if python3 -c "$_pil; Image.open(sys.argv[1]).resize((320,200), $_resample).convert('RGB').save(sys.argv[2],'ppm')" \
+#			"$cover_src" "$resources_src/screen16.ppm" 2>/dev/null \
+#			&& ppmtoilbm -maxplanes 8 "$resources_src/screen16.ppm" > "$resources_src/screen16.iff" 2>/dev/null; then
+#		echo "Generated screen16.iff (MEGA65 loading screen)"
+#	else
+#		echo "Warning: MEGA65 screen16.iff conversion failed — building without loading screen"
+#		rm -f "$resources_src/screen16.iff"
+#	fi
+#	rm -f "$resources_src/screen16.ppm"
 
 	# MS-DOS: SCREEN.PNG (320x200, 256-colour paletted PNG via Pillow)
 	if python3 -c "$_pil; Image.open(sys.argv[1]).resize((320,200), $_resample).quantize(256).save(sys.argv[2],'png')" \

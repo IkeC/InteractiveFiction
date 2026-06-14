@@ -103,16 +103,16 @@ total bytes=131943, compressed=83265 -> 37% savings
 total bytes=144476, compressed=91835 -> 36% savings
   adding: ART.PI1	(in=32034) (out=15349) (deflated 52%)
 total bytes=176510, compressed=107184 -> 39% savings
-Converting 'staub.zip' -> '/tmp/tmp.M7B78AI0xS/' -> 'staub.st'
+Converting 'staub.zip' -> '/tmp/tmp.6nWH4v6BEB/' -> 'staub.st'
 
 1) Unzipping...
-unzip staub.zip -d /tmp/tmp.M7B78AI0xS
+unzip staub.zip -d /tmp/tmp.6nWH4v6BEB
 Archive:  staub.zip
-  inflating: /tmp/tmp.M7B78AI0xS/PLAY.PRG  
-  inflating: /tmp/tmp.M7B78AI0xS/STORY.DAT  
-  inflating: /tmp/tmp.M7B78AI0xS/ARTVIEW.APP  
-  inflating: /tmp/tmp.M7B78AI0xS/ART.PI1  
-chmod -R u+rw /tmp/tmp.M7B78AI0xS/*
+  inflating: /tmp/tmp.6nWH4v6BEB/PLAY.PRG  
+  inflating: /tmp/tmp.6nWH4v6BEB/STORY.DAT  
+  inflating: /tmp/tmp.6nWH4v6BEB/ARTVIEW.APP  
+  inflating: /tmp/tmp.6nWH4v6BEB/ART.PI1  
+chmod -R u+rw /tmp/tmp.6nWH4v6BEB/*
 
 2) Checking/skipping intermediate directories...
 
@@ -120,25 +120,25 @@ chmod -R u+rw /tmp/tmp.M7B78AI0xS/*
 dd if=/dev/zero of=staub.st bs=1024 count=360
 360+0 records in
 360+0 records out
-368640 bytes (369 kB, 360 KiB) copied, 0.0477399 s, 7.7 MB/s
+368640 bytes (369 kB, 360 KiB) copied, 0.0569918 s, 6.5 MB/s
 
 4) Formatting disk image...
 mformat -a -t 80 -h 1 -n 9 -i staub.st ::
 
 5) Copying data to disk image...
-MTOOLS_NO_VFAT=1 mcopy -i staub.st -spmv /tmp/tmp.M7B78AI0xS/* ::
+MTOOLS_NO_VFAT=1 mcopy -i staub.st -spmv /tmp/tmp.6nWH4v6BEB/* ::
 Copying ART.PI1
 Copying ARTVIEW.APP
 Copying PLAY.PRG
 Copying STORY.DAT
 
 6) Cleaning up temporary files...
-rm -rv /tmp/tmp.M7B78AI0xS
-removed '/tmp/tmp.M7B78AI0xS/ARTVIEW.APP'
-removed '/tmp/tmp.M7B78AI0xS/PLAY.PRG'
-removed '/tmp/tmp.M7B78AI0xS/STORY.DAT'
-removed '/tmp/tmp.M7B78AI0xS/ART.PI1'
-removed directory '/tmp/tmp.M7B78AI0xS'
+rm -rv /tmp/tmp.6nWH4v6BEB
+removed '/tmp/tmp.6nWH4v6BEB/ARTVIEW.APP'
+removed '/tmp/tmp.6nWH4v6BEB/PLAY.PRG'
+removed '/tmp/tmp.6nWH4v6BEB/STORY.DAT'
+removed '/tmp/tmp.6nWH4v6BEB/ART.PI1'
+removed directory '/tmp/tmp.6nWH4v6BEB'
 Done.
 
 'ART.PI1' found in /Resources dir.
@@ -217,7 +217,7 @@ Writing files to disk:
 Total of 13378 bytes written in 1 files.
 
 
-STORY.DAT    91,648  07/06/1986 FULL
+STORY.DAT    91,648  05/06/1986 FULL
 KI.DVR         1874  02/07/1985 EXEC
 M3ZVM.CMD    13,378  05/04/1986 FULL
 CONFIG.SYS      463        1980 READ
@@ -258,7 +258,7 @@ Writing files to disk:
 Total of 14107 bytes written in 1 files.
 
 
-STORY.DAT     91,648  07/06/1986 FULL
+STORY.DAT     91,648  05/06/1986 FULL
 M4ZVM64.CMD   14,107  05/04/1986 FULL
 CONFIG.SYS      1036        1980 NO_ACCESS
 
