@@ -38,6 +38,7 @@ nimm keks
 raus
 x gebaeude
 w
+u bank
 rede mit frau
 1
 1
@@ -68,7 +69,7 @@ rede mit barbier
 2
 2
 0
-gib keks an molly
+gib molly den keks
 nimm molly
 raus
 w
@@ -159,6 +160,10 @@ n
 rede mit bill
 1
 nimm streichhoelzer
+mache streichholz an
+zuende streichholz an
+entzuende streichholz
+reibe streichholz
 mach lampe an
 raus
 w
@@ -184,6 +189,10 @@ rede mit barbier
 raus
 o
 x sand
+blase sand
+beseitige sand
+benutze sand
+benutze schaufel
 w
 no
 rede mit barbier
@@ -193,8 +202,10 @@ raus
 o
 benutze schaufel mit sand
 x holzpodest
-benutze brecheisen mit holzplatte
+x falltuer
+stecke kuhfuss in falltuer
 x oeffnung
+nimm bretter
 nimm seil
 w
 w
@@ -202,7 +213,10 @@ s
 w
 n
 benutze seil mit felsen
-runter
+klettere am seil runter
+
+u geselle
+zieh gitter
 lege taschentuch
 benutze brecheisen mit mann
 rede mit lucy

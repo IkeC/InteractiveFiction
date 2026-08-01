@@ -99,6 +99,35 @@ class TestSaloon:
         output = game_at_saloon.run(["nimm lampe"])
         assert_output_contains(output, "hoch")
 
+    def test_b_alias_asks_what_to_use(self, game_at_saloon):
+        output = game_at_saloon.run(["rauf", "nimm tasche", "runter", "b"])
+        assert_output_contains(output, "Was möchtest du benutzen?")
+
+    def test_revolver_use_asks_for_target(self, game_at_saloon):
+        output = game_at_saloon.run([
+            "rauf", "nimm tasche", "oeffne tasche", "nimm revolver",
+            "benutze revolver", "schiess revolver"
+        ])
+        assert_output_contains(output, "Worauf willst du schießen?")
+
+    def test_examine_lamp_updates_feminine_pronoun(self, game_at_saloon):
+        output = game_at_saloon.run(["x lampe", "x sie"])
+        assert_output_contains(output, "Petroleumlampe")
+        assert_output_not_contains(output, "Kohlezeichnung")
+
+    def test_examine_frau_updates_dative_pronoun(self, game_at_saloon):
+        output = game_at_saloon.run(["x frau", "rede mit ihr"])
+        assert_output_contains(output, "Was möchtest du zu Ella sagen?")
+        assert_output_not_contains(output, 'verstehe nicht was "ihr" bedeutet')
+
+    def test_barfrau_gets_definite_article_before_name(self, game_at_saloon):
+        output = game_at_saloon.run([
+            "rauf", "nimm tasche", "runter",
+            "rede mit frau", "2", "2", "0"
+        ])
+        assert_output_contains(output, "sagt die Frau")
+        assert_output_contains(output, "Die Frau legt einen Keks")
+
     def test_chair_can_be_pushed(self, game_at_saloon):
         output = game_at_saloon.run(["schieb stuhl"])
         assert_output_contains(output, "")  # just shouldn't crash

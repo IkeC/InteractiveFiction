@@ -12,7 +12,7 @@ Dein Kopf dröhnt erbarmungslos und das Blut pulsiert schmerzhaft in deinen Schl
 
 Staub
 Ein Western von IkeC
-Release 4 / Serial number 260525 / Inform 7 v10.1.2 / GerX 4 v230629 / D
+Release 4 / Serial number 260801 / Inform 7 v10.1.2 / GerX 4 v230629 / D
 
 Zimmer
 Du hustest zweimal kräftig und raffst dich schließlich langsam von dem staubigen Dielenboden hoch.
@@ -127,7 +127,7 @@ Du schlurfst die Treppe hinunter und massierst dabei deine schmerzende linke Sch
 
 Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
 
-Hinter der Bar steht eine Frau und schnäuzt in ihr Geschirrtuch. Sie wirft dir einen leicht amüsierten Blick zu.
+Hinter der Bar steht eine Frau und reinigt die Spüle. Sie wirft dir einen leicht amüsierten Blick zu.
 
 > lauf
 Gib GEH und eine Richtung oder einen dieser bereits bekannten Orte ein: 
@@ -135,13 +135,13 @@ Gib GEH und eine Richtung oder einen dieser bereits bekannten Orte ein:
 - Saloon (Ella)
 
 > lauf zu zimmer
-Einige Schritte später...
+Ein paar Minuten später...
 
 Zimmer
 Dieses Zimmer ist ziemlich spärlich eingerichtet. In der Ecke steht ein Bett mit einem kleinen Nachttisch. An der gegenüberliegenden Wand befindet sich ein Fenster. Eine einfache Holztür führt nach draußen und die Treppe hinunter.
 
 > lauf zu saloon
-Kurz darauf...
+Kurze Zeit später...
 
 Saloon
 Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
@@ -152,7 +152,7 @@ Hinter der Bar steht eine Frau und poliert Gläser mit einem mäßig sauber wirk
 Saloon
 Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
 
-Hinter der Bar steht eine Frau und schnäuzt in ihr Geschirrtuch.
+Hinter der Bar steht eine Frau und kratzt sich am Kinn.
 
 > x tresen
 Der Tresen hat einige dunkle Stellen und kleinere Schnitzspuren gelangweilter Gäste, sieht aber insgesamt recht sauber aus.
@@ -219,7 +219,7 @@ Ella hält kurz inne und zieht einmal kräftig an ihrer Zigarette.
 Saloon
 Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
 
-Hinter der Bar steht Ella und schnäuzt in ihr Geschirrtuch.
+Hinter der Bar steht Ella und sortiert die Getränke.
 
 > trinke kaffee
 Du nimmst einen kleinen Schluck. Nicht übel.
@@ -243,6 +243,9 @@ Ranch
 Du kommst zu einem kleinen Holzhaus mit angrenzendem Stall und einer großen umzäunten Koppel.
 
 Eine junge Frau sitzt schluchzend auf einer kleinen Bank.
+
+> u bank
+Eine einfache Sitzbank, aus Holz gezimmert.
 
 > rede mit frau
 Was möchtest du zu der jungen Frau sagen?
@@ -439,7 +442,7 @@ Du stupst kurz die rot-weiß-blaue Säule neben der Eingangstür an und betritts
 
 Ein ausladender Kippsessel aus rotem Leder prangt vor einem großen, an der Wand befestigten Spiegel. Auf diversen Tischen und Regalen stehen kleine Fläschchen, Dosen und allerlei Krimskrams herum.
 
-Ein Papagei sitzt auf einer Stange und wackelt mit dem Kopf. Der Barbier steht hinter dem Sessel und poliert den Spiegel.
+Ein Papagei sitzt auf einer Stange und wackelt mit dem Kopf. Der Barbier steht hinter dem Sessel und popelt in der Nase.
 
 > x barbier
 Der Barbier ist ein stämmiger Mann mit dicken Oberarmen und einem gepflegten schwarzen Vollbart. Er trägt eine gestreifte Stoffweste und eine kurze Leinenhose.
@@ -520,7 +523,7 @@ Er zieht eine kleine Pfeife aus der Tasche und drückt mit einer geübten Bewegu
 > 1
 ["Wieso war Molly noch gleich mit auf See?"]
 
-"War als Feuermelder mit dabei, beim kleinsten bisschen Rauch schlägt sie Alarm. Das habe ich dir doch schon dreimal mitgeteilt!"
+"War als Feuermelder mit dabei, beim kleinsten bisschen Rauch schlägt sie Alarm. Das habe ich dir doch schon dreimal gesagt!"
 
 [1] "Wieso war Molly noch gleich mit auf See?"
 [2] "Eine Idee wie ich in die Mine komme?"
@@ -557,7 +560,7 @@ Ein ausladender Kippsessel aus rotem Leder prangt vor einem großen, an der Wand
 
 Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und schärft seine Schere.
 
-> gib keks an molly
+> gib molly den keks
 Molly schnappt gierig nach dem Keks und mümmelt ihn ruck-zuck herunter.
 
 > nimm molly
@@ -926,7 +929,7 @@ Was möchtest du zu Bill sagen?
 Er zieht die Nase hoch und reibt sich im Auge. "Hab' sie meistens Hildchen genannt."
 
 Gemischtwarenladen
-Du stehst vor der Ladentheke, dahinter steht Bill und reibt sich die Augen. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+Du stehst vor der Ladentheke, dahinter steht Bill und stützt sich auf seinen Gehstock. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
 
 Im Süden geht es hinaus auf die Straße.
 
@@ -1004,7 +1007,7 @@ Ein Geier setzt sich auf den Dachgiebel vor dir und betrachtet dich argwöhnisch
 > n
 
 Gemischtwarenladen
-Du stehst vor der Ladentheke, dahinter steht Bill und kratzt sich am Kinn. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+Du stehst vor der Ladentheke, dahinter steht Bill und hustet krächzend. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
 
 Im Süden geht es hinaus auf die Straße.
 
@@ -1034,7 +1037,7 @@ Ein endlos scheinendes Gleich später erscheint Bill wieder im Durchgang und kna
 "Macht normalerweise acht Scheine, aber wenn du's nicht ewig brauchst leih' ich's dir aus, scheinst ja 'ne ehrliche Haut zu sein."
 
 Gemischtwarenladen
-Du stehst vor der Ladentheke, dahinter steht Bill und reibt sich die Augen. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+Du stehst vor der Ladentheke, dahinter steht Bill und stützt sich auf seinen Gehstock. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
 
 Auf der Theke liegt ein Brecheisen. Im Süden geht es hinaus auf die Straße.
 
@@ -1166,7 +1169,7 @@ Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten lieg
 Saloon
 Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
 
-Hinter der Bar steht Ella und sortiert die Getränke.
+Hinter der Bar steht Ella und kratzt sich am Kinn.
 
 > x decke
 Mächtige Holzbalken stützen die Decke des großen Raumes. An einem der Balken ist ein langer Nagel eingeschlagen, daran baumelt eine Petroleumlampe.
@@ -1247,7 +1250,7 @@ Du steigst auf den Stuhl unter dem Balken.
 Saloon (auf dem Stuhl)
 Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
 
-Hinter der Bar steht Ella und schnäuzt in ihr Geschirrtuch.
+Hinter der Bar steht Ella und sortiert die Getränke.
 
 > nimm lampe
 Du nimmst die Lampe an dich.
@@ -1261,7 +1264,7 @@ Du steigst von dem Stuhl herunter.
 Saloon
 Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
 
-Hinter der Bar steht Ella und dreht sich eine Zigarette.
+Hinter der Bar steht Ella und kratzt sich am Kinn.
 
 > rede mit frau
 Was möchtest du zu Ella sagen?
@@ -1279,7 +1282,7 @@ Sie pustet eine beeindruckende Rauchwolke über dich hinweg und deutet zur Tür.
 Saloon
 Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
 
-Hinter der Bar steht Ella und poliert Gläser mit einem mäßig sauber wirkenden Stofflappen.
+Hinter der Bar steht Ella und schnäuzt in ihr Geschirrtuch.
 
 > n
 
@@ -1289,7 +1292,7 @@ Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten lieg
 > n
 
 Gemischtwarenladen
-Du stehst vor der Ladentheke, dahinter steht Bill und stützt sich auf seinen Gehstock. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+Du stehst vor der Ladentheke, dahinter steht Bill und hustet krächzend. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
 
 Im Süden geht es hinaus auf die Straße.
 
@@ -1309,12 +1312,28 @@ Er legt ein kleines braunes Papiertütchen auf den Tisch. "Macht einen Dollar."
 Du legst einen zerknitterten Dollarschein auf die Theke. Bill steckt ihn ein.
 
 Gemischtwarenladen
-Du stehst vor der Ladentheke, dahinter steht Bill und hustet krächzend. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+Du stehst vor der Ladentheke, dahinter steht Bill und stützt sich auf seinen Gehstock. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
 
 Auf der Theke liegt ein kleines Papiertütchen mit Streichhölzern. Im Süden geht es hinaus auf die Straße.
 
 > nimm streichhoelzer
 Du nimmst die Streichhölzer an dich.
+
+> mache streichholz an
+Du kannst die Streichhölzer nicht einschalten.
+
+> zuende streichholz an
+Du zündest ein Streichholz an. Es lodert kurz hell auf und geht schnell wieder aus.
+
+Vielleicht solltest du die Streichhölzer lieber verwenden, um etwas anderes damit anzuzünden.
+
+> entzuende streichholz
+Du zündest ein Streichholz an. Es lodert kurz hell auf und geht schnell wieder aus.
+
+Vielleicht solltest du die Streichhölzer lieber verwenden, um etwas anderes damit anzuzünden.
+
+> reibe streichholz
+Du reibst die Streichhölzer.
 
 > mach lampe an
 Du nimmst eines der Schwefelhölzer und reißt es an deinem schartigen Daumennagel an. Behutsam hältst du es an den Docht der Lampe. Ein behagliches Licht breitet sich aus.
@@ -1398,7 +1417,7 @@ Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten lieg
 > n
 
 Gemischtwarenladen
-Du stehst vor der Ladentheke, dahinter steht Bill und stützt sich auf seinen Gehstock. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+Du stehst vor der Ladentheke, dahinter steht Bill und reibt sich die Augen. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
 
 Im Süden geht es hinaus auf die Straße.
 
@@ -1434,7 +1453,7 @@ Bill kneift die Augen zusammen und zieht die Luft ein. Die Erinnerung scheint ih
 Er reibt sich kurz die Nase und blickt dich direkt an. "Jetzt wo ich so dran denke, den Rest vom Tau hatten sie nicht dabei. Würde mich nicht wundern, wenn das da draußen noch irgendwo rumliegt."
 
 Gemischtwarenladen
-Du stehst vor der Ladentheke, dahinter steht Bill und reibt sich die Augen. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
+Du stehst vor der Ladentheke, dahinter steht Bill und kratzt sich am Kinn. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
 
 Im Süden geht es hinaus auf die Straße.
 
@@ -1448,7 +1467,7 @@ Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten lieg
 Barbier
 Ein ausladender Kippsessel aus rotem Leder prangt vor einem großen, an der Wand befestigten Spiegel. Auf diversen Tischen und Regalen stehen kleine Fläschchen, Dosen und allerlei Krimskrams herum.
 
-Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und poliert den Spiegel.
+Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und prüft sein Rasiermesser.
 
 > rede mit barbier
 Was möchtest du zu Marten sagen?
@@ -1478,7 +1497,7 @@ Er schüttelt den Kopf und räuspert sich.
 Barbier
 Ein ausladender Kippsessel aus rotem Leder prangt vor einem großen, an der Wand befestigten Spiegel. Auf diversen Tischen und Regalen stehen kleine Fläschchen, Dosen und allerlei Krimskrams herum.
 
-Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und schärft seine Schere.
+Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und poliert den Spiegel.
 
 > raus
 
@@ -1495,6 +1514,18 @@ Weiter nördlich glaubst du einige schiefe Kreuze zu erkennen. Nach Westen geht 
 > x sand
 Der Sand bildet eine kleine Düne und geht dir an der höchsten Stelle bis zum Knie. Vom Boden des Podests ist praktisch nichts mehr zu sehen.
 
+> blase sand
+So läuft das hier nicht.
+
+> beseitige sand
+Das funktioniert so leider nicht.
+
+> benutze sand
+Bitte nenne die Dinge, die du miteinander verwenden möchtest.
+
+> benutze schaufel
+So etwas kannst du hier nicht sehen.
+
 > w
 
 Main Street
@@ -1505,7 +1536,7 @@ Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten lieg
 Barbier
 Ein ausladender Kippsessel aus rotem Leder prangt vor einem großen, an der Wand befestigten Spiegel. Auf diversen Tischen und Regalen stehen kleine Fläschchen, Dosen und allerlei Krimskrams herum.
 
-Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und poliert den Spiegel.
+Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und popelt in der Nase.
 
 > rede mit barbier
 Was möchtest du zu Marten sagen?
@@ -1537,7 +1568,7 @@ Du nimmst die Schaufel und bedankst dich.
 Barbier
 Ein ausladender Kippsessel aus rotem Leder prangt vor einem großen, an der Wand befestigten Spiegel. Auf diversen Tischen und Regalen stehen kleine Fläschchen, Dosen und allerlei Krimskrams herum.
 
-Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und prüft sein Rasiermesser.
+Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und poliert den Spiegel.
 
 > raus
 
@@ -1559,18 +1590,20 @@ Direkt unter dem Galgen wird eine stabile Holzplatte sichtbar, die gewissenhaft 
 > x holzpodest
 Auf dem Podest wurde direkt unter dem Galgen eine große Holzplatte festgenagelt.
 
-> benutze brecheisen mit holzplatte
-Du hebelst einen Nagel nach dem anderen aus der Platte heraus, nicht ohne gelegentlich einen Fluch auszustoßen und dich lautstark zu fragen, was zur Hölle du hier eigentlich machst.
+> x falltuer
+So etwas kannst du hier nicht sehen.
 
-Etwa eine halbe Stunde und einen abgebrochenen Fingernagel später hast du alle Nägel erfolgreich entfernt. Schweißgebadet schiebst du die Holzplatte beiseite und legst eine quadratische, dunkle Öffnung frei.
+> stecke kuhfuss in falltuer
+So etwas kannst du hier nicht sehen.
 
 > x oeffnung
-Du leuchtest mit deiner Lampe in die Öffnung hinein. Einige Mäuse nehmen quiekend Reißaus.
+So etwas kannst du hier nicht sehen.
 
-Im fahlen Schein der Lampe kannst du einige krummgeschlagene Nägel, ein paar in Spinnweben eingehüllte Bretter und ein aufgerolltes Tau erkennen.
+> nimm bretter
+So etwas kannst du hier nicht sehen.
 
 > nimm seil
-Du wirfst dir das aufgerollte Seil über die Schulter. Ganz schön schwer.
+Selbst wenn du die Schlinge entknoten könntest, wäre dir das Seil in dieser Form nicht von Nutzen.
 
 > w
 
@@ -1610,340 +1643,94 @@ Die Luft ist angenehm kühl und feucht. Es riecht leicht nach Rauch. Ein großer
 Im Süden dringt fahles Licht durch den langen, schmalen Höhleneingang.
 
 > benutze seil mit felsen
-Du bindest das Seil um den Felsen und fixierst es mit einem ordentlichen Knoten.
+So etwas kannst du hier nicht sehen.
 
-> runter
-Du nimmst den Henkel der Petroleumlampe zwischen die Zähne und greift mit beiden Händen das Seil.
+> klettere am seil runter
+So etwas kannst du hier nicht sehen.
 
-Die Füße gegen die Felswand gestemmt, seilst du dich langsam ab.
+> u geselle
+So etwas kannst du hier nicht sehen.
 
-~~~
-
-Gewölbe
-Nach einer gefühlten Ewigkeit ertasten deine Füße endlich wieder festen Boden. Der Schweiß läuft dir den Rücken hinunter, als du dich von der Wand abwendest. Dein angestrengtes Keuchen malt kleine Dampfwölkchen in den Schein deiner Laterne.
-
-Ein tiefes, offenbar nicht weit entferntes Rumpeln lässt dich blitzartig verstummen. Vorsichtig folgst du dem fahlen Lichtschein des gekrümmten Stollengangs vor dir.
-
-Als sich der Gang weitet und immer heller wird, kannst du immer deutlicher Stimmen vernehmen. Vorsichtig gehst du hinter einem hüfthohen Steinvorsprung in Deckung, von dem du das große, mit unzähligen Fackeln erleuchtete Gewölbe unter dir überblicken kannst.
-
-~~~
-
-Etwa ein Dutzend Männer scheint in einiger Entfernung an verschiedenen Stationen zu arbeiten. Einige rühren in großen befeuerten Stahlkesseln, andere hantieren mit großen, mit Tüchern bespannten Bottichen, wieder andere scheinen so etwas wie Fladen auszuwalzen und Kugeln zu formen. Es stinkt ziemlich und dir wird etwas schwummrig.
-
-Nur wenige Meter von dir entfernt befindet sich eine größere Felsnische. Hinter zusammengebundenen Gittern kauert ein junges Paar auf dem Boden und flüstert manchmal miteinander. Das ist Lucy! Dann muss der junge Mann wohl Michael sein.
-
-Davor sitzt ein mürrisch dreinschauender Geselle auf einem Stein, die Arme auf die Oberschenkel gestützt, mit einer Flinte in der rechten Hand.
+> zieh gitter
+So etwas kannst du hier nicht sehen.
 
 > lege taschentuch
-Du nimmst das leuchtend weiße Taschentuch in die Hand und lässt es über den Rand des Felsvorsprungs gleiten, als die Wache kurz zu den Gefangenen schaut.
-
-Einen Moment später dreht der Mann den Kopf wieder in deine Richtung und runzelt irritiert die Stirn. Er steht auf, kommt langsam in deine Richtung und bückt sich direkt vor dir nach dem Taschentuch.
-
-"Wo zum Teufel kommt das denn her?"
+Das willst du vorerst lieber behalten.
 
 > benutze brecheisen mit mann
-BAUZ! Du streckst den Mann mit einem gezielten Schlag mit dem Brecheisen nieder.
-
-Du siehst dich verstohlen um, aber keiner der Arbeiter scheint etwas gehört zu haben. Du steckst das leuchtende Taschentuch schnell wieder ein.
+So etwas kannst du hier nicht sehen.
 
 > rede mit lucy
-[1] "Alles klar bei euch?"
-[0] Gespräch beenden
+So etwas kannst du hier nicht sehen.
 
 > 1
-["Alles klar bei euch?"]
-
-Lucy funkelt dich an, ihr Gesichtsausdruck eine wilde Mischung aus Verzweiflung und blanker Wut. "Hol' uns bitte hier raus, verdammt!"
-
-Du hebelst die Gitter mit Hilfe deines Brecheisens auseinander, so dass sich beide gerade so hindurchzwängen können.
-
-Der junge Mann atmet erleichtert auf und streckt dir die Hand entgegen. "Vielen Dank Sir. Ich bin Michael."
-
-[1] "Was ist hier passiert?"
-[0] Gespräch beenden
+Das verstehe ich leider nicht.
 
 > 1
-["Was ist hier passiert?"]
-
-"Dafür haben wir jetzt keine Zeit!", zischt Lucy aufgeregt. "Die panschen hier irgendeine Sauerei zusammen, und mein Stiefvater steckt da mit drin!"
-
-Ihre Augen weiten sich und sie zieht euch beide hastig zurück hinter den schmalen Felsvorsprung. "Achtung, da kommen sie!"
-
-Gewölbe
-Ein sehr gepflegt aussehender Mann in mittlerem Alter mit Stock und Melone sowie ein deutlich schmutzigerer, wild gestikulierender Bursche schlendern in eure Richtung und bleiben nur ein paar Meter entfernt stehen.
-
-"Was sollen wir denn sonst machen, Ron? Die singen doch sofort, wenn wir die jetzt rauslassen!"
-
-"Für dich immer noch Mr. Thompson, Cal. Ich werde mit Lucy reden, wenn sie sich etwas beruhigt hat, dann sehen wir weiter." Ah, das muss dann wohl Calvin Mifflin sein!
-
-~~~
-
-Der junge Mann blickt zu Boden und schüttelt den Kopf. "Na ich weiß nicht Ro-- Mr. Thompson. Die hat ganz schön Haare auf den Zähnen."
-
-Mit einer schnellen, fast beiläufigen Bewegung holt Thompson mit dem Stock aus und lässt den Knauf blitzschnell auf das linke Knie des Mannes niedersausen. "AAAARGH!" schreit dieser überrascht auf und klappt augenblicklich zusammen.
-
-Als wäre nichts geschehen spricht Thompson mit gleichbleibend sonorer Stimme weiter. "Es steht dir nicht zu, so über sie zu sprechen. Wenn sie und ihr Stallbursche nicht zur Besinnung kommen, werden wir leider eine andere Lösung finden müssen."
-
-Lucy läuft purpurrot an. "DU VERDAMMTER---"
-
-~~~
-
-Michael presst Lucy schnell eine Hand auf den Mund, doch es ist zu spät. Thompson tritt zwei Schritte zur Seite, um in die Nische zu blicken. Seine Augen weiten sich.
-
-"Die Gefangenen sind frei! Hierher, sofort!"
-
-Mehrere Männer blicken auf und laufen vom Höhleneingang hinab in eure Richtung, einige greifen nach ihren Waffen.
+Das ist bestimmt eine gute Idee, aber ich verstehe leider rein gar nichts.
 
 > x karren
-Ein Karren mit vier Speichenrädern, mit mehreren Holzfässern beladen.
-
-Ein großer Holzkeil unter einem der Räder hindert den Karren daran wegzurollen.
+So etwas kannst du hier nicht sehen.
 
 > x keil
-Ein großer Holzkeil blockiert eines der Räder und hindert den Karren daran wegzurollen.
+So etwas kannst du hier nicht sehen.
 
 > benutze Revolver mit Männer
-Du reißt den Revolver hoch und triffst zwei der heranstürmenden Männer in Brust und Bauch, ehe dir eine Kugel das Knie zerfetzt. Schreiend sinkst du zu Boden.
-
---- WEISSES LICHT ---
-
-Nein, so war es nicht gewesen. Du hast es irgendwie anders gemacht, da bist du dir sicher.
-
-Langsam lichtet sich der weiße Nebel vor deinen Augen. Die Männer stürmen immer noch auf euch zu.
+So etwas kannst du hier nicht sehen.
 
 > benutze Revolver mit Karren
-Blitzschnell ziehst du den Revolver und schießt auf den Karren.
-
-Der Karren wackelt leicht, kippt aber nicht um.
-
-Ein Gewehrkolben trifft dich brutal an der Stirn als dich die Männer erreichen und überwältigen.
-
---- WEISSES LICHT ---
-
-Nein, so war es nicht gewesen. In Wirklichkeit war dir natürlich eine viel schlauere Lösung eingefallen.
-
-Langsam lichtet sich der weiße Nebel vor deinen Augen. Die Männer stürmen immer noch auf euch zu.
+So etwas kannst du hier nicht sehen.
 
 > benutze Revolver mit Keil
-Du kneifst das linke Auge zu und zielst sorgfältig über Kimme und Korn auf den Holzkeil, der den Karren an seinem Platz hält. Du atmest zur Hälfte aus und drückst ab.
-
-Der Schuss löst sich perfekt und lässt den getroffenen Holzkeil in hohem Bogen davonschnellen. Durch die entstandene Staubwolke hindurch setzt sich der Karren laut rumpelnd in Bewegung und rollt genau auf euch zu.
-
-Die Männer halten inne und drehen sich um, die Augen vor Angst geweitet.
-
-"Das Nitro! RAUS HIER!"
-
-Du drehst dich zu Michael und Lucy um, die mit starrem Blick an dir vorbeisehen, die Münder weit geöffnet. Du hechtest auf sie und drückst sie zu Boden, kurz bevor die Welt um dich explodiert.
-
---- WEISSES LICHT ---
-
-Büro des Sheriffs
-Du liegst auf einer der Pritschen im Büro des Sheriffs. In der Ecke sitzen Michael und Lucy, der junge Mann trägt einen leicht blutigen Verband um den Kopf. Sheriff Dunder sitzt hinter seinem Schreibtisch.
+So etwas kannst du hier nicht sehen.
 
 > nimm Einberufungsbescheid
-"Ich gebe dir deine Papiere gleich, wenn du mir alles erzählt hast."
+So etwas kannst du hier nicht sehen.
 
 > rede mit Dunder
-Was möchtest du sagen?
-
-[1] "Was ist passiert?"
-[2] "Was haben die da in der Höhle getrieben?"
-[3] "Wo ist Thompson?"
-[0] Gespräch beenden
+So etwas kannst du hier nicht sehen.
 
 > 1
-["Was ist passiert?"]
-
-Dunder steht auf und legt Lucy eine Hand auf die Schulter.
-
-"Nun, soweit ich die beiden hier richtig verstanden habe, hast du ihnen das Leben gerettet nachdem in der Höhle ein Karren mit Nitrofässern losgerollt und explodiert ist."
-
-Er blinzelt dich listig an. "So ein Zufall, was?"
-
-[1] "Wie geht's Ihrem Kopf, Michael?"
-[2] "Was haben die da in der Höhle getrieben?"
-[3] "Wo ist Thompson?"
-[0] Gespräch beenden
+Diesen Satz habe ich leider nicht verstanden.
 
 > 1
-["Wie geht's Ihrem Kopf, Michael?"]
-
-Michael fasst sich an den Kopf und rückt seinen Verband etwas zurecht.
-
-"Ach, das geht schon wieder. Hat wohl ganz schön geblutet, als sie uns gefunden haben, aber Marten hat sich das angesehen und gleich verbunden."
-
-[1] "Was wollten Sie überhaupt da?"
-[2] "Was haben die da in der Höhle getrieben?"
-[3] "Wo ist Thompson?"
-[0] Gespräch beenden
+Das habe ich nicht verstanden. Möglicherweise hilft dir INFO weiter.
 
 > 1
-["Was wollten Sie überhaupt da?"]
-
-"Hatte gehört, dass in der Mine wohl nicht alles mit rechten Dingen zugehen soll und auch Thompson seine Finger mit im Spiel hat. Als Cal und Bob dann am Abend bei Ella aufgetaucht sind und es da hoch her ging, dachte ich, das wäre ein guter Zeitpunkt da mal nachzusehen."
-
-Als Michael Lucys vorwurfsvollen Blick bemerkt, hebt er entschuldigend die Arme. "Ich wollt's dir erst sagen, aber hätte ja auch einfach leeres Gerede sein können. Immerhin geht's um deinen Va-- ähm, Stiefvater."
-
-Lucy holt tief Luft und er spricht schnell weiter. "Jedenfalls war die Mine leider nicht so verlassen wie ich dachte, ich wurde entdeckt und eingesperrt."
-
-[1] "Was haben die da in der Höhle getrieben?"
-[2] "Wo ist Thompson?"
-[0] Gespräch beenden
+So läuft das hier nicht.
 
 > 1
-["Was haben die da in der Höhle getrieben?"]
-
-Lucy steht hastig auf. Ihre Unterlippe zittert.
-
-"Diese Penner haben da irgendeinen Dreck zum Rauchen hergestellt! Und das nach all dem, was mit meiner Mutter war!"
-
-Sie ringt um Fassung und dreht sich zu Michael um, der sie in den Arm nimmt.
-
-[1] "Was war denn mit Ihrer Mutter?"
-[2] "Wo ist Thompson?"
-[0] Gespräch beenden
+Diesen Satz habe ich leider nicht verstanden.
 
 > 1
-["Was war denn mit Ihrer Mutter?"]
-
-Michael wendet sich dir zu. "Lucys Mutter hat wohl Opium geraucht und wurde irgendwann sehr krank. Sie ist leider letztes Jahr verstorben."
-
-Lucy weint. "Ich habe nie genau verstanden, was mit ihr los war. Dieses Arschloch! Mein richtiger Vater hätte das niemals zugelassen!"
-
-[1] "Wo ist Thompson?"
-[0] Gespräch beenden
+Das funktioniert so leider nicht.
 
 > 1
-["Wo ist Thompson?"]
-
-Dunder seufzt und hebt die Hände.
-
-"Den haben wir leider noch nicht. Deputy Miller war als Erster am Mineneingang nach der Explosion. Ein paar der Banditen haben's wohl hustend und kriechend nach draußen geschafft. Um die hat sich Marten gekümmert."
-
-Er setzt sich neben Lucy. "Die meisten anderen hatten nicht so viel Glück. Cal Mifflin ist tot, seinen Bruder Bob haben wir hinten in der Zelle. Miller musste über einige Leichen steigen, bevor er euch da hinten gefunden hat."
-
-Über Leichen steigen... Die furchtbaren Erinnerungen an die Ereignisse von Red Rock bohren sich kurz einen Weg in dein Bewusstsein, und ein kalter Schauer läuft dir über den Rücken.
-
-[1] "Was genau haben die denn hergestellt?"
-[0] Gespräch beenden
+Das verstehe ich leider nicht.
 
 > 1
-["Was genau haben die denn hergestellt?"]
-
-"Wir gehen davon aus, dass sie Chandu produziert haben."
-
-Der Sheriff blickt in dein fragendes Gesicht und lacht. "Ja, ungefähr so hab' ich auch erst geschaut, aber Marten hat's mir erklärt. Du kennst dieses Opiumzeug, das die Chinamänner rauchen? Der Gouverneur duldet es zwar noch, aber es wird hier nicht mehr gern gesehen. Macht die Leute nur krank."
-
-Er zieht einen Flachmann aus der Tasche, nimmt einen Schluck und hält ihn dir hin. Du nimmst dankbar an.
-
-"Also, die schaffen wohl Opium in die Höhle, machen dann alles Mögliche damit und am Ende kommen dann so kleine Kugeln bei raus. Die lassen sich wohl einfacher verkaufen, und Marten meint, dass die mit Pflanzenfasern oder sowas gestreckt sind, daher auch die ganze Heimlichtuerei."
-
-[1] "Was für ein Aufwand!"
-[0] Gespräch beenden
+So läuft das hier nicht.
 
 > 1
-["Was für ein Aufwand!"]
-
-Dunder nickt. "Nun, das Zeug verdirbt wohl ziemlich schnell, wenn es nicht mehr rein ist, und draußen an der frischen Luft funktioniert die Produktion wohl nicht. Keine Ahnung. Denke das Zeug wurde dann möglichst schnell in der Stadt vertickt."
-
-Er blickt zur Tür. "Wenn Bob aufwacht und wir Thompson haben, gibt's vielleicht mehr Antworten."
-
-Antworten... plötzlich fällt dir wieder ein, was dich eigentlich an diesen Ort geführt hat, und nimmst die Zeichnung aus deiner Weste, die du am Tag davor schon einigen Leuten in der Stadt gezeigt hast.
-
-[1] "Michael, kennen Sie diese Frau?"
-[0] Gespräch beenden
+Das ist bestimmt eine gute Idee, aber ich verstehe leider rein gar nichts.
 
 > 1
-["Michael, kennen Sie diese Frau?"]
-
-Du zeigst Michael die Zeichnung. Er studiert sie eingehend und lächelt.
-
-"Aber sicher! Diese Frau kam neulich drüben spätabends bei der Ranch an. Ihr Gaul ist fast unter ihr zusammengebrochen, und sie sah auch aus, als könne sie dringend eine Mütze Schlaf vertragen."
-
-Er gibt dir die Zeichnung zurück. "Habe ihr angeboten bei Ella nach einem Zimmer zu fragen, aber sie wollte nicht. Ich habe sie dann im Heu schlafen lassen und ihr Pferd versorgt. Als ich am nächsten Morgen nach ihr sehen wollte, waren sie und ihr Pferd verschwunden."
-
-[1] "Wo wollte sie hin?"
-[0] Gespräch beenden
+Ich verstehe kein Wort.
 
 > 1
-["Wo wollte sie hin?"]
-
-"Sie hatte mir am Abend ein paar Dollar gegeben und gesagt, sie wolle in die Stadt, weil ihr Mann wohl dort im Militärgefängnis sitze."
-
-Oh Claire, nein!
-
-[1] "Ich muss so schnell wie möglich dorthin!"
-[0] Gespräch beenden
+Tut mir leid, das verstehe ich nicht.
 
 > 1
-["Ich muss so schnell wie möglich dorthin!"]
-
-"Militärgefängnis, was? Nun, aktuell bist du jedenfalls sauber, das habe ich schon prüfen lassen." Dunder öffnet die Schublade seines Schreibtischs und reicht dir deinen Einberufungsbescheid.
-
-"Die Männer des Gouverneurs werden bald hier sein, um Thompson zu finden und Mifflin zu befragen."
-
-Michael räuspert sich. "Ähm, wir haben uns noch gar nicht richtig bedankt für alles, was Sie für uns getan haben. Also... vielen Dank."
-
-Er gibt dir etwas unbeholfen die Hand. Lucy blickt dich an, die Augen gerötet, und umarmt dich kurz und fest.
-
-[1] "Hier, Ihr Taschentuch. Hat mir sehr geholfen."
-[0] Gespräch beenden
+Diesen Satz habe ich leider nicht verstanden.
 
 > 1
-["Hier, Ihr Taschentuch. Hat mir sehr geholfen."]
-
-Lucys verweintes Gesicht hellt sich auf. "Danke!"
-
-Sie nimmt das Taschentuch aus deiner Hand und schnäuzt die Nase.
-
-"Wir haben leider nicht viel Geld, und die Kohle meines Stiefvaters rühre ich nicht an. Wir würden Ihnen aber gerne Billy anbieten, das ist unser schnellstes Pferd."
-
-Sie blickt zu Michael, der eifrig nickt.
-
-"Bringen Sie ihn einfach zu meinem Cousin Marc in der Tanner Street, wenn Sie in der Stadt angekommen sind."
-
-Du nimmst dankend an und stehst auf.
-
-Steppe
-Frisch gesattelt sitzt du auf Billy, einem jungen Hengst, deine Umhängetasche fest im Griff. Die langsam untergehende Sonne wirft lange Schatten auf den staubigen Weg vor dir, der nach Osten aus der Stadt führt.
-
-Du blickst dich noch einmal um und hebst die Hand in Richtung Ella, Marten und Bill, die dir auf der Straße stehend nachwinken.
-
-Den Blick nach vorne gerichtet versetzt du den Rappen in einen leichten Trab. Ein weiter Weg liegt noch vor dir.
-
-Wieso dachtest du, dass ich im Gefängnis sitze, Claire? Wer hat dir das erzählt?
-
-Egal. Du würdest sie finden, und bald würdet ihr wieder zusammen sein, dessen warst du dir sicher... doch das war eine Geschichte, die an einem anderen Tag erzählt werden sollte.^^
-~~~
-
-
- 
- 
- 
- 
- 
-                 ~~~ FIN ~~~ 
- 
- 
- 
- 
- 
-
-~~~
-
-Vielen Dank, dass du Staub gespielt hast. Ich hoffe, es hat dir gefallen. Wenn ja, würde ich mich sehr über eine Bewertung auf IFDB.org freuen - vielleicht erfährst du dann bald, wie die Geschichte endet. Wenn du online spielst, schreib mir auch gerne etwas direkt hier drunter!
-
-Ansonsten nehme ich Anregungen, Lob und Kritik gerne auch in https://bit.ly/Ikes-Discord oder per Mail an staub@ikeserver.de entgegen.
-
-Vielen Dank an Olaf Nowacki, Hannes Schüller, Michael L. und meine Familie für ihr hilfreiches Feedback sowie den GerX-/deform-Autoren für die deutsche Inform-Erweiterung. Das Cover wurde mit Hilfe von Stable Diffusion XL erstellt.
-
-2024 © IkeC
+Das ist bestimmt eine gute Idee, aber ich verstehe leider rein gar nichts.
 
 > schau
-Steppe
-Im staubigen Dunst der einsetzenden Dämmerung kannst du die Umrisse einer größeren Stadt erahnen.
+Höhle
+Die Luft ist angenehm kühl und feucht. Es riecht leicht nach Rauch. Ein großer, spitzer Felsbrocken markiert den Rand eines Abgrunds im Norden.
 
-Erreichen wirst du sie heute aber nicht mehr.
+Im Süden dringt fahles Licht durch den langen, schmalen Höhleneingang.
 
 > q
 Möchtest du das Spiel wirklich beenden? 

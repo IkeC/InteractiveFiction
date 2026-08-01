@@ -71,8 +71,19 @@ Remove-Item $outPath -ErrorAction SilentlyContinue
 $tmpWalkthrough = [System.IO.Path]::GetTempFileName()
 try {
     $lines = Get-Content "$PSScriptRoot\..\Inform7\Tests\Staub.walkthrough.txt" -Encoding UTF8
-    [System.IO.File]::WriteAllLines($tmpWalkthrough, $lines, $utf8NoBom)
+    $commands = $lines | Where-Object { $_.Trim().Length -gt 0 }
+    [System.IO.File]::WriteAllLines($tmpWalkthrough, $commands, $utf8NoBom)
     cmd /c """$DFROTZ"" -m -q -Z 0 -T -w 999 -S 999 -n ""$outPath"" ""$PSScriptRoot\build\staub.z5"" < ""$tmpWalkthrough"""
+    $transcript = Get-Content $outPath -Encoding UTF8 | Where-Object { $_ -ne "> " -and $_ -ne ">" }
+    $normalizedTranscript = [System.Collections.Generic.List[string]]::new()
+    $previousBlank = $false
+    foreach ($line in $transcript) {
+        $isBlank = [string]::IsNullOrEmpty($line)
+        if ($isBlank -and $previousBlank) { continue }
+        $normalizedTranscript.Add($line)
+        $previousBlank = $isBlank
+    }
+    [System.IO.File]::WriteAllLines($outPath, $normalizedTranscript, $utf8NoBom)
 } finally {
     Remove-Item $tmpWalkthrough -ErrorAction SilentlyContinue
 }

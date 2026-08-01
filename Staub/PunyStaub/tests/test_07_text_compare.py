@@ -238,6 +238,10 @@ class TestSpaltActions:
         assert_output_contains(output, "handbreites Stück Fels")
         assert_output_contains(output, "deutlich breiter")
 
+    def test_explicit_give_article_is_accepted(self, game_at_spalt):
+        output = game_at_spalt.run(["gib molly den keks"])
+        assert_output_contains(output, "Molly schnappt gierig nach dem Keks")
+
     def test_brecheisen_spalt_no_wrong_text(self, game_at_spalt):
         output = game_at_spalt.run(["benutze brecheisen mit spalt"])
         assert_output_not_contains(output, "ohrenbetäubendes Krachen")

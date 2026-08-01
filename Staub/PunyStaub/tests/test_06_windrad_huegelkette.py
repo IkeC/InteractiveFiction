@@ -22,6 +22,10 @@ class TestWindrad:
         output = game_at_windrad.run(["nimm stange", "i"])
         assert_output_contains(output, "Metallstange")
 
+    def test_metallstange_has_feminine_inventory_article(self, game_at_windrad):
+        output = game_at_windrad.run(["nimm stange", "i"])
+        assert_output_contains(output, "eine Metallstange")
+
     def test_oob_direction_shows_desc_oob(self, game_at_windrad):
         output = game_at_windrad.run(["s"])
         assert_output_contains(output, _OOB_MARKER)
@@ -36,6 +40,10 @@ class TestHuegelkette:
     def test_examine_spalt(self, game_at_huegelkette):
         output = game_at_huegelkette.run(["x spalt"])
         assert_output_contains(output, "Spalt")
+
+    def test_rock_group_uses_correct_disambiguation_article(self, game_at_huegelkette):
+        output = game_at_huegelkette.run(["x felsen"])
+        assert_output_contains(output, "den Felsbrocken")
 
     def test_north_is_blocked_initially(self, game_at_huegelkette):
         output = game_at_huegelkette.run(["n"])

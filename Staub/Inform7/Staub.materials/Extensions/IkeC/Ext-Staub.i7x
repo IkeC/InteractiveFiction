@@ -74,12 +74,12 @@ To screenbreak-short:
 
 To weißlicht:
 	if Debug is false and ForWeb is false:
-		say "[line break][italic type]--- WEISSES LICHT ---[roman type][line break]";
+		say "[line break][line break][italic type]--- WEISSES LICHT ---[roman type][line break][line break]";
 		say "[line break][desc-press-key]";
 		wait for any key;
 		clear the screen;
 	else:
-		say "[line break][italic type]--- WEISSES LICHT ---[roman type][paragraph break]";
+		say "[paragraph break][italic type]--- WEISSES LICHT ---[roman type][paragraph break]";
 
 Unwichtig is a kind of thing. Unwichtig is fixed in place.
 Instead of examining Unwichtig:
@@ -126,11 +126,11 @@ The last carry out smelling rule:
 		say "Du riechst nichts Besonderes.".
 
 To say desc-Verwenden:
-	say "Bitte nenne die Dinge die du verwenden oder miteinander verbinden möchtest.".
+	say "Bitte nenne die Dinge, die du miteinander verwenden möchtest.".
 
 Nur-Using is an action applying to nothing.
 Understand "b", "benutz", "benutze", "bind", "binde", "knot", "knote", "befestig", "befestige" as Nur-using.
-Instead of Nur-using, say "[desc-Verwenden]".  
+Instead of Nur-using, say "[desc-Verwenden]".
 
 Using is an action applying to one visible thing.
 Understand "b [something]" as using.

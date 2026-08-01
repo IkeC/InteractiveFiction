@@ -58,6 +58,10 @@ class TestRanch:
         output = game_at_hauptstrasse.run(["w"])
         assert_output_contains(output, "junge Frau")
 
+    def test_ranch_bank_description_is_local(self, game_at_hauptstrasse):
+        output = game_at_hauptstrasse.run(["w", "x bank"])
+        assert_output_contains(output, "Sitzbank")
+
     def test_cant_leave_ranch_with_lucy(self, game_at_hauptstrasse):
         output = game_at_hauptstrasse.run(["w", "ost"])
         assert_output_contains(output, "sitzen lassen")
@@ -98,6 +102,17 @@ class TestSheriff:
         output = game_after_ko.run(["schau"])
         assert_output_contains(output, "Pritschen")
         assert_output_contains(output, "Schreibtisch")
+
+    def test_sheriff_desk_mentions_bag_when_release_is_pending(self, game_after_ko):
+        output = game_after_ko.run([
+            "rede mit sheriff", "1", "1", "1", "2", "0", "x tisch"
+        ])
+        assert_output_contains(output, "Tasche")
+
+    def test_sheriff_exit_does_not_use_saloon_message(self, game_after_ko):
+        output = game_after_ko.run(["raus"])
+        assert_output_contains(output, "knurrt")
+        assert_output_not_contains(output, "Kaffee gebrauchen")
 
     def test_cant_leave_when_locked_up(self, game_after_ko):
         output = game_after_ko.run(["raus"])

@@ -12,7 +12,8 @@ Include "chartable_de.h";   ! MUST be first
 
 Constant Story      "Staub";
 Constant Headline   "^Ein Western von IkeC^";
-Release 4;
+Release 5;
+
 Array UUID_ARRAY string "UUID://506FA077-9940-404A-B9FB-907CD4C773D2//";
 #Ifdef UUID_ARRAY;#Endif;
 
@@ -24,7 +25,7 @@ Constant OPTIONAL_NO_DARKNESS;
 Constant OPTIONAL_FULL_DIRECTIONS;
 Constant OPTIONAL_EXTENDED_METAVERBS;
 Constant OPTIONAL_SIMPLE_DOORS;
-Constant RUNTIME_ERRORS = 0;
+Constant RUNTIME_ERRORS = 1;
 Constant INITIAL_LOCATION_VALUE = r_Zimmer;
 Constant FLAG_COUNT = 60;
 
@@ -60,16 +61,46 @@ Verb 'benutz'
     * noun                                      -> Use
     * noun 'mit'/'auf'/'in'/'an' noun           -> UseTogether;
 
-Verb 'schiess' 'erschieß'
+Extend 'b' last
     *                                           -> UseOnly
+    * noun                                      -> Use
+    * noun 'mit'/'auf'/'in'/'an' noun           -> UseTogether;
+
+Verb 'hebel' 'hebele' 'heble'
+    * noun 'mit' noun                           -> UseTogether;
+
+Extend 'schieb' last
+    * noun 'mit' noun                           -> UseTogether;
+
+Verb 'beseitig' 'blas'
+    * noun                                      -> Use;
+
+Verb 'zuend' 'entzuend'
+    * noun                                      -> SwitchOn
+    * noun 'an'                                 -> SwitchOn;
+
+Verb 'mache'
+    * noun 'auf'                                -> Open
+    * noun 'zu'                                 -> Close
+    * noun 'an'                                 -> SwitchOn
+    * noun 'aus'                                -> SwitchOff;
+
+Extend 'kletter' last
+    * noun                                      -> Climb
+    * noun 'runter'                             -> Climb
+    * 'am' noun 'runter'                        -> Climb;
+
+Verb 'schiess' 'erschieß'
+    *                                           -> ShootOnly
     * 'auf' noun                                -> Use
     * 'auf' noun 'mit' noun                     -> UseTogether
     * noun                                      -> Use
     * noun 'mit' noun                           -> UseTogether;
 
 Extend 'lauf' last
-    * 'zu'/'zur'/'nach' topic                   -> LaufZu
     * topic                                     -> LaufZu
+    * 'zu'/'zum' -> LaufZu
+    * 'nach'/'in' topic                         -> LaufZu
     * ->                                           LaufOnly;
 
 [PrintDescOOB;
@@ -164,7 +195,13 @@ Extend 'lauf' last
 ];
 
 [UseOnlySub; "Was möchtest du benutzen?"; ];
-[UseSub; print "Ich weiß nicht, wie man "; print (the) noun; " benutzt."; ];
+[ShootOnlySub; "Worauf willst du schießen?"; ];
+[UseSub;
+    if (noun == Revolver) "Worauf willst du schießen?";
+    if (noun == GalgenSand) "Bitte nenne die Dinge, die du miteinander verwenden oder verbinden möchtest.";
+    if (noun == Schaufel) "Bitte nenne die Dinge, die du miteinander verwenden oder verbinden möchtest.";
+    print "Ich weiß nicht, wie man "; print (the) noun; " benutzt.";
+];
 [UseTogetherSub;
     ! Lampe + Streichhölzer (light lamp)
     if ((noun == Lampe && second == Streichhoelzer) ||
@@ -181,17 +218,17 @@ Extend 'lauf' last
         if (FlagIsSet(F_PLATFORM_DUG)) "Du bist mit dem Ergebnis eigentlich zufrieden.";
         SetFlag(F_PLATFORM_DUG);
         give Podest general;
-        give Eisenplatte ~concealed;
         "Stück um Stück befreist du das Podest von dem großen Sandhaufen, während dir der Wind unerbittlich ins Gesicht peitscht.^^Direkt unter dem Galgen wird eine stabile Holzplatte sichtbar, die gewissenhaft mit vielen großen Nägeln auf dem Podest festgenagelt wurde.";
     }
-    ! Brecheisen + Eisenplatte/Podest (pry open hatch)
-    if ((noun == Brecheisen && (second == Eisenplatte || second == Podest)) ||
-        ((noun == Eisenplatte || noun == Podest) && second == Brecheisen)) {
+    ! Brecheisen + Podest (pry open wooden plate)
+    if ((noun == Brecheisen && second == Podest) ||
+        (noun == Podest && second == Brecheisen)) {
         if (Brecheisen notin player) "Du hast das Brecheisen nicht dabei.";
         if (FlagIsClear(F_PLATFORM_DUG)) "Du musst zuerst den Sand wegschaufeln.";
         if (FlagIsSet(F_PLATFORM_OPEN)) "Die Falltür ist bereits geöffnet.";
         SetFlag(F_PLATFORM_OPEN);
         give Podest open;
+        give Podestkram ~concealed;
         give Seil ~concealed;
         "Du hebelst einen Nagel nach dem anderen aus der Platte heraus, nicht ohne gelegentlich einen Fluch auszustoßen und dich lautstark zu fragen, was zur Hölle du hier eigentlich machst.^^Etwa eine halbe Stunde und einen abgebrochenen Fingernagel später hast du alle Nägel erfolgreich entfernt. Schweißgebadet schiebst du die Holzplatte beiseite und legst eine quadratische, dunkle Öffnung frei.";
     }
@@ -566,12 +603,11 @@ Global vault_death_count = 0;
 ];
 
 [doWhiteLight;
-    print "^--- WEISSES LICHT ---^";
+    print "^^--- WEISSES LICHT ---^^";
 ];
 
 [doVaultDeath _r;
     doWhiteLight();
-    new_line;
     vault_death_count++;
     _r = random(3);
     print "Nein, so war es nicht gewesen. ";
@@ -638,7 +674,7 @@ Constant CS_SALOON_TREPPE = 121;
 
 [descSalonBalken;
     Examine:
-        print "Mächtige Holzbalken stützen die Decke des großen Raumes. An einem der Balken ist ein langer Nagel eingeschlagen, daran baumelt eine Petroleumlampe.";
+        "Mächtige Holzbalken stützen die Decke des großen Raumes. An einem der Balken ist ein langer Nagel eingeschlagen, daran baumelt eine Petroleumlampe.";
     default: rfalse;
 ];
 
@@ -755,7 +791,7 @@ Object -> Lampe "Petroleumlampe"
             SwitchOn: zuendeLampeAn(); rtrue;
             Drop: noDropValuable(); rtrue;
         ],
-    has concealed ~on static;
+    has concealed ~on static female;
 
 [descLampe;
     if (Lampe in player) print "Eine große, gefüllte ";
@@ -793,10 +829,12 @@ Object -> Lampe "Petroleumlampe"
 ];
 
 Object Streichhoelzer "Streichhölzer" r_Backstage
-    with name 'streichhölzer' 'zündhölzer' 'hoelzer' 'tuetchen' 'papiertuetchen',
+    with name 'streichholz' 'streichhölzer' 'zündholz' 'zündhölzer' 'hoelzer' 'tuetchen' 'papiertuetchen',
         description "Eine ganze Menge Streichhölzer in einem braunen Papiertütchen.",
         before [;
             Drop: noDropValuable(); rtrue;
+            SwitchOn, Rub:
+                "Du zündest ein Streichholz an. Es lodert kurz hell auf und geht schnell wieder aus.^^Vielleicht solltest du die Streichhölzer lieber verwenden, um etwas anderes damit anzuzünden.";
         ],
     has concealed pluralname;
 
@@ -885,6 +923,11 @@ Object -> Barfrau
     ".";
 ];
 
+[PrintBarfrau;
+    if (Barfrau has proper) print (string) Barfrau.short_name;
+    else print "die Frau";
+];
+
 [setTalkOptionsBarfrauKaffee;
     if (FlagIsSet(F_SALOON_OFFERED_COFFEE)) {
         if (Tasche in player) {
@@ -914,11 +957,11 @@ Object -> Barfrau
     ActivateTopic(Barfrau, 302);
     setTalkOptionsBarfrauKaffee();
     print "~Ist gestern noch hoch hergegangen hier, als du schon oben warst. Ich räume das später auf.~, sagt ";
-    print (string) Barfrau.short_name;
+    PrintBarfrau();
     print ". ~Du siehst ganz schön fertig aus, willst du einen Kaffee? Hab' direkt einen aufgebrüht, als ich dich hab' aufstehen hören.~";
 ];
 [bf_r302; print "~Hast dein Zeug oben gelassen? Ohne Tasche hast du doch gar kein Geld dabei."; sayPageTold(TC_BARFRAU_KAFFEE); print "~"; ];
-[bf_r303; print (string) Barfrau.short_name; print " dreht sich um und gießt eine tiefschwarze dampfende Brühe aus einem kleinen Blechtopf in eine Tasse und stellt sie vor dir auf den Tresen.^^~Wohl bekomm's, macht 'nen Vierteldollar. Zucker ist leider aus, aber 'n Keks hab' ich noch.~^^"; print (string) Barfrau.short_name; print " legt einen Keks neben die Tasse. Du legst das Geld hin, steckst die Nase tief in die Tasse und atmest einmal tief ein. Herrlich."; ];
+[bf_r303; PrintBarfrau(); print " dreht sich um und gießt eine tiefschwarze dampfende Brühe aus einem kleinen Blechtopf in eine Tasse und stellt sie vor dir auf den Tresen.^^~Wohl bekomm's, macht 'nen Vierteldollar. Zucker ist leider aus, aber 'n Keks hab' ich noch.~^^"; PrintBarfrau(); print " legt einen Keks neben die Tasse. Du legst das Geld hin, steckst die Nase tief in die Tasse und atmest einmal tief ein. Herrlich."; ];
 [bf_r304; print "~Keine Ahnung wer diesmal angefangen hat. Die Mifflin-Brüder haben mal wieder ordentlich gesoffen und mit ihren Scheinen gewedelt, aber natürlich nichts springen lassen.~^^"; print (string) Barfrau.short_name; print " zuckt mit den Schultern und lächelt. ~Denke das wird einigen nicht gefallen haben.~"; ];
 [bf_r306; print "~Lucy? Wieso?~^^Du erzählst "; print (string) Barfrau.short_name; print " kurz, was passiert ist.^^~Verdammter Mist. Lucy hab' ich zuletzt vor ein paar Tagen gesehen, aber Michael war gestern hier. Hab' ihn mit ein paar Leuten aus der Mine tuscheln sehen, dann weiß ich nicht mehr. Ist bestimmt vor der Schlägerei abgehauen, ist ja nicht so sein Ding.~"; ];
 [bf_r307; print "Du zeigst "; print (string) Barfrau.short_name; print " das Taschentuch mit dem Monogramm.^^~Ja, das gehört bestimmt ihr. Wo hast du das gefunden?~"; ];
@@ -1027,7 +1070,7 @@ Room r_Hauptstrasse "Main Street"
             3 'geier' 'vogel' 'decke' "Nichts mehr zu sehen."
             2 'staubwolke' 'wolke' "Längst verflogen.",
         s_to Schwingtuer, in_to Schwingtuer,
-        nw_to SheriffTuer,
+        nw_to Sherifftuer,
         n_to LadenTuer,
         ne_to r_Barbier,
         w_to r_Ranch,
@@ -1058,8 +1101,8 @@ Object -> Gebaeude "Gebäude"
         ],
     has scenery;
 
-Object -> SheriffTuer "Bürotür des Sheriffs"
-    with name 'sheriffbüro' 'büro' 'tuer' 'eingangstür',
+Object -> Sherifftuer "Bürotür des Sheriffs"
+    with name 'sheriffbüro' 'büro' 'tür' 'eingangstür' 'bürotür',
         description "Die Eingangstür zum Büro des Sheriffs.",
         door_dir (nw_to) (se_to),
         found_in r_Hauptstrasse r_Sheriff,
@@ -1098,6 +1141,7 @@ Constant CS_SHERIFF_HAUS      = 142;
     else
         print "Zwei Pritschen sind an der Wand befestigt";
     print ".^^Auf der gegenüberliegenden Seite steht ein massiver Schreibtisch";
+    if (Tasche in Schreibtisch) print ". Darauf liegt deine Tasche";
     if (FlagIsClear(F_PLAYER_LOCKED_UP))
         print ", dahinter sitzt Sheriff Dunder. Er hat den Hut tief ins Gesicht gezogen und scheint vor sich hin zu dösen";
     print ". Ein Durchgang führt offenbar tiefer ins Haus hinein. Eine breite Tür im Süden führt nach draußen.^";
@@ -1109,7 +1153,7 @@ Room r_Sheriff "Büro des Sheriffs"
             CS_ADD_LIST r_Sheriff (sc1)
             CS_ADD_LIST r_Sheriff (sc2),
         sc1
-            CS_SHERIFF_PRITSCHEN 14 'pritsche' 'pritschen' 'bett' 'betten' "Einfache Holzpritschen zum Sitzen oder Liegen. Sie haben sicher schon einige Banditen und/oder Saufkomas gesehen und riechen unangenehm."
+            CS_SHERIFF_PRITSCHEN 4 'pritsche' 'pritschen' 'bett' 'betten' "Einfache Holzpritschen zum Sitzen oder Liegen. Sie haben sicher schon einige Banditen und/oder Saufkomas gesehen und riechen unangenehm."
             2 'wand' 'wände' "Nichts Besonderes."
             CS_SHERIFF_DURCHGANG 3 'durchgang' 'gang' 'zellen' "Ein niedriger Durchgang der vermutlich zu Zellen und Dunders Privaträumen führt. Dunder lässt dich da nicht rein und du musst da auch nichts sehen.",
         sc2
@@ -1117,7 +1161,7 @@ Room r_Sheriff "Büro des Sheriffs"
             2 'schnauzer' 'bart' "Nichts Besonderes."
             2 'gesicht' 'falten' "Nichts Besonderes."
             2 'kleidung' 'klamotten' "Praktische Kleidung, wie sie hier fast alle tragen.",
-        se_to SheriffTuer, out_to SheriffTuer,
+        se_to Sherifftuer, out_to Sherifftuer,
         before [;
             Smell: "Es riecht leicht muffig und nach diversen Exkrementen von den Pritschen. Kein Ort wo man lange verweilen möchte.";
             Go:
@@ -1134,7 +1178,19 @@ Room r_Sheriff "Büro des Sheriffs"
 
 Object Schreibtisch "Schreibtisch" r_Sheriff
     with name 'schreibtisch' 'tisch',
-        description "Ein wuchtiger Schreibtisch aus dunklem Holz.",
+        description [;
+            print "Ein wuchtiger Schreibtisch aus dunklem Holz";
+            if (Tasche in self) print ". Darauf liegt deine Tasche";
+            ".";
+        ],
+        before [;
+            Receive:
+                if (noun == Tasche) {
+                    if (Tasche in self) "Die Tasche liegt bereits auf dem Schreibtisch.";
+                    move Tasche to self;
+                    "Du legst die Tasche auf den Schreibtisch.";
+                }
+        ],
     has supporter scenery;
 
 Object Sheriff "Sheriff Dunder" r_Sheriff
@@ -1183,12 +1239,12 @@ Array talk_array_sheriff -->
         sheriffRelease
     TM_INACTIVE 325 "~Ich glaube, ich habe Lucys Taschentuch gefunden!~"
         TM_NO_LINE
-        "~Spannende Geschichte, Junge.~ Er schaut dich abfällig an.^^~Komm wieder, wenn du sie gefunden hast, und nerv mich nicht mehr.~"
+        "~Spannende Geschichte, Junge.~ Er schaut dich abfällig an.^^~Komm' wieder, wenn du sie gefunden hast, und geh' mir bis dahin nicht weiter auf die Nerven.~"
     TM_END;
 
 [sheriffRelease;
     ClearFlag(F_PLAYER_LOCKED_UP);
-    give SheriffTuer ~locked open;
+    give Sherifftuer ~locked open;
     give LadenTuer ~locked open;
     move Lucy to r_Gewoelbe;
     move Taschentuch to r_Mine;
@@ -1212,7 +1268,7 @@ Array talk_array_sheriff -->
             "reibt sich die Augen",
             "hustet krächzend");
     }
-    print ". Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.^^Im Süden geht es hinaus auf die Straße.";
+    print ". Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer. Im Süden geht es hinaus auf die Straße.^";
     if (Brecheisen in Theke) print "^^Auf der Theke liegt ein Brecheisen.";
     if (Streichhoelzer in Theke) print "^^Auf der Theke liegt ein kleines Papiertütchen mit Streichhölzern.";
 ];
@@ -1224,7 +1280,7 @@ Room r_Laden "Gemischtwarenladen"
             CS_ADD_LIST r_Laden (sc1),
         sc1
             4 'regal' 'regale' 'wandregal' 'wandregale' descRegale
-            2 'schilder' 'schild' 'etiketten' "Du kannst die Schilder nicht lesen, aber du glaubst auch nicht, dass du eines dieser Dinge brauchst."
+            3 'schilder' 'schild' 'etiketten' "Du kannst die Schilder nicht lesen, aber du glaubst auch nicht, dass du eines dieser Dinge brauchst."
             1 'fenster' "Ein ziemlich staubiges Fenster zur Straße hinaus."
             2 'durchgang' 'hinterraum' "Ein Durchgang hinter der Theke führt offenbar in ein Lager.",
         s_to LadenTuer, out_to LadenTuer,
@@ -1267,14 +1323,17 @@ Object Brecheisen "Brecheisen" r_Backstage
         before [;
             Drop: noDropValuable(); rtrue;
         ],
-    has concealed;
+    has concealed neuter;
 
 Object Ladenmann "Bill" r_Laden
     with name 'ladenmann' 'bill' 'ladenbesitzer' 'mann',
         description "Der bucklige Ladenbesitzer heißt Bill. Er ist ein alter Mann mit schlohweißem schütterem Haar und einem vernarbten aber freundlich wirkenden Gesicht. Er trägt einen fleckigen Kittel und stützt sich auf einen Gehstock.",
         talk_array talk_array_bill,
         before [;
-            Ask, AskFor, AskTo, Tell, Give, Show: "Sag einfach REDE MIT ihm.";
+            Ask, AskFor, AskTo, Tell: "Sag einfach REDE MIT ihm.";
+            Give, Show:
+                print "Rede einfach mit "; print (DE_Dem) second;
+                ". Wenn du glaubst, jemandem etwas geben zu können, wirst du darüber sprechen können.";
         ],
     has animate proper concealed;
 
@@ -1399,7 +1458,7 @@ Room r_Barbier "Barbier"
             CS_ADD_LIST r_Barbier (sc1),
         sc1
             5 'sessel' 'kippsessel' 'leder' 'stuhl' 'sitz' "Ein großer Sessel aus rotem Leder, der sich in der Höhe verstellen lässt. Du hast keine Zeit für Dienstleistungen."
-            2 'spiegel' 'wandspiegel' 'wand' "Du könntest eine Rasur vertragen. Und einen Haarschnitt. Und ein Bad."
+            3 'spiegel' 'wandspiegel' 'wand' "Du könntest eine Rasur vertragen. Und einen Haarschnitt. Und ein Bad."
             7 'krimskrams' 'kram' 'tisch' 'tische' 'regal' 'regale' 'flaeschchen' "Dieser ganze Frisörkram interessiert dich nicht weiter."
             1 'stange' "Die Stange, auf der der Papagei sitzt.",
         sw_to r_Hauptstrasse, out_to r_Hauptstrasse,
@@ -1617,6 +1676,7 @@ Array talk_array_barbier -->
     if (r_Ranch.visitcounter == 2 && Lucy in r_Gewoelbe) {
         "^Ein dumpfer Knall aus westlicher Richtung gefolgt von leisem Fluchen lässt dich kurz aufhorchen.";
     } else if (r_Ranch.visitcounter == 4) {
+        give Junge ~concealed;
         "^Etwas zischt an deinem Kopf vorbei und landet vor dir in der Pferdekoppel. Ein kleiner Junge sprintet heran und springt über den Zaun.^^Kurz darauf kommt er mit einem Stoffball unter dem Arm wieder zum Vorschein und rennt davon. ~Sie ham nix gesehen Mister!~";
     } else if (r_Ranch.visitcounter == 7) {
         "^Du hörst das leise Rasseln einer Klapperschlange. Als du mit gezogenem Revolver neben das Haus trittst, verschwindet sie schnell in Richtung Steppe.";
@@ -1631,10 +1691,9 @@ Room r_Ranch "Ranch"
         cheap_scenery
             CS_ADD_LIST r_Ranch (sc1),
         sc1
-            2 'holzhaus' 'haus' 'häuschen' 'schuppen' "Ein kleines Holzhäuschen mit einem flachen, leicht schrägen Dach, kaum mehr als ein Schuppen."
+            4 'holzhaus' 'haus' 'häuschen' 'schuppen' "Ein kleines Holzhäuschen mit einem flachen, leicht schrägen Dach, kaum mehr als ein Schuppen."
             2 'koppel' 'zaun' "Eine kleine Pferdekoppel, durch einen hüfthohen Zaun eingefasst. Es gibt hier nichts außer vertrocknetem Steppengras."
             2 'stall' 'pferdestall' "Einige Pferde bewegen sich unruhig im Stall umher."
-            1 'bank' 'sitzbank' "Eine einfache Sitzbank, aus Holz gezimmert."
             3 'pferde' 'pferd' 'gaul' "Die Pferde scheinen unruhig zu sein.",
         e_to r_Hauptstrasse,
         s_to r_Windrad,
@@ -1655,6 +1714,16 @@ Room r_Ranch "Ranch"
                 if (selected_direction == n_to or ne_to or nw_to or se_to or sw_to)
                     return PrintDescOOB();
         ];
+
+Object RanchBank "Bank" r_Ranch
+    with name 'bank' 'sitzbank',
+        description "Eine einfache Sitzbank, aus Holz gezimmert.",
+    has scenery female;
+
+Object Junge "Junge" r_Ranch
+    with name 'junge' 'knabe' 'kind',
+        description "Der Junge ist nicht mehr zu sehen.",
+    has scenery concealed;
 
 Object Lucy "Frau" r_Ranch
     with name 'lucy' 'frau' 'mädchen',
@@ -1716,7 +1785,7 @@ Array talk_array_lucy -->
     if (FlagIsSet(F_LUCY_FREE)) { rfalse; }
     print "Lucy funkelt dich an, ihr Gesichtsausdruck eine wilde Mischung aus Verzweiflung und blanker Wut. ~Hol' uns bitte hier raus, verdammt!~^^";
     print "Du hebelst die Gitter mit Hilfe deines Brecheisens auseinander, so dass sich beide gerade so hindurchzwängen können.^^";
-    print "Der junge Mann atmet erleichtert auf und streckt dir die Hand entgegen. ~Vielen Dank Sir. Ich bin Michael.~^";
+    print "Der junge Mann atmet erleichtert auf und streckt dir die Hand entgegen. ~Vielen Dank Sir. Ich bin Michael.~";
     SetFlag(F_LUCY_FREE);
     give Michael ~concealed;
     ActivateTopic(Lucy, 401);
@@ -1772,7 +1841,7 @@ Array talk_array_lucy -->
         print "Als du das letzte Gebäude passierst, trifft dich der Wind hart von der Seite. Du ziehst dir dein Halstuch über die Nase und gehst langsam weiter. Nach ein paar Metern kannst du in der Staubwolke vor dir allmählich eine Art Gerüst erkennen.^^";
     }
     print "Du stehst vor einem Galgen, bestehend aus zwei Pfosten mit Querbalken und einer Schlinge. Ein Holzpodest dient als Fundament.^^";
-    print "Weiter nördlich glaubst du einige schiefe Kreuze zu erkennen. Nach Westen geht es zurück in die Stadt.^";
+    print "Weiter nördlich glaubst du, einige schiefe Kreuze zu erkennen. Nach Westen geht es zurück in die Stadt.^";
     if (r_Galgen.visitcounter == 3) {
         print "^~Suchen wohl Ihre Freunde, was? Sowas wie Sie wollen wir hier nicht mehr sehen!~^^Du blickst dich verdutzt um und siehst eine ältere Frau in einem der Häuser verschwinden, mit ihrem Gehstock wild in der Luft herumstochernd.^";
     }
@@ -1832,7 +1901,7 @@ Object Schlinge "Schlinge" r_Galgen
 ];
 
 Object Podest "Holzpodest" r_Galgen
-    with name 'podest' 'holzpodest' 'fundament' 'balken' 'platte' 'holzplatte' 'öffnung' 'loch' 'brett',
+    with name 'podest' 'holzpodest' 'fundament' 'balken' 'platte' 'holzplatte' 'falltür' 'falltuer' 'tür' 'tuer' 'luke' 'öffnung' 'loch' 'brett',
         description descPodest,
         before [;
             Take, Push, Pull, Open, Rub:
@@ -1849,12 +1918,21 @@ Object Podest "Holzpodest" r_Galgen
                 if (noun == Brecheisen && FlagIsSet(F_PLATFORM_DUG) && FlagIsClear(F_PLATFORM_OPEN)) {
                     SetFlag(F_PLATFORM_OPEN);
                     give Podest open;
+                    give Podestkram ~concealed;
                     give Seil ~concealed;
                     "Etwa eine halbe Stunde und einen abgebrochenen Fingernagel später hast du alle Nägel erfolgreich entfernt. Schweißgebadet schiebst du die Holzplatte beiseite und legst eine quadratische, dunkle Öffnung frei.";
                 }
                 rfalse;
         ],
     has scenery neuter;
+
+Object Podestkram "Bretter und Nägel" r_Galgen
+    with name 'bretter' 'nägel' 'naegel',
+        description "Ein paar in Spinnweben eingehüllte Bretter und krummgeschlagene Nägel.",
+        before [;
+            Take: "Du siehst keinen Grund das mitzunehmen.";
+        ],
+    has scenery concealed pluralname;
 
 [descGalgenSand;
     print "Der Sand bildet eine kleine Düne und geht dir an der höchsten Stelle bis zum Knie. Vom Boden des Podests ist praktisch nichts mehr zu sehen.^";
@@ -1884,29 +1962,11 @@ Object GalgenSand "Sand" r_Galgen
                     if (FlagIsSet(F_PLATFORM_DUG)) { "Du bist mit dem Ergebnis eigentlich zufrieden."; }
                     SetFlag(F_PLATFORM_DUG);
                     give Podest general;
-                    give Eisenplatte ~concealed;
                     "Stück um Stück befreist du das Podest von dem großen Sandhaufen, während dir der Wind unerbittlich ins Gesicht peitscht.^^Direkt unter dem Galgen wird eine stabile Holzplatte sichtbar, die gewissenhaft mit vielen großen Nägeln auf dem Podest festgenagelt wurde.";
                 }
                 rfalse;
         ],
     has scenery;
-
-Object Eisenplatte "eiserne Falltür" r_Galgen
-    with name 'eisenplatte' 'falltür' 'eisen' 'platte' 'metallplatte',
-        description "Eine rechteckige eiserne Falltür, etwa zwei Handbreit auf zwei Handbreit, bündig in das Holzpodest eingelassen.",
-        before [;
-            Open, Pull, Take:
-                "Sie ist fest verkeilt. Du brauchst einen Hebel, um sie aufzubrechen.";
-            Receive:
-                if (noun == Brecheisen) {
-                    SetFlag(F_PLATFORM_OPEN);
-                    give Podest open;
-                    give Seil ~concealed;
-                    "Etwa eine halbe Stunde und einen abgebrochenen Fingernagel später hast du alle Nägel erfolgreich entfernt. Schweißgebadet schiebst du die Platte beiseite und legst eine quadratische, dunkle Öffnung frei.";
-                }
-                rfalse;
-        ],
-    has concealed scenery neuter;
 
 Object Seil "Seil" r_Galgen
     with name 'seil' 'tau' 'strick' 'rolle',
@@ -1923,7 +1983,7 @@ Object Seil "Seil" r_Galgen
                 move self to player;
                 "Du wirfst dir das aufgerollte Seil über die Schulter. Ganz schön schwer.";
         ],
-    has concealed scenery;
+    has concealed scenery neuter;
 
 Object GalgenKreuze "Kreuze" r_Galgen
     with name 'kreuz' 'kreuze' 'holzkreuze',
@@ -1948,7 +2008,7 @@ Object GalgenStadt "Stadt" r_Galgen
     print "Weiter vorne stehen vier Kreuze sauber aufgereiht nebeneinander, jeweils am Kopfende eines ordentlich mit Steinen eingefassten Grabes.^^";
     print "Im Süden siehst du die Umrisse des Galgens.^";
     if (r_Friedhof.visitcounter == 2) {
-        print "^^Ein Gecko sitzt starr auf einem der Grabkreuze und sonnt sich. Als du die Hand nach ihm ausstreckst, verschwindet er blitzartig im Gebüsch.^";
+        print "^Ein Gecko sitzt starr auf einem der Grabkreuze und sonnt sich. Als du die Hand nach ihm ausstreckst, verschwindet er blitzartig im Gebüsch.^";
     }
 ];
 
@@ -1980,8 +2040,8 @@ Object FriedhofGraeber "Gräber" r_Friedhof
     has scenery pluralname;
 
 Object Zwicker "Zwicker" r_Laden
-    with name 'zwicker' 'brille' 'kneifer',
-        description "Ein altmodischer Zwicker, einer der Gläser ist ein wenig verschmutzt.",
+    with name 'zwicker' 'brille' 'kneifer' 'linsen',
+        description "Ein einfacher Zwicker mit dicken, leicht milchigen Gläsern.",
     has concealed;
 
 [KreuzMenu val;
@@ -2074,11 +2134,11 @@ Object Zwicker "Zwicker" r_Laden
     print "Das Windrad ist in etwa fünfzehn Meter Höhe auf einen aus langen Metallstangen bestehenden Gittermast montiert und quietscht bei jeder Bewegung. Eine Heckfahne aus Metall stellt die Rotorblätter automatisch in Windrichtung.^^";
     print "Im Norden geht es zurück zur Ranch. Ein Weg führt nach Westen Richtung Hügelkette.^";
     if (r_Windrad.visitcounter == 3) {
-        print "^^Zwei Kojoten schleichen sich bis auf wenige Meter an dich heran. Du nimmst einen Stein und wirft ihn in ihre Richtung, woraufhin sie laut aufheulend Reißaus nehmen.^";
+        print "^Zwei Kojoten schleichen sich bis auf wenige Meter an dich heran. Du nimmst einen Stein und wirfst ihn in ihre Richtung, woraufhin sie laut aufheulend Reißaus nehmen.^";
     } else if (r_Windrad.visitcounter == 6) {
-        print "^^Einige Kojoten scheinen dich aus einiger Entfernung zu beobachten. Du machst eine beiläufige Wurfbewegung und sie rennen davon.^";
+        print "^Einige Kojoten scheinen dich aus einiger Entfernung zu beobachten. Du machst eine beiläufige Wurfbewegung und sie rennen davon.^";
     } else if (r_Windrad.visitcounter == 8) {
-        print "^^squieeek ... squieeeeek ...^^Du kannst dieses verdammte Windrad langsam nicht mehr hören, geschweige denn sehen. Wofür ist das Teil überhaupt?^^Du wischst dir den Schweiß von der Stirn und ziehst in Erwägung öfter mal zu laufen, um schneller voranzukommen.^";
+        print "^squieeek ... squieeeeek ...^^Du kannst dieses verdammte Windrad langsam nicht mehr hören, geschweige denn sehen. Wofür ist das Teil überhaupt?^^Du wischst dir den Schweiß von der Stirn und ziehst in Erwägung öfter mal zu laufen, um schneller voranzukommen.^";
     }
 ];
 
@@ -2401,12 +2461,16 @@ Room r_Hoehle "Höhle"
         description descHoehle,
         s_to r_Huegelkette, out_to r_Huegelkette,
         before [;
+            Climb:
+                if (noun == Seil) {
+                    <<Go FAKE_D_OBJ>>;
+                }
             Go:
                 if (selected_direction == n_to or d_to) {
                     if (Lampe in player && Lampe has on) {
                         if (FlagIsSet(F_ROPE_TIED)) {
                             if (r_Gewoelbe hasnt visited) {
-                                print "Du nimmst den Henkel der Petroleumlampe zwischen die Zähne und greift mit beiden Händen das Seil.^^Die Füße gegen die Felswand gestemmt, seilst du dich langsam ab.^";
+                                print "Du nimmst den Henkel der Petroleumlampe zwischen die Zähne und greifst mit beiden Händen das Seil.^^Die Füße gegen die Felswand gestemmt, seilst du dich langsam ab.^";
                                 doScreenbreak();
                             }
                             PlayerTo(r_Gewoelbe);
@@ -2509,7 +2573,7 @@ Constant CS_VAULT_TORCHES = 202;
         }
         new_line;
     }
-    if (FlagIsClear(F_GUARD_OUT) && Geselle hasnt general) {
+    if (FlagIsClear(F_GUARD_OUT) && Geselle hasnt concealed) {
         print "^^Davor sitzt ein mürrisch dreinschauender Geselle auf einem Stein, die Arme auf die Oberschenkel gestützt, mit einer Flinte in der rechten Hand.";
         new_line;
     }
@@ -2624,7 +2688,7 @@ Object Geselle "Geselle" r_Gewoelbe
                 }
                 rfalse;
         ],
-    has animate concealed;
+    has animate scenery;
 
 Object Michael "Bursche" r_Gewoelbe
     with name 'bursche' 'michael' 'mann' 'junger',
@@ -2635,7 +2699,7 @@ Object Michael "Bursche" r_Gewoelbe
     has animate concealed;
 
 Object VaultNische "Felsnische" r_Gewoelbe
-    with name 'nische' 'felsnische' 'kaefig' 'gitter' 'gitterstabe' 'stabe',
+    with name 'nische' 'felsnische' 'kaefig',
         description [;
             if (FlagIsSet(F_LUCY_FREE))
                 "Lucy und Michael stehen gebückt im Halbdunkel neben ihrem ehemaligen Gefängnis.";
@@ -2644,6 +2708,14 @@ Object VaultNische "Felsnische" r_Gewoelbe
             "Nur wenige Meter von dir entfernt befindet sich eine größere Felsnische. Hinter zusammengebundenen Gittern kauert ein junges Paar.";
         ],
     has scenery;
+
+Object VaultGitter "Gitter" r_Gewoelbe
+    with name 'gitter' 'gitterstäbe' 'gitterstabe' 'stäbe' 'stabe',
+        description "Zusammengebundene Gitterstäbe versperren die Felsnische.",
+        before [;
+            Take, Push, Pull, Open: "Das Gitter ist nicht beweglich.";
+        ],
+    has scenery pluralname;
 
 Object VaultThompson "Thompson" r_Gewoelbe
     with name 'thompson' 'mann' 'buergermeister' 'stiefvater' 'stock' 'melone' 'hut',

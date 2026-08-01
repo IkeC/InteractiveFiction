@@ -1494,7 +1494,7 @@ Array talk_array_Lucy -->
 ];
 
 [doScreenbreak;
-	print "@@126@@126@@126^^";
+	print "^@@126@@126@@126^^";
 ];
 
 Global vault_death_count = 0;

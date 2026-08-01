@@ -285,7 +285,7 @@ Carry out using something on something:
 					now pg-Bill-Spalt is active;
 					stop the action;
 				else: [Spalt schon bearbeitet]
-					say "Du hast den Spalt schon breiter gemacht. Das Brecheisen ist leider zu kurz um es als Hebel zu verwenden.";
+					say "Du hast den Spalt schon breiter gemacht. Das Brecheisen ist leider zu kurz, um es als Hebel zu verwenden.";
 					stop the action;
 			if the second noun is the Podest:
 				if Podest is not entdeckt:
@@ -874,7 +874,7 @@ Instead of switching off the Lampe:
 	say "Du lässt sie lieber brennen. Ist so schön behaglich.".
 
 Instead of burning the Streichhölzer:
-	say "Du zündest ein Streichholz an. Es lodert kurz hell auf und geht schnell wieder aus.[paragraph break]Vielleicht solltest du die Streichhölzer lieber verwenden um etwas anderes damit anzuzünden.";
+	say "Du zündest ein Streichholz an. Es lodert kurz hell auf und geht schnell wieder aus.[paragraph break]Vielleicht solltest du die Streichhölzer lieber verwenden, um etwas anderes damit anzuzünden.";
 
 Instead of burning the Lampe:
 	if player does not have Lampe:

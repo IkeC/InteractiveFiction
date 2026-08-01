@@ -60,7 +60,7 @@
 				"cwd": "${workspaceFolder}\\Staub\\PunyStaub"
 			},
 			"dependsOn": [
-				"Staub Build"
+				"PunyStaub Build (Windows)"
 			],
 			"isBackground": false,
 			"problemMatcher": [],
