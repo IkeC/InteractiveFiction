@@ -9,7 +9,7 @@ Dein Kopf dröhnt erbarmungslos und das Blut pulsiert schmerzhaft in deinen Schl
 
 Staub
 Ein Western von IkeC
-Release 5 / Serial number 260801 / Inform v6.44 PunyInformDE v6.7 R
+Release 5 / Serial number 261118 / Inform v6.44 PunyInformDE v6.9 R
 
 Zimmer
 Du hustest zweimal kräftig und raffst dich schließlich langsam von dem staubigen Dielenboden hoch.
@@ -119,7 +119,7 @@ Du schlurfst die Treppe hinunter und massierst dabei deine schmerzende linke Sch
 
 Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
 
-Hinter der Bar steht eine Frau und sortiert die Getränke. Sie wirft dir einen leicht amüsierten Blick zu.
+Hinter der Bar steht eine Frau und wischt gelangweilt den Tresen. Sie wirft dir einen leicht amüsierten Blick zu.
 
 > lauf
 LAUF ZU einem dieser Orte:
@@ -127,14 +127,16 @@ LAUF ZU einem dieser Orte:
 - Saloon (Ella)
 
 > lauf zu zimmer
-Diesen Ort kenne ich nicht. Bekannte Orte:
-- Zimmer
-- Saloon (Ella)
+Kurze Zeit später...
+Zimmer
+Dieses Zimmer ist ziemlich spärlich eingerichtet. In der Ecke steht ein Bett mit einem kleinen Nachttisch. An der gegenüberliegenden Wand befindet sich ein Fenster. Eine einfache Holztür führt nach draußen und die Treppe hinunter.
 
 > lauf zu saloon
-Diesen Ort kenne ich nicht. Bekannte Orte:
-- Zimmer
-- Saloon (Ella)
+Kurze Zeit später...
+Saloon
+Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
+
+Hinter der Bar steht eine Frau und reinigt die Spüle.
 
 > schau
 Saloon
@@ -909,7 +911,7 @@ Ein Geier setzt sich auf den Dachgiebel vor dir und betrachtet dich argwöhnisch
 
 > n
 Gemischtwarenladen
-Du stehst vor der Ladentheke, dahinter steht Bill und reibt sich die Augen. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer. Im Süden geht es hinaus auf die Straße.
+Du stehst vor der Ladentheke, dahinter steht Bill und kratzt sich am Kinn. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer. Im Süden geht es hinaus auf die Straße.
 
 > rede mit bill
 Was möchtest du zu Bill sagen?
@@ -1051,7 +1053,7 @@ Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten lieg
 Saloon
 Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
 
-Hinter der Bar steht Ella und wischt gelangweilt den Tresen.
+Hinter der Bar steht Ella und schnäuzt in ihr Geschirrtuch.
 
 > x decke
 Mächtige Holzbalken stützen die Decke des großen Raumes. An einem der Balken ist ein langer Nagel eingeschlagen, daran baumelt eine Petroleumlampe.
@@ -1124,7 +1126,7 @@ Du steigst auf den Stuhl unter dem Balken.
 Saloon (auf dem Stuhl)
 Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
 
-Hinter der Bar steht Ella und reinigt die Spüle.
+Hinter der Bar steht Ella und kratzt sich am Kinn.
 
 > nimm lampe
 Du nimmst die Lampe vom Nagel.
@@ -1137,7 +1139,7 @@ Du steigst von dem Stuhl herunter.
 Saloon
 Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
 
-Hinter der Bar steht Ella und sortiert die Getränke.
+Hinter der Bar steht Ella und wischt gelangweilt den Tresen.
 
 > rede mit frau
 Was möchtest du zu Ella sagen?
@@ -1159,7 +1161,7 @@ Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten lieg
 
 > n
 Gemischtwarenladen
-Du stehst vor der Ladentheke, dahinter steht Bill und stützt sich auf seinen Gehstock. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer. Im Süden geht es hinaus auf die Straße.
+Du stehst vor der Ladentheke, dahinter steht Bill und reibt sich die Augen. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer. Im Süden geht es hinaus auf die Straße.
 
 > rede mit bill
 Was möchtest du zu Bill sagen?
@@ -1272,7 +1274,7 @@ Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten lieg
 
 > n
 Gemischtwarenladen
-Du stehst vor der Ladentheke, dahinter steht Bill und hustet krächzend. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer. Im Süden geht es hinaus auf die Straße.
+Du stehst vor der Ladentheke, dahinter steht Bill und stützt sich auf seinen Gehstock. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer. Im Süden geht es hinaus auf die Straße.
 
 > rede mit bill
 Was möchtest du zu Bill sagen?
@@ -1313,7 +1315,7 @@ Die breite, staubige Straße verläuft von Osten nach Westen. Im Nordwesten lieg
 Barbier
 Ein ausladender Kippsessel aus rotem Leder prangt vor einem großen, an der Wand befestigten Spiegel. Auf diversen Tischen und Regalen stehen kleine Fläschchen, Dosen und allerlei Krimskrams herum.
 
-Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und sortiert einige Döschen.
+Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und popelt in der Nase.
 
 > rede mit barbier
 Was möchtest du zu Marten sagen?

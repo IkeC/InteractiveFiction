@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import os
-import pty
 import re
 import select
 import subprocess
@@ -60,6 +59,8 @@ def _write_to_child(master_fd: int, data: bytes) -> None:
 
 
 def generate_transcript(story_path: Path, walkthrough_path: Path, out_path: Path) -> None:
+    import pty
+
     commands = [line.strip() for line in walkthrough_path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
     master_fd, slave_fd = pty.openpty()

@@ -63,7 +63,7 @@ COMMAND: 'runter'
  Saloon Du schlurfst die Treppe hinunter und massierst dabei deine schmerzende linke Schulter.
  Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
 -Hinter der Bar steht eine Frau und reinigt die Spüle. Sie wirft dir einen leicht amüsierten Blick zu.
-+Hinter der Bar steht eine Frau und sortiert die Getränke. Sie wirft dir einen leicht amüsierten Blick zu.
++Hinter der Bar steht eine Frau und wischt gelangweilt den Tresen. Sie wirft dir einen leicht amüsierten Blick zu.
 
 COMMAND: 'lauf'
 --- Inform7
@@ -78,16 +78,17 @@ COMMAND: 'lauf zu zimmer'
 @@ -1,2 +1 @@
 -Ein paar Minuten später...
 -Zimmer Dieses Zimmer ist ziemlich spärlich eingerichtet. In der Ecke steht ein Bett mit einem kleinen Nachttisch. An der gegenüberliegenden Wand befindet sich ein Fenster. Eine einfache Holztür führt nach draußen und die Treppe hinunter.
-+Diesen Ort kenne ich nicht. Bekannte Orte: - Zimmer - Saloon (Ella)
++Kurze Zeit später... Zimmer Dieses Zimmer ist ziemlich spärlich eingerichtet. In der Ecke steht ein Bett mit einem kleinen Nachttisch. An der gegenüberliegenden Wand befindet sich ein Fenster. Eine einfache Holztür führt nach draußen und die Treppe hinunter.
 
 COMMAND: 'lauf zu saloon'
 --- Inform7
 +++ PunyStaub
-@@ -1,3 +1 @@
+@@ -1,3 +1,2 @@
 -Kurze Zeit später...
 -Saloon Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
 -Hinter der Bar steht eine Frau und poliert Gläser mit einem mäßig sauber wirkenden Stofflappen.
-+Diesen Ort kenne ich nicht. Bekannte Orte: - Zimmer - Saloon (Ella)
++Kurze Zeit später... Saloon Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
++Hinter der Bar steht eine Frau und reinigt die Spüle.
 
 COMMAND: 'schau'
 --- Inform7
@@ -296,7 +297,7 @@ COMMAND: 'n'
 @@ -1,2 +1 @@
 -Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und hustet krächzend. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
 -Im Süden geht es hinaus auf die Straße.
-+Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und reibt sich die Augen. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer. Im Süden geht es hinaus auf die Straße.
++Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und kratzt sich am Kinn. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer. Im Süden geht es hinaus auf die Straße.
 
 COMMAND: '1'
 --- Inform7
@@ -331,7 +332,7 @@ COMMAND: 's'
 @@ -1,2 +1,2 @@
  Saloon Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
 -Hinter der Bar steht Ella und kratzt sich am Kinn.
-+Hinter der Bar steht Ella und wischt gelangweilt den Tresen.
++Hinter der Bar steht Ella und schnäuzt in ihr Geschirrtuch.
 
 COMMAND: '1'
 --- Inform7
@@ -351,7 +352,7 @@ COMMAND: 'benutze stuhl'
 -Saloon (auf dem Stuhl) Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
 -Hinter der Bar steht Ella und sortiert die Getränke.
 +Du steigst auf den Stuhl unter dem Balken. Saloon (auf dem Stuhl) Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
-+Hinter der Bar steht Ella und reinigt die Spüle.
++Hinter der Bar steht Ella und kratzt sich am Kinn.
 
 COMMAND: 'nimm lampe'
 --- Inform7
@@ -368,7 +369,7 @@ COMMAND: 'raus'
 -Saloon Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
 -Hinter der Bar steht Ella und kratzt sich am Kinn.
 +Du steigst von dem Stuhl herunter. Saloon Der Saloon besteht aus einigen runden Tischen mit Stühlen und einer kleinen Bühne. Daneben führt eine Treppe hoch in dein Zimmer. Gegenüber befindet sich ein langer Tresen. Zwei massive Balken verlaufen unter der Decke. Eine Schwingtür im Norden führt nach draußen.
-+Hinter der Bar steht Ella und sortiert die Getränke.
++Hinter der Bar steht Ella und wischt gelangweilt den Tresen.
 
 COMMAND: '1'
 --- Inform7
@@ -386,7 +387,7 @@ COMMAND: 'n'
 @@ -1,2 +1 @@
 -Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und hustet krächzend. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
 -Im Süden geht es hinaus auf die Straße.
-+Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und stützt sich auf seinen Gehstock. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer. Im Süden geht es hinaus auf die Straße.
++Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und reibt sich die Augen. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer. Im Süden geht es hinaus auf die Straße.
 
 COMMAND: '1'
 --- Inform7
@@ -421,7 +422,7 @@ COMMAND: 'n'
 @@ -1,2 +1 @@
 -Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und reibt sich die Augen. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer.
 -Im Süden geht es hinaus auf die Straße.
-+Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und hustet krächzend. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer. Im Süden geht es hinaus auf die Straße.
++Gemischtwarenladen Du stehst vor der Ladentheke, dahinter steht Bill und stützt sich auf seinen Gehstock. Bis auf die offenen Wandregale hinter Bill ist der Laden ziemlich leer. Im Süden geht es hinaus auf die Straße.
 
 COMMAND: '1'
 --- Inform7
@@ -440,7 +441,7 @@ COMMAND: 'no'
 @@ -1,2 +1,2 @@
  Barbier Ein ausladender Kippsessel aus rotem Leder prangt vor einem großen, an der Wand befestigten Spiegel. Auf diversen Tischen und Regalen stehen kleine Fläschchen, Dosen und allerlei Krimskrams herum.
 -Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und prüft sein Rasiermesser.
-+Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und sortiert einige Döschen.
++Molly sitzt auf einer Stange und wackelt mit dem Kopf. Marten steht hinter dem Sessel und popelt in der Nase.
 
 COMMAND: '1'
 --- Inform7

@@ -98,9 +98,10 @@ Verb 'schiess' 'erschieß'
     * noun 'mit' noun                           -> UseTogether;
 
 Extend 'lauf' last
+    * 'zu'/'zum' topic                         -> LaufZu
+    * 'nach'/'in' topic                        -> LaufZu
     * topic                                     -> LaufZu
     * 'zu'/'zum' -> LaufZu
-    * 'nach'/'in' topic                         -> LaufZu
     * ->                                           LaufOnly;
 
 [PrintDescOOB;

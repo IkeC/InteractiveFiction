@@ -178,7 +178,7 @@ class TestLaufZu:
 
     def test_lauf_zu_already_there(self, game_after_release):
         output = game_after_release.run(["raus", "lauf zu main"])
-        assert_output_contains(output, "bereits dort")
+        assert_output_contains(output, "Da bist du doch schon!")
 
     def test_lauf_zu_unvisited_place(self, game_after_release):
         output = game_after_release.run(["lauf zu gewolbe"])
